@@ -1,0 +1,425 @@
+[
+  {
+    "id": 29,
+    "count": 2,
+    "description": "",
+    "link": "https://ipmaustralia.com.au/product-category/cryoanalgesia/",
+    "name": "Cryoanalgesia",
+    "slug": "cryoanalgesia",
+    "taxonomy": "product_cat",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat/29",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/product_cat"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product?product_cat=29"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 31,
+    "count": 3,
+    "description": "",
+    "link": "https://ipmaustralia.com.au/product-category/epidurolysis/",
+    "name": "Epidurolysis",
+    "slug": "epidurolysis",
+    "taxonomy": "product_cat",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat/31",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/product_cat"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product?product_cat=31"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 33,
+    "count": 3,
+    "description": "• solution to prevent blood clotting in ozone, HOT and UVB autologous blood therapy\r\n• for catheter blocking in dialysis",
+    "link": "https://ipmaustralia.com.au/product-category/ozone-therapy/medical-devices/",
+    "name": "Medical Devices",
+    "slug": "medical-devices",
+    "taxonomy": "product_cat",
+    "parent": 32,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat/33",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/product_cat"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat/32"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product?product_cat=33"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 32,
+    "count": 10,
+    "description": "",
+    "link": "https://ipmaustralia.com.au/product-category/ozone-therapy/",
+    "name": "Ozone Therapy",
+    "slug": "ozone-therapy",
+    "taxonomy": "product_cat",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat/32",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/product_cat"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product?product_cat=32"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 30,
+    "count": 1,
+    "description": "",
+    "link": "https://ipmaustralia.com.au/product-category/regenerative-medicine/",
+    "name": "Regenerative Medicine",
+    "slug": "regenerative-medicine",
+    "taxonomy": "product_cat",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat/30",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/product_cat"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product?product_cat=30"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "count": 1,
+    "description": "",
+    "link": "https://ipmaustralia.com.au/product-category/registration/",
+    "name": "Registration",
+    "slug": "registration",
+    "taxonomy": "product_cat",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat/21",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/product_cat"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product?product_cat=21"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 34,
+    "count": 2,
+    "description": "• vacuum bottles with sodium citrate for laboratory use\r\n• vacuum bottles in various sizes for laboratory use\r\n",
+    "link": "https://ipmaustralia.com.au/product-category/ozone-therapy/sterile-disposable-products/",
+    "name": "Sterile Disposable Products",
+    "slug": "sterile-disposable-products",
+    "taxonomy": "product_cat",
+    "parent": 32,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat/34",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/product_cat"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat/32"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product?product_cat=34"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 44,
+    "count": 5,
+    "description": "• transfusion devices\r\n• perfusions devices\r\n• Heidelberg extensions\r\n• interconnectors\r\n• ventilation filter\r\n• transfer filter sets\r\n• blood collecting equipment",
+    "link": "https://ipmaustralia.com.au/product-category/ozone-therapy/system-articles-for-ozone-oxygen-therapy-and-for-other-medical-applications/",
+    "name": "System Articles for Ozone-Oxygen Therapy and for Other Medical Applications",
+    "slug": "system-articles-for-ozone-oxygen-therapy-and-for-other-medical-applications",
+    "taxonomy": "product_cat",
+    "parent": 32,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat/44",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/product_cat"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat/32"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product?product_cat=44"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 20,
+    "count": 0,
+    "description": "",
+    "link": "https://ipmaustralia.com.au/product-category/uncategorized/",
+    "name": "Uncategorized",
+    "slug": "uncategorized",
+    "taxonomy": "product_cat",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat/20",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product_cat"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/product_cat"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/product?product_cat=20"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

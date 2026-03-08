@@ -1,0 +1,113 @@
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { CheckCircle2 } from "lucide-react";
+import educationHero from "@/assets/Education of minimally invasive procedures for pain management.png";
+import sydneyWorkshop3 from "@/assets/Ultrasound-guided cryoanalgesia workshop Sydney_3.png.png";
+
+const focusPoints = [
+  "Improve patient outcomes",
+  "Support safe adoption",
+  "Enable procedural excellence",
+];
+
+const AboutSection = () => {
+  return (
+    <section id="about" className="section-container section-padding relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-primary/5 to-blue-400/5 rounded-full blur-3xl" />
+
+      <div className="relative grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center">
+        {/* Text */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-primary/10 to-blue-500/10 text-primary border border-primary/20">
+            Who We Are
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mt-6 mb-6 leading-tight">
+            A National Hub for Interventional Practice
+          </h2>
+          <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-5">
+            <strong className="text-slate-800">Interventional Pain Management Australia (IPMA)</strong> brings
+            clinicians together to advance procedural medicine through structured education, clinical evidence, and carefully selected technologies.
+          </p>
+
+          {/* Our Focus */}
+          <div className="mb-6">
+            <p className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-3">Our focus:</p>
+            <ul className="space-y-2">
+              {focusPoints.map((point) => (
+                <li key={point} className="flex items-center gap-3 text-slate-600">
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+            Whether it's workshops, new procedures, or shared insights, IPMA is all about supporting the people who make a difference in pain care.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link to="/clinical-education" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-primary to-blue-600 text-white font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300">
+              Explore workshops
+            </Link>
+            <Link to="/about" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-slate-700 font-semibold text-sm border border-slate-200 hover:border-primary/50 hover:text-primary transition-all duration-300">
+              Our mission
+            </Link>
+          </div>
+
+          <div className="mt-10 grid grid-cols-2 gap-4">
+            {[
+              { value: "1995", label: "Founded" },
+              { value: "Australia", label: "Clinician network" },
+            ].map((item) => (
+              <div key={item.label} className="rounded-2xl bg-gradient-to-br from-white to-slate-50 border border-slate-200/80 px-5 py-4 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
+                <div className="text-xl md:text-2xl font-bold text-slate-800">{item.value}</div>
+                <div className="text-[11px] uppercase tracking-[0.15em] text-slate-500 font-semibold">
+                  {item.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Imagery */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="relative"
+        >
+          <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-slate-200 shadow-2xl shadow-slate-300/40">
+            <img
+              src={educationHero}
+              alt="Interventional training session"
+              className="w-full h-full object-cover"
+            />
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
+          </div>
+          <div className="hidden md:block absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-xl rounded-2xl p-4 max-w-[240px] border border-slate-200/80 shadow-xl">
+            <div className="aspect-[4/3] rounded-xl overflow-hidden mb-3 border border-slate-100">
+              <img
+                src={sydneyWorkshop3}
+                alt="Workshop in session"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="text-sm font-bold text-slate-800">Live workshops</div>
+            <div className="text-xs text-slate-500">Hands-on, ultrasound-guided practice.</div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;

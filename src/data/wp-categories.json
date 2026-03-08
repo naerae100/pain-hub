@@ -1,0 +1,542 @@
+[
+  {
+    "id": 50,
+    "count": 8,
+    "description": "Cryoanalgesia - procedural videos",
+    "link": "https://ipmaustralia.com.au/category/cryoanalgesiaproceduralvideos/",
+    "name": "Cryoanalgesia - procedural videos",
+    "slug": "cryoanalgesiaproceduralvideos",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories/50",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/posts?categories=50"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "count": 17,
+    "description": "Cryoanalgesia studies and publications",
+    "link": "https://ipmaustralia.com.au/category/cryoanalgesiastudies/",
+    "name": "Cryoanalgesia - studies",
+    "slug": "cryoanalgesiastudies",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories/23",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/posts?categories=23"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 51,
+    "count": 3,
+    "description": "Cryoanalgesia – books",
+    "link": "https://ipmaustralia.com.au/category/cryoanalgesiabooks/",
+    "name": "Cryoanalgesia – books",
+    "slug": "cryoanalgesiabooks",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories/51",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/posts?categories=51"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 54,
+    "count": 6,
+    "description": "Cryoanalgesia – presentations",
+    "link": "https://ipmaustralia.com.au/category/cryopresentations/",
+    "name": "Cryoanalgesia – presentations",
+    "slug": "cryopresentations",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories/54",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/posts?categories=54"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 56,
+    "count": 3,
+    "description": "Spasticity management with cryoanalgesia",
+    "link": "https://ipmaustralia.com.au/category/cryoanalgesiastudiesspasticity/",
+    "name": "Cryoanalgesia – studies - spasticity",
+    "slug": "cryoanalgesiastudiesspasticity",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories/56",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/posts?categories=56"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 63,
+    "count": 6,
+    "description": "Cryoanalgesia studies – rib fracture",
+    "link": "https://ipmaustralia.com.au/category/cryoanalgesiaribfracture/",
+    "name": "Cryoanalgesia – studies – rib fracture",
+    "slug": "cryoanalgesiaribfracture",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories/63",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/posts?categories=63"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 57,
+    "count": 16,
+    "description": "Cryoanalgesia for thoracic pain management",
+    "link": "https://ipmaustralia.com.au/category/cryoanalgesiastudiesthoracic/",
+    "name": "Cryoanalgesia – studies – thoracic",
+    "slug": "cryoanalgesiastudiesthoracic",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories/57",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/posts?categories=57"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 55,
+    "count": 2,
+    "description": "Cryoanalgesia – webinars",
+    "link": "https://ipmaustralia.com.au/category/cryoanalgesiawebinars/",
+    "name": "Cryoanalgesia – webinars",
+    "slug": "cryoanalgesiawebinars",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories/55",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/posts?categories=55"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 26,
+    "count": 3,
+    "description": "",
+    "link": "https://ipmaustralia.com.au/category/epidurolysis/",
+    "name": "Epidurolysis",
+    "slug": "epidurolysis",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories/26",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/posts?categories=26"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 25,
+    "count": 2,
+    "description": "",
+    "link": "https://ipmaustralia.com.au/category/ozone-therapy/",
+    "name": "Ozone therapy",
+    "slug": "ozone-therapy",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories/25",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/posts?categories=25"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "count": 1,
+    "description": "",
+    "link": "https://ipmaustralia.com.au/category/regenerative-medicine/",
+    "name": "Regenerative medicine",
+    "slug": "regenerative-medicine",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories/24",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/posts?categories=24"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1,
+    "count": 0,
+    "description": "",
+    "link": "https://ipmaustralia.com.au/category/uncategorized/",
+    "name": "Uncategorized",
+    "slug": "uncategorized",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories/1",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://ipmaustralia.com.au/wp-json/wp/v2/posts?categories=1"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]
