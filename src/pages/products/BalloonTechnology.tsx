@@ -81,15 +81,15 @@ const BalloonTechnology = () => {
                                 These design elements support navigation into stenosed foraminal or epidural regions where standard catheters may fail to access or mechanically modify pathology. Representative systems include the ZINeu Epidural Balloon Catheter Series, described as an epidural balloon platform for nerve block and neuroplasty applications.
                             </p>
                         </div>
-                        <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white p-4 items-center flex">
-                            <img src={platformCatheter} alt="Balloon Decompression Catheter" className="w-full h-auto rounded-2xl" />
+                        <div className="content-img-wrap shadow-xl">
+                            <img src={platformCatheter} alt="Balloon Decompression Catheter" className="content-img" />
                         </div>
                     </div>
 
                     {/* Mechanical Principle */}
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                        <div className="order-2 lg:order-1 rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-[#0e0e0e] aspect-[4/3] flex items-center justify-center">
-                            <img src={inflatedBalloon} alt="Inflated balloon with contrast dye" className="w-full h-auto object-contain" />
+                        <div className="order-2 lg:order-1 content-img-wrap shadow-xl bg-[#0e0e0e]">
+                            <img src={inflatedBalloon} alt="Inflated balloon with contrast dye" className="content-img object-contain" />
                         </div>
                         <div className="order-1 lg:order-2">
                             <span className="pill mb-6">Action</span>
@@ -149,8 +149,8 @@ const BalloonTechnology = () => {
                                 <li className="flex items-center gap-2"><ChevronRight className="w-4 h-4 text-primary" /> Fluoroscopic-guided interventional workflows</li>
                             </ul>
                         </div>
-                        <div className="rounded-2xl overflow-hidden shadow-md">
-                            <img src={ecoSeriesImg} alt="ECO Series Catheter" className="w-full h-auto object-cover" />
+                        <div className="content-img-wrap shadow-md">
+                            <img src={ecoSeriesImg} alt="ECO Series Catheter" className="content-img" />
                         </div>
                     </div>
 
@@ -169,8 +169,8 @@ const BalloonTechnology = () => {
                             </div>
 
                             <div className="space-y-8">
-                                <div className="rounded-2xl overflow-hidden border border-border/50 shadow-sm bg-white p-2">
-                                    <img src={zineu01Img} alt="The ZiNeu01 catheter" className="w-full h-32 object-contain" />
+                                <div className="content-img-wrap content-img-wrap--auto shadow-sm bg-white">
+                                    <img src={zineu01Img} alt="The ZiNeu01 catheter" className="w-full h-full object-contain p-2" />
                                     <div className="text-center text-xs font-medium text-muted-foreground py-2 border-t border-border mt-2">
                                         The entire catheter bends
                                     </div>
@@ -208,8 +208,8 @@ const BalloonTechnology = () => {
                             </div>
 
                             <div className="space-y-8">
-                                <div className="rounded-2xl overflow-hidden border border-border/50 shadow-sm bg-white p-2">
-                                    <img src={zineu1sImg} alt="The ZiNeuS catheter" className="w-full h-32 object-contain" />
+                                <div className="content-img-wrap content-img-wrap--auto shadow-sm bg-white">
+                                    <img src={zineu1sImg} alt="The ZiNeuS catheter" className="w-full h-full object-contain p-2" />
                                     <div className="text-center text-xs font-medium text-muted-foreground py-2 border-t border-border mt-2">
                                         The articulated part bends more
                                     </div>
@@ -252,8 +252,8 @@ const BalloonTechnology = () => {
                     {/* Tip Comparison */}
                     <div className="grid lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto mb-20 bg-background border border-border rounded-3xl p-8 overflow-hidden shadow-md">
                         <div className="order-2 lg:order-1 relative">
-                            <div className="rounded-2xl overflow-hidden border border-border shadow-inner bg-white p-2">
-                                <img src={tipsComparison} alt="Differences between the ZiNeu01 and ZiNeuS" className="w-full h-auto" />
+                            <div className="content-img-wrap content-img-wrap--auto shadow-sm bg-white">
+                                <img src={tipsComparison} alt="Differences between the ZiNeu01 and ZiNeuS" className="w-full h-full object-contain p-2" />
                             </div>
                         </div>
                         <div className="order-1 lg:order-2 space-y-6">

@@ -131,8 +131,8 @@ const Cryotherapy = () => {
                                 Controlled cooling enables predictable lesion formation within target nerve tissues.
                             </p>
                         </div>
-                        <div className="aspect-square rounded-3xl overflow-hidden border border-border shadow-xl">
-                            <img src={iceBallImg} alt="CRYO-S Painless with ice ball" className="w-full h-full object-cover" />
+                        <div className="content-img-wrap shadow-xl">
+                            <img src={iceBallImg} alt="CRYO-S Painless with ice ball" className="content-img" />
                         </div>
                     </div>
                 </div>
@@ -152,8 +152,8 @@ const Cryotherapy = () => {
                     </div>
 
                     <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-                        <div className="rounded-3xl overflow-hidden border border-border shadow-2xl bg-white p-4">
-                            <img src={consoleImg} alt="Cryo-S Console" className="w-full h-auto object-contain rounded-2xl" />
+                        <div className="content-img-wrap shadow-xl">
+                            <img src={consoleImg} alt="Cryo-S Console" className="content-img" />
                         </div>
                         <div>
                             <div className="bg-background border border-border/50 rounded-2xl p-8 shadow-sm">
@@ -337,8 +337,8 @@ const Cryotherapy = () => {
             <section className="py-20 lg:py-24 bg-secondary/30 border-y border-border">
                 <div className="section-container">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                        <div className="order-2 lg:order-1 aspect-[4/3] rounded-3xl overflow-hidden border-4 border-white shadow-2xl relative">
-                            <img src={usImg} alt="Cryoprobe with ice ball under ultrasound" className="w-full h-full object-cover" />
+                        <div className="order-2 lg:order-1 content-img-wrap shadow-xl relative">
+                            <img src={usImg} alt="Cryoprobe with ice ball under ultrasound" className="content-img" />
                             <div className="absolute bottom-4 left-4 right-4 bg-background/90 backdrop-blur-sm p-3 rounded-2xl border border-border text-center text-sm font-medium text-foreground">
                                 Real-time visualisation of cryolesion under ultrasound
                             </div>
@@ -465,8 +465,8 @@ const Cryotherapy = () => {
                                 Its utility is contextualised within the Cryoanalgesia procedural framework, which incorporates clinical indications, patient selection, expected outcomes, and safety considerations.
                             </p>
                         </div>
-                        <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3]">
-                            <img src={teachingImg} alt="Dr Urbanczak teaches US guided techniques" className="w-full h-full object-cover" />
+                        <div className="content-img-wrap shadow-xl">
+                            <img src={teachingImg} alt="Dr Urbanczak teaches US guided techniques" className="content-img" />
                         </div>
                     </div>
                 </div>

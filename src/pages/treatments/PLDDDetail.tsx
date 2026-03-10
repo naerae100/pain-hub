@@ -1,427 +1,560 @@
 import { Link } from "react-router-dom";
-import { ChevronRight, Zap, BookOpen, Video, FileText, ArrowRight, CheckCircle2, AlertTriangle, Users, Microscope, Shield, Snowflake, Circle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import {
+    ChevronRight, ArrowRight, Shield, Activity, BookOpen, Video,
+    FileText, CheckCircle2, AlertTriangle, Users, Microscope, Target,
+    Stethoscope, MapPin, Heart, Layers, Zap, Expand,
+    CircleDot, Info, TrendingUp, BarChart3, Syringe, Snowflake,
+    Clock, Eye, Ban, Disc, Crosshair, Timer
+} from "lucide-react";
 import PageHero from "@/components/PageHero";
-import procedureHands from "@/assets/procedure-hands.jpg";
 
-const escalationSteps = [
-    {
-        step: "01",
-        title: "Cryoanalgesia (Facet Denervation)",
-        icon: Snowflake,
-        description: "Targeted cryoneurolysis of facet-mediated pain. Non-destructive, reversible nerve modulation as an initial or diagnostic step.",
-        href: "/procedures/cryoanalgesia",
-        color: "from-blue-500 to-blue-600",
-    },
-    {
-        step: "02",
-        title: "Epidural Balloon Decompression",
-        icon: Circle,
-        description: "Catheter-based decompression and adhesiolysis for central and foraminal stenosis, disc-related pain, and epidural adhesions.",
-        href: "/procedures/epidural-balloon-decompression",
-        color: "from-primary to-primary/80",
-    },
-    {
-        step: "03",
-        title: "Percutaneous Laser Disc Decompression",
-        icon: Zap,
-        description: "Laser energy to reduce intradiscal pressure in contained disc herniations causing persistent radicular pain.",
-        href: "/procedures/pldd",
-        color: "from-amber-500 to-amber-600",
-    },
-];
-
-const advantages = [
-    "Minimally invasive — performed percutaneously under image guidance",
-    "Outpatient or same-day procedure",
-    "Reduced intradiscal pressure provides neural decompression",
-    "Preservation of disc integrity — no tissue removal",
-    "Lower surgical risk compared with open discectomy",
-    "Suitable for patients who are not surgical candidates or prefer conservative approach",
-];
-
-const clinicalApplications = [
-    "Contained lumbar disc herniation with radicular symptoms",
-    "Contained cervical disc herniation causing radiculopathy",
-    "Disc protrusions causing persistent pain despite conservative therapy",
-    "Patients who have not responded to epidural steroid injections",
-    "Patients seeking alternatives to open or endoscopic discectomy",
-];
-
-const faqs = [
-    {
-        question: "What is PLDD?",
-        answer: "Percutaneous Laser Disc Decompression (PLDD) is a minimally invasive procedure where a thin optical fibre is inserted into the centre of the intervertebral disc under image guidance. Controlled laser energy is delivered to vaporise a small amount of disc tissue, reducing intradiscal pressure and relieving neural compression.",
-    },
-    {
-        question: "Who is a suitable candidate for PLDD?",
-        answer: "PLDD is indicated for patients with contained disc herniations (the outer annulus is intact) causing radicular symptoms that have not responded to conservative treatment including physiotherapy, medication, and epidural injections. It is not suitable for extruded or sequestrated disc fragments.",
-    },
-    {
-        question: "How does PLDD compare to open discectomy?",
-        answer: "PLDD is less invasive — performed through a needle under local anaesthesia with minimal tissue disruption. Recovery is faster, surgical risks are lower, and the procedure preserves disc structure. However, it is indicated for contained herniations, whereas open discectomy may address a wider range of disc pathologies.",
-    },
-    {
-        question: "What are the expected outcomes?",
-        answer: "Clinical studies report significant pain improvement in selected patients with contained disc herniations. Success rates vary by patient selection, but favourable outcomes are reported in 70–89% of well-selected patients, with sustained benefit documented at 1–2 year follow-up.",
-    },
-    {
-        question: "What are the risks of PLDD?",
-        answer: "PLDD is generally considered a low-risk procedure. Potential risks include transient increase in pain, local soreness, and rare complications such as discitis (disc infection), nerve injury, or thermal damage. Risks are minimised through proper patient selection, image guidance, and controlled laser delivery.",
-    },
-    {
-        question: "How does PLDD fit into a treatment pathway?",
-        answer: "PLDD is positioned as part of a spine procedure escalation pathway: Cryo facet denervation → Epidural balloon decompression → PLDD. This stepwise approach allows clinicians to escalate from reversible nerve modulation through catheter-based decompression to disc-level intervention based on patient response and pathology.",
-    },
-];
+// Images
+import heroImg from "@/assets/Percutaneous Laser Disc Decompression_technology2 (2).png";
+import procedureImg from "@/assets/Dr Stogicza performs an X-ray guided procedure.png";
 
 const PLDDDetail = () => {
     return (
-        <div className="min-h-screen bg-background">
+        <div className="flex-1 flex flex-col bg-background">
+            {/* Hero */}
             <PageHero
-                image={procedureHands}
+                image={heroImg}
                 title="Percutaneous Laser Disc Decompression (PLDD)"
-                subtitle="Precision energy delivery for modern minimally invasive surgery."
-                breadcrumbs={[{ label: "Procedures", href: "/procedures" }, { label: "PLDD" }]}
+                subtitle="Minimally Invasive Intradiscal Decompression for Contained Disc Herniation"
+                breadcrumbs={[
+                    { label: "Procedures", href: "/procedures" },
+                    { label: "PLDD" },
+                ]}
             />
-
-            {/* CTA Bar */}
-            <section className="bg-primary/5 border-b border-border">
-                <div className="section-container py-4">
-                    <div className="flex flex-wrap items-center justify-center gap-3">
-                        <Link to="/clinical-education">
-                            <Button variant="outline" size="sm" className="rounded-full gap-2">
-                                <BookOpen className="w-4 h-4" /> View Training
-                            </Button>
-                        </Link>
-                        <Link to="/videos">
-                            <Button variant="outline" size="sm" className="rounded-full gap-2">
-                                <Video className="w-4 h-4" /> Watch Videos
-                            </Button>
-                        </Link>
-                        <Link to="/resources">
-                            <Button variant="outline" size="sm" className="rounded-full gap-2">
-                                <FileText className="w-4 h-4" /> Read Evidence
-                            </Button>
-                        </Link>
-                    </div>
-                </div>
-            </section>
 
             {/* Overview */}
             <section className="py-20 lg:py-24">
                 <div className="section-container">
-                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-                        <div>
-                            <div className="flex items-center gap-3 text-primary uppercase tracking-wider font-bold text-sm mb-4">
-                                <span className="w-8 h-[2px] bg-primary"></span>
-                                Overview
-                            </div>
-                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
-                                What is PLDD?
-                            </h2>
-                        </div>
-                        <div className="space-y-5">
-                            <p className="text-lg text-muted-foreground leading-relaxed">
-                                Percutaneous Laser Disc Decompression (PLDD) is a minimally invasive treatment for contained disc pathology causing persistent radicular pain. A thin optical fibre is inserted into the disc nucleus under image guidance, and controlled laser energy is delivered to vaporise a small volume of disc tissue.
-                            </p>
-                            <p className="text-lg text-muted-foreground leading-relaxed">
-                                This reduces intradiscal pressure, allowing the disc bulge to recede and relieving neural compression — without the need for open surgery or tissue removal.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Spine Procedure Escalation Pathway */}
-            <section className="py-20 lg:py-24 bg-secondary/30 border-y border-border">
-                <div className="section-container">
-                    <div className="text-center max-w-3xl mx-auto mb-14">
-                        <div className="flex items-center justify-center gap-3 text-primary uppercase tracking-wider font-bold text-sm mb-4">
-                            <span className="w-8 h-[2px] bg-primary"></span>
-                            Treatment Pathway
-                            <span className="w-8 h-[2px] bg-primary"></span>
-                        </div>
-                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
-                            Spine Procedure Escalation Pathway
+                    <div className="max-w-4xl mx-auto">
+                        <span className="pill mb-6">Overview</span>
+                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-8">
+                            What is PLDD?
                         </h2>
-                        <p className="text-lg text-muted-foreground">
-                            The three procedures form a clear escalation pathway for spine-related pain, from reversible nerve modulation to disc-level intervention.
-                        </p>
-                    </div>
-
-                    <div className="max-w-5xl mx-auto relative">
-                        {/* Connecting line */}
-                        <div className="hidden lg:block absolute top-[4.5rem] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-blue-400 via-primary to-amber-400" />
-
-                        <div className="grid lg:grid-cols-3 gap-8">
-                            {escalationSteps.map((step) => (
-                                <Link
-                                    key={step.step}
-                                    to={step.href}
-                                    className="bg-background border border-border/50 rounded-2xl p-8 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group relative"
-                                >
-                                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 relative z-10`}>
-                                        <step.icon className="w-8 h-8" />
-                                    </div>
-                                    <div className="text-sm text-primary font-bold mb-2">Step {step.step}</div>
-                                    <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{step.title}</h3>
-                                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">{step.description}</p>
-                                    <div className="flex items-center gap-2 text-sm font-medium text-primary">
-                                        Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                    </div>
-                                </Link>
-                            ))}
+                        <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                            <p>
+                                Percutaneous Laser Disc Decompression (PLDD) is a minimally invasive intradiscal procedure designed to reduce pressure within a contained intervertebral disc herniation.
+                            </p>
+                            <p>
+                                Using controlled laser energy delivered through a percutaneous needle, a small portion of nucleus pulposus material is vaporised. This reduces intradiscal pressure, which in turn decreases nerve root compression and radicular symptoms.
+                            </p>
+                            <p className="text-foreground font-medium italic border-l-4 border-primary pl-4 py-2">
+                                PLDD is typically considered after failure of structured conservative management and before escalation to open surgical intervention.
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Mechanism of Action */}
-            <section className="py-20 lg:py-24">
+            <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
                 <div className="section-container">
-                    <div className="max-w-4xl mx-auto">
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center">
-                                <Microscope className="w-7 h-7" />
-                            </div>
-                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="text-center mb-16">
+                            <span className="pill mb-6">Science</span>
+                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 Mechanism of Action
                             </h2>
-                        </div>
-                        <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
-                            <p>
-                                PLDD works by delivering controlled laser energy (typically Nd:YAG or diode laser) through a thin optical fibre inserted percutaneously into the disc nucleus pulposus.
-                            </p>
-                            <p>
-                                The laser energy vaporises a small volume of disc tissue, converting it to gas. This creates a reduction in intradiscal pressure, which allows the disc bulge to retract away from the compressed nerve root.
-                            </p>
-                            <p>
-                                The procedure is performed under fluoroscopic or CT guidance to ensure precise fibre positioning, and typically takes 30–60 minutes under local anaesthesia.
+                            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                                PLDD works through controlled intradiscal decompression:
                             </p>
                         </div>
-                    </div>
-                </div>
-            </section>
 
-            {/* Key Advantages */}
-            <section className="py-20 lg:py-24 bg-secondary/30 border-y border-border">
-                <div className="section-container">
-                    <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-10">
-                            Key Advantages
-                        </h2>
-                        <div className="grid md:grid-cols-2 gap-4">
-                            {advantages.map((item) => (
-                                <div key={item} className="flex items-start gap-3 bg-background border border-border/50 rounded-xl p-5">
-                                    <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                                    <span className="text-muted-foreground">{item}</span>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                            {[
+                                { icon: Zap, title: "Targeted Vaporisation", desc: "Controlled vaporisation of nucleus pulposus material" },
+                                { icon: TrendingUp, title: "Pressure Reduction", desc: "Reduction of intradiscal pressure" },
+                                { icon: Expand, title: "Neural Relief", desc: "Secondary reduction of nerve root compression" },
+                                { icon: Heart, title: "Symptom Resolution", desc: "Relief of radicular symptoms" }
+                            ].map((item, idx) => (
+                                <div key={idx} className="bg-background border border-border rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+                                        <item.icon className="w-6 h-6" />
+                                    </div>
+                                    <h3 className="text-sm font-bold text-foreground mb-2">{item.title}</h3>
+                                    <p className="text-xs text-muted-foreground">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
-                    </div>
-                </div>
-            </section>
 
-            {/* Clinical Applications */}
-            <section className="py-20 lg:py-24">
-                <div className="section-container">
-                    <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
-                            Clinical Applications
-                        </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                            PLDD is indicated for patients with contained disc pathology causing radicular symptoms that have not responded to conservative management:
-                        </p>
-                        <ul className="space-y-4 mb-8">
-                            {clinicalApplications.map((item) => (
-                                <li key={item} className="flex items-start gap-3 text-muted-foreground text-lg">
-                                    <ChevronRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            {/* Patient Selection & Contraindications */}
-            <section className="py-20 lg:py-24 bg-secondary/30 border-y border-border">
-                <div className="section-container">
-                    <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                        <div>
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-                                    <Users className="w-6 h-6" />
+                        <div className="max-w-4xl mx-auto space-y-6">
+                            <div className="bg-background border border-border rounded-3xl p-8 shadow-sm">
+                                <p className="text-muted-foreground leading-relaxed mb-6">
+                                    Even small reductions in disc volume can produce meaningful decreases in internal disc pressure, improving neural irritation without destabilising the spinal segment.
+                                </p>
+                                <div className="grid md:grid-cols-2 gap-4">
+                                    <div className="bg-purple-50 border border-purple-200 rounded-2xl p-5">
+                                        <p className="text-sm text-muted-foreground">
+                                            <strong className="text-foreground">Unlike epidural balloon decompression:</strong> PLDD acts <em>within the disc itself</em>, not in the epidural space.
+                                        </p>
+                                    </div>
+                                    <div className="bg-blue-50 border border-blue-200 rounded-2xl p-5">
+                                        <p className="text-sm text-muted-foreground">
+                                            <strong className="text-foreground">Unlike cryoanalgesia:</strong> PLDD does not interrupt nerve conduction — it reduces <em>mechanical compression</em>.
+                                        </p>
+                                    </div>
                                 </div>
-                                <h2 className="text-2xl font-display font-bold text-foreground">Ideal Candidates</h2>
                             </div>
-                            <ul className="space-y-3">
-                                {[
-                                    "Contained disc herniation confirmed on MRI",
-                                    "Radicular pain consistent with disc level",
-                                    "Failure of conservative therapy (6+ weeks)",
-                                    "No significant neurological deficit requiring urgent surgery",
-                                    "Patients preferring minimally invasive approach",
-                                ].map((item) => (
-                                    <li key={item} className="flex items-start gap-2 text-muted-foreground">
-                                        <CheckCircle2 className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div>
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center">
-                                    <AlertTriangle className="w-6 h-6" />
-                                </div>
-                                <h2 className="text-2xl font-display font-bold text-foreground">Contraindications</h2>
-                            </div>
-                            <ul className="space-y-3">
-                                {[
-                                    "Extruded or sequestrated disc fragments",
-                                    "Severe spinal stenosis not related to disc pathology",
-                                    "Significant neurological deficit (e.g. cauda equina syndrome)",
-                                    "Active infection at the procedure site",
-                                    "Severe disc space narrowing (>50% height loss)",
-                                ].map((item) => (
-                                    <li key={item} className="flex items-start gap-2 text-muted-foreground">
-                                        <AlertTriangle className="w-4 h-4 text-amber-500 mt-1 flex-shrink-0" />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Risks */}
+            {/* Where It Fits Clinically */}
             <section className="py-20 lg:py-24">
                 <div className="section-container">
-                    <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
-                            Risks & Safety
-                        </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                            PLDD is generally considered a low-risk procedure when performed with appropriate patient selection and image guidance.
-                        </p>
+                    <div className="max-w-5xl mx-auto">
+                        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                            <div>
+                                <span className="pill mb-6">Clinical Positioning</span>
+                                <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
+                                    Where It Fits Clinically
+                                </h2>
+                                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                                    PLDD may be considered for patients with:
+                                </p>
+                                <ul className="space-y-3 mb-8">
+                                    {[
+                                        "Persistent radicular pain",
+                                        "Contained lumbar or cervical disc herniation",
+                                        "Disc bulge without annular rupture",
+                                        "Symptoms persisting beyond ~6 weeks of conservative therapy"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                                            <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />{item}
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                <p className="text-lg text-foreground font-medium mb-4">It is generally considered after:</p>
+                                <ul className="space-y-2 mb-8">
+                                    {[
+                                        "Anti-inflammatory medication",
+                                        "Physiotherapy",
+                                        "Targeted spinal injections"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" />{item}
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5">
+                                    <p className="text-sm text-muted-foreground">
+                                        <strong className="text-foreground">Not indicated</strong> for large sequestered fragments or advanced structural instability. Careful patient selection is essential to optimise outcomes.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Procedure Image */}
+                            <div>
+                                <div className="content-img-wrap shadow-xl">
+                                    <img src={procedureImg} alt="Dr Stogicza performs an X-ray guided PLDD procedure" className="content-img" />
+                                </div>
+                                <p className="text-xs text-center text-muted-foreground mt-3 italic">X-ray guided intradiscal procedure</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Indications & Contraindications */}
+            <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
+                <div className="section-container">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="text-center mb-16">
+                            <span className="pill mb-6">Patient Selection</span>
+                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
+                                Indications & Contraindications
+                            </h2>
+                        </div>
+
                         <div className="grid md:grid-cols-2 gap-8">
-                            <div className="bg-card border border-border rounded-2xl p-8">
-                                <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                                    <Shield className="w-5 h-5 text-emerald-600" /> Low-Risk Profile
+                            {/* Indications */}
+                            <div className="bg-background border border-green-200 rounded-3xl p-8 shadow-sm">
+                                <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                                    <CheckCircle2 className="w-6 h-6 text-green-500" /> Indications
                                 </h3>
                                 <ul className="space-y-3">
                                     {[
-                                        "No tissue removal — disc structure preserved",
-                                        "Local anaesthesia reduces systemic risk",
-                                        "Image guidance ensures precise fibre positioning",
-                                        "Short procedure time (30–60 min)",
-                                    ].map((item) => (
-                                        <li key={item} className="flex items-start gap-2 text-muted-foreground text-sm">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                                            <span>{item}</span>
+                                        "Contained lumbar disc protrusion",
+                                        "Contained cervical disc protrusion",
+                                        "Radicular pain with imaging correlation",
+                                        "Disc bulge without significant disc height collapse"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-2 text-muted-foreground">
+                                            <ChevronRight className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />{item}
                                         </li>
                                     ))}
                                 </ul>
+                                <p className="text-sm text-muted-foreground mt-4 italic border-l-4 border-green-300 pl-3">
+                                    The annulus fibrosus should remain intact.
+                                </p>
                             </div>
-                            <div className="bg-card border border-border rounded-2xl p-8">
-                                <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                                    <AlertTriangle className="w-5 h-5 text-amber-500" /> Potential Risks
+
+                            {/* Contraindications */}
+                            <div className="bg-background border border-red-200 rounded-3xl p-8 shadow-sm">
+                                <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                                    <Ban className="w-6 h-6 text-red-500" /> Contraindications
                                 </h3>
                                 <ul className="space-y-3">
                                     {[
-                                        "Transient increase in pain",
-                                        "Local soreness at insertion site",
-                                        "Discitis / disc infection (rare)",
-                                        "Nerve injury or thermal damage (rare with guidance)",
-                                    ].map((item) => (
-                                        <li key={item} className="flex items-start gap-2 text-muted-foreground text-sm">
-                                            <AlertTriangle className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
-                                            <span>{item}</span>
+                                        "Sequestered disc fragments",
+                                        "Complete annular rupture",
+                                        "Absolute bony spinal or foraminal stenosis",
+                                        "Significant spondylolisthesis with instability",
+                                        "Progressive neurological deficit requiring open decompression",
+                                        "Active infection or malignancy",
+                                        "Severe disc space collapse"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-2 text-muted-foreground">
+                                            <ChevronRight className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />{item}
                                         </li>
                                     ))}
                                 </ul>
+                                <p className="text-sm text-muted-foreground mt-4 italic">
+                                    Appropriate imaging evaluation is mandatory prior to treatment.
+                                </p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Procedural Overview */}
+            <section className="py-20 lg:py-24">
+                <div className="section-container">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="text-center mb-16">
+                            <span className="pill mb-6">Technique</span>
+                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
+                                Procedural Overview
+                            </h2>
+                            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                                PLDD is performed under local anaesthesia with image guidance.
+                            </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-8 mb-12">
+                            {/* Lumbar Spine */}
+                            <div className="bg-card border border-border rounded-3xl p-8 shadow-sm">
+                                <h3 className="text-xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
+                                    <Activity className="w-6 h-6 text-primary" /> Lumbar Spine
+                                </h3>
+                                <ul className="space-y-3">
+                                    {[
+                                        "Patient positioned prone",
+                                        "Dorsolateral needle approach (typically 7–10 cm from midline)",
+                                        "Needle placement confirmed under fluoroscopy",
+                                        "Intradiscal contrast discography performed",
+                                        "Laser fibre introduced via introducer needle",
+                                        "Controlled energy delivery with intermittent pauses"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" />{item}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <p className="text-sm text-muted-foreground mt-4 bg-primary/5 rounded-xl p-3">
+                                    Total energy delivery depends on disc level and anatomy. In lumbar applications, typical total energy ranges around <strong>1000–1200J per disc</strong>.
+                                </p>
+                            </div>
+
+                            {/* Cervical Spine */}
+                            <div className="bg-card border border-border rounded-3xl p-8 shadow-sm">
+                                <h3 className="text-xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
+                                    <Activity className="w-6 h-6 text-primary" /> Cervical Spine
+                                </h3>
+                                <ul className="space-y-3">
+                                    {[
+                                        "Patient positioned supine with slight extension",
+                                        "Careful anterior approach",
+                                        "Protection of trachea, oesophagus, and carotid structures",
+                                        "Discography performed prior to ablation",
+                                        "Controlled pulsed or continuous energy delivery"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" />{item}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <p className="text-sm text-muted-foreground mt-4 bg-primary/5 rounded-xl p-3">
+                                    Typical total energy for cervical discs may be lower (e.g., <strong>~800J per disc</strong>).
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Intra-Procedure Considerations */}
+                        <div className="max-w-4xl mx-auto bg-gradient-to-r from-primary/5 to-transparent border border-border rounded-3xl p-8 shadow-sm">
+                            <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                                <Eye className="w-6 h-6 text-primary" /> Intra-Procedure Considerations
+                            </h3>
+                            <ul className="space-y-3">
+                                {[
+                                    "Pain provocation testing may confirm correct fibre positioning",
+                                    "Gradual energy delivery in intervals",
+                                    "Saline irrigation between energy cycles",
+                                    "Continuous physiological monitoring"
+                                ].map((item, i) => (
+                                    <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                                        <Shield className="w-5 h-5 text-primary shrink-0 mt-0.5" />{item}
+                                    </li>
+                                ))}
+                            </ul>
+                            <p className="text-foreground font-medium italic mt-6 border-l-4 border-primary pl-4 py-2">
+                                The goal is controlled decompression without structural destabilisation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Post-Procedure Pathway */}
+            <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
+                <div className="section-container">
+                    <div className="max-w-4xl mx-auto">
+                        <span className="pill mb-6">Recovery</span>
+                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-8">
+                            Post-Procedure Pathway
+                        </h2>
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {[
+                                { icon: Clock, step: "01", title: "Observation", desc: "Approximately 2–4 hours post-procedure" },
+                                { icon: Timer, step: "02", title: "Same-Day Discharge", desc: "Day-case procedure" },
+                                { icon: Shield, step: "03", title: "Activity Modification", desc: "Avoid prolonged sitting/standing for ~2 weeks" },
+                                { icon: TrendingUp, step: "04", title: "Rehabilitation", desc: "Gradual rehabilitation beginning 3–4 weeks post-procedure" }
+                            ].map((item, i) => (
+                                <div key={i} className="bg-background border border-border rounded-2xl p-6 text-center shadow-sm">
+                                    <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white text-sm font-bold mx-auto mb-4">
+                                        {item.step}
+                                    </div>
+                                    <item.icon className="w-6 h-6 text-primary mx-auto mb-3" />
+                                    <h4 className="font-bold text-foreground text-sm mb-2">{item.title}</h4>
+                                    <p className="text-xs text-muted-foreground">{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+                        <p className="text-center text-muted-foreground italic mt-8">
+                            No fusion or structural instrumentation is required.
+                        </p>
                     </div>
                 </div>
             </section>
 
             {/* Clinical Outcomes */}
-            <section className="py-20 lg:py-24 bg-secondary/30 border-y border-border">
-                <div className="section-container">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-10">
-                            Clinical Outcomes
-                        </h2>
-                        <div className="grid md:grid-cols-3 gap-8">
-                            <div className="bg-background border border-border/50 rounded-2xl p-8">
-                                <div className="text-4xl font-display font-bold text-primary mb-2">70–89%</div>
-                                <p className="text-sm text-muted-foreground">Favourable outcomes in well-selected patients</p>
-                            </div>
-                            <div className="bg-background border border-border/50 rounded-2xl p-8">
-                                <div className="text-4xl font-display font-bold text-primary mb-2">1–2 yr</div>
-                                <p className="text-sm text-muted-foreground">Sustained benefit documented at follow-up</p>
-                            </div>
-                            <div className="bg-background border border-border/50 rounded-2xl p-8">
-                                <div className="text-4xl font-display font-bold text-primary mb-2">30–60 min</div>
-                                <p className="text-sm text-muted-foreground">Typical procedure duration</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* FAQ */}
             <section className="py-20 lg:py-24">
                 <div className="section-container">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-10">
-                            Frequently Asked Questions
+                        <span className="pill mb-6">Outcomes</span>
+                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-8">
+                            Clinical Outcomes
                         </h2>
-                        <div className="space-y-6">
-                            {faqs.map((faq, idx) => (
-                                <div key={idx} className="bg-card border border-border rounded-2xl p-8">
-                                    <h3 className="text-lg font-bold text-foreground mb-3">{faq.question}</h3>
-                                    <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                            Published and reported data indicate:
+                        </p>
+                        <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                            {[
+                                "Pain relief in appropriately selected patients",
+                                "Reported improvement rates up to ~80% in selected cohorts",
+                                "Reduced recovery time compared with open surgery",
+                                "Repeatability if clinically indicated"
+                            ].map((item, i) => (
+                                <div key={i} className="bg-card border border-border rounded-xl p-4 flex items-start gap-2">
+                                    <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                                    <span className="text-sm text-foreground">{item}</span>
                                 </div>
                             ))}
+                        </div>
+                        <p className="text-muted-foreground leading-relaxed italic">
+                            As with all intradiscal therapies, outcomes depend heavily on proper patient selection, imaging correlation, and technical precision.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Advantages */}
+            <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
+                <div className="section-container">
+                    <div className="max-w-5xl mx-auto">
+                        <div className="text-center mb-16">
+                            <span className="pill mb-6">Benefits</span>
+                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
+                                Advantages
+                            </h2>
+                        </div>
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            {[
+                                "Minimally invasive",
+                                "Local anaesthesia",
+                                "Day-case procedure",
+                                "Minimal muscle disruption",
+                                "Low scarring risk",
+                                "Short rehabilitation timeline",
+                                "Repeatable if required"
+                            ].map((item, i) => (
+                                <div key={i} className="bg-background border border-border rounded-xl p-5 flex items-start gap-3 shadow-sm hover:shadow-md transition-shadow">
+                                    <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                                    <span className="text-sm text-foreground font-medium">{item}</span>
+                                </div>
+                            ))}
+                        </div>
+                        <p className="text-center text-muted-foreground italic mt-8">
+                            PLDD does not involve open decompression or fusion.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Risks & Limitations */}
+            <section className="py-20 lg:py-24">
+                <div className="section-container">
+                    <div className="max-w-4xl mx-auto">
+                        <span className="pill mb-6">Safety</span>
+                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-8">
+                            Risks & Limitations
+                        </h2>
+
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="bg-card border border-amber-200 rounded-3xl p-8 shadow-sm">
+                                <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                                    <AlertTriangle className="w-5 h-5 text-amber-500" /> Potential Risks
+                                </h3>
+                                <ul className="space-y-3">
+                                    {[
+                                        "Incomplete symptom relief",
+                                        "Transient increase in radicular pain",
+                                        "Discitis (rare)",
+                                        "Nerve irritation",
+                                        "Bleeding or infection",
+                                        "Progression of underlying degeneration"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <ChevronRight className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />{item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <div className="bg-card border border-border rounded-3xl p-8 shadow-sm">
+                                <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                                    <Info className="w-5 h-5 text-primary" /> PLDD Does Not Address
+                                </h3>
+                                <ul className="space-y-3">
+                                    {[
+                                        "Advanced bony stenosis",
+                                        "Instability",
+                                        "Extruded/sequestered disc fragments"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                            <ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" />{item}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <p className="text-sm text-muted-foreground mt-4 italic">
+                                    Careful indication selection remains critical.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Education & Links */}
-            <section className="py-20 lg:py-24 bg-secondary/30 border-t border-border">
+            {/* How It Differs */}
+            <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
                 <div className="section-container">
-                    <div className="text-center max-w-2xl mx-auto mb-14">
-                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
-                            Education & Further Information
-                        </h2>
+                    <div className="max-w-5xl mx-auto">
+                        <div className="text-center mb-16">
+                            <span className="pill mb-6">Comparison</span>
+                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
+                                How It Differs from Other IPMA Procedures
+                            </h2>
+                        </div>
+
+                        <div className="overflow-x-auto mb-12">
+                            <table className="w-full text-sm border-collapse bg-background rounded-2xl overflow-hidden shadow-sm border border-border">
+                                <thead>
+                                    <tr>
+                                        <th className="py-4 px-6 text-left font-bold text-foreground bg-red-50 border-b-2 border-red-200">PLDD</th>
+                                        <th className="py-4 px-6 text-left font-bold text-foreground bg-purple-50 border-b-2 border-purple-200">Balloon Decompression</th>
+                                        <th className="py-4 px-6 text-left font-bold text-foreground bg-blue-50 border-b-2 border-blue-200">Cryoanalgesia</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr className="border-b border-border">
+                                        <td className="py-3 px-6 text-muted-foreground">Intradiscal decompression</td>
+                                        <td className="py-3 px-6 text-muted-foreground">Epidural mechanical decompression</td>
+                                        <td className="py-3 px-6 text-muted-foreground">Peripheral nerve interruption</td>
+                                    </tr>
+                                    <tr className="border-b border-border">
+                                        <td className="py-3 px-6 text-muted-foreground">Acts within disc nucleus</td>
+                                        <td className="py-3 px-6 text-muted-foreground">Acts in epidural space</td>
+                                        <td className="py-3 px-6 text-muted-foreground">Acts on peripheral nerves</td>
+                                    </tr>
+                                    <tr className="border-b border-border">
+                                        <td className="py-3 px-6 text-muted-foreground">Mechanical pressure reduction</td>
+                                        <td className="py-3 px-6 text-muted-foreground">Adhesiolysis + expansion</td>
+                                        <td className="py-3 px-6 text-muted-foreground">Wallerian degeneration</td>
+                                    </tr>
+                                    <tr>
+                                        <td className="py-3 px-6 text-red-600 font-medium">Structural pressure relief</td>
+                                        <td className="py-3 px-6 text-purple-600 font-medium">Space restoration</td>
+                                        <td className="py-3 px-6 text-blue-600 font-medium">Analgesic modulation</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div className="text-center">
+                            <p className="text-muted-foreground leading-relaxed">
+                                Each modality addresses a different pain generator: <strong>Intradiscal pressure</strong>, <strong>Epidural adhesions / stenosis</strong>, <strong>Peripheral neural pain</strong>.
+                            </p>
+                        </div>
                     </div>
-                    <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                        {[
-                            { title: "Clinical Education", href: "/clinical-education", icon: BookOpen, desc: "Explore training programs covering PLDD technique, patient selection, and laser safety." },
-                            { title: "Resources & Evidence", href: "/resources", icon: FileText, desc: "Access clinical evidence, imaging studies, and published outcomes for PLDD." },
-                            { title: "Procedural Videos", href: "/videos", icon: Video, desc: "Watch PLDD procedure demonstrations and patient assessment techniques." },
-                        ].map((item) => (
-                            <Link
-                                key={item.title}
-                                to={item.href}
-                                className="bg-background border border-border/50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 group flex flex-col"
-                            >
-                                <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
-                                    <item.icon className="w-6 h-6" />
+                </div>
+            </section>
+
+            {/* Education & Resources CTA */}
+            <section className="py-16 lg:py-20">
+                <div className="section-container">
+                    <div className="max-w-4xl mx-auto">
+                        <div className="relative bg-gradient-to-br from-primary to-primary/80 rounded-[2.5rem] p-10 lg:p-16 text-white shadow-2xl overflow-hidden">
+                            <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 translate-x-1/4" />
+                            <div className="relative z-10 text-center">
+                                <h3 className="text-2xl lg:text-3xl font-display font-bold mb-4">Education & Resources</h3>
+                                <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+                                    Explore PLDD training, procedural protocols, evidence, and clinical implementation support.
+                                </p>
+                                <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
+                                    <Link to="/clinical-education" className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full bg-white text-primary font-bold hover:bg-white/90 transition-colors">
+                                        <BookOpen className="w-5 h-5" />
+                                        View PLDD Training
+                                    </Link>
+                                    <Link to="/resources" className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition-colors">
+                                        <FileText className="w-5 h-5" />
+                                        Access Protocols & Evidence
+                                    </Link>
+                                    <Link to="/contact" className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition-colors">
+                                        <MapPin className="w-5 h-5" />
+                                        Enquire About Implementation
+                                    </Link>
                                 </div>
-                                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{item.title}</h3>
-                                <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-grow">{item.desc}</p>
-                                <div className="flex items-center gap-2 text-sm font-medium text-primary">
-                                    Learn More <ArrowRight className="w-4 h-4" />
-                                </div>
-                            </Link>
-                        ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* One-Line Summary */}
+            <section className="py-16">
+                <div className="section-container">
+                    <div className="max-w-4xl mx-auto bg-primary text-primary-foreground rounded-3xl p-8 md:p-12 text-center shadow-lg">
+                        <h3 className="text-2xl font-display font-bold mb-4">Summary</h3>
+                        <p className="text-lg lg:text-xl font-medium leading-relaxed opacity-90">
+                            Percutaneous Laser Disc Decompression is a minimally invasive intradiscal decompression technique designed to relieve radicular pain in selected patients with contained disc herniation.
+                        </p>
                     </div>
                 </div>
             </section>

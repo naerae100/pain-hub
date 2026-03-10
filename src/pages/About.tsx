@@ -156,10 +156,14 @@ const About = () => {
                         </div>
 
                         {/* Gallery Grid (Simulated from uploaded images) */}
-                        <div className="grid md:grid-cols-2 gap-6 rounded-3xl overflow-hidden shadow-2xl">
+                        <div className="grid md:grid-cols-2 gap-6">
                             {/* We use object-cover to make them look like a cohesive gallery */}
-                            <img src={workshopGallery1} alt="Workshop Session 1" className="w-full h-64 lg:h-80 object-cover object-top hover:scale-105 transition-transform duration-700" />
-                            <img src={workshopGallery2} alt="Workshop Session 2" className="w-full h-64 lg:h-80 object-cover object-top hover:scale-105 transition-transform duration-700" />
+                            <div className="content-img-wrap shadow-xl">
+                                <img src={workshopGallery1} alt="Workshop Session 1" className="content-img hover:scale-105 transition-transform duration-700" />
+                            </div>
+                            <div className="content-img-wrap shadow-xl">
+                                <img src={workshopGallery2} alt="Workshop Session 2" className="content-img hover:scale-105 transition-transform duration-700" />
+                            </div>
                         </div>
 
                         {/* Featured Workshop Card */}

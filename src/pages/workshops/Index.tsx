@@ -149,27 +149,27 @@ const WorkshopIndex = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
-                            className="rounded-3xl overflow-hidden shadow-xl border border-border bg-background aspect-[4/3] p-0"
+                            className="content-img-wrap shadow-xl"
                         >
-                            <img src={sydneyWorkshop1} alt="Sydney Workshop 1" className="w-full h-full object-cover rounded-xl" />
+                            <img src={sydneyWorkshop1} alt="Sydney Workshop 1" className="content-img" />
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.1 }}
                             viewport={{ once: true }}
-                            className="rounded-3xl overflow-hidden shadow-xl border border-border bg-background aspect-[4/3] p-0"
+                            className="content-img-wrap shadow-xl"
                         >
-                            <img src={sydneyWorkshop2} alt="Sydney Workshop 2" className="w-full h-full object-cover rounded-xl" />
+                            <img src={sydneyWorkshop2} alt="Sydney Workshop 2" className="content-img" />
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="rounded-3xl overflow-hidden shadow-xl border border-border bg-background aspect-[4/3] p-0"
+                            className="content-img-wrap shadow-xl"
                         >
-                            <img src={shoulderAnatomy1} alt="Anatomy Drawing" className="w-full h-full object-cover rounded-xl" />
+                            <img src={shoulderAnatomy1} alt="Anatomy Drawing" className="content-img" />
                         </motion.div>
                     </div>
                 </div>
@@ -234,11 +234,11 @@ const WorkshopIndex = () => {
                                 Deep anatomical understanding is the cornerstone of interventional success. Our workshops use detailed anatomical mapping and high-resolution ultrasound to ensure precision in every procedure.
                             </p>
                             <div className="grid grid-cols-2 gap-4">
-                                <div className="rounded-2xl overflow-hidden border border-border bg-background p-2 shadow-sm">
-                                    <img src={shoulderAnatomy1} alt="Shoulder Anatomy Drawing" className="w-full h-auto rounded-xl" />
+                                <div className="content-img-wrap">
+                                    <img src={shoulderAnatomy1} alt="Shoulder Anatomy Drawing" className="content-img" />
                                 </div>
-                                <div className="rounded-2xl overflow-hidden border border-border bg-background p-2 shadow-sm">
-                                    <img src={shoulderAnatomy2} alt="Shoulder Anatomy Results" className="w-full h-auto rounded-xl" />
+                                <div className="content-img-wrap">
+                                    <img src={shoulderAnatomy2} alt="Shoulder Anatomy Results" className="content-img" />
                                 </div>
                             </div>
                         </motion.div>
@@ -249,11 +249,11 @@ const WorkshopIndex = () => {
                             viewport={{ once: true }}
                             className="relative"
                         >
-                            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-                                <img src={sydneyWorkshop1} alt="Sydney Workshop" className="w-full h-full object-cover" />
+                            <div className="content-img-wrap shadow-xl">
+                                <img src={sydneyWorkshop1} alt="Sydney Workshop" className="content-img" />
                             </div>
-                            <div className="absolute -bottom-6 -right-6 w-1/2 aspect-square rounded-2xl overflow-hidden shadow-xl border-4 border-white hidden md:block">
-                                <img src={sydneyWorkshop2} alt="Workshop Session" className="w-full h-full object-cover" />
+                            <div className="absolute -bottom-6 -right-6 w-1/2 content-img-wrap content-img-wrap--square shadow-xl hidden md:block">
+                                <img src={sydneyWorkshop2} alt="Workshop Session" className="content-img" />
                             </div>
                         </motion.div>
                     </div>

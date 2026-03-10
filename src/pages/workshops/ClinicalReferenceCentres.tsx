@@ -79,8 +79,8 @@ const ClinicalReferenceCentres = () => {
                     </div>
 
                     <div className="mt-16 max-w-4xl mx-auto">
-                        <div className="rounded-2xl overflow-hidden shadow-lg border border-border bg-background">
-                            <img src={referenceCentresImg} alt="Clinical Reference Centres" className="w-full h-auto" />
+                        <div className="content-img-wrap content-img-wrap--wide shadow-lg">
+                            <img src={referenceCentresImg} alt="Clinical Reference Centres" className="content-img" />
                         </div>
                     </div>
                 </div>
@@ -111,11 +111,11 @@ const ClinicalReferenceCentres = () => {
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                                <div className="rounded-2xl overflow-hidden border border-border shadow-md">
-                                    <img src={amitLakkaraju1} alt="Dr Amit Lakkaraju Cryo Reference Centre" className="w-full h-auto" />
+                                <div className="content-img-wrap shadow-md">
+                                    <img src={amitLakkaraju1} alt="Dr Amit Lakkaraju Cryo Reference Centre" className="content-img" />
                                 </div>
-                                <div className="rounded-2xl overflow-hidden border border-border shadow-md">
-                                    <img src={amitLakkaraju2} alt="Dr Amit Lakkaraju Cryo Reference Centre Session" className="w-full h-auto" />
+                                <div className="content-img-wrap shadow-md">
+                                    <img src={amitLakkaraju2} alt="Dr Amit Lakkaraju Cryo Reference Centre Session" className="content-img" />
                                 </div>
                             </div>
 

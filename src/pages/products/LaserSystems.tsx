@@ -57,8 +57,8 @@ const LaserSystems = () => {
                 <div className="section-container">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         <div className="order-2 lg:order-1">
-                            <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
-                                <img src={plddLeadImage} alt="PLDD Lumbar Spine Technology Lead" className="w-full h-auto object-cover" />
+                            <div className="content-img-wrap shadow-xl">
+                                <img src={plddLeadImage} alt="PLDD Lumbar Spine Technology Lead" className="content-img" />
                             </div>
                         </div>
 
@@ -170,8 +170,8 @@ const LaserSystems = () => {
                             </ul>
                         </div>
 
-                        <div className="bg-secondary/20 p-4 border border-border rounded-3xl shadow-sm">
-                            <img src={plddXrayImage} alt="X-ray PLDD Lumbar Spine Needle Placement" className="w-full h-auto rounded-2xl object-cover mix-blend-multiply" />
+                        <div className="content-img-wrap shadow-sm">
+                            <img src={plddXrayImage} alt="X-ray PLDD Lumbar Spine Needle Placement" className="content-img" />
                             <p className="text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground mt-4">Fluoroscopic Confirmation</p>
                         </div>
                     </div>
@@ -286,8 +286,8 @@ const LaserSystems = () => {
                         </div>
 
                         <div className="order-1 lg:order-2">
-                            <div className="bg-white border-4 border-white shadow-xl rounded-3xl overflow-hidden mb-6">
-                                <img src={plddBubblesImage} alt="Observation of Air Bubbles in PLDD" className="w-full h-auto object-cover" />
+                            <div className="content-img-wrap shadow-xl mb-6">
+                                <img src={plddBubblesImage} alt="Observation of Air Bubbles in PLDD" className="content-img" />
                             </div>
                             <p className="text-center text-sm font-medium text-muted-foreground italic">Observation of air bubbles during the procedure.</p>
                         </div>

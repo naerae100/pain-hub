@@ -77,11 +77,11 @@ const Orthobiologics = () => {
 
                     <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
                         <div className="lg:col-span-6 order-2 lg:order-1 relative">
-                            <div className="rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-white mb-6 relative z-10">
-                                <img src={marrowAspirationLiquid} alt="Marrow Aspiration Liquid Autograft" className="w-full h-auto object-cover" />
+                            <div className="content-img-wrap shadow-xl mb-6 relative z-10">
+                                <img src={marrowAspirationLiquid} alt="Marrow Aspiration Liquid Autograft" className="content-img" />
                             </div>
-                            <div className="rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-white w-2/3 ml-auto relative -mt-16 z-20">
-                                <img src={marrowAspirationLiquidTip} alt="Marrow Aspiration Tip Detail" className="w-full h-auto object-cover" />
+                            <div className="content-img-wrap shadow-lg w-2/3 ml-auto relative -mt-16 z-20">
+                                <img src={marrowAspirationLiquidTip} alt="Marrow Aspiration Tip Detail" className="content-img" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-3">
                                     <span className="text-white text-xs font-medium">Trochar Tip Detail</span>
                                 </div>
@@ -260,12 +260,12 @@ const Orthobiologics = () => {
                         <div className="lg:col-span-5 space-y-10">
                             {/* Images Grid */}
                             <div className="space-y-4">
-                                <div className="bg-secondary/20 p-4 rounded-3xl border border-border">
-                                    <img src={marrowCancellousAllThree} alt="Marrow Aspiration & Cancellous Bone Graft Setup" className="w-full h-auto rounded-xl object-cover mix-blend-multiply max-h-64 mx-auto" />
+                                <div className="content-img-wrap shadow-sm">
+                                    <img src={marrowCancellousAllThree} alt="Marrow Aspiration & Cancellous Bone Graft Setup" className="content-img" />
                                 </div>
-                                <div className="bg-secondary/20 p-4 rounded-3xl border border-border overflow-hidden">
-                                    <img src={marrowCancellousTip} alt="Trephine Needle Tip" className="w-full h-auto rounded-xl object-cover max-h-48 mx-auto mix-blend-multiply" />
-                                    <p className="text-xs text-center text-muted-foreground mt-3 font-medium tracking-wide uppercase">8G Trephine Core Extraction</p>
+                                <div className="content-img-wrap shadow-sm relative">
+                                    <img src={marrowCancellousTip} alt="Trephine Needle Tip" className="content-img" />
+                                    <p className="absolute bottom-0 left-0 right-0 bg-background/80 backdrop-blur-sm text-xs text-center text-muted-foreground py-2 font-medium tracking-wide uppercase">8G Trephine Core Extraction</p>
                                 </div>
                             </div>
 
@@ -374,12 +374,14 @@ const Orthobiologics = () => {
                             </div>
                         </div>
                         <div className="grid grid-cols-2 gap-6 relative">
-                            <div className="col-span-2 bg-white rounded-3xl p-6 border-4 border-white shadow-xl flex items-center justify-center">
-                                <img src={cervosTripleKeyPrp} alt="Cervos Triple KeyPRP" className="w-full max-w-[400px] h-auto object-contain" />
+                            <div className="col-span-2 content-img-wrap shadow-xl flex items-center justify-center">
+                                <img src={cervosTripleKeyPrp} alt="Cervos Triple KeyPRP" className="content-img" />
                             </div>
-                            <div className="col-span-2 bg-secondary/50 rounded-3xl p-6 border border-border flex flex-col md:flex-row gap-8 items-center justify-center text-center md:text-left">
+                            <div className="col-span-2 bg-secondary/50 rounded-2xl p-6 border border-border flex flex-col md:flex-row gap-8 items-center justify-center text-center md:text-left">
                                 <div className="w-1/3 min-w-[120px]">
-                                    <img src={cervosKeyPrp} alt="CERVOS-KEYPRP Technology" className="w-full h-auto object-contain drop-shadow-md rounded-xl mix-blend-multiply" />
+                                    <div className="content-img-wrap content-img-wrap--square">
+                                        <img src={cervosKeyPrp} alt="CERVOS-KEYPRP Technology" className="content-img" />
+                                    </div>
                                 </div>
                                 <div className="w-2/3">
                                     <h5 className="font-bold text-lg text-foreground mb-3">Customisable Biologic Profiles</h5>
@@ -427,8 +429,8 @@ const Orthobiologics = () => {
                                 <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" /> Preserve platelet integrity prior to centrifugation</li>
                                 <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" /> Support consistent PRP processing protocols</li>
                             </ul>
-                            <div className="absolute -bottom-10 -right-10 w-2/3 opacity-30 pointer-events-none mix-blend-multiply">
-                                <img src={ppsSodiumCitrate} alt="PPS Sodium Citrate" className="w-full h-auto" />
+                            <div className="absolute -bottom-10 -right-10 w-2/3 opacity-30 pointer-events-none">
+                                <img src={ppsSodiumCitrate} alt="PPS Sodium Citrate" className="w-full h-auto object-contain" />
                             </div>
                         </div>
                     </div>
