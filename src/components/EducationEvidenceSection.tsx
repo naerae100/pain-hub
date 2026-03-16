@@ -1,7 +1,5 @@
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { BookOpen, FileText } from "lucide-react";
 
 const EducationEvidenceSection = () => {
     return (
@@ -31,20 +29,16 @@ const EducationEvidenceSection = () => {
                 <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                     {[
                         {
-                            icon: FileText,
                             title: "Clinical Evidence",
                             description: "Access published research, clinical outcomes data, and systematic reviews supporting interventional procedures.",
                             href: "/resources",
                             cta: "View evidence",
-                            accent: "from-emerald-500/10 to-emerald-600/5",
                         },
                         {
-                            icon: BookOpen,
                             title: "Clinical Education & Training",
                             description: "Structured workshops, hands-on procedural training, and evidence-based educational pathways for clinicians.",
                             href: "/clinical-education",
                             cta: "View training",
-                            accent: "from-blue-500/10 to-blue-600/5",
                         },
                     ].map((item, index) => (
                         <motion.div
@@ -56,11 +50,8 @@ const EducationEvidenceSection = () => {
                         >
                             <Link
                                 to={item.href}
-                                className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 transition-all duration-500 p-8 md:p-10 flex flex-col h-full"
+                                className="group bg-white rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500 p-8 md:p-10 flex flex-col h-full"
                             >
-                                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.accent} flex items-center justify-center mb-6`}>
-                                    <item.icon className="w-7 h-7 text-slate-700" />
-                                </div>
                                 <h3 className="font-display text-xl md:text-2xl font-bold text-slate-800 mb-3 group-hover:text-primary transition-colors duration-300">
                                     {item.title}
                                 </h3>
@@ -68,7 +59,7 @@ const EducationEvidenceSection = () => {
                                     {item.description}
                                 </p>
                                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all duration-300">
-                                    {item.cta} <ArrowRight className="w-4 h-4" />
+                                    {item.cta} →
                                 </span>
                             </Link>
                         </motion.div>

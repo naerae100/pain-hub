@@ -38,7 +38,7 @@
     --input: 210 24% 88%;
     --ring: 209 100% 28%;
 
-    --radius: 1.5rem;
+    --radius: 0.75rem;
 
     /* Sidebar */
     --sidebar-background: 0 0% 100%;
@@ -99,51 +99,51 @@
 
   /* Modern Surface Styles */
   .surface-card {
-    @apply bg-card border border-border rounded-[1.5rem] overflow-hidden;
-    box-shadow: 0 16px 40px -28px hsl(220 35% 15% / 0.25);
+    @apply bg-card border border-slate-100 rounded-xl overflow-hidden;
+    box-shadow: 0 4px 20px -12px hsl(220 35% 15% / 0.12);
     transition: all 0.4s ease;
   }
 
   .surface-card:hover {
-    box-shadow: 0 24px 60px -32px hsl(220 35% 15% / 0.35);
-    transform: translateY(-4px);
+    box-shadow: 0 12px 32px -16px hsl(220 35% 15% / 0.18);
+    transform: translateY(-2px);
   }
 
   .pro-card {
-    @apply bg-card rounded-[2rem] overflow-hidden border border-border;
-    box-shadow: 0 18px 50px -36px hsl(220 35% 15% / 0.3);
+    @apply bg-card rounded-xl overflow-hidden border border-slate-100;
+    box-shadow: 0 4px 20px -12px hsl(220 35% 15% / 0.12);
     transition: all 0.45s ease;
   }
 
   .pro-card:hover {
-    box-shadow: 0 28px 70px -36px hsl(220 35% 15% / 0.35);
-    transform: translateY(-4px);
+    box-shadow: 0 12px 32px -16px hsl(220 35% 15% / 0.18);
+    transform: translateY(-2px);
   }
 
   /* Hero Carousel Card */
   .hero-slide {
-    @apply relative rounded-[2.5rem] overflow-hidden border border-border;
+    @apply relative rounded-2xl overflow-hidden;
     background: radial-gradient(circle at 20% 20%, hsl(210 40% 96%), hsl(210 25% 92%));
   }
 
   /* Feature Card Variants */
   .feature-card-light {
-    @apply relative rounded-[2rem] overflow-hidden p-8 border border-border bg-card;
+    @apply relative rounded-xl overflow-hidden p-8 border border-slate-100 bg-card;
     transition: all 0.4s ease;
   }
 
   .feature-card-light:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
   }
 
   .feature-card-dark {
-    @apply relative rounded-[2rem] overflow-hidden p-8;
+    @apply relative rounded-xl overflow-hidden p-8;
     background: linear-gradient(135deg, hsl(222 30% 12%) 0%, hsl(222 28% 8%) 100%);
     transition: all 0.4s ease;
   }
 
   .feature-card-dark:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
   }
 
   /* Glass Effect */
@@ -395,7 +395,7 @@
 
   /* ── Standardised Content Image Containers ── */
   .content-img-wrap {
-    @apply w-full overflow-hidden rounded-2xl border border-border bg-secondary/20;
+    @apply w-full overflow-hidden rounded-xl bg-secondary/20;
     aspect-ratio: 4 / 3;
     /* uniform height across all images   */
   }
@@ -414,7 +414,7 @@
   }
 
   .content-img {
-    @apply w-full h-full object-cover;
+    @apply w-full h-full object-contain;
   }
 
   /* Animation Delays */

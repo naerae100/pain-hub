@@ -1,11 +1,8 @@
-import { Target, Lightbulb, ArrowRight, Calendar, MapPin, GraduationCap, Users, Sparkles, Phone, Mail, Linkedin, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import { workshops } from "@/data/workshops";
-import workshopGallery1 from "@/assets/workshop-gallery-1.png";
-import workshopGallery2 from "@/assets/workshop-gallery-2.png";
+import heroAbout from "@/assets/Medical proffesionals_IPMA.png";
 import educationHero from "@/assets/Education of minimally invasive procedures for pain management.png";
 import sydneyWorkshop3 from "@/assets/Ultrasound-guided cryoanalgesia workshop Sydney_3.png.png";
-import heroMedical from "@/assets/hero-medical.jpg";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -20,333 +17,286 @@ const About = () => {
 
             {/* Hero Section */}
             <PageHero
-                image={heroMedical}
-                title="About IPMA"
-                subtitle="Driving excellence in interventional pain management through education and innovation."
+                image={heroAbout}
+                title="Interventional Pain Management Australia - Advancing Clinical Practice in Interventional Pain & Spine Care"
+                subtitle="About IPMA"
                 breadcrumbs={[{ label: "About IPMA" }]}
             />
 
-            {/* Who We Are Section */}
+            {/* Introduction Section */}
             <section className="section-container pb-20 pt-12">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                    <div className="order-2 lg:order-1 relative">
-                        <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl z-10">
-                            <img
-                                src={educationHero}
-                                alt="Clinician Training"
-                                className="w-full h-full object-cover min-h-[400px]"
-                            />
-                        </div>
-                        {/* Secondary Overlapping Image */}
-                        <div className="absolute -bottom-8 -right-8 w-2/3 aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white z-20 hidden md:block group">
-                            <img
-                                src={sydneyWorkshop3}
-                                alt="Sydney Workshop Session"
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
-                        </div>
-                        {/* Decorative background element */}
-                        <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl -z-10" />
-                    </div>
-                    <div className="flex flex-col gap-6 order-1 lg:order-2">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                    <div className="flex flex-col gap-6">
                         <div className="flex items-center gap-3 text-primary uppercase tracking-wider font-bold text-sm">
                             <span className="w-8 h-[2px] bg-primary"></span>
                             About IPMA
                         </div>
-                        <h2 className="text-4xl lg:text-5xl font-display font-bold text-foreground">
-                            Advancing the future of Pain Management.
-                        </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
-                            Interventional Pain Management Australia (IPMA) is a dedicated organization established to foster excellence in the field of pain medicine.
+                        <p className="text-xl text-foreground font-medium leading-relaxed">
+                            Interventional Pain Management Australia (IPMA) is an educational and clinical collaboration platform dedicated to advancing evidence-informed interventional pain and minimally invasive spine care.
                         </p>
                         <p className="text-lg text-muted-foreground leading-relaxed">
-                            We bring together leading practitioners, researchers, and innovators to share knowledge, refine techniques, and ultimately improve patient outcomes across the country. Through our specialized workshops and community events, we are setting new standards for care in acute and chronic pain treatment.
+                            IPMA brings together clinicians, researchers, and procedural specialists to share knowledge, refine techniques, and support the responsible adoption of modern interventional technologies.
+                        </p>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                            Through structured education programs, reference centre observation, and clinical resources, IPMA promotes safe and effective integration of procedures that target the underlying causes of pain while minimising tissue disruption.
+                        </p>
+                    </div>
+                    <div className="relative">
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl z-10 bg-slate-50 border border-slate-100 h-[400px]">
+                            <img
+                                src={educationHero}
+                                alt="Clinician Training"
+                                className="w-full h-full object-contain"
+                            />
+                        </div>
+                        {/* Secondary Overlapping Image */}
+                        <div className="absolute -bottom-8 -right-8 w-2/3 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-20 hidden md:block group bg-slate-50">
+                            <img
+                                src={sydneyWorkshop3}
+                                alt="Sydney Workshop Session"
+                                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* What IPMA Does Section */}
+            <section className="bg-slate-50 py-24 border-y border-slate-100">
+                <div className="section-container">
+                    <div className="max-w-3xl">
+                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-blue-900 mb-8">What IPMA Does</h2>
+                        <p className="text-lg text-muted-foreground mb-8">IPMA supports clinicians by providing:</p>
+                        <ul className="grid gap-6">
+                            {[
+                                "Clinical education and hands-on training in interventional pain and minimally invasive spine procedures",
+                                "Reference centre observation programs for real-world procedural learning",
+                                "Evidence-based clinical resources supporting safe adoption of new technologies",
+                                "Collaborative learning networks connecting practitioners across Australia"
+                            ].map((item, i) => (
+                                <li key={i} className="flex gap-4 text-lg text-foreground/80 leading-relaxed group">
+                                    <span className="text-primary font-bold mt-1">•</span>
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                        <p className="text-lg text-blue-800 font-medium mt-10 p-6 bg-blue-100/50 rounded-xl border border-blue-100">
+                            The focus is not simply technology — but appropriate patient selection, procedural precision, and responsible clinical integration.
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* Core Values / "Look Good" Section */}
-            <section className="bg-secondary/50 py-24">
-                <div className="section-container">
-                    <div className="text-center max-w-2xl mx-auto mb-16">
-                        <h2 className="text-3xl font-display font-bold text-foreground mb-4">Our Core Values</h2>
-                        <p className="text-muted-foreground text-lg">Foundation principles that guide every workshop, partnership, and initiative we undertake.</p>
-                    </div>
+            {/* Areas of Clinical Focus */}
+            <section className="section-container py-24">
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <h2 className="text-3xl lg:text-5xl font-display font-bold text-foreground mb-6">Areas of Clinical Focus</h2>
+                    <p className="text-muted-foreground text-lg">IPMA educational programs currently focus on four core procedural domains:</p>
+                </div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {/* Value 1 */}
-                        <div className="bg-background border border-border/50 p-8 rounded-3xl hover:shadow-lg transition-all duration-300">
-                            <div className="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
-                                <GraduationCap className="w-7 h-7" />
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {[
+                        {
+                            title: "Cryoanalgesia",
+                            desc: "Image-guided cryoneurolysis for peripheral neuralgia, postoperative pain, and selected spasticity applications."
+                        },
+                        {
+                            title: "Epidural Balloon Decompression",
+                            desc: "Mechanical epidural expansion and adhesiolysis for lumbar spinal stenosis and neurogenic claudication."
+                        },
+                        {
+                            title: "Percutaneous Laser Disc Decompression (PLDD)",
+                            desc: "Minimally invasive intradiscal decompression for contained disc herniation and radicular pain."
+                        },
+                        {
+                            title: "Orthobiologic Therapies",
+                            desc: "Autologous biologic approaches supporting tissue repair and regenerative pathways within interventional care."
+                        }
+                    ].map((domain, idx) => (
+                        <div key={idx} className="bg-white border border-slate-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                            <h3 className="text-xl font-bold text-blue-900 mb-4">{domain.title}</h3>
+                            <p className="text-muted-foreground leading-relaxed text-sm">
+                                {domain.desc}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+                <p className="text-center text-muted-foreground italic mt-12">
+                    Each modality is presented within a structured clinical framework emphasising indications, mechanisms, safety, and outcomes.
+                </p>
+            </section>
+
+            {/* Education at the Core Section */}
+            <section className="bg-blue-900 text-white py-24 overflow-hidden relative">
+                <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 translate-x-1/4" />
+                <div className="section-container relative z-10">
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        <div className="flex flex-col gap-8">
+                            <h2 className="text-4xl lg:text-6xl font-display font-bold leading-tight">Education at the Core of Practice</h2>
+                            <p className="text-xl text-blue-100 leading-relaxed">
+                                Education is central to IPMA’s mission. Programs are designed to support clinicians at different stages of procedural adoption, including:
+                            </p>
+                            <ul className="grid gap-4">
+                                {[
+                                    "Hands-on cadaver workshops",
+                                    "Clinical observation through IPMA Reference Centres",
+                                    "Case-based discussions and expert panels",
+                                    "Evidence reviews and clinical resource libraries"
+                                ].map((item, i) => (
+                                    <li key={i} className="flex gap-4 text-lg items-center text-white/90">
+                                        <span className="w-2 h-2 rounded-full bg-blue-300" />
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                            <p className="text-xl font-medium text-white p-6 bg-white/10 rounded-xl backdrop-blur-sm border border-white/20">
+                                This approach allows practitioners to learn not only how procedures are performed, but when they should be used.
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="rounded-2xl overflow-hidden shadow-2xl bg-white/10 h-64 mt-12">
+                                <img src={educationHero} alt="Education" className="w-full h-full object-contain" />
                             </div>
-                            <h3 className="text-xl font-bold mb-3">Education First</h3>
-                            <p className="text-muted-foreground leading-relaxed">
-                                We believe in continuous learning. Our workshops provide hands-on training with the latest technologies to ensure practitioners stay at the forefront.
+                            <div className="rounded-2xl overflow-hidden shadow-2xl bg-white/10 h-64">
+                                <img src={sydneyWorkshop3} alt="Workshop" className="w-full h-full object-contain" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Mission & Vision */}
+            <section className="section-container py-24">
+                <div className="grid md:grid-cols-2 gap-12 lg:gap-24">
+                    <div className="flex flex-col gap-6">
+                        <h2 className="text-3xl font-display font-bold text-blue-900 border-l-4 border-primary pl-6">Our Mission</h2>
+                        <p className="text-xl text-muted-foreground leading-relaxed">
+                            To support evidence-informed interventional pain and spine practice through education, collaboration, and responsible integration of minimally invasive procedural technologies.
+                        </p>
+                    </div>
+                    <div className="flex flex-col gap-6">
+                        <h2 className="text-3xl font-display font-bold text-blue-900 border-l-4 border-primary pl-6">Our Vision</h2>
+                        <p className="text-xl text-muted-foreground leading-relaxed">
+                            To establish IPMA as a trusted Australian platform for interventional pain education, connecting clinicians with the knowledge, training, and clinical resources required to deliver modern pain care.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Workshops Section */}
+            <section className="py-24 bg-slate-50 border-t border-slate-200">
+                <div className="section-container">
+                    <div className="max-w-4xl mx-auto flex flex-col gap-12">
+                        <div className="text-center">
+                            <h2 className="text-3xl lg:text-5xl font-display font-bold text-blue-900 mb-6">Clinical Education & Workshops</h2>
+                            <p className="text-lg text-muted-foreground">
+                                IPMA regularly hosts focused educational events designed for clinicians interested in advancing their interventional skillset.
                             </p>
                         </div>
 
-                        {/* Value 2 */}
-                        <div className="bg-background border border-border/50 p-8 rounded-3xl hover:shadow-lg transition-all duration-300">
-                            <div className="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-6">
-                                <Users className="w-7 h-7" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-3">Community</h3>
-                            <p className="text-muted-foreground leading-relaxed">
-                                Building a strong network of Australian professionals who support one another, share insights, and collaborate on complex cases.
-                            </p>
-                        </div>
-
-                        {/* Value 3 */}
-                        <div className="bg-background border border-border/50 p-8 rounded-3xl hover:shadow-lg transition-all duration-300">
-                            <div className="w-14 h-14 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center mb-6">
-                                <Sparkles className="w-7 h-7" />
-                            </div>
-                            <h3 className="text-xl font-bold mb-3">Innovation</h3>
-                            <p className="text-muted-foreground leading-relaxed">
-                                Embracing the newest evidence-based procedures, from cryoanalgesia to regenerative therapies, to offer better solutions for patients.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Mission & Vision (Refined) */}
-            <section className="section-container py-20 lg:py-24">
-                <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
-                    {/* Mission */}
-                    <div className="flex flex-col gap-4">
-                        <div className="flex items-center gap-4 text-primary">
-                            <div className="p-3 rounded-xl bg-primary/10">
-                                <Target className="w-6 h-6" />
-                            </div>
-                            <h2 className="text-2xl font-display font-bold text-foreground">Our Mission</h2>
-                        </div>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
-                            To promote evidence-based benefits of interventional pain procedures and to build a trusted community of dedicated Australian pain practitioners who believe in and utilize advanced techniques — including cryoanalgesia, regenerative medicine, and other treatments.
-                        </p>
-                    </div>
-
-                    {/* Vision */}
-                    <div className="flex flex-col gap-4">
-                        <div className="flex items-center gap-4 text-primary">
-                            <div className="p-3 rounded-xl bg-primary/10">
-                                <Lightbulb className="w-6 h-6" />
-                            </div>
-                            <h2 className="text-2xl font-display font-bold text-foreground">Our Vision</h2>
-                        </div>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
-                            To become Australia's leading hub for interventional pain education, networking, and innovation — empowering practitioners with the knowledge, tools, and support they need to deliver better outcomes for patients living with acute or chronic pain.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Education / Workshop Section */}
-            <section className="py-20 bg-gradient-to-b from-background to-secondary/20">
-                <div className="section-container">
-                    <div className="flex flex-col gap-12">
-                        <div>
-                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground text-blue-900 mb-4">
-                                The First Australian Cryoanalgesia Workshop – June 2025
-                            </h2>
-                            <div className="h-full border-l-4 border-primary pl-6">
-                                <p className="text-xl text-primary font-medium">Education is at our core.</p>
-                            </div>
-                        </div>
-
-                        {/* Gallery Grid (Simulated from uploaded images) */}
-                        <div className="grid md:grid-cols-2 gap-6">
-                            {/* We use object-cover to make them look like a cohesive gallery */}
-                            <div className="content-img-wrap shadow-xl">
-                                <img src={workshopGallery1} alt="Workshop Session 1" className="content-img hover:scale-105 transition-transform duration-700" />
-                            </div>
-                            <div className="content-img-wrap shadow-xl">
-                                <img src={workshopGallery2} alt="Workshop Session 2" className="content-img hover:scale-105 transition-transform duration-700" />
-                            </div>
-                        </div>
-
-                        {/* Featured Workshop Card */}
-                        {featuredWorkshop && (
-                            <div className="relative mt-8 rounded-[2.5rem] overflow-hidden bg-gradient-to-r from-[#0055a6] to-[#003366] text-white p-8 lg:p-16 shadow-2xl">
-                                {/* Background Pattern */}
-                                <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 translate-x-1/4" />
-
-                                <div className="grid lg:grid-cols-2 gap-12 relative z-10 items-center">
-                                    <div className="flex flex-col">
-                                        <h3 className="text-3xl lg:text-5xl font-display font-bold leading-tight mb-6">
-                                            {featuredWorkshop.title}
-                                        </h3>
-                                        <p className="text-lg lg:text-xl text-white/90 mb-8 max-w-xl leading-relaxed">
-                                            {featuredWorkshop.subtitle} – A hands-on workshop for acute and chronic pain.
-                                        </p>
-
-                                        <div className="flex flex-col gap-4 mb-10 text-white/80">
-                                            <div className="flex items-center gap-3">
-                                                <Calendar className="w-5 h-5" />
-                                                <span className="text-lg font-medium">{featuredWorkshop.date}</span>
-                                            </div>
-                                            <div className="flex items-center gap-3">
-                                                <MapPin className="w-5 h-5" />
-                                                <span className="text-lg font-medium">{featuredWorkshop.location}</span>
-                                            </div>
-                                        </div>
-
-                                        <div className="flex flex-wrap gap-4">
-                                            <Link to={`/clinical-education/${featuredWorkshop.slug}`}>
-                                                <Button size="lg" className="h-14 px-8 rounded-full bg-white/10 hover:bg-white/20 text-white border-white/20 border backdrop-blur-sm text-lg font-bold">
-                                                    Details
-                                                </Button>
-                                            </Link>
-                                            <Link to={`/clinical-education/${featuredWorkshop.slug}`}>
-                                                <Button size="lg" className="h-14 px-8 rounded-full bg-white text-[#003366] hover:bg-white/90 text-lg font-bold shadow-lg shadow-black/10 group">
-                                                    Workshop Registration
-                                                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                                                </Button>
-                                            </Link>
-                                        </div>
-                                    </div>
-
-                                    {/* Simple decorative element for the right side since we don't have the exact map graphic */}
-                                    <div className="hidden lg:flex justify-end items-center opacity-30">
-                                        <MapPin className="w-64 h-64 text-white" />
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                </div>
-            </section>
-
-            {/* ───────────── Contact Us Section ───────────── */}
-            <section id="contact" className="py-20 lg:py-28 bg-secondary/30 border-t border-border">
-                <div className="section-container">
-                    <div className="text-center max-w-2xl mx-auto mb-16">
-                        <div className="flex items-center justify-center gap-3 text-primary uppercase tracking-wider font-bold text-sm mb-4">
-                            <span className="w-8 h-[2px] bg-primary"></span>
-                            Get in Touch
-                            <span className="w-8 h-[2px] bg-primary"></span>
-                        </div>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground text-blue-900 mb-4">
-                            We'd love to hear from you
-                        </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
-                            Whether you have questions about our procedures, want to register for a workshop, or need more information about our services.
-                        </p>
-                    </div>
-
-                    <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-
-                        {/* Left Column: Contact Info */}
-                        <div className="lg:col-span-5 flex flex-col gap-10">
-                            <div className="flex flex-col gap-8">
-                                {/* Phone */}
-                                <div className="flex items-center gap-5 group">
-                                    <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-primary transition-colors group-hover:bg-primary group-hover:text-white shadow-sm border border-primary/10">
-                                        <Phone className="w-6 h-6" />
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <span className="text-sm font-bold text-primary tracking-wider uppercase mb-1">Call Us</span>
-                                        <a href="tel:0493519620" className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
-                                            0493 519 620
-                                        </a>
-                                    </div>
-                                </div>
-
-                                {/* Email */}
-                                <div className="flex items-center gap-5 group">
-                                    <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-primary transition-colors group-hover:bg-primary group-hover:text-white shadow-sm border border-primary/10">
-                                        <Mail className="w-6 h-6" />
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <span className="text-sm font-bold text-primary tracking-wider uppercase mb-1">Email Us</span>
-                                        <a href="mailto:contact@ipmaaustralia.com.au" className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
-                                            contact@ipmaaustralia.com.au
-                                        </a>
-                                    </div>
-                                </div>
-
-                                {/* Location */}
-                                <div className="flex items-center gap-5 group">
-                                    <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-primary transition-colors group-hover:bg-primary group-hover:text-white shadow-sm border border-primary/10">
-                                        <MapPin className="w-6 h-6" />
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <span className="text-sm font-bold text-primary tracking-wider uppercase mb-1">Location</span>
-                                        <span className="text-lg font-semibold text-foreground">Brisbane, Australia</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="flex flex-col gap-4">
-                                <span className="text-lg font-bold text-foreground">Follow us</span>
-                                <div className="flex gap-4">
-                                    <a href="#" className="w-12 h-12 rounded-full bg-[#0077b5]/10 text-[#0077b5] flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-all duration-300">
-                                        <Linkedin className="w-6 h-6" />
-                                    </a>
-                                    <a href="#" className="w-12 h-12 rounded-full bg-[#FF0000]/10 text-[#FF0000] flex items-center justify-center hover:bg-[#FF0000] hover:text-white transition-all duration-300">
-                                        <Youtube className="w-6 h-6" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Right Column: Contact Form */}
-                        <div className="lg:col-span-7 w-full">
-                            <div className="bg-white border border-border/50 p-8 md:p-12 rounded-[2.5rem] shadow-xl relative overflow-hidden">
-                                {/* Background Decorative Circle */}
-                                <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-
-                                <h3 className="text-3xl font-display font-bold text-foreground mb-8 text-blue-900 border-l-4 border-primary pl-4">
-                                    Send a message
+                        {/* Featured Workshop */}
+                        <div className="bg-white border border-slate-100 rounded-2xl p-8 lg:p-12 shadow-xl">
+                            <div className="flex flex-col gap-6">
+                                <span className="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 font-bold uppercase text-xs w-fit tracking-wider">Upcoming workshop</span>
+                                <h3 className="text-3xl font-display font-bold text-foreground">
+                                    Mastering Ultrasound-Guided Pain Management Techniques
                                 </h3>
+                                <div className="flex flex-wrap gap-8 text-muted-foreground">
+                                    <div className="flex items-center gap-2">
+                                        <span className="font-bold">📅</span> Saturday, 27 September 2025
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <span className="font-bold">📍</span> Brisbane, Queensland
+                                    </div>
+                                </div>
+                                <div className="grid md:grid-cols-2 gap-12 mt-4">
+                                    <div>
+                                        <p className="font-bold text-blue-900 mb-4">These workshops combine:</p>
+                                        <ul className="grid gap-3">
+                                            {[
+                                                "Procedural demonstrations",
+                                                "Cadaver-based training",
+                                                "Clinical case discussions",
+                                                "Structured education pathways"
+                                            ].map((item, i) => (
+                                                <li key={i} className="flex gap-3 text-muted-foreground">
+                                                    <span className="text-primary">•</span> {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                    <div className="flex flex-col gap-4 justify-end">
+                                        <Button size="lg" className="rounded-full font-bold h-14 text-lg shadow-lg shadow-primary/20">
+                                            Register Now
+                                        </Button>
+                                        <p className="text-xs text-center text-muted-foreground">
+                                            Past workshops include: Australian Cryoanalgesia Workshop
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                                <form className="flex flex-col gap-6 relative z-10">
-                                    <div className="grid gap-2">
-                                        <Input
-                                            placeholder="Name*"
-                                            className="h-14 rounded-2xl border-transparent bg-secondary/50 focus:bg-white transition-all text-lg px-6 placeholder:text-muted-foreground/60"
-                                        />
-                                    </div>
-                                    <div className="grid gap-2">
-                                        <Input
-                                            placeholder="E-mail*"
-                                            type="email"
-                                            className="h-14 rounded-2xl border-transparent bg-secondary/50 focus:bg-white transition-all text-lg px-6 placeholder:text-muted-foreground/60"
-                                        />
-                                    </div>
-                                    <div className="grid gap-2">
-                                        <Input
-                                            placeholder="Subject*"
-                                            className="h-14 rounded-2xl border-transparent bg-secondary/50 focus:bg-white transition-all text-lg px-6 placeholder:text-muted-foreground/60"
-                                        />
-                                    </div>
-                                    <div className="grid gap-2">
-                                        <Textarea
-                                            placeholder="Your message*"
-                                            className="min-h-[180px] rounded-2xl border-transparent bg-secondary/50 focus:bg-white transition-all text-lg p-6 placeholder:text-muted-foreground/60 resize-none"
-                                        />
-                                    </div>
+            {/* Get in Touch Section */}
+            <section id="contact" className="py-24 bg-white border-t border-slate-200">
+                <div className="section-container">
+                    <div className="grid lg:grid-cols-2 gap-20 items-center">
+                        <div>
+                            <h2 className="text-4xl lg:text-6xl font-display font-bold text-blue-900 mb-8">Get in Touch</h2>
+                            <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
+                                Whether you are interested in clinical education, reference centre observation, or collaboration, the IPMA team welcomes enquiries from clinicians and healthcare organisations.
+                            </p>
 
-                                    <div className="flex items-center gap-3 pt-2">
-                                        <div className="flex items-center space-x-2">
-                                            <input type="checkbox" id="privacy-about" className="w-5 h-5 rounded border-primary text-primary focus:ring-primary/20 cursor-pointer" />
-                                            <label
-                                                htmlFor="privacy-about"
-                                                className="text-sm font-medium leading-none text-muted-foreground cursor-pointer"
-                                            >
-                                                I have read and accept the <a href="#" className="text-primary hover:underline">Privacy Policy.</a>
-                                            </label>
-                                        </div>
+                            <div className="grid gap-8">
+                                <div className="flex items-center gap-6 group">
+                                    <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-2xl group-hover:bg-primary group-hover:text-white transition-all">
+                                        📞
                                     </div>
-
-                                    <Button size="lg" className="h-14 rounded-full text-lg mt-4 w-full sm:w-auto px-12 font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] transition-transform">
-                                        Submit
-                                    </Button>
-                                </form>
+                                    <div className="flex flex-col">
+                                        <span className="text-xs font-bold uppercase text-primary tracking-widest mb-1">Phone</span>
+                                        <a href="tel:+61493519620" className="text-2xl font-bold text-foreground">+61 493 519 620</a>
+                                    </div>
+                                </div>
+                                <div className="flex items-center gap-6 group">
+                                    <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-2xl group-hover:bg-primary group-hover:text-white transition-all">
+                                        ✉️
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="text-xs font-bold uppercase text-primary tracking-widest mb-1">Email</span>
+                                        <a href="mailto:contact@ipmaaustralia.com.au" className="text-2xl font-bold text-foreground">contact@ipmaaustralia.com.au</a>
+                                    </div>
+                                </div>
+                                <div className="flex items-center gap-6 group">
+                                    <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-2xl group-hover:bg-primary group-hover:text-white transition-all">
+                                        📍
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="text-xs font-bold uppercase text-primary tracking-widest mb-1">Location</span>
+                                        <span className="text-2xl font-bold text-foreground">Sydney, Australia</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
+                        {/* Simplified Contact Form */}
+                        <div className="bg-slate-50 p-8 lg:p-12 rounded-2xl border border-slate-100 shadow-xl">
+                            <h3 className="text-2xl font-display font-bold text-blue-900 mb-8">Send an Enquiry</h3>
+                            <form className="grid gap-6">
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <Input placeholder="First Name*" className="h-14 rounded-xl border-slate-200" />
+                                    <Input placeholder="Last Name*" className="h-14 rounded-xl border-slate-200" />
+                                </div>
+                                <Input placeholder="Email Address*" type="email" className="h-14 rounded-xl border-slate-200" />
+                                <Input placeholder="Professional Title (e.g. Pain Specialist, Registrar)*" className="h-14 rounded-xl border-slate-200" />
+                                <Textarea placeholder="How can we help you?*" className="min-h-[150px] rounded-xl border-slate-200" />
+                                <Button size="lg" className="h-14 rounded-full font-bold text-lg shadow-lg shadow-primary/20 mt-2">
+                                    Send Message →
+                                </Button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -355,3 +305,4 @@ const About = () => {
 };
 
 export default About;
+

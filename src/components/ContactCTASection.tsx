@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -47,9 +46,8 @@ const ContactCTASection = () => {
             whileTap={{ scale: 0.98 }}
             className="inline-flex"
           >
-            <Link to="/contact" className="btn-primary text-base md:text-lg px-9 py-4 group">
-              Speak with our team
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            <Link to="/contact" className="btn-primary text-base md:text-lg px-9 py-4">
+              Speak with our team →
             </Link>
           </motion.div>
         </motion.div>

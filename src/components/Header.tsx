@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Search, User, ShoppingBag, Phone, Calendar, Globe, ChevronDown } from "lucide-react";
+import { Menu, X, Search, User, ShoppingBag, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import ipmaLogo from "@/assets/ipma-logo.webp";
 import { Button } from "@/components/ui/button";
 
 const topNavLinks = [
-  { label: "My IPMA", href: "/auth", icon: User },
-  { label: "Events", href: "/clinical-education", icon: Calendar },
-  { label: "Contact Us", href: "/about#contact", icon: Phone },
-  { label: "Australia", href: "/about", icon: Globe },
+  { label: "My IPMA", href: "/auth" },
+  { label: "Events", href: "/clinical-education" },
+  { label: "Contact Us", href: "/about#contact" },
+  { label: "Australia", href: "/about" },
 ];
 
 // Updated order to match screenshot
@@ -61,16 +61,15 @@ const Header = () => {
   return (
     <>
       {/* Top Utility Bar */}
-      <div className={`w-full border-b border-white/10 text-xs text-white/90 transition-all duration-300 ${isScrolled ? "hidden" : ""}`} style={{ backgroundColor: '#55575C' }}>
+      <div className={`w-full border-b border-white/10 text-[10px] sm:text-xs text-white/90 transition-all duration-300 ${isScrolled ? "hidden" : ""}`} style={{ backgroundColor: '#55575C' }}>
         <div className="section-container flex items-center justify-end h-8 gap-0">
           {topNavLinks.map((link, index) => (
             <span key={link.label} className="flex items-center">
               {index > 0 && <span className="mx-2 text-white/30 select-none">|</span>}
               <Link
                 to={link.href}
-                className="inline-flex items-center gap-1.5 hover:text-white transition-colors duration-200"
+                className="inline-flex items-center hover:text-white transition-colors duration-200 py-1"
               >
-                <link.icon className="w-3 h-3" />
                 {link.label}
               </Link>
             </span>
@@ -98,7 +97,7 @@ const Header = () => {
               <img
                 src={ipmaLogo}
                 alt="Interventional Pain Management Australia"
-                className="h-10 md:h-12 w-auto" // Slightly larger
+                className="h-9 md:h-11 w-auto"
               />
             </MotionLink>
 
@@ -111,10 +110,10 @@ const Header = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 + index * 0.05 }}
-                    className="flex items-center gap-1 text-sm font-medium text-foreground/75 hover:text-primary transition-colors duration-200 py-2"
+                    className="flex items-center gap-1 text-sm font-semibold text-foreground/75 hover:text-primary transition-colors duration-200 py-2"
                   >
                     {link.label}
-                    {link.children && <ChevronDown className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />}
+                    {link.children && <span className="text-[10px] opacity-40 group-hover:opacity-100 transition-opacity ml-0.5">▼</span>}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
                   </MotionLink>
 
@@ -126,7 +125,7 @@ const Header = () => {
                           <Link
                             key={child.label}
                             to={child.href}
-                            className="block px-5 py-3 text-sm text-foreground/80 hover:text-primary hover:bg-secondary/50 transition-colors"
+                            className="block px-5 py-3 text-sm text-foreground/80 hover:text-primary hover:bg-secondary/50 transition-colors font-medium"
                           >
                             {child.label}
                           </Link>
@@ -138,23 +137,21 @@ const Header = () => {
               ))}
             </nav>
 
-            {/* Icons: Search, User, Cart */}
+            {/* Icons Area simplified */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="hidden lg:flex items-center gap-5 text-blue-900"
+              className="hidden lg:flex items-center gap-6 text-blue-900 font-bold text-sm"
             >
-              <button className="hover:text-primary transition-colors hover:scale-110 transform duration-200">
-                <Search className="w-5 h-5 stroke-[2.5]" />
+              <button className="hover:text-primary transition-colors text-xs uppercase tracking-widest">
+                Search
               </button>
-              <Link to="/auth" className="hover:text-primary transition-colors hover:scale-110 transform duration-200">
-                <User className="w-5 h-5 stroke-[2.5]" />
+              <Link to="/auth" className="hover:text-primary transition-colors text-xs uppercase tracking-widest">
+                Login
               </Link>
-              <Link to="/cart" className="hover:text-primary transition-colors hover:scale-110 transform duration-200 relative">
-                <ShoppingBag className="w-5 h-5 stroke-[2.5]" />
-                {/* Optional Cart Badge */}
-                {/* <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span> */}
+              <Link to="/cart" className="hover:text-primary transition-colors relative text-xs uppercase tracking-widest">
+                Cart
               </Link>
             </motion.div>
 
@@ -165,7 +162,7 @@ const Header = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? "CLOSE" : "MENU"}
             </motion.button>
           </div>
 
@@ -177,7 +174,7 @@ const Header = () => {
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3 }}
-                className="lg:hidden overflow-hidden border-t border-border"
+                className="lg:hidden overflow-hidden border-t border-border bg-background"
               >
                 <div className="py-6 space-y-1">
                   {mainNavLinks.map((link, index) => (
@@ -187,7 +184,7 @@ const Header = () => {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.05 }}
-                        className="block px-4 py-3.5 text-lg font-medium text-foreground/80 hover:text-foreground hover:bg-secondary rounded-xl transition-all duration-200"
+                        className="block px-4 py-3.5 text-lg font-bold text-foreground/80 hover:text-primary hover:bg-secondary rounded-xl transition-all duration-200"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {link.label}
@@ -196,7 +193,7 @@ const Header = () => {
                         <Link
                           key={child.label}
                           to={child.href}
-                          className="block pl-8 pr-4 py-2.5 text-base text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-xl transition-all duration-200"
+                          className="block pl-8 pr-4 py-2.5 text-base text-muted-foreground hover:text-primary hover:bg-secondary/50 rounded-xl transition-all duration-200 font-medium"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {child.label}
@@ -204,12 +201,12 @@ const Header = () => {
                       ))}
                     </div>
                   ))}
-                  <div className="pt-4 px-4 flex justify-between gap-4 border-t border-border mt-4">
-                    <Link to="/auth" className="flex items-center gap-2 p-2" onClick={() => setIsMenuOpen(false)}>
-                      <User className="w-5 h-5" /> Sign In
+                  <div className="pt-6 px-4 flex flex-col gap-4 border-t border-border mt-6">
+                    <Link to="/auth" className="text-lg font-bold uppercase tracking-widest p-2" onClick={() => setIsMenuOpen(false)}>
+                      Sign In
                     </Link>
-                    <Link to="/cart" className="flex items-center gap-2 p-2" onClick={() => setIsMenuOpen(false)}>
-                      <ShoppingBag className="w-5 h-5" /> Cart
+                    <Link to="/cart" className="text-lg font-bold uppercase tracking-widest p-2" onClick={() => setIsMenuOpen(false)}>
+                      Cart
                     </Link>
                   </div>
                 </div>

@@ -1,6 +1,6 @@
 import { useParams, Navigate } from "react-router-dom";
 import { treatments } from "@/data/treatments";
-import { ArrowRight, Play, FileText, CheckCircle2, ChevronRight, BarChart3, PieChart, Linkedin } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const TreatmentDetail = () => {
@@ -47,7 +47,7 @@ const TreatmentDetail = () => {
 
                         {/* Breakthrough Card (Blue) - if exists */}
                         {treatment.breakthroughCard && (
-                            <div className="relative rounded-[2.5rem] overflow-hidden bg-[#0a4b8f] text-white min-h-[500px] shadow-2xl group">
+                            <div className="relative rounded-2xl overflow-hidden bg-[#0a4b8f] text-white min-h-[500px] shadow-2xl group">
                                 <img
                                     src={treatment.breakthroughCard.image}
                                     alt="Treatment Procedure"
@@ -70,7 +70,7 @@ const TreatmentDetail = () => {
                         )}
                         {/* Placeholder if no breakthrough card */}
                         {!treatment.breakthroughCard && (
-                            <div className="relative rounded-[2.5rem] overflow-hidden bg-secondary min-h-[400px] flex items-center justify-center border border-border">
+                            <div className="relative rounded-2xl overflow-hidden bg-secondary min-h-[400px] flex items-center justify-center border border-slate-100">
                                 <img src={treatment.heroImage} className="absolute inset-0 w-full h-full object-cover opacity-50" />
                                 <div className="relative z-10 bg-background/80 backdrop-blur-md p-8 rounded-3xl text-center max-w-sm m-4">
                                     <h3 className="text-2xl font-bold mb-2">Learn More</h3>
@@ -97,7 +97,7 @@ const TreatmentDetail = () => {
 
                             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                                 {treatment.clinicalOutcomes.conditions.map((category, idx) => (
-                                    <div key={idx} className="flex flex-col gap-4 p-6 rounded-3xl bg-secondary/30 border border-border/50 hover:bg-secondary/50 transition-colors">
+                                    <div key={idx} className="flex flex-col gap-4 p-6 rounded-xl bg-secondary/30 border border-slate-100 hover:bg-secondary/50 transition-colors">
                                         <h4 className="text-lg font-bold text-blue-700 mb-2 border-b border-blue-200 pb-2">
                                             {category.category}
                                         </h4>
@@ -115,11 +115,8 @@ const TreatmentDetail = () => {
 
                             {/* Infographic Placeholder / Animated Graph Simulation */}
                             <div className="grid md:grid-cols-2 gap-8 mt-8">
-                                <div className="bg-card border border-border rounded-3xl p-8 shadow-sm">
+                                <div className="bg-card border border-slate-100 rounded-xl p-8 shadow-sm">
                                     <div className="flex items-center gap-4 mb-6">
-                                        <div className="p-3 bg-green-100 text-green-600 rounded-xl">
-                                            <BarChart3 className="w-6 h-6" />
-                                        </div>
                                         <h3 className="font-bold text-lg">Efficacy vs Traditional Methods</h3>
                                     </div>
                                     <div className="space-y-4">
@@ -141,11 +138,8 @@ const TreatmentDetail = () => {
                                     </div>
                                 </div>
 
-                                <div className="bg-card border border-border rounded-3xl p-8 shadow-sm">
+                                <div className="bg-card border border-slate-100 rounded-xl p-8 shadow-sm">
                                     <div className="flex items-center gap-4 mb-6">
-                                        <div className="p-3 bg-purple-100 text-purple-600 rounded-xl">
-                                            <PieChart className="w-6 h-6" />
-                                        </div>
                                         <h3 className="font-bold text-lg">Application Areas</h3>
                                     </div>
                                     <div className="flex items-center justify-center h-40 text-muted-foreground text-sm italic">
@@ -160,10 +154,10 @@ const TreatmentDetail = () => {
 
                     {/* Diagram Section */}
                     {treatment.diagram && (
-                        <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-[2.5rem] p-8 lg:p-12 border border-border">
+                        <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 lg:p-12 border border-slate-100">
                             <h2 className="text-3xl font-display font-bold text-blue-900 mb-8 text-center">{treatment.diagram.title}</h2>
                             <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white">
-                                <img src={treatment.diagram.image} alt={treatment.diagram.title} className="w-full object-cover" />
+                                <img src={treatment.diagram.image} alt={treatment.diagram.title} className="w-full object-contain" />
                                 <div className="absolute inset-x-0 bottom-0 bg-white/90 backdrop-blur-md p-6 border-t border-border/50">
                                     <p className="text-lg text-foreground/80 leading-relaxed text-center max-w-4xl mx-auto">
                                         {treatment.diagram.description}
@@ -179,11 +173,11 @@ const TreatmentDetail = () => {
                             <h2 className="text-3xl font-display font-bold text-blue-900 mb-8">Video Learning Series</h2>
                             <div className="grid md:grid-cols-2 gap-8">
                                 {treatment.videos.map((video, idx) => (
-                                    <div key={idx} className="group relative rounded-3xl overflow-hidden shadow-xl aspect-video cursor-pointer">
-                                        <img src={video.thumbnail} alt={video.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                    <div key={idx} className="group relative rounded-xl overflow-hidden shadow-xl aspect-video cursor-pointer">
+                                        <img src={video.thumbnail} alt={video.title} className="w-full h-full object-contain bg-black group-hover:scale-105 transition-transform duration-700" />
                                         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
                                             <div className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/50 group-hover:scale-110 transition-transform">
-                                                <Play className="w-8 h-8 text-white fill-current ml-1" />
+                                                <span className="text-white text-3xl ml-1">▶</span>
                                             </div>
                                         </div>
                                         <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
@@ -198,9 +192,8 @@ const TreatmentDetail = () => {
 
                     {/* Articles Section */}
                     {treatment.articles && (
-                        <div className="bg-secondary/30 rounded-[2.5rem] p-8 lg:p-12 border border-border">
-                            <h2 className="text-3xl font-display font-bold text-blue-900 mb-8 flex items-center gap-3">
-                                <FileText className="w-8 h-8" />
+                        <div className="bg-secondary/30 rounded-2xl p-8 lg:p-12 border border-slate-100">
+                            <h2 className="text-3xl font-display font-bold text-blue-900 mb-8">
                                 Key Publications
                             </h2>
                             <div className="grid gap-4">
@@ -217,7 +210,7 @@ const TreatmentDetail = () => {
                                                 </div>
                                             </div>
                                             <Button variant="ghost" className="shrink-0 text-primary hover:text-primary/80 hover:bg-primary/5">
-                                                Read Abstract <ArrowRight className="w-4 h-4 ml-2" />
+                                                Read Abstract →
                                             </Button>
                                         </div>
                                     </div>
@@ -241,7 +234,7 @@ const TreatmentDetail = () => {
                                                 <span className="text-sm font-bold text-gray-900">{post.author}</span>
                                                 <span className="text-xs text-gray-500">{post.role} • {post.time}</span>
                                             </div>
-                                            <Linkedin className="w-5 h-5 text-[#0077b5] ml-auto" />
+                                            <span className="text-[#0077b5] text-xs font-bold ml-auto">in</span>
                                         </div>
                                         <p className="text-sm text-gray-700 mb-4 line-clamp-3 leading-relaxed">
                                             {post.content}
@@ -250,7 +243,7 @@ const TreatmentDetail = () => {
                                             <img src={post.image} alt="Post Content" className="w-full h-full object-cover opacity-80" />
                                             <div className="absolute inset-0 flex items-center justify-center">
                                                 <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/40 group-hover:scale-110 transition-transform">
-                                                    <Play className="w-5 h-5 fill-current" />
+                                                    <span className="text-white text-xl">▶</span>
                                                 </div>
                                             </div>
                                             <div className="absolute bottom-4 left-4 right-4">

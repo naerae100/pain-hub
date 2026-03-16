@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
@@ -68,7 +68,7 @@ const ResearchSection = () => {
             </p>
           </motion.div>
 
-          {/* Navigation */}
+          {/* Navigation — keep chevrons for functional scroll */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -112,7 +112,7 @@ const ResearchSection = () => {
             style={{ scrollSnapAlign: "start" }}
           >
             {/* Image */}
-            <div className="aspect-[4/3] rounded-[1.25rem] overflow-hidden bg-secondary mb-5">
+            <div className="aspect-[4/3] rounded-lg overflow-hidden bg-secondary mb-5">
               <motion.img
                 src={article.image}
                 alt={article.title}
@@ -128,7 +128,7 @@ const ResearchSection = () => {
               {article.title}
             </h3>
             <span className="link-arrow text-sm font-semibold">
-              Read more <ArrowRight className="w-4 h-4" />
+              Read more →
             </span>
           </MotionLink>
         ))}

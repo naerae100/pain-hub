@@ -105,19 +105,19 @@ const ProductCategoryIndex = () => {
                         <Link
                             key={category.id}
                             to={`/technologies/${category.slug}`}
-                            className="group relative rounded-3xl overflow-hidden aspect-[4/3] bg-card border border-border shadow-sm hover:shadow-lg transition-all duration-300"
+                            className="group relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-50 border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
                         >
                             <img
                                 src={category.image}
                                 alt={category.title}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                             />
                             <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 via-black/50 to-transparent">
                                 <h3 className="text-white font-bold text-lg md:text-xl truncate drop-shadow-md">
                                     {category.title}
                                 </h3>
                                 <div className="flex items-center gap-2 text-primary-foreground/80 text-xs font-medium uppercase tracking-wider mt-1 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                                    View Products <ArrowRight className="w-3 h-3" />
+                                    View Products →
                                 </div>
                             </div>
                         </Link>

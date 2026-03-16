@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { CheckCircle2 } from "lucide-react";
 import educationHero from "@/assets/Education of minimally invasive procedures for pain management.png";
 import sydneyWorkshop3 from "@/assets/Ultrasound-guided cryoanalgesia workshop Sydney_3.png.png";
 
@@ -41,7 +40,7 @@ const AboutSection = () => {
             <ul className="space-y-2">
               {focusPoints.map((point) => (
                 <li key={point} className="flex items-center gap-3 text-slate-600">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                   <span>{point}</span>
                 </li>
               ))}
@@ -66,7 +65,7 @@ const AboutSection = () => {
               { value: "1995", label: "Founded" },
               { value: "Australia", label: "Clinician network" },
             ].map((item) => (
-              <div key={item.label} className="rounded-2xl bg-gradient-to-br from-white to-slate-50 border border-slate-200/80 px-5 py-4 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
+              <div key={item.label} className="rounded-xl bg-gradient-to-br from-white to-slate-50 border border-slate-100 px-5 py-4 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
                 <div className="text-xl md:text-2xl font-bold text-slate-800">{item.value}</div>
                 <div className="text-[11px] uppercase tracking-[0.15em] text-slate-500 font-semibold">
                   {item.label}
@@ -84,7 +83,7 @@ const AboutSection = () => {
           viewport={{ once: true }}
           className="relative"
         >
-          <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-slate-200 shadow-2xl shadow-slate-300/40">
+          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-slate-100 shadow-xl">
             <img
               src={educationHero}
               alt="Interventional training session"
@@ -93,8 +92,8 @@ const AboutSection = () => {
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
           </div>
-          <div className="hidden md:block absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-xl rounded-2xl p-4 max-w-[240px] border border-slate-200/80 shadow-xl">
-            <div className="aspect-[4/3] rounded-xl overflow-hidden mb-3 border border-slate-100">
+          <div className="hidden md:block absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-xl rounded-xl p-4 max-w-[240px] border border-slate-100 shadow-lg">
+            <div className="aspect-[4/3] rounded-lg overflow-hidden mb-3 border border-slate-100">
               <img
                 src={sydneyWorkshop3}
                 alt="Workshop in session"

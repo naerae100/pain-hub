@@ -1,10 +1,9 @@
 import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import workshopHero from "@/assets/IPMA_Hands-On Clinical Workshop.png";
-import cryoHero from "@/assets/Cryo-S-Painless_1.jpg";
 import proceduresHero from "@/assets/Cryoanalgesia procedure in OR.png";
+import cryoProcedure from "@/assets/Cryoanalgesia_procedure.png";
 
 const slides = [
   {
@@ -20,14 +19,14 @@ const slides = [
   },
   {
     id: 2,
-    eyebrow: "Technology",
-    title: "CRYO-S Painless",
-    subtitle: "Precision cryoanalgesia with controlled temperature delivery for consistent outcomes.",
-    cta: "See the system",
-    ctaSecondary: "Request a demo",
-    href: "/technologies/cryotherapy",
-    secondaryHref: "/contact",
-    image: cryoHero,
+    eyebrow: "Procedures",
+    title: "Cryoanalgesia",
+    subtitle: "Targeted nerve modulation for durable pain relief using controlled low temperatures — a minimally invasive alternative.",
+    cta: "Learn more",
+    ctaSecondary: "Clinical evidence",
+    href: "/procedures/cryoanalgesia",
+    secondaryHref: "/resources",
+    image: cryoProcedure,
   },
   {
     id: 3,
@@ -159,7 +158,7 @@ const HeroSection = () => {
                     ].map((item) => (
                       <div
                         key={item.value}
-                        className="rounded-2xl border border-border bg-white/80 px-4 py-3"
+                        className="rounded-xl border border-slate-100 bg-white/80 px-4 py-3"
                       >
                         <div className="text-base font-semibold text-foreground">
                           {item.value}
@@ -181,14 +180,14 @@ const HeroSection = () => {
               className="nav-arrow"
               aria-label="Previous slide"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <span className="text-lg">‹</span>
             </button>
             <button
               onClick={nextSlide}
               className="nav-arrow"
               aria-label="Next slide"
             >
-              <ChevronRight className="w-5 h-5" />
+              <span className="text-lg">›</span>
             </button>
           </div>
         </div>

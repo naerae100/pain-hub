@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import cryoTech from "@/assets/Cryotherapy_technology.png";
@@ -12,28 +11,24 @@ const products = [
     description: "Precision cryoanalgesia systems",
     image: cryoTech,
     href: "/technologies/cryotherapy",
-    accent: "from-blue-500/20",
   },
   {
     title: "Laser Systems",
     description: "Disc decompression lasers",
     image: laserTech,
     href: "/technologies/laser-systems",
-    accent: "from-amber-500/20",
   },
   {
     title: "Balloon Decompression",
     description: "Epidural catheter systems",
     image: balloonTech,
     href: "/technologies/balloon-technology",
-    accent: "from-violet-500/20",
   },
   {
     title: "Orthobiologics",
     description: "PRP & regenerative tools",
     image: orthobiologicsTech,
     href: "/technologies/orthobiologics",
-    accent: "from-emerald-500/20",
   },
 ];
 
@@ -97,19 +92,18 @@ const ProductsSection = () => {
             key={product.title}
             to={product.href}
             variants={itemVariants}
-            whileHover={{ y: -6, transition: { duration: 0.3 } }}
-            className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-500"
+            whileHover={{ y: -4, transition: { duration: 0.3 } }}
+            className="group bg-white rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500"
           >
             {/* Image */}
-            <div className="aspect-square overflow-hidden relative">
+            <div className="aspect-square overflow-hidden relative bg-slate-50">
               <motion.img
                 src={product.image}
                 alt={product.title}
-                className="w-full h-full object-cover"
-                whileHover={{ scale: 1.08 }}
+                className="w-full h-full object-contain p-2"
+                whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.6 }}
               />
-              <div className={`absolute inset-0 bg-gradient-to-t ${product.accent} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
             </div>
 
             {/* Content */}
@@ -121,7 +115,7 @@ const ProductsSection = () => {
                 {product.description}
               </p>
               <span className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">
-                View details <ArrowRight className="w-3.5 h-3.5" />
+                View details →
               </span>
             </div>
           </MotionLink>

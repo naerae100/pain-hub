@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import workshopImage from "@/assets/Ultrasound-guided cryoanalgesia workshop Brisbane.png.png";
@@ -13,7 +12,6 @@ const features = [
     cta: "Explore workshops",
     image: workshopImage,
     href: "/clinical-education",
-    accent: "from-blue-600/20 to-indigo-600/10",
   },
   {
     id: 2,
@@ -22,7 +20,6 @@ const features = [
     cta: "View technologies",
     image: cryoDevice,
     href: "/technologies",
-    accent: "from-emerald-600/20 to-teal-600/10",
   },
   {
     id: 3,
@@ -31,7 +28,6 @@ const features = [
     cta: "View procedures",
     image: procedureHands,
     href: "/procedures",
-    accent: "from-violet-600/20 to-purple-600/10",
   },
 ];
 
@@ -62,21 +58,19 @@ const FeatureCards = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={cardVariants}
-            whileHover={{ y: -8, transition: { duration: 0.3 } }}
-            className="group relative bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl hover:shadow-primary/10 transition-all duration-500"
+            whileHover={{ y: -4, transition: { duration: 0.3 } }}
+            className="group relative bg-white rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500"
           >
-            {/* Image with gradient overlay */}
-            <div className="relative overflow-hidden aspect-[4/3]">
+            {/* Image */}
+            <div className="relative overflow-hidden aspect-[4/3] bg-slate-50">
               <motion.img
                 src={feature.image}
                 alt={feature.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 initial={{ scale: 1 }}
-                whileHover={{ scale: 1.08 }}
+                whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
               />
-              {/* Subtle gradient accent */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${feature.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
             </div>
 
             {/* Content */}
@@ -88,12 +82,12 @@ const FeatureCards = () => {
                 {feature.title}
               </h3>
               <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all duration-300">
-                {feature.cta} <ArrowRight className="w-4 h-4" />
+                {feature.cta} →
               </span>
             </div>
 
             {/* Bottom accent line */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-blue-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-blue-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
           </MotionLink>
         ))}
       </div>
@@ -102,4 +96,3 @@ const FeatureCards = () => {
 };
 
 export default FeatureCards;
-

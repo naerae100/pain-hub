@@ -1,394 +1,570 @@
-import { useState } from "react";
-import { Play, FileText, BookOpen, GraduationCap, ArrowRight, Download, HelpCircle, Microscope, Video, Presentation, ClipboardList, Snowflake, Circle, Droplets, Star, Filter } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import React, { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
-import { cn } from "@/lib/utils";
 import PageHero from "@/components/PageHero";
-import medicalTraining from "@/assets/medical-training.jpg";
+import imgResourcesHero from "@/assets/IPMA_Resources.png";
+import {
+    cryoPdfs, balloonPdfs, prpPdfs, plddPdfs,
+    cryoAnatomicalAreas, cryoLevelsOfEvidence, balloonCategoryNames,
+} from "@/data/evidence";
 
-// ── Thumbnail imports ──
-import imgRfaCervical from "@/assets/resource-rfa-cervical.png";
-import imgCryoSafety from "@/assets/resource-cryo-safety.png";
-import imgBalloonOutcomes from "@/assets/resource-balloon-outcomes.png";
-import imgOrthoEvidence from "@/assets/resource-ortho-evidence.png";
-import imgGenicularBlock from "@/assets/resource-genicular-block.png";
-import imgIntercostalCryo from "@/assets/resource-intercostal-cryo.png";
-import imgEpiduralProcedure from "@/assets/resource-epidural-procedure.png";
-import imgLaserPldd from "@/assets/resource-laser-pldd.png";
-import imgPrpProcedure from "@/assets/resource-prp-procedure.png";
-import imgWebinarPanel from "@/assets/resource-webinar-panel.png";
-import imgAnimationMoa from "@/assets/resource-animation-moa.png";
-import imgCryoDevice from "@/assets/cryo-device.jpg";
-import imgHeroSurgery from "@/assets/hero-surgery.jpg";
-import imgProcedureHands from "@/assets/procedure-hands.jpg";
-import imgTreatmentDiagram from "@/assets/treatment-diagram.png";
-
-// ── Pillar definitions ──
-const pillars = [
-    { id: "all", label: "All Resources", icon: Filter },
-    { id: "evidence", label: "Clinical Evidence", icon: BookOpen },
-    { id: "videos", label: "Procedural Videos", icon: Play },
-    { id: "animations", label: "Animations & MOA", icon: Video },
-    { id: "webinars", label: "Webinars & Expert Talks", icon: Presentation },
-    { id: "guides", label: "Clinical Guides", icon: ClipboardList },
-];
-
-// ── Featured bands ──
-const featuredBands = [
-    {
-        title: "Introduction to Cryoanalgesia",
-        description: "Foundations of cryoneurolysis technology, mechanisms of reversible nerve modulation, and clinical applications.",
-        tag: "FEATURED",
-        href: "/technologies/cryotherapy",
-        color: "from-blue-600 to-cyan-600",
-        icon: Snowflake,
-    },
-    {
-        title: "Understanding Balloon Decompression",
-        description: "Epidural balloon adhesiolysis, ZiNeu catheter technology, and patient selection pathways.",
-        tag: "FEATURED",
-        href: "/technologies/balloon-technology",
-        color: "from-amber-600 to-orange-600",
-        icon: Circle,
-    },
-    {
-        title: "Foundations of Orthobiologics",
-        description: "PRP, bone marrow concentrate, anticoagulant protocols, and regenerative medicine frameworks.",
-        tag: "FEATURED",
-        href: "/technologies/orthobiologics",
-        color: "from-rose-600 to-pink-600",
-        icon: Droplets,
-    },
-];
-
-// ── Resource items with thumbnail images ──
-const resourceItems = [
-    // Clinical Evidence
-    { id: 1, pillar: "evidence", tag: "ARTICLE", title: "The Role of RFA in Cervical Facet Pain", description: "Peer-reviewed evidence review on radiofrequency ablation outcomes in cervical facet-mediated pain.", time: "8 min read", date: "Added 2 weeks ago", link: "/education#studies", image: imgRfaCervical },
-    { id: 2, pillar: "evidence", tag: "STUDY", title: "Cryoneurolysis Safety Data Summary", description: "Comprehensive safety outcomes from multicentre cryoanalgesia studies.", time: "12 min read", date: "Recently added", link: "/education#studies", image: imgCryoSafety },
-    { id: 3, pillar: "evidence", tag: "EVIDENCE", title: "Balloon Decompression Outcome Studies", description: "Published outcome data on epidural balloon adhesiolysis for failed back surgery syndrome.", time: "10 min read", date: "Recently added", link: "/education#studies", image: imgBalloonOutcomes },
-    { id: 4, pillar: "evidence", tag: "REVIEW", title: "Orthobiologics in Degenerative Joint Disease", description: "Evidence summaries for PRP and BMAC in osteoarthritis and tendinopathy management.", time: "15 min read", date: "Recently added", link: "/education#studies", image: imgOrthoEvidence },
-
-    // Procedural Videos
-    { id: 5, pillar: "videos", tag: "VIDEO", title: "Ultrasound-Guided Genicular Nerve Block", description: "High-definition technique guide for genicular nerve cryoneurolysis under ultrasound.", time: "6 min", date: "Added 2 days ago", link: "/education#videos", image: imgGenicularBlock, featured: true },
-    { id: 6, pillar: "videos", tag: "VIDEO", title: "Cryoanalgesia: Intercostal Nerve Procedure", description: "Intraoperative cryoanalgesia technique for thoracic pain management.", time: "8 min", date: "Recently added", link: "/education#videos", image: imgIntercostalCryo },
-    { id: 7, pillar: "videos", tag: "VIDEO", title: "Balloon Decompression: Lumbar Epidural", description: "Fluoroscopy-guided ZiNeu catheter deployment for epidural adhesiolysis.", time: "12 min", date: "Recently added", link: "/education#videos", image: imgEpiduralProcedure },
-    { id: 8, pillar: "videos", tag: "VIDEO", title: "PRP Preparation & Knee Injection", description: "Point-of-care platelet-rich plasma preparation and ultrasound-guided intra-articular delivery.", time: "9 min", date: "Recently added", link: "/education#videos", image: imgPrpProcedure },
-    { id: 9, pillar: "videos", tag: "VIDEO", title: "Laser Disc Decompression (PLDD)", description: "Percutaneous laser disc decompression under fluoroscopic guidance.", time: "10 min", date: "Recently added", link: "/education#videos", image: imgLaserPldd },
-
-    // Animations & MOA
-    { id: 10, pillar: "animations", tag: "ANIMATION", title: "Balloon Inflation Mechanism", description: "Step-by-step animation showing ZiNeu balloon catheter inflation and adhesiolysis mechanics.", time: "3 min", date: "Recently added", link: "/education#videos", image: imgAnimationMoa },
-    { id: 11, pillar: "animations", tag: "ANIMATION", title: "Laser Disc Decompression: How It Works", description: "Animated overview of intradiscal laser energy delivery and volume reduction.", time: "4 min", date: "Recently added", link: "/education#videos", image: imgLaserPldd },
-    { id: 12, pillar: "animations", tag: "ANIMATION", title: "PRP & Biologics: Mechanism of Action", description: "Platelet degranulation, growth factor release, and tissue regeneration cascade.", time: "5 min", date: "Recently added", link: "/education#videos", image: imgPrpProcedure },
-    { id: 13, pillar: "animations", tag: "ANIMATION", title: "Cryoneurolysis: Wallerian Degeneration", description: "How controlled freezing induces reversible nerve degeneration while preserving neural structure.", time: "3 min", date: "Recently added", link: "/education#videos", image: imgCryoSafety },
-
-    // Webinars & Expert Talks
-    { id: 14, pillar: "webinars", tag: "WEBINAR", title: "Expert Panel: Cryotherapy in Modern Practice", description: "On-demand panel discussion with leading interventional pain specialists on cryoanalgesia.", time: "45 min", date: "Recently added", link: "/education#webinars", image: imgWebinarPanel },
-    { id: 15, pillar: "webinars", tag: "WEBINAR", title: "Grand Rounds: Complex Spine Cases", description: "Case-based discussion of challenging interventional spine pathology management.", time: "60 min", date: "Recently added", link: "/education#webinars", image: imgHeroSurgery },
-    { id: 16, pillar: "webinars", tag: "WEBINAR", title: "Biologics Masterclass: PRP to BMAC", description: "Expert talk on autologous biologic preparation, evidence, and clinical decision-making.", time: "50 min", date: "Recently added", link: "/education#webinars", image: imgOrthoEvidence },
-
-    // Clinical Guides & Downloads
-    { id: 17, pillar: "guides", tag: "PDF", title: "2024 Spasticity Management Protocol", description: "Clinical protocol for spasticity assessment and cryotherapy-based management pathways.", time: "12 pages", date: "Added 1 week ago", link: "/education#webinars", image: imgCryoDevice },
-    { id: 18, pillar: "guides", tag: "PDF", title: "Patient Selection Guide: Balloon Decompression", description: "Criteria and decision algorithms for identifying candidates for epidural balloon adhesiolysis.", time: "8 pages", date: "Recently added", link: "/resources", image: imgBalloonOutcomes },
-    { id: 19, pillar: "guides", tag: "PDF", title: "Procedural Checklist: Cryoanalgesia", description: "Step-by-step pre-procedure, intra-procedure, and post-procedure checklist for cryoneurolysis.", time: "4 pages", date: "Recently added", link: "/resources", image: imgProcedureHands },
-    { id: 20, pillar: "guides", tag: "GUIDE", title: "Treatment Algorithm: Spine Pain Pathway", description: "Evidence-based algorithm for interventional spine pain management from conservative to procedural.", time: "6 pages", date: "Recently added", link: "/resources", image: imgTreatmentDiagram },
-    { id: 21, pillar: "guides", tag: "GUIDE", title: "Post-Procedure Pathway: Orthobiologics", description: "Rehabilitation and follow-up protocols following PRP and BMAC injection procedures.", time: "5 pages", date: "Recently added", link: "/resources", image: imgOrthoEvidence },
-];
-
-const tagColors: Record<string, string> = {
-    VIDEO: "bg-blue-100 text-blue-700",
-    ARTICLE: "bg-emerald-100 text-emerald-700",
-    STUDY: "bg-emerald-100 text-emerald-700",
-    EVIDENCE: "bg-emerald-100 text-emerald-700",
-    REVIEW: "bg-emerald-100 text-emerald-700",
-    PDF: "bg-purple-100 text-purple-700",
-    GUIDE: "bg-purple-100 text-purple-700",
-    ANIMATION: "bg-violet-100 text-violet-700",
-    WEBINAR: "bg-amber-100 text-amber-700",
-    FEATURED: "bg-primary text-primary-foreground",
+/* ───────── helpers ───────── */
+const ytId = (url: string) => {
+    const m = url.match(/(?:youtu\.be\/|v=)([^#&?]{11})/);
+    return m ? m[1] : null;
 };
 
+/* ───────── video embed ───────── */
+const YtEmbed = ({ url, title }: { url: string; title: string }) => {
+    const id = ytId(url);
+    if (!id) return null;
+    return (
+        <div className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200">
+            <div className="relative aspect-video">
+                <iframe className="w-full h-full absolute inset-0"
+                    src={`https://www.youtube.com/embed/${id}`} title={title} frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen />
+            </div>
+            <div className="px-4 py-3 border-t border-gray-100">
+                <p className="text-[13px] font-semibold text-gray-800 leading-snug">{title}</p>
+            </div>
+        </div>
+    );
+};
+
+/* ───────── section divider ───────── */
+const SectionTitle = ({ title, subtitle, id }: { icon?: React.ElementType; title: string; subtitle?: string; id?: string }) => (
+    <div id={id} className="scroll-mt-28 mb-10">
+        <h2 className="text-xl lg:text-2xl font-bold text-gray-900 tracking-tight mb-2">{title}</h2>
+        {subtitle && <p className="text-[13px] text-gray-500 max-w-3xl">{subtitle}</p>}
+        <div className="h-px bg-gray-200 mt-5" />
+    </div>
+);
+
+/* ───────── collapsible ───────── */
+const Collapsible = ({ title, children, defaultOpen = true }: { title: string; children: React.ReactNode; defaultOpen?: boolean }) => {
+    const [open, setOpen] = useState(defaultOpen);
+    return (
+        <div className="border border-gray-200 rounded-xl overflow-hidden mb-4 bg-white">
+            <button onClick={() => setOpen(!open)}
+                className="w-full flex items-center justify-between px-5 py-3.5 hover:bg-gray-50/70 transition-colors text-left">
+                <span className="text-[14px] font-bold text-gray-800">{title}</span>
+                {open ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
+            </button>
+            {open && <div className="px-5 pb-5 border-t border-gray-100">{children}</div>}
+        </div>
+    );
+};
+
+/* ───────── pdf row ───────── */
+const PdfRow = ({ title, badge }: { title: string; badge?: string }) => (
+    <div className="flex items-center gap-3 px-4 py-2.5 hover:bg-blue-50/40 transition-colors group">
+        <span className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0" />
+        <span className="flex-1 text-[12.5px] text-gray-700 leading-snug line-clamp-2">{title}</span>
+        {badge && <span className="shrink-0 text-[10px] font-semibold text-gray-500 bg-gray-100 px-2 py-0.5 rounded whitespace-nowrap">{badge}</span>}
+        <span className="text-[11px] text-gray-300 group-hover:text-primary shrink-0 transition-colors">↓</span>
+    </div>
+);
+
+/* ───────── pdf library box (scrollable) ───────── */
+const PdfLibrary = ({
+    title,
+    subtitle,
+    children,
+    count,
+    total,
+    filters,
+}: {
+    title: string;
+    subtitle?: string;
+    children: React.ReactNode;
+    count: number;
+    total: number;
+    filters?: React.ReactNode;
+}) => (
+    <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm mt-5">
+        <div className="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
+            <div>
+                <h4 className="text-[15px] font-bold text-gray-900">{title}</h4>
+                {subtitle && <p className="text-[12px] text-gray-500 mt-0.5">{subtitle}</p>}
+            </div>
+            <span className="text-[11px] font-semibold text-primary bg-primary/5 px-2.5 py-1 rounded-md">
+                {count} / {total}
+            </span>
+        </div>
+        {filters && <div className="px-5 py-3 bg-gray-50/60 border-b border-gray-100">{filters}</div>}
+        <div className="max-h-[380px] overflow-y-auto divide-y divide-gray-50">
+            {children}
+        </div>
+    </div>
+);
+
+/* ───────── video tab system ───────── */
+const VideoSection = ({
+    tabs,
+    activeTab,
+    onTabChange,
+    children,
+}: {
+    tabs: { key: string; label: string; icon?: React.ElementType; color?: string }[];
+    activeTab: string;
+    onTabChange: (key: string) => void;
+    children: React.ReactNode;
+}) => (
+    <div>
+        <div className="flex flex-wrap gap-1.5 mb-7 bg-gray-100 p-1 rounded-lg w-fit">
+            {tabs.map(tab => (
+                <button key={tab.key} onClick={() => onTabChange(tab.key)}
+                    className={`px-4 py-2 rounded-md text-[12px] font-semibold transition-all ${
+                        activeTab === tab.key
+                            ? "bg-white text-gray-900 shadow-sm"
+                            : "text-gray-500 hover:text-gray-800"
+                    }`}>
+                    {tab.label}
+                </button>
+            ))}
+        </div>
+        {children}
+    </div>
+);
+
+/* ═══════════════════════════════════════════ */
+/*                   PAGE                     */
+/* ═══════════════════════════════════════════ */
+
+const videoTabs = [
+    { key: "cryo", label: "Cryoanalgesia" },
+    { key: "balloon", label: "Balloon Decompression" },
+    { key: "ortho", label: "Orthobiologics" },
+    { key: "laser", label: "Laser (PLDD)" },
+];
+
 const Resources = () => {
-    const [activePillar, setActivePillar] = useState("all");
+    // PDF filters
+    const [cryoArea, setCryoArea] = useState("All");
+    const [cryoLevel, setCryoLevel] = useState("All");
+    const filteredCryo = cryoPdfs.filter(p =>
+        (cryoArea === "All" || p.anatomicalArea === cryoArea) &&
+        (cryoLevel === "All" || p.levelOfEvidence === cryoLevel)
+    );
+    const [balloonCat, setBalloonCat] = useState("All");
+    const filteredBalloon = balloonCat === "All" ? balloonPdfs : balloonPdfs.filter(p => p.category === balloonCat);
 
-    const filteredItems = activePillar === "all"
-        ? resourceItems
-        : resourceItems.filter(item => item.pillar === activePillar);
-
-    const featuredVideo = resourceItems.find(item => item.featured);
+    // Video tabs
+    const [procTab, setProcTab] = useState("cryo");
+    const [animTab, setAnimTab] = useState("cryo");
+    const [webTab, setWebTab] = useState("cryo");
 
     return (
-        <div className="flex-1 flex flex-col bg-background">
-            {/* Hero Section */}
+        <div className="min-h-screen bg-gray-50 pt-20">
             <PageHero
-                image={medicalTraining}
                 title="Clinical Resources for Interventional Practice"
                 subtitle="IPMA provides clinicians with curated educational materials designed to support procedural understanding, clinical decision-making, and safe adoption."
-                breadcrumbs={[{ label: "Resources" }]}
+                image={imgResourcesHero}
             />
 
-            {/* Featured Bands */}
-            <section className="section-container py-20 lg:py-24">
-                <div className="mb-12">
-                    <div className="flex items-center gap-3 text-primary uppercase tracking-wider font-bold text-sm mb-4">
-                        <span className="w-8 h-[2px] bg-primary"></span>
-                        Featured Resources
-                    </div>
-                    <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground">
-                        Essential reading for interventional clinicians
-                    </h2>
-                </div>
-                <div className="grid md:grid-cols-3 gap-6">
-                    {featuredBands.map((band) => (
-                        <Link
-                            key={band.title}
-                            to={band.href}
-                            className="group relative overflow-hidden rounded-2xl p-8 text-white transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-                        >
-                            <div className={`absolute inset-0 bg-gradient-to-br ${band.color}`} />
-                            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors" />
-                            <div className="relative z-10">
-                                <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-6">
-                                    <band.icon className="w-6 h-6" />
-                                </div>
-                                <div className="inline-block px-3 py-1 rounded-full bg-white/20 text-xs font-bold uppercase tracking-wider mb-4">
-                                    {band.tag}
-                                </div>
-                                <h3 className="text-xl font-bold mb-3">{band.title}</h3>
-                                <p className="text-white/80 text-sm leading-relaxed mb-5">{band.description}</p>
-                                <div className="flex items-center gap-2 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">
-                                    Explore <ArrowRight className="w-4 h-4" />
-                                </div>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
-            </section>
-
-            {/* Featured Procedure of the Month */}
-            {featuredVideo && (
-                <section className="bg-secondary/30 border-y border-border py-16">
-                    <div className="section-container">
-                        <div className="flex items-center gap-3 mb-8">
-                            <Star className="w-6 h-6 text-amber-500 fill-amber-500" />
-                            <h2 className="text-2xl font-display font-bold text-foreground">Featured Procedure of the Month</h2>
-                        </div>
-                        <Link to={featuredVideo.link} className="group flex flex-col md:flex-row gap-0 bg-background border border-border/50 rounded-2xl overflow-hidden hover:shadow-lg transition-all">
-                            <div className="md:w-1/3 aspect-video md:aspect-auto relative overflow-hidden">
-                                <img src={featuredVideo.image} alt={featuredVideo.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                                    <div className="w-16 h-16 bg-primary/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                                        <Play className="w-7 h-7 text-white fill-white ml-1" />
-                                    </div>
-                                </div>
-                                <div className="absolute top-4 left-4">
-                                    <div className="px-3 py-1.5 rounded-lg bg-amber-100 text-amber-700 text-xs font-bold">⭐ FEATURED</div>
-                                </div>
-                            </div>
-                            <div className="p-8 md:w-2/3 flex flex-col justify-center">
-                                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{featuredVideo.title}</h3>
-                                <p className="text-muted-foreground leading-relaxed mb-4">{featuredVideo.description}</p>
-                                <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                                    <span>{featuredVideo.time}</span>
-                                    <span>•</span>
-                                    <span>{featuredVideo.date}</span>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                </section>
-            )}
-
-            {/* 5 Pillars Filter + Content Grid */}
-            <section className="section-container py-20 lg:py-24">
-                {/* Pillar Filter Bar */}
-                <div className="sticky top-16 z-30 bg-background/95 backdrop-blur-sm py-4 mb-12 border-b border-border/50">
-                    {/* Mobile: Dropdown */}
-                    <div className="md:hidden">
-                        <select
-                            value={activePillar}
-                            onChange={(e) => setActivePillar(e.target.value)}
-                            className="w-full h-12 px-4 rounded-xl border border-input bg-background/50 text-base focus:ring-2 focus:ring-primary focus:border-primary outline-none"
-                        >
-                            {pillars.map((p) => (
-                                <option key={p.id} value={p.id}>{p.label}</option>
-                            ))}
-                        </select>
-                    </div>
-
-                    {/* Desktop: Buttons */}
-                    <div className="hidden md:flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
-                        {pillars.map((p) => (
-                            <button
-                                key={p.id}
-                                onClick={() => setActivePillar(p.id)}
-                                className={cn(
-                                    "flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 whitespace-nowrap border",
-                                    activePillar === p.id
-                                        ? "bg-primary text-primary-foreground border-primary shadow-md"
-                                        : "bg-card text-muted-foreground border-border hover:border-primary hover:text-primary"
-                                )}
-                            >
-                                <p.icon className="w-4 h-4" />
-                                {p.label}
-                            </button>
+            {/* STICKY NAV */}
+            <nav className="sticky top-20 z-30 bg-white border-b border-gray-200 shadow-sm">
+                <div className="container mx-auto px-4 overflow-x-auto">
+                    <div className="flex gap-1 py-2.5 min-w-max">
+                        {[
+                            { label: "Clinical Evidence", href: "#evidence" },
+                            { label: "Procedural Videos", href: "#videos" },
+                            { label: "Animations", href: "#animations" },
+                            { label: "Webinars", href: "#webinars" },
+                            { label: "Frameworks", href: "#frameworks" },
+                        ].map(n => (
+                            <a key={n.label} href={n.href}
+                                className="px-4 py-2 rounded-lg text-[13px] font-bold text-gray-500 hover:text-primary hover:bg-primary/5 transition-all whitespace-nowrap">
+                                {n.label}
+                            </a>
                         ))}
                     </div>
                 </div>
+            </nav>
 
-                {/* Pillar Description */}
-                <div className="mb-10">
-                    {activePillar === "evidence" && (
-                        <p className="text-lg text-muted-foreground">Key publications, evidence summaries, safety data, and outcome studies supporting interventional techniques.</p>
-                    )}
-                    {activePillar === "videos" && (
-                        <p className="text-lg text-muted-foreground">High-definition procedural footage across cryoanalgesia, balloon decompression, orthobiologics, and laser procedures.</p>
-                    )}
-                    {activePillar === "animations" && (
-                        <p className="text-lg text-muted-foreground">Mechanism of action animations for balloon, laser, and biologic technologies — ideal for clinician education and patient explanation.</p>
-                    )}
-                    {activePillar === "webinars" && (
-                        <p className="text-lg text-muted-foreground">On-demand webinars, expert panels, and case discussions with leading interventional pain specialists.</p>
-                    )}
-                    {activePillar === "guides" && (
-                        <p className="text-lg text-muted-foreground">Patient selection guides, procedural checklists, treatment algorithms, and post-procedure pathways.</p>
-                    )}
-                </div>
-
-                {/* Resource Cards Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredItems.map((item) => (
-                        <Link
-                            key={item.id}
-                            to={item.link}
-                            className="group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
-                        >
-                            <div className="aspect-video relative overflow-hidden">
-                                <img
-                                    src={item.image}
-                                    alt={item.title}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                />
-                                {(item.pillar === "videos" || item.pillar === "animations") && (
-                                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                                        <div className="w-12 h-12 bg-primary/80 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                                            <Play className="w-5 h-5 text-white fill-white ml-0.5" />
-                                        </div>
-                                    </div>
-                                )}
-                                {item.pillar === "guides" && (
-                                    <div className="absolute inset-0 bg-black/10" />
-                                )}
-                                <div className="absolute top-3 left-3">
-                                    <div className={`px-2.5 py-1 rounded-lg text-xs font-bold ${tagColors[item.tag] || "bg-gray-100 text-gray-700"}`}>
-                                        {item.tag}
-                                    </div>
-                                </div>
-                                {item.featured && (
-                                    <div className="absolute top-3 right-3">
-                                        <Star className="w-5 h-5 text-amber-500 fill-amber-500" />
-                                    </div>
-                                )}
-                            </div>
-                            <div className="p-6">
-                                <div className="flex items-center gap-2 text-xs font-bold text-muted-foreground mb-2 uppercase tracking-wide">
-                                    <span>{item.date}</span>
-                                    <span>•</span>
-                                    <span>{item.time}</span>
-                                </div>
-                                <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-tight mb-2">
-                                    {item.title}
-                                </h3>
-                                <p className="text-sm text-muted-foreground leading-relaxed mb-3">{item.description}</p>
-                                <div className="flex items-center text-sm font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                                    {item.pillar === "guides" ? "Download" : item.pillar === "videos" || item.pillar === "animations" ? "Watch Now" : item.pillar === "webinars" ? "Watch Now" : "Read Now"}
-                                    {item.pillar === "guides" ? <Download className="w-4 h-4 ml-1" /> : <ArrowRight className="w-4 h-4 ml-1" />}
-                                </div>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
-
-                {filteredItems.length === 0 && (
-                    <div className="text-center py-20 text-muted-foreground">
-                        <p className="text-lg">No resources in this category yet.</p>
-                        <button onClick={() => setActivePillar("all")} className="mt-4 text-primary font-bold hover:underline">View all resources</button>
+            {/* FEATURED PROCEDURE OF THE MONTH */}
+            <section className="py-14 bg-white border-b border-gray-200">
+                <div className="container mx-auto px-4 max-w-3xl text-center">
+                    <p className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-2">Featured Resource</p>
+                    <h2 className="text-lg font-bold text-gray-900 mb-1">Procedure of the Month</h2>
+                    <p className="text-[12px] text-gray-500 mb-6">Updated monthly — essential procedural techniques.</p>
+                    <div className="rounded-xl overflow-hidden border border-gray-200 shadow-md">
+                        <div className="aspect-video relative">
+                            <iframe className="w-full h-full absolute inset-0"
+                                src={`https://www.youtube.com/embed/${ytId("https://youtu.be/NTVysvvxH1A")}`}
+                                title="Procedure of the Month" frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen />
+                        </div>
                     </div>
-                )}
+                </div>
             </section>
 
-            {/* Explore the Library — Existing cards preserved */}
-            <section className="section-container py-20 lg:py-24 border-t border-border">
-                <div className="flex items-center justify-between mb-12">
-                    <h2 className="text-3xl font-display font-bold text-foreground">Explore the Library</h2>
-                </div>
+            {/* ═══════════ CLINICAL EVIDENCE ═══════════ */}
+            <section id="evidence" className="py-20">
+                <div className="container mx-auto px-4 max-w-5xl">
+                    <SectionTitle title="Clinical Evidence"
+                        subtitle="Key publications and studies supporting interventional pain practice." />
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {/* FAQ */}
-                    <Link to="/faq" className="bg-white border border-border p-8 rounded-[2.5rem] hover:shadow-xl hover:shadow-cyan-500/5 transition-all duration-300 group cursor-pointer relative overflow-hidden">
-                        <div className="w-14 h-14 bg-cyan-50 rounded-2xl flex items-center justify-center text-cyan-600 mb-8 group-hover:bg-cyan-600 group-hover:text-white transition-colors duration-300">
-                            <HelpCircle className="w-7 h-7" />
-                        </div>
-                        <h3 className="text-2xl font-display font-bold text-blue-900 group-hover:text-cyan-700 transition-colors mb-4">FAQ's</h3>
-                        <p className="text-muted-foreground leading-relaxed mb-8 min-h-[3rem]">Common questions about procedures, recovery times, and expected outcomes.</p>
-                        <div className="flex items-center text-sm font-bold text-cyan-600 group-hover:translate-x-2 transition-transform">
-                            View Questions <ArrowRight className="w-4 h-4 ml-2" />
-                        </div>
-                    </Link>
+                    {/* ── CRYO ── */}
+                    <div className="mb-16">
+                        <h3 className="text-[16px] font-bold text-gray-900 mb-5">
+                            Cryoanalgesia & Cryoneurolysis
+                        </h3>
 
-                    {/* Procedure Videos */}
-                    <Link to="/education#videos" className="bg-white border border-border p-8 rounded-[2.5rem] hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group cursor-pointer relative overflow-hidden">
-                        <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-8 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
-                            <Play className="w-7 h-7 fill-current" />
-                        </div>
-                        <h3 className="text-2xl font-display font-bold text-blue-900 group-hover:text-blue-700 transition-colors mb-4">Procedure Video Library</h3>
-                        <p className="text-muted-foreground leading-relaxed mb-8 min-h-[3rem]">High-definition technique guides, live case demonstrations, and anatomy reviews.</p>
-                        <div className="flex items-center text-sm font-bold text-primary group-hover:translate-x-2 transition-transform">
-                            Explore Videos <ArrowRight className="w-4 h-4 ml-2" />
-                        </div>
-                    </Link>
-
-                    {/* Research */}
-                    <Link to="/education#studies" className="bg-white border border-border p-8 rounded-[2.5rem] hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 group cursor-pointer relative overflow-hidden">
-                        <div className="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
-                            <BookOpen className="w-7 h-7" />
-                        </div>
-                        <h3 className="text-2xl font-display font-bold text-blue-900 group-hover:text-emerald-700 transition-colors mb-4">Research & Evidence</h3>
-                        <p className="text-muted-foreground leading-relaxed mb-8 min-h-[3rem]">Curated lists of peer-reviewed articles supporting interventional techniques.</p>
-                        <div className="flex items-center text-sm font-bold text-emerald-600 group-hover:translate-x-2 transition-transform">
-                            Browse Research <ArrowRight className="w-4 h-4 ml-2" />
-                        </div>
-                    </Link>
-
-                    {/* Educational Materials */}
-                    <Link to="/education#webinars" className="bg-white border border-border p-8 rounded-[2.5rem] hover:shadow-xl hover:shadow-amber-500/5 transition-all duration-300 group cursor-pointer relative overflow-hidden">
-                        <div className="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-600 mb-8 group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300">
-                            <BookOpen className="w-7 h-7" />
-                        </div>
-                        <h3 className="text-2xl font-display font-bold text-blue-900 group-hover:text-amber-700 transition-colors mb-4">Educational Materials</h3>
-                        <p className="text-muted-foreground leading-relaxed mb-8 min-h-[3rem]">Comprehensive resources for the Cryo Workshop: Procedural videos, clinical studies, and webinar recordings.</p>
-                        <div className="flex items-center text-sm font-bold text-amber-600 group-hover:translate-x-2 transition-transform">
-                            View Materials <ArrowRight className="w-4 h-4 ml-2" />
-                        </div>
-                    </Link>
-
-                    {/* Workshops CTA */}
-                    <div className="bg-gradient-to-br from-blue-900 to-blue-800 text-white p-8 rounded-[2.5rem] hover:shadow-xl hover:shadow-blue-900/20 transition-all duration-300 group cursor-pointer relative overflow-hidden md:col-span-2 lg:col-span-4 shadow-2xl">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-white/10 transition-colors" />
-                        <div className="flex flex-col md:flex-row gap-8 items-start md:items-center relative z-10">
-                            <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-white shrink-0">
-                                <GraduationCap className="w-7 h-7" />
+                        <Collapsible title="Executive Summary — 155 Studies (April 2026)">
+                            <p className="text-[13px] text-gray-700 leading-relaxed mt-3 mb-4">
+                                The current clinical literature demonstrates a predominantly favorable evidence base for targeted cryoanalgesia and cryoneurolysis.
+                            </p>
+                            <div className="grid sm:grid-cols-3 gap-2.5 mb-4">
+                                <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-center">
+                                    <span className="block text-xl font-bold text-primary">123 <span className="text-xs font-semibold">(79%)</span></span>
+                                    <p className="text-[11px] font-semibold text-gray-600 mt-0.5">Positive outcomes</p>
+                                </div>
+                                <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-center">
+                                    <span className="block text-xl font-bold text-amber-600">24 <span className="text-xs font-semibold">(15%)</span></span>
+                                    <p className="text-[11px] font-semibold text-gray-600 mt-0.5">Mixed / neutral</p>
+                                </div>
+                                <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 text-center">
+                                    <span className="block text-xl font-bold text-red-600">8 <span className="text-xs font-semibold">(5%)</span></span>
+                                    <p className="text-[11px] font-semibold text-gray-600 mt-0.5">Unfavorable / cautionary</p>
+                                </div>
                             </div>
-                            <div className="flex-grow">
-                                <h3 className="text-2xl font-display font-bold text-white mb-2">Workshops & Masterclasses</h3>
-                                <p className="text-white/80 leading-relaxed max-w-xl text-lg">
-                                    Join our hands-on training sessions. Next event: <span className="text-white font-bold decoration-2 underline decoration-white/30 underline-offset-4">Advanced Cryo Techniques (March 15th)</span>
+                            <p className="text-[12px] text-gray-600 border-l-2 border-primary pl-3 italic leading-relaxed">
+                                Cryoanalgesia is widely supported across multiple clinical settings, though results vary depending on anatomical target, patient selection, and clinical context.
+                            </p>
+                        </Collapsible>
+
+                        <Collapsible title="Anatomical Focus and Clinical Outcomes" defaultOpen={false}>
+                            <div className="mt-4 space-y-4">
+                                <div className="grid md:grid-cols-2 gap-3">
+                                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                                        <p className="font-bold text-[13px] text-gray-900 mb-0.5">Thoracic & Intercostal <span className="text-primary font-semibold text-[12px]">(76 studies)</span></p>
+                                        <p className="text-[12px] text-gray-600 mb-1.5">60 Pro · 9 Mixed · 7 Con</p>
+                                        <p className="text-[12px] text-gray-500 leading-relaxed">Largest evidence body. Contains most cautionary reports — technique and patient selection critical.</p>
+                                    </div>
+                                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                                        <p className="font-bold text-[13px] text-gray-900 mb-0.5">Knee & Orthopaedic <span className="text-primary font-semibold text-[12px]">(29 studies)</span></p>
+                                        <p className="text-[12px] text-gray-600 mb-1.5">25 Pro · 4 Mixed · 0 Con</p>
+                                        <p className="text-[12px] text-gray-500 leading-relaxed">Highly consistent results. Strongly supports cryoanalgesia in TKA perioperative pain management.</p>
+                                    </div>
+                                </div>
+                                <table className="w-full text-[12px] border-collapse bg-white rounded-lg overflow-hidden border border-gray-200">
+                                    <thead><tr className="bg-gray-50">
+                                        <th className="py-2 px-3 text-left font-bold text-gray-800">Area</th>
+                                        <th className="py-2 px-3 text-center font-bold text-gray-800">Studies</th>
+                                        <th className="py-2 px-3 text-center font-semibold text-green-700">Pro</th>
+                                        <th className="py-2 px-3 text-center font-semibold text-amber-700">Mix</th>
+                                        <th className="py-2 px-3 text-center font-semibold text-red-700">Con</th>
+                                    </tr></thead>
+                                    <tbody>{[
+                                        ["Low back / lumbar spine", 10, 9, 1, 0],
+                                        ["Upper extremity / spasticity", 8, 8, 0, 0],
+                                        ["Head / face", 6, 3, 3, 0],
+                                        ["Phantom limb / amputation", 5, 4, 1, 0],
+                                    ].map(([a,s,p,m,c], i) => (
+                                        <tr key={i} className="border-t border-gray-100">
+                                            <td className="py-2 px-3 font-medium text-gray-700">{a}</td>
+                                            <td className="py-2 px-3 text-center text-gray-600">{s}</td>
+                                            <td className="py-2 px-3 text-center font-semibold text-green-700">{p}</td>
+                                            <td className="py-2 px-3 text-center text-amber-600">{m}</td>
+                                            <td className="py-2 px-3 text-center text-red-600">{c}</td>
+                                        </tr>
+                                    ))}</tbody>
+                                </table>
+                            </div>
+                        </Collapsible>
+
+                        <Collapsible title="Quality and Levels of Evidence" defaultOpen={false}>
+                            <div className="mt-3 space-y-2 text-[13px] text-gray-700 leading-relaxed">
+                                <p><span className="font-bold text-gray-800">High-Level (I & II):</span> 33 studies — 25 Pro, 4 Mixed, 4 Con. Randomized trials, prospective studies, systematic reviews.</p>
+                                <p><span className="font-bold text-gray-800">Observational (III & IV):</span> 82 studies — 79 Pro, 1 Mixed, 2 Con. Real-world clinical practice.</p>
+                                <p><span className="font-bold text-gray-800">Expert Commentary (V):</span> 37 publications — 19 Pro, 16 Mixed, 2 Con. Protocol optimization and emerging indications.</p>
+                            </div>
+                        </Collapsible>
+
+                        <Collapsible title="Overall Interpretation" defaultOpen={false}>
+                            <div className="mt-3 bg-primary/5 border border-primary/20 rounded-lg p-4">
+                                <p className="text-[13px] text-gray-800 leading-relaxed">
+                                    Across 155 peer-reviewed studies, cryoanalgesia is <span className="font-bold">widely studied</span>, <span className="font-bold">predominantly positive</span>, and <span className="font-bold">supported by expanding higher-quality evidence</span>. However, outcomes depend strongly on clinical indication, nerve selection, technique, and patient selection.
                                 </p>
                             </div>
-                            <Link to="/clinical-education" className="flex items-center text-sm font-bold text-white group-hover:translate-x-2 transition-transform shrink-0 bg-white/20 hover:bg-white/30 px-6 py-3 rounded-full backdrop-blur-sm">
-                                Register Now <ArrowRight className="w-4 h-4 ml-2" />
+                        </Collapsible>
+
+                        <PdfLibrary title="Evidence Library — Cryoanalgesia"
+                            count={filteredCryo.length} total={cryoPdfs.length}
+                            filters={
+                                <div className="grid sm:grid-cols-2 gap-3">
+                                    <div>
+                                        <label className="text-[11px] font-extrabold text-gray-500 uppercase tracking-wider mb-1.5 block">Anatomical Area</label>
+                                        <select value={cryoArea} onChange={e => setCryoArea(e.target.value)}
+                                            className="w-full h-9 px-3 rounded-lg border border-gray-300 bg-white text-[13px] text-gray-900 font-medium">
+                                            <option value="All">All Areas</option>
+                                            {cryoAnatomicalAreas.map(a => <option key={a} value={a}>{a}</option>)}
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label className="text-[11px] font-extrabold text-gray-500 uppercase tracking-wider mb-1.5 block">Level of Evidence</label>
+                                        <select value={cryoLevel} onChange={e => setCryoLevel(e.target.value)}
+                                            className="w-full h-9 px-3 rounded-lg border border-gray-300 bg-white text-[13px] text-gray-900 font-medium">
+                                            <option value="All">All Levels</option>
+                                            {cryoLevelsOfEvidence.map(l => <option key={l} value={l}>{l}</option>)}
+                                        </select>
+                                    </div>
+                                </div>
+                            }>
+                            {filteredCryo.map((p, i) => <PdfRow key={i} title={p.title} badge={`${p.anatomicalArea} · ${p.levelOfEvidence}`} />)}
+                            {filteredCryo.length === 0 && <p className="text-center py-12 text-gray-400 text-[13px]">No documents match filters.</p>}
+                        </PdfLibrary>
+                    </div>
+
+                    {/* ── BALLOON ── */}
+                    <div className="mb-16">
+                        <h3 className="text-[16px] font-bold text-gray-900 mb-5">
+                            Epidural Adhesiolysis & Balloon Technologies
+                        </h3>
+
+                        <Collapsible title="Clinical Evidence Summary">
+                            <div className="mt-4 space-y-4 text-[14px] text-gray-800 leading-relaxed">
+                                <p>Percutaneous epidural adhesiolysis addresses epidural fibrosis by mechanically disrupting scar tissue and restoring access to the affected nerve root.</p>
+                                <div className="grid md:grid-cols-2 gap-4">
+                                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                                        <p className="font-extrabold text-gray-900 mb-2">Randomized Controlled Trials</p>
+                                        <ul className="text-[13px] text-gray-700 space-y-1.5">
+                                            <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" /> Significant reductions in pain scores</li>
+                                            <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" /> Improved functional outcomes</li>
+                                            <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" /> Sustained benefit when repeated</li>
+                                        </ul>
+                                    </div>
+                                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                                        <p className="font-extrabold text-gray-900 mb-2">10-Year Long-Term Follow-up</p>
+                                        <p className="text-[13px] text-gray-700">A landmark 10-year RCT follow-up demonstrated sustained clinical benefit — the <span className="font-bold">longest follow-up evidence</span> available for a minimally invasive intervention in this population.</p>
+                                    </div>
+                                </div>
+                                <p><span className="font-extrabold">Balloon catheter systems</span> enhance mechanical disruption. RCTs show greater improvements in pain and function vs conventional adhesiolysis with favorable safety.</p>
+                            </div>
+                        </Collapsible>
+
+                        <PdfLibrary title="Evidence Library — Epidural Adhesiolysis"
+                            count={filteredBalloon.length} total={balloonPdfs.length}
+                            filters={
+                                <div>
+                                    <label className="text-[11px] font-extrabold text-gray-500 uppercase tracking-wider mb-1.5 block">Category</label>
+                                    <select value={balloonCat} onChange={e => setBalloonCat(e.target.value)}
+                                        className="w-full md:w-auto min-w-[260px] h-9 px-3 rounded-lg border border-gray-300 bg-white text-[13px] text-gray-900 font-medium">
+                                        <option value="All">All Categories</option>
+                                        {balloonCategoryNames.map(c => <option key={c} value={c}>{c}</option>)}
+                                    </select>
+                                </div>
+                            }>
+                            {filteredBalloon.map((p, i) => <PdfRow key={i} title={p.title} badge={p.category} />)}
+                            {filteredBalloon.length === 0 && <p className="text-center py-12 text-gray-400 text-[13px]">No documents match filter.</p>}
+                        </PdfLibrary>
+                    </div>
+
+                    {/* ── PRP ── */}
+                    <div className="mb-16">
+                        <h3 className="text-[16px] font-bold text-gray-900 mb-5">
+                            Platelet-based & Bone Marrow–derived Biologics
+                        </h3>
+
+                        <Collapsible title="PRP for Knee Osteoarthritis — Current Evidence">
+                            <div className="mt-4 space-y-4 text-[14px] text-gray-800 leading-relaxed">
+                                <p>Current literature supports PRP as a treatment option for mild to moderate knee osteoarthritis. PRP performs better than hyaluronic acid and offers longer-lasting benefit than corticosteroid injection in many studies.</p>
+                                <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                                    <p className="font-extrabold text-gray-900 mb-2">Key Insight: Dose Dependency</p>
+                                    <p className="text-[13px] text-gray-700">PRP is not one uniform treatment. Outcomes depend on <span className="font-bold">total platelet dose</span> — positive studies deliver ≥5 billion platelets. Some authors propose 10 billion as a threshold for durable benefit.</p>
+                                </div>
+                                <p className="text-[13px] text-gray-700 font-bold italic border-l-4 border-primary pl-4">
+                                    Current evidence supports symptom relief and functional improvement. Claims of reliable cartilage regeneration are not yet clinically proven. Patients should be counselled with realistic expectations.
+                                </p>
+                            </div>
+                        </Collapsible>
+
+                        <Collapsible title="Key Literature Synthesis" defaultOpen={false}>
+                            <div className="mt-4 space-y-2">
+                                {[
+                                    { t: "Bansal et al., 2021", d: "~10.45B platelets, 90% recovery, zero leukocytes. Significantly better WOMAC at 12 months vs hyaluronic acid." },
+                                    { t: "Patel et al., 2024 (Triple-blind RCT)", d: "2.82B vs 5.65B platelets — higher dose showed significantly better outcomes at 6 months." },
+                                    { t: "Berrigan et al., 2024 (Systematic Review)", d: "Positive studies at 6 months used mean ~5.5B platelets vs ~2.3B in negative studies." },
+                                    { t: "ESSKA-ORBIT Consensus, 2024", d: "Sufficient evidence supports PRP for KL 1-3 knee OA. Clinically better than HA, longer than corticosteroids." },
+                                    { t: "ESSKA-ICRS RAND/UCLA, 2024", d: "PRP appropriate for ≤80yrs with KL 0-III after failure of conservative treatment; not as first-line." },
+                                    { t: "De Matthaeis et al., 2024", d: "High-dose neutrophil-depleted PRP: ~70% OMERACT-OARSI responder rates at 3–12 months." },
+                                ].map((r, i) => (
+                                    <div key={i} className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-3">
+                                        <p className="text-[13px] font-extrabold text-gray-900">{r.t}</p>
+                                        <p className="text-[12px] text-gray-700 mt-1">{r.d}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </Collapsible>
+
+                        <PdfLibrary title="Evidence Library — PRP & BMAC"
+                            count={prpPdfs.length} total={prpPdfs.length}>
+                            {prpPdfs.map((p, i) => <PdfRow key={i} title={p.title} />)}
+                        </PdfLibrary>
+                    </div>
+
+                    {/* ── PLDD ── */}
+                    <div className="mb-8">
+                        <h3 className="text-[16px] font-bold text-gray-900 mb-5">
+                            Percutaneous Laser Disc Decompression (PLDD)
+                        </h3>
+
+                        <Collapsible title="Evidence Summary">
+                            <div className="mt-4 grid md:grid-cols-2 gap-4">
+                                <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                                    <p className="font-extrabold text-gray-900 mb-2">Randomised Controlled Trials</p>
+                                    <ul className="text-[13px] text-gray-700 space-y-1.5">
+                                        <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" /> Similar improvements in pain vs microdiscectomy</li>
+                                        <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" /> Higher reoperation rates with PLDD</li>
+                                        <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" /> ~50% of PLDD patients avoided open surgery</li>
+                                    </ul>
+                                </div>
+                                <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+                                    <p className="font-extrabold text-gray-900 mb-2">Systematic Reviews</p>
+                                    <ul className="text-[13px] text-gray-700 space-y-1.5">
+                                        <li>• <span className="font-bold">70–80%</span> success in well-selected patients</li>
+                                        <li>• Most favorable in contained lumbar disc herniations</li>
+                                        <li>• Complication rates generally low</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </Collapsible>
+
+                        <Collapsible title="Key Literature" defaultOpen={false}>
+                            <div className="mt-4 space-y-2">
+                                {[
+                                    { t: "Brouwer et al., 2015/2017 (Landmark RCT)", d: "Non-inferiority trial. Surgery avoided in 48% of PLDD patients. 2-year resurgery: 52% PLDD vs 21% surgery." },
+                                    { t: "Singh et al., 2009/2013 (Pain Physician)", d: "Level II-2 evidence for short- and long-term relief in contained disc herniation." },
+                                    { t: "Seddighi et al., 2025 (World Neurosurgery RCT)", d: "84 patients: similar long-term outcomes but higher resurgery with PLDD." },
+                                    { t: "Gazzeri et al., 2022 (Pain Therapy)", d: "1470nm diode laser: 85.2% improvement by MacNab criteria at 6 months." },
+                                    { t: "Radoš et al., 2023 (Systematic Review)", d: "PLDD safe and effective; further prospective RCTs needed." },
+                                ].map((r, i) => (
+                                    <div key={i} className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-3">
+                                        <p className="text-[13px] font-extrabold text-gray-900">{r.t}</p>
+                                        <p className="text-[12px] text-gray-700 mt-1">{r.d}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </Collapsible>
+
+                        <PdfLibrary title="Evidence Library — PLDD"
+                            count={plddPdfs.length} total={plddPdfs.length}>
+                            {plddPdfs.map((p, i) => <PdfRow key={i} title={p.title} />)}
+                        </PdfLibrary>
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══════════ PROCEDURAL VIDEOS ═══════════ */}
+            <section id="videos" className="py-20 bg-white border-y border-gray-200">
+                <div className="container mx-auto px-4 max-w-5xl">
+                    <SectionTitle title="Procedural Videos"
+                        subtitle="Image-guided interventional techniques captured in clinical and cadaveric settings." />
+                    <VideoSection tabs={videoTabs} activeTab={procTab} onTabChange={setProcTab}>
+                        {procTab === "cryo" && (
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <YtEmbed url="https://youtu.be/NTVysvvxH1A" title="Cryoanalgesia Procedure — Elfekky" />
+                                <YtEmbed url="https://youtu.be/DnX0npQEdCM" title="Cryoanalgesia SIJ — Cadaver Hands-on" />
+                            </div>
+                        )}
+                        {procTab === "balloon" && (
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <YtEmbed url="https://youtu.be/aHqcbCPtY5o" title="ZiNeu Procedure" />
+                            </div>
+                        )}
+                        {procTab === "ortho" && (
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <YtEmbed url="https://youtu.be/6yRR5Swe4Eg" title="Dr Baumgartner — Shoulder Procedure" />
+                            </div>
+                        )}
+                        {procTab === "laser" && (
+                            <p className="text-[14px] text-gray-500 py-8">Procedural videos for PLDD coming soon.</p>
+                        )}
+                    </VideoSection>
+                </div>
+            </section>
+
+            {/* ═══════════ ANIMATIONS ═══════════ */}
+            <section id="animations" className="py-20 bg-gray-50">
+                <div className="container mx-auto px-4 max-w-5xl">
+                    <SectionTitle title="Animations & Mechanism of Action"
+                        subtitle="Supports clinician education and patient communication." />
+                    <VideoSection tabs={videoTabs} activeTab={animTab} onTabChange={setAnimTab}>
+                        {animTab === "cryo" && (
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <YtEmbed url="https://youtu.be/ozs8EcJLqGc" title="Cryoanalgesia — Overview Animation" />
+                            </div>
+                        )}
+                        {animTab === "balloon" && (
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <YtEmbed url="https://youtu.be/5JN9ktthQsc" title="Balloon Decompression — MOA Animation" />
+                            </div>
+                        )}
+                        {animTab === "ortho" && (
+                            <p className="text-[14px] text-gray-500 py-8">Biologics MOA animation coming soon.</p>
+                        )}
+                        {animTab === "laser" && (
+                            <p className="text-[14px] text-gray-500 py-8">Laser MOA animation coming soon.</p>
+                        )}
+                    </VideoSection>
+                </div>
+            </section>
+
+            {/* ═══════════ WEBINARS ═══════════ */}
+            <section id="webinars" className="py-20 bg-white border-y border-gray-200">
+                <div className="container mx-auto px-4 max-w-5xl">
+                    <SectionTitle title="Webinars & Expert Talks"
+                        subtitle="On-demand education from leading interventional pain specialists." />
+                    <VideoSection tabs={[videoTabs[0], videoTabs[1]]} activeTab={webTab} onTabChange={setWebTab}>
+                        {webTab === "cryo" && (
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <YtEmbed url="https://youtu.be/8TwRFLcKPSU" title="Cryoanalgesia Webinar — Elfekky" />
+                                <YtEmbed url="https://youtu.be/gCyOg4VZo5o" title="Foot & Ankle Cryoanalgesia — Dr Brian Allen" />
+                                <YtEmbed url="https://youtu.be/swu2p9QWiLg" title="Expert Panel — Dr Schwartz & Motov" />
+                                <YtEmbed url="https://youtu.be/UugEHfh1Z_E" title="Cryoanalgesia Talk — Patel" />
+                            </div>
+                        )}
+                        {webTab === "balloon" && (
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <YtEmbed url="https://youtu.be/V8Ttj4u8bm0" title="ZiNeu Presentation" />
+                                <YtEmbed url="https://youtu.be/-mbFyDGhx3E" title="Epimed Adhesiolysis Webinar" />
+                            </div>
+                        )}
+                    </VideoSection>
+                </div>
+            </section>
+
+            {/* ═══════════ FRAMEWORKS ═══════════ */}
+            <section id="frameworks" className="py-20 bg-gray-50">
+                <div className="container mx-auto px-4 max-w-5xl">
+                    <SectionTitle title="Treatment Frameworks" />
+                    <div className="max-w-lg">
+                        <YtEmbed url="https://youtu.be/-PynquMfd0M" title="Cryo vs RFA — Dr Filipovski" />
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══════════ EXPLORE ═══════════ */}
+            <section className="py-20 bg-white border-t border-gray-200">
+                <div className="container mx-auto px-4 max-w-5xl">
+                    <SectionTitle title="Explore the Library" />
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                        {[
+                            { label: "FAQ's", to: "/faq" },
+                            { label: "Video Library", to: "/video-library" },
+                            { label: "Research", to: "/research" },
+                            { label: "Education", to: "/educational-materials" },
+                        ].map(link => (
+                            <Link key={link.label} to={link.to}
+                                className="group flex items-center justify-center gap-2 p-5 bg-gray-50 border border-gray-100 rounded-xl hover:border-primary hover:shadow-sm transition-all text-center">
+                                <span className="text-[13px] font-bold text-gray-800 group-hover:text-primary transition-colors">{link.label}</span>
+                                <span className="text-primary text-sm group-hover:translate-x-0.5 transition-transform">→</span>
                             </Link>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>

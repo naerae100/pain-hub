@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import cryoProcedure from "@/assets/Cryoanalgesia_procedure.png";
@@ -79,28 +78,18 @@ const TreatmentsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: index * 0.1, ease: [0.4, 0, 0.2, 1] }}
               viewport={{ once: true, margin: "-50px" }}
-              whileHover={{ y: -6, transition: { duration: 0.3 } }}
-              className="group bg-white rounded-2xl md:rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-500"
+              whileHover={{ y: -4, transition: { duration: 0.3 } }}
+              className="group bg-white rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500"
             >
-              {/* Image Container */}
-              <div className="aspect-[4/5] overflow-hidden relative bg-slate-50 flex items-center justify-center p-0">
-                {/* Blurred Background to fill empty space elegantly */}
-                <div
-                  className="absolute inset-0 opacity-40 blur-2xl scale-110 bg-center bg-cover transition-transform duration-700 group-hover:scale-125"
-                  style={{ backgroundImage: `url(${treatment.image})` }}
-                />
-
-                {/* Foreground Image */}
+              {/* Image Container — object-contain so full image is always visible */}
+              <div className="aspect-[16/10] overflow-hidden relative bg-slate-50">
                 <motion.img
                   src={treatment.image}
                   alt={treatment.title}
-                  className="w-full h-full object-contain p-4 md:p-6 drop-shadow-2xl relative z-10"
-                  whileHover={{ scale: 1.05 }}
+                  className="w-full h-full object-contain"
+                  whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.6 }}
                 />
-
-                {/* Gradient Overlay for aesthetic */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-transparent z-20 pointer-events-none" />
               </div>
 
               {/* Content */}
@@ -116,7 +105,7 @@ const TreatmentsSection = () => {
                   {treatment.description}
                 </p>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all duration-300">
-                  Read more <ArrowRight className="w-4 h-4" />
+                  Read more →
                 </span>
               </div>
             </MotionLink>

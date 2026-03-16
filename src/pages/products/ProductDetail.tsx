@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { categories, products, ProductSection } from "@/data/products";
-import { ArrowRight, ChevronLeft, Check, Award, Zap, CheckCircle2 } from "lucide-react";
+import { ChevronLeft, Check } from "lucide-react";
 import NotFound from "@/pages/NotFound";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -19,10 +19,7 @@ const FeaturesGrid = ({ features }: { features: any[] }) => (
             {features.map((feature, idx) => {
                 const Icon = feature.icon;
                 return (
-                    <div key={idx} className="flex flex-col gap-5 p-8 rounded-[2rem] bg-secondary/30 border border-border/50 hover:bg-card hover:shadow-xl transition-all duration-300 group">
-                        <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary mb-2 group-hover:scale-110 transition-transform">
-                            {Icon ? <Icon className="w-7 h-7" /> : <Zap className="w-7 h-7" />}
-                        </div>
+                    <div key={idx} className="flex flex-col gap-5 p-8 rounded-xl bg-secondary/30 border border-slate-100 hover:bg-card hover:shadow-xl transition-all duration-300 group">
                         <h3 className="text-xl font-bold font-display text-foreground">{feature.title}</h3>
                         <p className="text-muted-foreground leading-relaxed text-sm md:text-base">{feature.description}</p>
                     </div>
@@ -43,11 +40,11 @@ const TextImageSection = ({ section }: { section: Extract<ProductSection, { type
             </div>
 
             {/* Image Side */}
-            <div className={cn("w-full relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-white lg:col-span-6 aspect-[4/3] lg:aspect-auto lg:h-[600px]", section.align === 'right' ? "lg:order-2" : "lg:order-1")}>
+            <div className={cn("w-full relative rounded-2xl overflow-hidden shadow-2xl bg-slate-50 lg:col-span-6 aspect-[4/3] lg:aspect-auto lg:h-[600px]", section.align === 'right' ? "lg:order-2" : "lg:order-1")}>
                 <img
                     src={section.image}
                     alt={section.imageAlt || section.title}
-                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-700"
                 />
                 {/* Gradient overlay for text readability if needed, though clean is better */}
             </div>
@@ -67,15 +64,15 @@ const ContentListSection = ({ section }: { section: Extract<ProductSection, { ty
 
             <div className={cn("flex flex-col lg:grid lg:grid-cols-12 gap-12 lg:gap-20 items-start", section.align === 'left' ? "" : "")}>
                 {/* Image Side */}
-                <div className={cn("w-full relative rounded-[2.5rem] overflow-hidden shadow-2xl lg:col-span-5 h-[500px] lg:sticky lg:top-32", section.align === 'left' ? "lg:order-1" : "lg:order-2")}>
-                    <img src={section.image} alt={section.imageAlt || "Section Image"} className="w-full h-full object-cover" />
+                <div className={cn("w-full relative rounded-2xl overflow-hidden shadow-2xl lg:col-span-5 h-[500px] lg:sticky lg:top-32 bg-slate-50", section.align === 'left' ? "lg:order-1" : "lg:order-2")}>
+                    <img src={section.image} alt={section.imageAlt || "Section Image"} className="w-full h-full object-contain" />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent mix-blend-multiply opacity-40" />
                 </div>
 
                 {/* Content Side */}
                 <div className={cn("w-full flex flex-col gap-12 lg:col-span-7", section.align === 'left' ? "lg:order-2" : "lg:order-1")}>
                     {section.items.map((item, idx) => (
-                        <div key={idx} className="bg-background rounded-[2rem] p-8 md:p-10 shadow-sm border border-border/50 hover:shadow-md transition-shadow">
+                        <div key={idx} className="bg-background rounded-xl p-8 md:p-10 shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
                             <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
                                 <div className="w-2 h-8 bg-primary rounded-full" />
                                 {item.title}
@@ -111,16 +108,13 @@ const FullTextSection = ({ section }: { section: Extract<ProductSection, { type:
 
 const ExperienceBadgeSection = ({ section }: { section: Extract<ProductSection, { type: 'experience-badge' }> }) => (
     <section className="section-container py-24 md:py-32">
-        <div className="relative rounded-[3rem] overflow-hidden bg-foreground text-background">
+        <div className="relative rounded-2xl overflow-hidden bg-foreground text-background">
             <div className="absolute inset-0">
                 <img src={section.image} alt="Background" className="w-full h-full object-cover opacity-20" />
             </div>
             <div className="relative z-10 p-12 md:p-24 grid lg:grid-cols-2 gap-16 items-center">
                 <div>
                     <div className="flex items-center gap-4 mb-8">
-                        <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center text-primary-foreground">
-                            <Award className="w-8 h-8" />
-                        </div>
                         <span className="text-primary font-bold tracking-widest uppercase">Trusted Excellence</span>
                     </div>
                     <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">{section.title}</h2>
