@@ -1,20 +1,27 @@
 import { motion } from "framer-motion";
+import { Activity, Layers, Dna } from "lucide-react";
 
 const areas = [
     {
         title: "Pain Medicine",
         description: "Interventional techniques for acute and chronic pain, including cryoanalgesia, nerve blocks, and neuromodulation.",
-        color: "bg-blue-500",
+        color: "text-blue-500",
+        bg: "bg-blue-500/10",
+        icon: Activity,
     },
     {
         title: "Spine",
         description: "Minimally invasive spine procedures — epidural balloon decompression, PLDD, and facet denervation.",
-        color: "bg-violet-500",
+        color: "text-violet-500",
+        bg: "bg-violet-500/10",
+        icon: Layers,
     },
     {
         title: "Orthopaedics",
         description: "Orthobiologic therapies, PRP, and regenerative techniques for musculoskeletal repair and joint preservation.",
-        color: "bg-emerald-500",
+        color: "text-emerald-500",
+        bg: "bg-emerald-500/10",
+        icon: Dna,
     },
 ];
 
@@ -51,8 +58,10 @@ const ClinicalAreasSection = () => {
                         viewport={{ once: true, margin: "-50px" }}
                         className="group bg-white rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500 p-6 md:p-8"
                     >
-                        <div className="flex items-center gap-2 mb-3">
-                            <span className={`w-2 h-2 rounded-full ${area.color}`} />
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className={`w-10 h-10 rounded-xl ${area.bg} flex items-center justify-center`}>
+                                <area.icon className={`w-5 h-5 ${area.color}`} />
+                            </div>
                             <span className="text-xs font-bold uppercase tracking-wider text-slate-500">{area.title}</span>
                         </div>
                         <h3 className="font-display text-xl md:text-2xl font-bold text-slate-800 mb-3">

@@ -34,7 +34,8 @@ export interface Workshop {
   eligibility: string[];
 }
 
-import workshopHero from "@/assets/hero-surgery.jpg"; // Reusing existing asset for now
+import newWorkshopImage from "@/assets/newworkshop.webp";
+import oldWorkshopImage from "@/assets/oldworkshop.webp";
 
 export const workshops: Workshop[] = [
   {
@@ -45,7 +46,7 @@ export const workshops: Workshop[] = [
     status: "OPEN",
     date: "Saturday, 27 September 2025",
     location: "Brisbane, QLD",
-    image: workshopHero,
+    image: newWorkshopImage,
     price: "$2,200 (inc GST)",
     cpdPoints: "Eligible for ANZCA and FPM CPD Program (Category 2)",
     description: [
@@ -153,7 +154,7 @@ export const workshops: Workshop[] = [
     status: "CLOSED",
     date: "13-14 June 2024",
     location: "Macquarie University, NSW",
-    image: workshopHero,
+    image: oldWorkshopImage,
     price: "-",
     description: ["Past event."],
     learningObjectives: [],

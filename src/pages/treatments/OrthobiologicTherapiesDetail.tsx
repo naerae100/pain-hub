@@ -470,10 +470,30 @@ const OrthobiologicTherapiesDetail = () => {
                                 </div>
                             ))}
                         </div>
-                        <p className="text-muted-foreground leading-relaxed mb-4">
-                            In knee osteoarthritis and selected musculoskeletal conditions, higher platelet doses have been associated with improved structural and symptomatic outcomes in moderate disease cohorts.
+                        <p className="text-muted-foreground leading-relaxed mb-8">
+                            In knee osteoarthritis and selected musculoskeletal conditions, higher platelet doses have been associated with improved structural and symptomatic outcomes in moderate disease cohorts. Current evidence supports symptom relief and functional improvement, though claims of reliable cartilage regeneration are not yet clinically proven. Patients should be counselled with realistic expectations.
                         </p>
-                        <p className="text-muted-foreground leading-relaxed italic">
+
+                        <div className="bg-primary/5 border border-primary/20 rounded-3xl p-8 lg:p-10 mb-8">
+                            <h3 className="text-2xl font-display font-bold text-foreground mb-6">Key Literature Synthesis</h3>
+                            <div className="grid sm:grid-cols-2 gap-4">
+                                {[
+                                    { t: "Bansal et al., 2021", d: "~10.45B platelets, 90% recovery, zero leukocytes. Significantly better WOMAC at 12 months vs hyaluronic acid." },
+                                    { t: "Patel et al., 2024 (Triple-blind RCT)", d: "2.82B vs 5.65B platelets — higher dose showed significantly better outcomes at 6 months." },
+                                    { t: "Berrigan et al., 2024 (Systematic Review)", d: "Positive studies at 6 months used mean ~5.5B platelets vs ~2.3B in negative studies." },
+                                    { t: "ESSKA-ORBIT Consensus, 2024", d: "Sufficient evidence supports PRP for KL 1-3 knee OA. Clinically better than HA, longer than corticosteroids." },
+                                    { t: "ESSKA-ICRS RAND/UCLA, 2024", d: "PRP appropriate for ≤80yrs with KL 0-III after failure of conservative treatment; not as first-line." },
+                                    { t: "De Matthaeis et al., 2024", d: "High-dose neutrophil-depleted PRP: ~70% OMERACT-OARSI responder rates at 3–12 months." },
+                                ].map((r, i) => (
+                                    <div key={i} className="bg-background border border-border rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition-shadow">
+                                        <p className="text-sm font-bold text-foreground mb-1">{r.t}</p>
+                                        <p className="text-xs text-muted-foreground leading-relaxed">{r.d}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <p className="text-center text-muted-foreground leading-relaxed italic">
                             IPMA supports ongoing appraisal of emerging regenerative literature.
                         </p>
                     </div>

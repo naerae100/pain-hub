@@ -1,4 +1,4 @@
-import { ArrowUp } from "lucide-react";
+import { Linkedin, Youtube, PhoneCall, Mail, MapPin, ArrowUp, Info } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ipmaLogo from "@/assets/ipma-logo.webp";
@@ -24,6 +24,23 @@ const Footer = () => {
 
   return (
     <footer className="bg-blue-950 pt-20 pb-10 border-t border-blue-900">
+      {/* Disclaimer */}
+      <div className="section-container mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex items-start gap-4 p-6 rounded-2xl bg-blue-900/50 border border-blue-800 text-blue-200"
+        >
+          <Info className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+          <p className="text-sm leading-relaxed opacity-90">
+            Disclosures and important safety information. This website is intended for healthcare professionals only.
+            All products and procedures are subject to regulatory requirements.
+          </p>
+        </motion.div>
+      </div>
+
       <div className="section-container">
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-20 mb-20">
@@ -47,11 +64,11 @@ const Footer = () => {
               techniques, and tools. Empowering clinicians to make a difference.
             </p>
 
-            {/* Social Links simplified */}
+            {/* Social Links */}
             <div className="flex gap-4">
               {[
-                { label: "LinkedIn", href: "#", text: "in" },
-                { label: "YouTube", href: "#", text: "YT" },
+                { label: "LinkedIn", href: "#", icon: Linkedin },
+                { label: "YouTube", href: "#", icon: Youtube },
               ].map((social) => (
                 <motion.a
                   key={social.label}
@@ -61,7 +78,7 @@ const Footer = () => {
                   className="w-12 h-12 rounded-full bg-blue-900/50 border border-blue-800 flex items-center justify-center text-blue-300 hover:text-white hover:bg-primary hover:border-primary transition-all duration-300 font-bold"
                   aria-label={social.label}
                 >
-                  {social.text}
+                  <social.icon className="w-5 h-5" />
                 </motion.a>
               ))}
             </div>
@@ -91,7 +108,7 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Contact simplified */}
+          {/* Contact */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -101,27 +118,33 @@ const Footer = () => {
             <h3 className="font-display text-lg font-bold text-white mb-8 tracking-wide">
               Contact
             </h3>
-            <ul className="space-y-6">
+            <ul className="space-y-5">
               <li>
                 <a
                   href="tel:+61493519620"
-                  className="flex flex-col gap-1 text-blue-300 hover:text-white transition-colors duration-200"
+                  className="flex items-center gap-4 text-blue-300 hover:text-white transition-colors duration-200 group"
                 >
-                  <span className="text-[10px] uppercase font-bold tracking-widest opacity-50">Phone</span>
+                  <div className="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center shrink-0 border border-blue-800 group-hover:border-primary transition-colors">
+                    <PhoneCall className="w-4 h-4 text-primary" />
+                  </div>
                   <span className="text-lg font-medium">+61 493 519 620</span>
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:contact@ipmaaustralia.com.au"
-                  className="flex flex-col gap-1 text-blue-300 hover:text-white transition-colors duration-200 break-all"
+                  className="flex items-center gap-4 text-blue-300 hover:text-white transition-colors duration-200 group break-all"
                 >
-                  <span className="text-[10px] uppercase font-bold tracking-widest opacity-50">Email</span>
+                  <div className="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center shrink-0 border border-blue-800 group-hover:border-primary transition-colors">
+                    <Mail className="w-4 h-4 text-primary" />
+                  </div>
                   <span className="text-lg font-medium">contact@ipmaaustralia.com.au</span>
                 </a>
               </li>
-              <li className="flex flex-col gap-1 text-blue-300">
-                <span className="text-[10px] uppercase font-bold tracking-widest opacity-50">Location</span>
+              <li className="flex items-center gap-4 text-blue-300">
+                <div className="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center shrink-0 border border-blue-800">
+                  <MapPin className="w-4 h-4 text-primary" />
+                </div>
                 <span className="text-lg font-medium">Sydney, Australia</span>
               </li>
             </ul>
@@ -163,10 +186,6 @@ const Footer = () => {
             </motion.button>
           </div>
         </div>
-        <p className="text-blue-400/40 text-[10px] mt-12 text-center leading-relaxed">
-          Disclosures and important safety information. This website is intended for healthcare professionals only.
-          All products and procedures are subject to regulatory requirements.
-        </p>
       </div>
     </footer>
   );

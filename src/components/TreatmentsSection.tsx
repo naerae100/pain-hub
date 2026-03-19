@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Snowflake, Minimize2, Zap, Dna } from "lucide-react";
 import cryoProcedure from "@/assets/Cryoanalgesia_procedure.png";
 import balloonProcedure from "@/assets/Balloon decompression_procedure.png";
 import laserProcedure from "@/assets/Percutaneous Laser Disc Decompression_procedure.png";
@@ -12,7 +13,9 @@ const treatments = [
     description: "Targeted nerve freezing for acute and chronic pain with reversible, non-destructive nerve modulation.",
     image: cryoProcedure,
     href: "/procedures/cryoanalgesia",
-    color: "bg-blue-500",
+    color: "text-blue-500",
+    bg: "bg-blue-500/10",
+    icon: Snowflake,
   },
   {
     category: "Procedure",
@@ -20,7 +23,9 @@ const treatments = [
     description: "Catheter-based decompression and adhesiolysis for lumbar stenosis and epidural adhesions.",
     image: balloonProcedure,
     href: "/procedures/epidural-balloon-decompression",
-    color: "bg-emerald-500",
+    color: "text-emerald-500",
+    bg: "bg-emerald-500/10",
+    icon: Minimize2,
   },
   {
     category: "Procedure",
@@ -28,7 +33,9 @@ const treatments = [
     description: "Precision laser energy to reduce intradiscal pressure in contained disc herniations.",
     image: laserProcedure,
     href: "/procedures/pldd",
-    color: "bg-violet-500",
+    color: "text-violet-500",
+    bg: "bg-violet-500/10",
+    icon: Zap,
   },
   {
     category: "Procedure",
@@ -36,7 +43,9 @@ const treatments = [
     description: "PRP and bone marrow-based treatments to support tissue healing and musculoskeletal repair.",
     image: orthobiologicProcedure,
     href: "/procedures/orthobiologic-therapies",
-    color: "bg-amber-500",
+    color: "text-amber-500",
+    bg: "bg-amber-500/10",
+    icon: Dna,
   },
 ];
 
@@ -94,8 +103,10 @@ const TreatmentsSection = () => {
 
               {/* Content */}
               <div className="p-5 md:p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className={`w-2 h-2 rounded-full ${treatment.color}`} />
+                <div className="flex items-center gap-2.5 mb-3">
+                  <div className={`w-8 h-8 rounded-full ${treatment.bg} flex items-center justify-center`}>
+                    <treatment.icon className={`w-4 h-4 ${treatment.color}`} />
+                  </div>
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-500">{treatment.category}</span>
                 </div>
                 <h3 className="font-display text-xl md:text-2xl font-bold text-slate-800 mb-3 group-hover:text-primary transition-colors duration-300">

@@ -1,6 +1,6 @@
 import { useParams, Navigate } from "react-router-dom";
 import { treatments } from "@/data/treatments";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Linkedin, Play, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const TreatmentDetail = () => {
@@ -177,7 +177,7 @@ const TreatmentDetail = () => {
                                         <img src={video.thumbnail} alt={video.title} className="w-full h-full object-contain bg-black group-hover:scale-105 transition-transform duration-700" />
                                         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
                                             <div className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/50 group-hover:scale-110 transition-transform">
-                                                <span className="text-white text-3xl ml-1">▶</span>
+                                                <Play className="w-8 h-8 text-white fill-white ml-1" />
                                             </div>
                                         </div>
                                         <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
@@ -209,8 +209,8 @@ const TreatmentDetail = () => {
                                                     {article.authors} • <span className="italic">{article.reference}</span>
                                                 </div>
                                             </div>
-                                            <Button variant="ghost" className="shrink-0 text-primary hover:text-primary/80 hover:bg-primary/5">
-                                                Read Abstract →
+                                            <Button variant="ghost" className="shrink-0 text-primary hover:text-primary/80 hover:bg-primary/5 gap-2">
+                                                Read Abstract <ExternalLink className="w-4 h-4" />
                                             </Button>
                                         </div>
                                     </div>
@@ -234,7 +234,7 @@ const TreatmentDetail = () => {
                                                 <span className="text-sm font-bold text-gray-900">{post.author}</span>
                                                 <span className="text-xs text-gray-500">{post.role} • {post.time}</span>
                                             </div>
-                                            <span className="text-[#0077b5] text-xs font-bold ml-auto">in</span>
+                                            <Linkedin className="w-5 h-5 text-[#0077b5] ml-auto" />
                                         </div>
                                         <p className="text-sm text-gray-700 mb-4 line-clamp-3 leading-relaxed">
                                             {post.content}
@@ -243,7 +243,7 @@ const TreatmentDetail = () => {
                                             <img src={post.image} alt="Post Content" className="w-full h-full object-cover opacity-80" />
                                             <div className="absolute inset-0 flex items-center justify-center">
                                                 <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/40 group-hover:scale-110 transition-transform">
-                                                    <span className="text-white text-xl">▶</span>
+                                                    <Play className="w-5 h-5 text-white fill-white ml-0.5" />
                                                 </div>
                                             </div>
                                             <div className="absolute bottom-4 left-4 right-4">

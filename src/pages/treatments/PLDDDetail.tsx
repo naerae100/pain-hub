@@ -368,8 +368,33 @@ const PLDDDetail = () => {
                                 </div>
                             ))}
                         </div>
-                        <p className="text-muted-foreground leading-relaxed italic">
-                            As with all intradiscal therapies, outcomes depend heavily on proper patient selection, imaging correlation, and technical precision.
+                        <div className="bg-primary/5 border border-primary/20 rounded-3xl p-8 lg:p-10 mb-8 mt-12">
+                            <h3 className="text-2xl font-display font-bold text-foreground mb-4">Expanded Clinical Evidence Summary</h3>
+                            <p className="text-muted-foreground leading-relaxed mb-8">
+                                PLDD stands as one of the most studied minimally invasive intradiscal procedures, supported by over 30 years of clinical data.
+                            </p>
+                            <div className="grid md:grid-cols-2 gap-8">
+                                <div className="bg-background border border-border rounded-2xl p-6 shadow-sm">
+                                    <h4 className="font-bold text-foreground mb-4 flex items-center gap-2">
+                                        <Activity className="w-5 h-5 text-primary" /> Equivalent to Microdiscectomy
+                                    </h4>
+                                    <p className="text-sm text-muted-foreground leading-relaxed">
+                                        A landmark non-inferiority RCT (Brouwer et al.) demonstrated that PLDD achieves comparable clinical outcomes to surgical microdiscectomy at 1-year and 2-year follow-up for contained disc herniations, while offering a faster return to work.
+                                    </p>
+                                </div>
+                                <div className="bg-background border border-border rounded-2xl p-6 shadow-sm">
+                                    <h4 className="font-bold text-foreground mb-4 flex items-center gap-2">
+                                        <TrendingUp className="w-5 h-5 text-green-500" /> High Success Rates
+                                    </h4>
+                                    <p className="text-sm text-muted-foreground leading-relaxed">
+                                        Large observational cohorts (some exceeding 1,000 patients) report success rates of 75-89% when strict inclusion criteria are applied (contained herniation, intact annulus).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p className="text-muted-foreground leading-relaxed italic border-l-4 border-primary pl-4 py-2">
+                            Careful patient selection is the most significant predictor of success. PLDD is not indicated for extruded or sequestered fragments. As with all intradiscal therapies, outcomes depend heavily on proper patient selection, imaging correlation, and technical precision.
                         </p>
                     </div>
                 </div>

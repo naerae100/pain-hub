@@ -34,9 +34,7 @@ import PLDDDetail from "./pages/treatments/PLDDDetail";
 
 import Resources from "./pages/Resources";
 import FAQ from "./pages/FAQ";
-import VideoLibrary from "./pages/VideoLibrary";
-import Research from "./pages/Research";
-import EducationalMaterials from "./pages/EducationalMaterials";
+
 
 const queryClient = new QueryClient();
 
@@ -83,9 +81,7 @@ const App = () => (
                   <Route path="/checkout" element={<Checkout />} />
                   <Route path="/resources" element={<Resources />} />
                   <Route path="/faq" element={<FAQ />} />
-                  <Route path="/videos" element={<VideoLibrary />} />
-                  <Route path="/research" element={<Research />} />
-                  <Route path="/education" element={<EducationalMaterials />} />
+
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/*" element={<WpContentPage />} />
                 </Routes>

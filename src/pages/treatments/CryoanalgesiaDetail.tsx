@@ -6,6 +6,7 @@ import {
     CircleDot, Info, HelpCircle, ExternalLink, Layers
 } from "lucide-react";
 import PageHero from "@/components/PageHero";
+import { researchData } from "@/data/research";
 
 // Images
 import heroImg from "@/assets/Cryoanalgesia of the genicular nerves using ultrasound guidance.png";
@@ -465,6 +466,150 @@ const CryoanalgesiaDetail = () => {
                         <p className="text-muted-foreground leading-relaxed">
                             Contraindications and risk considerations are reviewed during formal training and outlined within procedural guidelines.
                         </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Clinical Evidence */}
+            <section className="py-20 lg:py-24 bg-background border-t border-border">
+                <div className="section-container">
+                    <div className="max-w-5xl mx-auto">
+                        <div className="text-center mb-16">
+                            <span className="pill mb-6">Evidence base</span>
+                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
+                                Clinical Evidence Summary
+                            </h2>
+                            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                                The current clinical literature demonstrates a predominantly favorable evidence base for targeted cryoanalgesia and cryoneurolysis.
+                            </p>
+                        </div>
+
+                        {/* Executive Summary Stats */}
+                        <div className="grid sm:grid-cols-3 gap-6 mb-12">
+                            <div className="bg-green-50/50 border border-green-100 rounded-3xl p-8 text-center shadow-sm">
+                                <span className="block text-5xl font-display font-bold text-green-600 mb-2">123</span>
+                                <span className="block text-sm font-bold text-green-700 uppercase tracking-widest mb-2">Positive Outcomes</span>
+                                <span className="text-sm font-semibold text-green-600/70">79% of studies</span>
+                            </div>
+                            <div className="bg-amber-50/50 border border-amber-100 rounded-3xl p-8 text-center shadow-sm">
+                                <span className="block text-5xl font-display font-bold text-amber-500 mb-2">24</span>
+                                <span className="block text-sm font-bold text-amber-600 uppercase tracking-widest mb-2">Mixed / Neutral</span>
+                                <span className="text-sm font-semibold text-amber-500/70">15% of studies</span>
+                            </div>
+                            <div className="bg-red-50/50 border border-red-100 rounded-3xl p-8 text-center shadow-sm">
+                                <span className="block text-5xl font-display font-bold text-red-500 mb-2">8</span>
+                                <span className="block text-sm font-bold text-red-600 uppercase tracking-widest mb-2">Unfavorable</span>
+                                <span className="text-sm font-semibold text-red-500/70">5% of studies</span>
+                            </div>
+                        </div>
+
+                        {/* Detailed Breakdown */}
+                        <div className="bg-card border border-border rounded-3xl p-8 lg:p-12 shadow-sm mb-12">
+                            <h3 className="text-2xl font-display font-bold text-foreground mb-8">Anatomical Focus and Outcomes</h3>
+                            <div className="grid md:grid-cols-2 gap-8 mb-10">
+                                <div>
+                                    <h4 className="text-lg font-bold text-foreground mb-3 flex items-center justify-between">
+                                        Thoracic & Intercostal 
+                                        <span className="text-sm font-medium px-3 py-1 bg-primary/10 text-primary rounded-full">76 studies</span>
+                                    </h4>
+                                    <p className="text-primary font-semibold mb-3">60 Pro · 9 Mixed · 7 Con</p>
+                                    <p className="text-muted-foreground leading-relaxed text-sm">
+                                        Largest evidence body. Contains most cautionary reports — technique and patient selection critical.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 className="text-lg font-bold text-foreground mb-3 flex items-center justify-between">
+                                        Knee & Orthopaedic
+                                        <span className="text-sm font-medium px-3 py-1 bg-primary/10 text-primary rounded-full">29 studies</span>
+                                    </h4>
+                                    <p className="text-primary font-semibold mb-3">25 Pro · 4 Mixed · 0 Con</p>
+                                    <p className="text-muted-foreground leading-relaxed text-sm">
+                                        Highly consistent results. Strongly supports cryoanalgesia in TKA perioperative pain management.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Table */}
+                            <div className="overflow-x-auto">
+                                <table className="w-full text-sm text-left border-collapse">
+                                    <thead>
+                                        <tr className="border-b-2 border-primary/20 bg-secondary/30">
+                                            <th className="py-4 px-5 font-bold text-foreground rounded-tl-xl">Additional Areas</th>
+                                            <th className="py-4 px-5 font-bold text-foreground text-center">Studies</th>
+                                            <th className="py-4 px-5 font-semibold text-green-600 text-center">Pro</th>
+                                            <th className="py-4 px-5 font-semibold text-amber-500 text-center">Mixed</th>
+                                            <th className="py-4 px-5 font-semibold text-red-500 text-center rounded-tr-xl">Con</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-border">
+                                        {[
+                                            ["Low back / lumbar spine", 10, 9, 1, 0],
+                                            ["Upper extremity / spasticity", 8, 8, 0, 0],
+                                            ["Head / face", 6, 3, 3, 0],
+                                            ["Phantom limb / amputation", 5, 4, 1, 0],
+                                        ].map(([a,s,p,m,c], i) => (
+                                            <tr key={i} className="hover:bg-secondary/10 transition-colors">
+                                                <td className="py-4 px-5 font-medium text-foreground">{a}</td>
+                                                <td className="py-4 px-5 text-center text-muted-foreground">{s}</td>
+                                                <td className="py-4 px-5 text-center font-semibold text-green-600">{p}</td>
+                                                <td className="py-4 px-5 text-center font-semibold text-amber-500">{m}</td>
+                                                <td className="py-4 px-5 text-center font-semibold text-red-500">{c}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        {/* Quality of Evidence & Interpretation */}
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <div className="bg-secondary/30 rounded-3xl p-8 border border-border">
+                                <h3 className="text-xl font-display font-bold text-foreground mb-6">Quality of Evidence</h3>
+                                <ul className="space-y-4">
+                                    <li className="flex items-start gap-3">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                                        <p className="text-sm text-muted-foreground leading-relaxed"><strong className="text-foreground">High-Level (I & II):</strong> 33 studies (25 Pro, 4 Mix, 4 Con). Comprising randomized trials, prospective studies, and systematic reviews.</p>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                                        <p className="text-sm text-muted-foreground leading-relaxed"><strong className="text-foreground">Observational (III & IV):</strong> 82 studies (79 Pro, 1 Mix, 2 Con). Reflecting real-world clinical practice.</p>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                                        <p className="text-sm text-muted-foreground leading-relaxed"><strong className="text-foreground">Expert Commentary (V):</strong> 37 publications (19 Pro, 16 Mix, 2 Con). Focused on protocol optimization and emerging indications.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="bg-primary text-primary-foreground rounded-3xl p-8 shadow-lg flex flex-col justify-center">
+                                <h3 className="text-xl font-display font-bold mb-4">Overall Interpretation</h3>
+                                <p className="leading-relaxed opacity-90">
+                                    Across 155 peer-reviewed studies, cryoanalgesia is <strong>widely studied</strong>, <strong>predominantly positive</strong>, and <strong>supported by expanding higher-quality evidence</strong>. However, outcomes depend strongly on clinical indication, nerve selection, technique, and patient selection.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Selected Publications */}
+            <section className="py-16 bg-secondary/10 border-b border-border">
+                <div className="section-container">
+                    <div className="max-w-4xl mx-auto">
+                        <div className="mb-10 text-center">
+                            <h3 className="text-2xl font-display font-bold text-foreground mb-4">Selected Publications</h3>
+                        </div>
+                        <div className="flex flex-col gap-4">
+                            {researchData.cryo.map((item) => (
+                                <div key={item.id} className="bg-background border border-border p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                                    <h4 className="text-lg font-bold text-blue-900 mb-2 leading-snug">{item.title}</h4>
+                                    <div className="text-sm text-muted-foreground">
+                                        <span className="font-semibold text-slate-700">{item.author}</span>
+                                        <span className="mx-2 text-slate-300">•</span>
+                                        <span className="italic">{item.journal}</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>

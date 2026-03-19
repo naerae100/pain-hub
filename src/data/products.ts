@@ -4,6 +4,18 @@ import heroMedical from "@/assets/hero-medical.jpg";
 import heroSurgery from "@/assets/hero-surgery.jpg";
 import procedureHands from "@/assets/procedure-hands.jpg";
 
+import cryImg from "@/assets/cry.webp";
+import regImg from "@/assets/reg.webp";
+import epiImg from "@/assets/epi.webp";
+import ozoneImg from "@/assets/Ozone.webp";
+
+import cryoSPainlessImg from "@/assets/CRYO-S.webp";
+import cryoprobesImg from "@/assets/CRYO.webp";
+import regpImg from "@/assets/regp.webp";
+import raczCatImg from "@/assets/Racz-Cat.webp";
+import essentialImg from "@/assets/essential.webp";
+import dayNeedleImg from "@/assets/Day-Needle.webp";
+
 export interface Feature {
     title: string;
     description: string;
@@ -46,28 +58,28 @@ export const categories: Category[] = [
         slug: "cryoanalgesia",
         title: "Cryoanalgesia",
         description: "Advanced cryosurgery systems for pain management and minimally invasive treatments.",
-        image: procedureHands,
+        image: cryImg,
     },
     {
         id: "regen",
         slug: "regenerative-medicine",
         title: "Regenerative Medicine",
         description: "Cutting-edge therapies for stimulating the body's own repair mechanisms.",
-        image: heroMedical,
+        image: regImg,
     },
     {
         id: "epidurolysis",
         slug: "epidurolysis",
         title: "Epidurolysis",
         description: "Specialized catheters and systems for adhesiolysis and nerve decompression.",
-        image: heroSurgery,
+        image: epiImg,
     },
     {
         id: "ozone",
         slug: "ozone-therapy",
         title: "Ozone Therapy",
         description: "Medical ozone generators for therapeutic applications.",
-        image: heroMedical,
+        image: ozoneImg,
     },
 ];
 
@@ -79,7 +91,7 @@ export const products: Product[] = [
         slug: "cryo-s-painless",
         name: "CRYO-S Painless",
         subtitle: "Advanced Cryoanalgesia Now TGA Registered in Australia",
-        image: cryoDevice,
+        image: cryoSPainlessImg,
         description: [
             "The CRYO-S Painless cryosurgery system is now TGA registered and available in Australia, offering practitioners a minimally invasive and effective solution for long-term pain relief.",
             "Using either CO2 or N2O, this microprocessor-controlled device delivers precise cryoanalgesia for a variety of acute and chronic pain conditions. Its primary advantage is its exceptional versatility, supported by the market's largest selection of specialized probes in various shapes and sizes, all designed for high visibility under ultrasound guidance.",
@@ -296,7 +308,7 @@ export const products: Product[] = [
         slug: "cryoprobes",
         name: "Cryoprobes",
         subtitle: "Specialized probes for precise cryoanalgesia",
-        image: cryoDevice,
+        image: cryoprobesImg,
         description: [
             "A wide range of specialized probes designed for specific pain management applications.",
             "Features echogenic markers for perfect visibility under ultrasound."
@@ -308,9 +320,9 @@ export const products: Product[] = [
         id: "regen-prp",
         categoryId: "regen",
         slug: "regen-prp-system",
-        name: "PRP Pro System",
+        name: "60mL superdose PRP system",
         subtitle: "Advanced Platelet-Rich Plasma Concentration High Yield Kit",
-        image: heroMedical,
+        image: regpImg,
         description: [
             "Our PRP Pro System offers the highest concentration of platelets for regenerative therapies.",
             "Designed for ease of use and maximum sterility."
@@ -322,15 +334,43 @@ export const products: Product[] = [
         id: "epidurolysis-catheter",
         categoryId: "epidurolysis",
         slug: "epidurolysis-catheter-flex",
-        name: "Flexi-Cath 3000",
+        name: "Catheters",
         subtitle: "Steerable Epidurolysis Catheter for Precise Adhesiolysis",
-        image: heroSurgery,
+        image: raczCatImg,
         description: [
             "The Flexi-Cath 3000 provides unparalleled steering capability for targeted epidurolysis.",
             "Soft tip design minimizes tissue trauma."
         ],
         features: [],
         benefits: ["Precise targeting", "Improved patient comfort"]
+    },
+    {
+        id: "epidurolysis-needles-essential",
+        categoryId: "epidurolysis",
+        slug: "epidurolysis-needles-essential",
+        name: "Epidural needles",
+        subtitle: "Essential needles for epidural access",
+        image: essentialImg,
+        description: [
+            "Precision-engineered needles to facilitate safe and effective epidural access.",
+            "Features depth markings and an ergonomic hub for enhanced procedural control."
+        ],
+        features: [],
+        benefits: ["Safe access", "High visibility"]
+    },
+    {
+        id: "epidurolysis-needles-day",
+        categoryId: "epidurolysis",
+        slug: "epidurolysis-needles-day",
+        name: "Nerve block needles",
+        subtitle: "Dependable access for nerve blocks",
+        image: dayNeedleImg,
+        description: [
+            "Designed for targeted nerve block delivery with maximum accuracy.",
+            "Available in multiple gauges and lengths to suit various anatomies."
+        ],
+        features: [],
+        benefits: ["Smooth insertion", "Echogenic tip design"]
     },
     {
         id: "ozone-gen-x",

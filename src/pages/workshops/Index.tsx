@@ -151,7 +151,7 @@ const WorkshopIndex = () => {
                             viewport={{ once: true }}
                             className="content-img-wrap shadow-xl"
                         >
-                            <img src={sydneyWorkshop1} alt="Sydney Workshop 1" className="content-img" />
+                            <img src={sydneyWorkshop1} alt="Sydney Workshop 1" className="w-full h-full object-cover" />
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -160,7 +160,7 @@ const WorkshopIndex = () => {
                             viewport={{ once: true }}
                             className="content-img-wrap shadow-xl"
                         >
-                            <img src={sydneyWorkshop2} alt="Sydney Workshop 2" className="content-img" />
+                            <img src={sydneyWorkshop2} alt="Sydney Workshop 2" className="w-full h-full object-cover" />
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
@@ -234,11 +234,11 @@ const WorkshopIndex = () => {
                                 Deep anatomical understanding is the cornerstone of interventional success. Our workshops use detailed anatomical mapping and high-resolution ultrasound to ensure precision in every procedure.
                             </p>
                             <div className="grid grid-cols-2 gap-4">
-                                <div className="content-img-wrap">
-                                    <img src={shoulderAnatomy1} alt="Shoulder Anatomy Drawing" className="content-img" />
+                                <div className="content-img-wrap shadow-sm">
+                                    <img src={shoulderAnatomy1} alt="Shoulder Anatomy Drawing" className="w-full h-full object-cover" />
                                 </div>
-                                <div className="content-img-wrap">
-                                    <img src={shoulderAnatomy2} alt="Shoulder Anatomy Results" className="content-img" />
+                                <div className="content-img-wrap shadow-sm">
+                                    <img src={shoulderAnatomy2} alt="Shoulder Anatomy Results" className="w-full h-full object-cover" />
                                 </div>
                             </div>
                         </motion.div>
@@ -249,11 +249,11 @@ const WorkshopIndex = () => {
                             viewport={{ once: true }}
                             className="relative"
                         >
-                            <div className="content-img-wrap shadow-xl">
-                                <img src={sydneyWorkshop1} alt="Sydney Workshop" className="content-img" />
+                            <div className="content-img-wrap content-img-wrap--auto shadow-xl rounded-2xl overflow-hidden">
+                                <img src={sydneyWorkshop1} alt="Sydney Workshop" className="w-full h-auto object-cover" />
                             </div>
-                            <div className="absolute -bottom-6 -right-6 w-1/2 content-img-wrap content-img-wrap--square shadow-xl hidden md:block">
-                                <img src={sydneyWorkshop2} alt="Workshop Session" className="content-img" />
+                            <div className="absolute -bottom-8 -left-8 w-1/2 aspect-square rounded-2xl overflow-hidden shadow-2xl border-4 border-background hidden md:block">
+                                <img src={sydneyWorkshop2} alt="Workshop Session" className="w-full h-full object-cover" />
                             </div>
                         </motion.div>
                     </div>

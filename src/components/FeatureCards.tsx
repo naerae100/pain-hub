@@ -1,33 +1,37 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import workshopImage from "@/assets/Ultrasound-guided cryoanalgesia workshop Brisbane.png.png";
-import cryoDevice from "@/assets/Cryo-S-Painless_1.jpg";
-import procedureHands from "@/assets/Cryoanalgesia procedure in OR.png";
+import { Calendar, BookOpen, Activity } from "lucide-react";
+import newWorkshopImage from "@/assets/newworkshop.webp";
+import educationHero from "@/assets/Education of minimally invasive procedures for pain management.png";
+import proceduresHero from "@/assets/Cryoanalgesia procedure in OR (1).png";
 
 const features = [
   {
     id: 1,
-    label: "Workshops",
-    title: "Hands-on Training",
-    cta: "Explore workshops",
-    image: workshopImage,
-    href: "/clinical-education",
+    label: "Workshop",
+    title: "Australian Cryoanalgesia Workshop",
+    cta: "Learn more",
+    image: newWorkshopImage,
+    href: "/clinical-education/australian-cryoanalgesia-workshop-2025",
+    icon: Calendar,
   },
   {
     id: 2,
-    label: "Technologies",
-    title: "Precision Equipment",
-    cta: "View technologies",
-    image: cryoDevice,
-    href: "/technologies",
+    label: "Education",
+    title: "Clinical Education",
+    cta: "Learn more",
+    image: educationHero,
+    href: "/clinical-education",
+    icon: BookOpen,
   },
   {
     id: 3,
     label: "Procedures",
-    title: "Minimally Invasive Care",
-    cta: "View procedures",
-    image: procedureHands,
+    title: "Interventional Procedures",
+    cta: "Learn more",
+    image: proceduresHero,
     href: "/procedures",
+    icon: Activity,
   },
 ];
 
@@ -66,7 +70,7 @@ const FeatureCards = () => {
               <motion.img
                 src={feature.image}
                 alt={feature.title}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
                 initial={{ scale: 1 }}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
@@ -75,13 +79,14 @@ const FeatureCards = () => {
 
             {/* Content */}
             <div className="p-5 md:p-6 flex flex-col gap-3">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-primary/10 to-blue-500/10 text-primary border border-primary/20 w-fit">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-primary/10 to-blue-500/10 text-primary border border-primary/20 w-fit">
+                <feature.icon className="w-3.5 h-3.5" />
                 {feature.label}
               </span>
               <h3 className="font-display text-xl md:text-2xl font-semibold text-slate-800 leading-tight group-hover:text-primary transition-colors duration-300">
                 {feature.title}
               </h3>
-              <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all duration-300">
+              <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all duration-300 mt-2">
                 {feature.cta} →
               </span>
             </div>

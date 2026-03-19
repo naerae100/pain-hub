@@ -1,4 +1,11 @@
 import { Link } from "react-router-dom";
+import { 
+    BookOpenCheck, Building2, Library, Network, 
+    Snowflake, Minimize2, Zap, Dna, 
+    Target, Eye, 
+    Microscope, Users, FileText,
+    PhoneCall, Mail, MapPin, Search
+} from "lucide-react";
 import { workshops } from "@/data/workshops";
 import heroAbout from "@/assets/Medical proffesionals_IPMA.png";
 import educationHero from "@/assets/Education of minimally invasive procedures for pain management.png";
@@ -69,14 +76,16 @@ const About = () => {
                         <p className="text-lg text-muted-foreground mb-8">IPMA supports clinicians by providing:</p>
                         <ul className="grid gap-6">
                             {[
-                                "Clinical education and hands-on training in interventional pain and minimally invasive spine procedures",
-                                "Reference centre observation programs for real-world procedural learning",
-                                "Evidence-based clinical resources supporting safe adoption of new technologies",
-                                "Collaborative learning networks connecting practitioners across Australia"
+                                { text: "Clinical education and hands-on training in interventional pain and minimally invasive spine procedures", icon: BookOpenCheck },
+                                { text: "Reference centre observation programs for real-world procedural learning", icon: Building2 },
+                                { text: "Evidence-based clinical resources supporting safe adoption of new technologies", icon: Library },
+                                { text: "Collaborative learning networks connecting practitioners across Australia", icon: Network }
                             ].map((item, i) => (
-                                <li key={i} className="flex gap-4 text-lg text-foreground/80 leading-relaxed group">
-                                    <span className="text-primary font-bold mt-1">•</span>
-                                    <span>{item}</span>
+                                <li key={i} className="flex gap-4 text-lg text-foreground/80 leading-relaxed group items-start">
+                                    <div className="flex-shrink-0 mt-1 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                        <item.icon className="w-4 h-4 text-primary group-hover:text-white transition-colors duration-300" />
+                                    </div>
+                                    <span className="mt-1">{item.text}</span>
                                 </li>
                             ))}
                         </ul>
@@ -98,22 +107,29 @@ const About = () => {
                     {[
                         {
                             title: "Cryoanalgesia",
-                            desc: "Image-guided cryoneurolysis for peripheral neuralgia, postoperative pain, and selected spasticity applications."
+                            desc: "Image-guided cryoneurolysis for peripheral neuralgia, postoperative pain, and selected spasticity applications.",
+                            icon: Snowflake
                         },
                         {
                             title: "Epidural Balloon Decompression",
-                            desc: "Mechanical epidural expansion and adhesiolysis for lumbar spinal stenosis and neurogenic claudication."
+                            desc: "Mechanical epidural expansion and adhesiolysis for lumbar spinal stenosis and neurogenic claudication.",
+                            icon: Minimize2
                         },
                         {
                             title: "Percutaneous Laser Disc Decompression (PLDD)",
-                            desc: "Minimally invasive intradiscal decompression for contained disc herniation and radicular pain."
+                            desc: "Minimally invasive intradiscal decompression for contained disc herniation and radicular pain.",
+                            icon: Zap
                         },
                         {
                             title: "Orthobiologic Therapies",
-                            desc: "Autologous biologic approaches supporting tissue repair and regenerative pathways within interventional care."
+                            desc: "Autologous biologic approaches supporting tissue repair and regenerative pathways within interventional care.",
+                            icon: Dna
                         }
                     ].map((domain, idx) => (
-                        <div key={idx} className="bg-white border border-slate-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                        <div key={idx} className="bg-white border border-slate-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow group">
+                            <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
+                                <domain.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+                            </div>
                             <h3 className="text-xl font-bold text-blue-900 mb-4">{domain.title}</h3>
                             <p className="text-muted-foreground leading-relaxed text-sm">
                                 {domain.desc}
@@ -136,16 +152,18 @@ const About = () => {
                             <p className="text-xl text-blue-100 leading-relaxed">
                                 Education is central to IPMA’s mission. Programs are designed to support clinicians at different stages of procedural adoption, including:
                             </p>
-                            <ul className="grid gap-4">
+                            <ul className="grid gap-6 mt-2">
                                 {[
-                                    "Hands-on cadaver workshops",
-                                    "Clinical observation through IPMA Reference Centres",
-                                    "Case-based discussions and expert panels",
-                                    "Evidence reviews and clinical resource libraries"
+                                    { text: "Hands-on cadaver workshops", icon: Microscope },
+                                    { text: "Clinical observation through IPMA Reference Centres", icon: Eye },
+                                    { text: "Case-based discussions and expert panels", icon: Users },
+                                    { text: "Evidence reviews and clinical resource libraries", icon: FileText }
                                 ].map((item, i) => (
                                     <li key={i} className="flex gap-4 text-lg items-center text-white/90">
-                                        <span className="w-2 h-2 rounded-full bg-blue-300" />
-                                        {item}
+                                        <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                                            <item.icon className="w-5 h-5 text-blue-200" />
+                                        </div>
+                                        {item.text}
                                     </li>
                                 ))}
                             </ul>
@@ -169,14 +187,20 @@ const About = () => {
             <section className="section-container py-24">
                 <div className="grid md:grid-cols-2 gap-12 lg:gap-24">
                     <div className="flex flex-col gap-6">
-                        <h2 className="text-3xl font-display font-bold text-blue-900 border-l-4 border-primary pl-6">Our Mission</h2>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <div className="flex items-center gap-4 mb-2 border-l-4 border-primary pl-6">
+                            <Target className="w-8 h-8 text-primary" />
+                            <h2 className="text-3xl font-display font-bold text-blue-900">Our Mission</h2>
+                        </div>
+                        <p className="text-xl text-muted-foreground leading-relaxed pl-10 md:pl-0 lg:pl-10">
                             To support evidence-informed interventional pain and spine practice through education, collaboration, and responsible integration of minimally invasive procedural technologies.
                         </p>
                     </div>
                     <div className="flex flex-col gap-6">
-                        <h2 className="text-3xl font-display font-bold text-blue-900 border-l-4 border-primary pl-6">Our Vision</h2>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <div className="flex items-center gap-4 mb-2 border-l-4 border-primary pl-6">
+                            <Eye className="w-8 h-8 text-primary" />
+                            <h2 className="text-3xl font-display font-bold text-blue-900">Our Vision</h2>
+                        </div>
+                        <p className="text-xl text-muted-foreground leading-relaxed pl-10 md:pl-0 lg:pl-10">
                             To establish IPMA as a trusted Australian platform for interventional pain education, connecting clinicians with the knowledge, training, and clinical resources required to deliver modern pain care.
                         </p>
                     </div>
@@ -252,26 +276,26 @@ const About = () => {
 
                             <div className="grid gap-8">
                                 <div className="flex items-center gap-6 group">
-                                    <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-2xl group-hover:bg-primary group-hover:text-white transition-all">
-                                        📞
+                                    <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                                        <PhoneCall className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300" />
                                     </div>
                                     <div className="flex flex-col">
                                         <span className="text-xs font-bold uppercase text-primary tracking-widest mb-1">Phone</span>
-                                        <a href="tel:+61493519620" className="text-2xl font-bold text-foreground">+61 493 519 620</a>
+                                        <a href="tel:+61493519620" className="text-2xl font-bold text-foreground hover:text-primary transition-colors">+61 493 519 620</a>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-6 group">
-                                    <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-2xl group-hover:bg-primary group-hover:text-white transition-all">
-                                        ✉️
+                                    <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                                        <Mail className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300" />
                                     </div>
                                     <div className="flex flex-col">
                                         <span className="text-xs font-bold uppercase text-primary tracking-widest mb-1">Email</span>
-                                        <a href="mailto:contact@ipmaaustralia.com.au" className="text-2xl font-bold text-foreground">contact@ipmaaustralia.com.au</a>
+                                        <a href="mailto:contact@ipmaaustralia.com.au" className="text-lg md:text-xl lg:text-2xl font-bold text-foreground hover:text-primary transition-colors break-all">contact@ipmaaustralia.com.au</a>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-6 group">
-                                    <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-2xl group-hover:bg-primary group-hover:text-white transition-all">
-                                        📍
+                                    <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                                        <MapPin className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300" />
                                     </div>
                                     <div className="flex flex-col">
                                         <span className="text-xs font-bold uppercase text-primary tracking-widest mb-1">Location</span>

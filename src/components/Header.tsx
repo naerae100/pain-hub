@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Search, User, ShoppingBag, ChevronDown } from "lucide-react";
+import { Menu, X, Search, UserCircle2, ShoppingBag, PhoneCall, CalendarDays, MapPin, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import ipmaLogo from "@/assets/ipma-logo.webp";
 import { Button } from "@/components/ui/button";
 
 const topNavLinks = [
-  { label: "My IPMA", href: "/auth" },
-  { label: "Events", href: "/clinical-education" },
-  { label: "Contact Us", href: "/about#contact" },
-  { label: "Australia", href: "/about" },
+  { label: "My IPMA", href: "/auth", icon: UserCircle2 },
+  { label: "Events", href: "/clinical-education", icon: CalendarDays },
+  { label: "Contact Us", href: "/about#contact", icon: PhoneCall },
+  { label: "Australia", href: "/about", icon: MapPin },
 ];
 
 // Updated order to match screenshot
@@ -68,8 +68,9 @@ const Header = () => {
               {index > 0 && <span className="mx-2 text-white/30 select-none">|</span>}
               <Link
                 to={link.href}
-                className="inline-flex items-center hover:text-white transition-colors duration-200 py-1"
+                className="inline-flex items-center gap-1.5 hover:text-white transition-colors duration-200 py-1"
               >
+                <link.icon className="w-3 h-3 text-white/70" />
                 {link.label}
               </Link>
             </span>
@@ -113,7 +114,7 @@ const Header = () => {
                     className="flex items-center gap-1 text-sm font-semibold text-foreground/75 hover:text-primary transition-colors duration-200 py-2"
                   >
                     {link.label}
-                    {link.children && <span className="text-[10px] opacity-40 group-hover:opacity-100 transition-opacity ml-0.5">▼</span>}
+                    {link.children && <ChevronDown className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 transition-opacity ml-0.5" />}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
                   </MotionLink>
 
@@ -142,16 +143,16 @@ const Header = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="hidden lg:flex items-center gap-6 text-blue-900 font-bold text-sm"
+              className="hidden lg:flex items-center gap-5 text-blue-900"
             >
-              <button className="hover:text-primary transition-colors text-xs uppercase tracking-widest">
-                Search
+              <button className="hover:text-primary transition-colors hover:scale-110 transform duration-200" aria-label="Search">
+                <Search className="w-5 h-5 stroke-[2.5]" />
               </button>
-              <Link to="/auth" className="hover:text-primary transition-colors text-xs uppercase tracking-widest">
-                Login
+              <Link to="/auth" className="hover:text-primary transition-colors hover:scale-110 transform duration-200" aria-label="Login">
+                <UserCircle2 className="w-5 h-5 stroke-[2.5]" />
               </Link>
-              <Link to="/cart" className="hover:text-primary transition-colors relative text-xs uppercase tracking-widest">
-                Cart
+              <Link to="/cart" className="hover:text-primary transition-colors hover:scale-110 transform duration-200 relative" aria-label="Cart">
+                <ShoppingBag className="w-5 h-5 stroke-[2.5]" />
               </Link>
             </motion.div>
 
@@ -162,7 +163,7 @@ const Header = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? "CLOSE" : "MENU"}
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </motion.button>
           </div>
 
@@ -202,11 +203,11 @@ const Header = () => {
                     </div>
                   ))}
                   <div className="pt-6 px-4 flex flex-col gap-4 border-t border-border mt-6">
-                    <Link to="/auth" className="text-lg font-bold uppercase tracking-widest p-2" onClick={() => setIsMenuOpen(false)}>
-                      Sign In
+                    <Link to="/auth" className="flex items-center gap-2 p-2 text-lg font-bold uppercase tracking-widest" onClick={() => setIsMenuOpen(false)}>
+                      <UserCircle2 className="w-5 h-5" /> Sign In
                     </Link>
-                    <Link to="/cart" className="text-lg font-bold uppercase tracking-widest p-2" onClick={() => setIsMenuOpen(false)}>
-                      Cart
+                    <Link to="/cart" className="flex items-center gap-2 p-2 text-lg font-bold uppercase tracking-widest" onClick={() => setIsMenuOpen(false)}>
+                      <ShoppingBag className="w-5 h-5" /> Cart
                     </Link>
                   </div>
                 </div>

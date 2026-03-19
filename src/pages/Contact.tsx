@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { PhoneCall, Mail, Linkedin, Youtube } from "lucide-react";
 
 const Contact = () => {
     return (
@@ -34,23 +35,23 @@ const Contact = () => {
                             <div className="grid gap-8 mt-4">
                                 {/* Phone */}
                                 <div className="flex items-center gap-6 group">
-                                    <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-2xl group-hover:bg-primary group-hover:text-white transition-all">
-                                        📞
+                                    <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                                        <PhoneCall className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300" />
                                     </div>
                                     <div className="flex flex-col">
                                         <span className="text-xs font-bold uppercase text-primary tracking-widest mb-1">Phone</span>
-                                        <a href="tel:+61493519620" className="text-2xl font-bold text-foreground">+61 493 519 620</a>
+                                        <a href="tel:+61493519620" className="text-2xl font-bold text-foreground hover:text-primary transition-colors">+61 493 519 620</a>
                                     </div>
                                 </div>
 
                                 {/* Email */}
                                 <div className="flex items-center gap-6 group">
-                                    <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-2xl group-hover:bg-primary group-hover:text-white transition-all">
-                                        ✉️
+                                    <div className="w-16 h-16 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                                        <Mail className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300" />
                                     </div>
                                     <div className="flex flex-col">
                                         <span className="text-xs font-bold uppercase text-primary tracking-widest mb-1">Email</span>
-                                        <a href="mailto:contact@ipmaaustralia.com.au" className="text-2xl font-bold text-foreground break-all">contact@ipmaaustralia.com.au</a>
+                                        <a href="mailto:contact@ipmaaustralia.com.au" className="text-lg md:text-xl lg:text-2xl font-bold text-foreground hover:text-primary transition-colors break-all">contact@ipmaaustralia.com.au</a>
                                     </div>
                                 </div>
                             </div>
@@ -58,11 +59,11 @@ const Contact = () => {
                             <div className="flex flex-col gap-4 mt-8">
                                 <span className="text-lg font-bold text-foreground">Follow us</span>
                                 <div className="flex gap-4">
-                                    <a href="#" className="w-12 h-12 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-[#0077b5] font-bold hover:bg-primary hover:text-white transition-all">
-                                        in
+                                    <a href="#" className="w-12 h-12 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-[#0077b5] group hover:bg-[#0077b5] hover:border-[#0077b5] transition-all" aria-label="LinkedIn">
+                                        <Linkedin className="w-5 h-5 group-hover:text-white transition-colors" />
                                     </a>
-                                    <a href="#" className="w-12 h-12 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-[#FF0000] font-bold hover:bg-primary hover:text-white transition-all">
-                                        YT
+                                    <a href="#" className="w-12 h-12 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-[#FF0000] group hover:bg-[#FF0000] hover:border-[#FF0000] transition-all" aria-label="YouTube">
+                                        <Youtube className="w-6 h-6 group-hover:text-white transition-colors" />
                                     </a>
                                 </div>
                             </div>

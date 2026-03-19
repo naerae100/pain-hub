@@ -373,6 +373,35 @@ const EpiduralBalloonDetail = () => {
                             </div>
                         </div>
 
+                        {/* Expanded Summary */}
+                        <div className="bg-primary/5 border border-primary/20 rounded-3xl p-8 lg:p-12 mb-12">
+                            <h3 className="text-2xl font-display font-bold text-foreground mb-4">Expanded Clinical Evidence Summary</h3>
+                            <p className="text-muted-foreground leading-relaxed mb-8">
+                                Percutaneous epidural adhesiolysis addresses epidural fibrosis by mechanically disrupting scar tissue and restoring access to the affected nerve root. Balloon catheter systems enhance this mechanical disruption.
+                            </p>
+                            <div className="grid md:grid-cols-2 gap-8">
+                                <div className="bg-background border border-border rounded-2xl p-6 shadow-sm">
+                                    <h4 className="font-bold text-foreground mb-4 flex items-center gap-2">
+                                        <BookOpen className="w-5 h-5 text-primary" /> Randomized Controlled Trials
+                                    </h4>
+                                    <ul className="space-y-3 text-sm text-muted-foreground">
+                                        <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" /> Significant reductions in pain scores</li>
+                                        <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" /> Improved functional outcomes</li>
+                                        <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" /> Sustained benefit when repeated</li>
+                                        <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" /> Greater improvements in pain/function vs conventional adhesiolysis</li>
+                                    </ul>
+                                </div>
+                                <div className="bg-background border border-border rounded-2xl p-6 shadow-sm">
+                                    <h4 className="font-bold text-foreground mb-4 flex items-center gap-2">
+                                        <Activity className="w-5 h-5 text-primary" /> 10-Year Long-Term Follow-up
+                                    </h4>
+                                    <p className="text-sm text-muted-foreground leading-relaxed">
+                                        A landmark 10-year RCT follow-up demonstrated sustained clinical benefit — the <strong className="text-foreground">longest follow-up evidence</strong> available for a minimally invasive intervention in this population.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
                         <p className="text-center text-muted-foreground italic max-w-3xl mx-auto">
                             As with all interventional procedures, outcomes depend on appropriate patient selection and operator expertise.
                         </p>
