@@ -222,7 +222,13 @@ const Resources = () => {
     const openPdf = (pdf: { title: string; relativePath: string }) => {
         // Enforce URL encoding for paths with spaces and special characters
         const safeUrl = "/" + pdf.relativePath.split('/').map(segment => encodeURIComponent(segment)).join('/');
-        setActiveMedia({ url: safeUrl, title: pdf.title, type: 'pdf' });
+        
+        // Mobile browsers struggle with iframe PDFs. Fallback to native tab opening.
+        if (window.innerWidth <= 768) {
+            window.open(safeUrl, '_blank');
+        } else {
+            setActiveMedia({ url: safeUrl, title: pdf.title, type: 'pdf' });
+        }
     };
 
     const openVideo = (url: string, title: string) => {

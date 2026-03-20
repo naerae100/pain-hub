@@ -1040,6 +1040,55 @@ export const cryoPdfs: CryoPdf[] = [
     "anatomicalArea": "Upper extremity/spasticity",
     "levelOfEvidence": "Level V",
     "relativePath": "Sorted Pdfs/Upper extremity _ spasticity/Level V/Emerging Role of Cryoneurolysis in Spasticity Management_A Narrative Review_Boissonnault_Pereira_Winston_2026.pdf"
+  },
+  {
+    "title": "A Multimodal Pain Management Protocol Including Preoperative Cryoneurolysis for Total Knee Arthroplasty to Reduce Pain, Opioid Consumption, and Length of Stay Urban 2021",
+    "filename": "A Multimodal Pain Management Protocol Including Preoperative Cryoneurolysis for Total Knee Arthroplasty to Reduce Pain, Opioid Consumption, and Length of Stay_Urban_2021.PDF",
+    "anatomicalArea": "Knee",
+    "levelOfEvidence": "Level III",
+    "relativePath": "Sorted Pdfs/Knee/Level III/A Multimodal Pain Management Protocol Including Preoperative Cryoneurolysis for Total Knee Arthroplasty to Reduce Pain, Opioid Consumption, and Length of Stay_Urban_2021.PDF"
+  },
+  {
+    "title": "Radiofrequency denervation and cryoablation of the lumbar zygapophysial joints in the treatment of positive lumbar facet joint syndrome A report of three cases Kocan 2023",
+    "filename": "Radiofrequency denervation and cryoablation of the lumbar zygapophysial joints in the treatment of positive lumbar facet joint syndrome_A report of three cases_Kocan_2023.PDF",
+    "anatomicalArea": "Low back/lumbar spine",
+    "levelOfEvidence": "Level II",
+    "relativePath": "Sorted Pdfs/Low back_lumbar spine/Level II/Radiofrequency denervation and cryoablation of the lumbar zygapophysial joints in the treatment of positive lumbar facet joint syndrome_A report of three cases_Kocan_2023.PDF"
+  },
+  {
+    "title": "Comparing the effectiveness of treatment with radio frequency denervation, cryoablation and endoscopic debridement of the facet joints Simona 2022",
+    "filename": "Comparing the effectiveness of treatment with radio frequency denervation, cryoablation and endoscopic debridement of the facet joints_Simona_2022.PDF",
+    "anatomicalArea": "Low back/lumbar spine",
+    "levelOfEvidence": "Level III",
+    "relativePath": "Sorted Pdfs/Low back_lumbar spine/Level III/Comparing the effectiveness of treatment with radio frequency denervation, cryoablation and endoscopic debridement of the facet joints_Simona_2022.PDF"
+  },
+  {
+    "title": "Ultrasound Guided Percutaneous Cryoneurolysis for Acute Pain Management A Case Report Gabriel Trescot 2018",
+    "filename": "Ultrasound-Guided Percutaneous Cryoneurolysis for Acute Pain Management A Case Report_Gabriel_Trescot_2018.PDF",
+    "anatomicalArea": "Phantom limb/amputation",
+    "levelOfEvidence": "Level IV",
+    "relativePath": "Sorted Pdfs/Phantom limb _ amputation/Level IV/Ultrasound-Guided Percutaneous Cryoneurolysis for Acute Pain Management A Case Report_Gabriel_Trescot_2018.PDF"
+  },
+  {
+    "title": "US guided Percutaneous Cryoneurolysis for the Treatment of Pain after Traumatic Rib Fracture A Randomized Activecontrolled Participantand Observer masked Study Finneran 2025",
+    "filename": "US-guided Percutaneous Cryoneurolysis for the Treatment of Pain after Traumatic Rib Fracture A Randomized, Activecontrolled, Participantand Observer-masked Study_Finneran_2025.PDF",
+    "anatomicalArea": "Thorax/chest wall/intercostal",
+    "levelOfEvidence": "Level II",
+    "relativePath": "Sorted Pdfs/Thorax_chest wall_intercostal/Level II/US-guided Percutaneous Cryoneurolysis for the Treatment of Pain after Traumatic Rib Fracture A Randomized, Activecontrolled, Participantand Observer-masked Study_Finneran_2025.PDF"
+  },
+  {
+    "title": "In hospital outcomes of intercostal nerve cryoablation and surgicalstabilization of rib fractures Fernandez 2022",
+    "filename": "In-hospital outcomes of intercostal nerve cryoablation and surgicalstabilization of rib fractures_Fernandez_2022.PDF",
+    "anatomicalArea": "Thorax/chest wall/intercostal",
+    "levelOfEvidence": "Level III",
+    "relativePath": "Sorted Pdfs/Thorax_chest wall_intercostal/Level III/In-hospital outcomes of intercostal nerve cryoablation and surgicalstabilization of rib fractures_Fernandez_2022.PDF"
+  },
+  {
+    "title": "Intercostal nerve cryoanalgesia in the treatment of pain in patients operated on by the modified Nuss method with the BackOnFeet application Zacha 2023",
+    "filename": "Intercostal nerve cryoanalgesia in the treatment of pain in patients operated on by the modified Nuss method with the BackOnFeet application_Zacha_2023.PDF",
+    "anatomicalArea": "Thorax/chest wall/intercostal",
+    "levelOfEvidence": "Level III",
+    "relativePath": "Sorted Pdfs/Thorax_chest wall_intercostal/Level III/Intercostal nerve cryoanalgesia in the treatment of pain in patients operated on by the modified Nuss method with the BackOnFeet application_Zacha_2023.PDF"
   }
 ];
 
