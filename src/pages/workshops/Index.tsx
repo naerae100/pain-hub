@@ -318,7 +318,7 @@ const WorkshopIndex = () => {
             </section>
 
             {/* ── Workshops Listing ── */}
-            <section className="py-20 lg:py-24 bg-secondary/30 border-t border-border">
+            <section id="workshops" className="py-20 lg:py-24 bg-secondary/30 border-t border-border scroll-mt-20">
                 <div className="section-container">
                     <div className="text-center max-w-2xl mx-auto mb-12">
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">

@@ -12,7 +12,7 @@ const features = [
     title: "Australian Cryoanalgesia Workshop",
     cta: "Learn more",
     image: newWorkshopImage,
-    href: "/clinical-education/australian-cryoanalgesia-workshop-2025",
+    href: "/clinical-education#workshops",
     icon: Calendar,
   },
   {

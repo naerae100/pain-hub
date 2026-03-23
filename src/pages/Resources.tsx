@@ -300,7 +300,7 @@ const Resources = () => {
                         subtitle="Key publications and studies supporting interventional pain practice." />
 
                     {/* ── CRYO ── */}
-                    <div className="mb-20">
+                    <div id="cryo" className="mb-20 scroll-mt-28">
                         <h3 className="text-xl font-bold text-gray-900 mb-3 block border-l-4 border-primary pl-4">
                             Cryoanalgesia & Cryoneurolysis
                         </h3>
@@ -336,7 +336,7 @@ const Resources = () => {
                     </div>
 
                     {/* ── BALLOON ── */}
-                    <div className="mb-20">
+                    <div id="balloon" className="mb-20 scroll-mt-28">
                         <h3 className="text-xl font-bold text-gray-900 mb-3 block border-l-4 border-primary pl-4">
                             Epidural Adhesiolysis & Balloon Technologies
                         </h3>
@@ -362,7 +362,7 @@ const Resources = () => {
                     </div>
 
                     {/* ── PRP ── */}
-                    <div className="mb-20">
+                    <div id="prp" className="mb-20 scroll-mt-28">
                         <h3 className="text-xl font-bold text-gray-900 mb-3 block border-l-4 border-primary pl-4">
                             Platelet-based & Bone Marrow–derived Biologics
                         </h3>
@@ -377,7 +377,7 @@ const Resources = () => {
                     </div>
 
                     {/* ── PLDD ── */}
-                    <div className="mb-8">
+                    <div id="pldd" className="mb-8 scroll-mt-28">
                         <h3 className="text-xl font-bold text-gray-900 mb-3 block border-l-4 border-primary pl-4">
                             Percutaneous Laser Disc Decompression (PLDD)
                         </h3>

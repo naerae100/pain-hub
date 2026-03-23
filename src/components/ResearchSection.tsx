@@ -2,35 +2,39 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import heroSurgery from "@/assets/hero-surgery.jpg";
-import procedureHands from "@/assets/procedure-hands.jpg";
-import cryoDevice from "@/assets/cryo-device.jpg";
-import medicalTraining from "@/assets/medical-training.jpg";
+import cryoImg from "@/assets/Cryoanalgesia procedure in OR (1).png";
+import balloonImg from "@/assets/Balloon Decompression_Catheter.jpg";
+import prpImg from "@/assets/Cervos Triple KeyPRP.png";
+import plddImg from "@/assets/PLDD_lumbar spine_technology.png";
 
 const articles = [
   {
     category: "Research",
-    title: "Ultrasound-guided Percutaneous Cryoneurolysis for Rib Fracture Pain",
-    image: procedureHands,
-    href: "/resources/research-papers-and-articles",
-  },
-  {
-    category: "Article",
-    title: "Bedside percutaneous cryoneurolysis technique for acute pain",
-    image: heroSurgery,
-    href: "/resources/research-papers-and-articles",
+    title: "Cryoanalgesia & Cryoneurolysis",
+    subtitle: "155 peer-reviewed studies across 9 anatomical areas",
+    image: cryoImg,
+    href: "/resources#cryo",
   },
   {
     category: "Research",
-    title: "Cryoneurolysis for Pain Control in Older Adults",
-    image: medicalTraining,
-    href: "/resources/research-papers-and-articles",
+    title: "Epidural Adhesiolysis & Balloon Technologies",
+    subtitle: "Systematic reviews, RCTs, and health economics",
+    image: balloonImg,
+    href: "/resources#balloon",
   },
   {
-    category: "Clinical Study",
-    title: "The value of cryoanalgesia in modern pain management",
-    image: cryoDevice,
-    href: "/resources/research-papers-and-articles",
+    category: "Research",
+    title: "PRP & Bone Marrow–derived Biologics",
+    subtitle: "Superdose PRP and orthobiologic studies",
+    image: prpImg,
+    href: "/resources#prp",
+  },
+  {
+    category: "Research",
+    title: "Percutaneous Laser Disc Decompression (PLDD)",
+    subtitle: "Clinical outcomes and radiological analysis",
+    image: plddImg,
+    href: "/resources#pldd",
   },
 ];
 
@@ -61,7 +65,7 @@ const ResearchSection = () => {
           >
             <span className="pill">Research</span>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mt-6 mb-4">
-              Research and articles.
+              Research.
             </h2>
             <p className="text-muted-foreground text-lg md:text-xl max-w-xl">
               Evidence-based practice is central to interventional pain management.
@@ -124,11 +128,12 @@ const ResearchSection = () => {
 
             {/* Content */}
             <span className="tag-primary">{article.category}</span>
-            <h3 className="font-display text-xl font-semibold text-foreground mb-4 leading-tight group-hover:text-primary transition-colors duration-300 mt-2">
+            <h3 className="font-display text-xl font-semibold text-foreground mb-2 leading-tight group-hover:text-primary transition-colors duration-300 mt-2">
               {article.title}
             </h3>
+            <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{article.subtitle}</p>
             <span className="link-arrow text-sm font-semibold">
-              Read more →
+              View evidence →
             </span>
           </MotionLink>
         ))}

@@ -88,17 +88,30 @@ const TreatmentsSection = () => {
               transition={{ duration: 0.7, delay: index * 0.1, ease: [0.4, 0, 0.2, 1] }}
               viewport={{ once: true, margin: "-50px" }}
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
-              className="group bg-white rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-500"
+              className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500"
             >
-              {/* Image Container — object-contain so full image is always visible */}
-              <div className="aspect-[16/10] overflow-hidden relative bg-slate-50">
-                <motion.img
-                  src={treatment.image}
-                  alt={treatment.title}
-                  className="w-full h-full object-contain"
-                  whileHover={{ scale: 1.03 }}
-                  transition={{ duration: 0.6 }}
-                />
+              {/* Image Container */}
+              <div className="h-80 overflow-hidden relative bg-white flex items-center justify-center p-3">
+                {index === 3 ? (
+                  /* 4th image is landscape — crop into portrait frame */
+                  <div className="w-[70%] h-full rounded-md overflow-hidden">
+                    <motion.img
+                      src={treatment.image}
+                      alt={treatment.title}
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.03 }}
+                      transition={{ duration: 0.6 }}
+                    />
+                  </div>
+                ) : (
+                  <motion.img
+                    src={treatment.image}
+                    alt={treatment.title}
+                    className="w-full h-full object-contain"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.6 }}
+                  />
+                )}
               </div>
 
               {/* Content */}
