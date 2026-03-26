@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Snowflake, Minimize2, Zap, Dna } from "lucide-react";
-import cryoProcedure from "@/assets/Cryoanalgesia_procedure.png";
-import balloonProcedure from "@/assets/Balloon decompression_procedure.png";
-import laserProcedure from "@/assets/Percutaneous Laser Disc Decompression_procedure.png";
-import orthobiologicProcedure from "@/assets/Orthobiologic Therapies_procedure.png";
+import cryoProcedure from "@/assets/Cryoanalgesia of the genicular nerves using ultrasound guidance.png";
+import balloonProcedure from "@/assets/Epidural Balloon Decompression Procedure.png";
+import laserProcedure from "@/assets/Percutaneous Laser Disc Decompression_technology2 (2).png";
+import orthobiologicProcedure from "@/assets/Orthobiologic Therapies_procedure (1).png";
 
 const treatments = [
   {
@@ -91,27 +91,14 @@ const TreatmentsSection = () => {
               className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-500"
             >
               {/* Image Container */}
-              <div className="h-80 overflow-hidden relative bg-white flex items-center justify-center p-3">
-                {index === 3 ? (
-                  /* 4th image is landscape — crop into portrait frame */
-                  <div className="w-[70%] h-full rounded-md overflow-hidden">
-                    <motion.img
-                      src={treatment.image}
-                      alt={treatment.title}
-                      className="w-full h-full object-cover"
-                      whileHover={{ scale: 1.03 }}
-                      transition={{ duration: 0.6 }}
-                    />
-                  </div>
-                ) : (
-                  <motion.img
-                    src={treatment.image}
-                    alt={treatment.title}
-                    className="w-full h-full object-contain"
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ duration: 0.6 }}
-                  />
-                )}
+              <div className="aspect-[16/10] overflow-hidden relative bg-slate-50">
+                <motion.img
+                  src={treatment.image}
+                  alt={treatment.title}
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.6 }}
+                />
               </div>
 
               {/* Content */}

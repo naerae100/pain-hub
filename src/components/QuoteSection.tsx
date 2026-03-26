@@ -32,7 +32,7 @@ const QuoteSection = () => {
               the confidence and capability to lead modern pain care."
             </p>
             <footer className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
-              Dr. Pain Management Specialist, IPMA
+              Dr. Amit Lakkaraju, IR Pain Specialist
             </footer>
           </blockquote>
         </div>

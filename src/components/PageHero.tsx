@@ -10,16 +10,17 @@ interface PageHeroProps {
     title: string;
     subtitle?: string;
     breadcrumbs?: BreadcrumbItem[];
+    imagePosition?: string;
 }
 
-const PageHero = ({ image, title, subtitle, breadcrumbs }: PageHeroProps) => {
+const PageHero = ({ image, title, subtitle, breadcrumbs, imagePosition }: PageHeroProps) => {
     return (
         <section className="relative w-full h-screen min-h-[500px] overflow-hidden">
             {/* Background Image */}
             <img
                 src={image}
                 alt={title}
-                className="absolute inset-0 w-full h-full object-cover"
+                className={`absolute inset-0 w-full h-full object-cover ${imagePosition || ''}`}
                 loading="eager"
             />
 

@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import cryoImg from "@/assets/Cryoanalgesia procedure in OR (1).png";
-import balloonImg from "@/assets/Balloon Decompression_Catheter.jpg";
-import prpImg from "@/assets/Cervos Triple KeyPRP.png";
-import plddImg from "@/assets/PLDD_lumbar spine_technology.png";
+import balloonImg from "@/assets/Epidural Balloon Decompression Procedure.png";
+import prpImg from "@/assets/Bone marrow aspiration procedure.png";
+import plddImg from "@/assets/Percutaneous Laser Disc Decompression_technology2 (2).png";
 
 const articles = [
   {
@@ -56,7 +56,7 @@ const ResearchSection = () => {
     <section id="research" className="py-20 overflow-hidden">
       <div className="section-container">
         {/* Header */}
-        <div className="flex items-end justify-between mb-12">
+        <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -67,18 +67,18 @@ const ResearchSection = () => {
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground mt-6 mb-4">
               Research.
             </h2>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-xl">
+            <p className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto">
               Evidence-based practice is central to interventional pain management.
             </p>
           </motion.div>
 
-          {/* Navigation — keep chevrons for functional scroll */}
+          {/* Navigation */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="hidden md:flex gap-3"
+            className="hidden md:flex justify-center gap-3 mt-8"
           >
             <button
               onClick={() => scroll("left")}

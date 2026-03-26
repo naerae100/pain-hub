@@ -39,8 +39,8 @@ const AboutSection = () => {
             <p className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-3">Our focus:</p>
             <ul className="space-y-2">
               {focusPoints.map((point) => (
-                <li key={point} className="flex items-center gap-3 text-slate-600">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                <li key={point} className="flex items-center gap-3 text-base md:text-lg text-slate-600">
+                  <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
                   <span>{point}</span>
                 </li>
               ))}
@@ -62,7 +62,7 @@ const AboutSection = () => {
 
           <div className="mt-10 grid grid-cols-2 gap-4">
             {[
-              { value: "1995", label: "Founded" },
+              { value: "2025", label: "Founded" },
               { value: "Australia", label: "Clinician network" },
             ].map((item) => (
               <div key={item.label} className="rounded-xl bg-gradient-to-br from-white to-slate-50 border border-slate-100 px-5 py-4 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
@@ -100,8 +100,8 @@ const AboutSection = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="text-sm font-bold text-slate-800">Live workshops</div>
-            <div className="text-xs text-slate-500">Hands-on, ultrasound-guided practice.</div>
+            <div className="text-base font-bold text-slate-800">Live workshops</div>
+            <div className="text-sm text-slate-500">Hands-on, ultrasound-guided practice.</div>
           </div>
         </motion.div>
       </div>

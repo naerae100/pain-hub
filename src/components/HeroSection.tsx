@@ -153,7 +153,7 @@ const HeroSection = () => {
                   <div className="mt-8 hidden md:grid grid-cols-3 gap-3 text-xs text-muted-foreground">
                     {[
                       { value: "30+ yrs", label: "clinical leadership" },
-                      { value: "500+", label: "trained clinicians" },
+                      { value: "50+", label: "trained clinicians" },
                       { value: "Evidence", label: "driven practice" },
                     ].map((item) => (
                       <div

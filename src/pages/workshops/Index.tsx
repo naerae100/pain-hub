@@ -143,7 +143,7 @@ const WorkshopIndex = () => {
                         </motion.div>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-6 mt-16 max-w-6xl mx-auto">
+                    <div className="grid md:grid-cols-2 gap-6 mt-16 max-w-4xl mx-auto">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -161,15 +161,6 @@ const WorkshopIndex = () => {
                             className="content-img-wrap shadow-xl"
                         >
                             <img src={sydneyWorkshop2} alt="Sydney Workshop 2" className="w-full h-full object-cover" />
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            viewport={{ once: true }}
-                            className="content-img-wrap shadow-xl"
-                        >
-                            <img src={shoulderAnatomy1} alt="Anatomy Drawing" className="content-img" />
                         </motion.div>
                     </div>
                 </div>
@@ -250,10 +241,7 @@ const WorkshopIndex = () => {
                             className="relative"
                         >
                             <div className="content-img-wrap content-img-wrap--auto shadow-xl rounded-2xl overflow-hidden">
-                                <img src={sydneyWorkshop1} alt="Sydney Workshop" className="w-full h-auto object-cover" />
-                            </div>
-                            <div className="absolute -bottom-8 -left-8 w-1/2 aspect-square rounded-2xl overflow-hidden shadow-2xl border-4 border-background hidden md:block">
-                                <img src={sydneyWorkshop2} alt="Workshop Session" className="w-full h-full object-cover" />
+                                <img src={brisbaneWorkshop} alt="Brisbane Workshop" className="w-full h-auto object-cover" />
                             </div>
                         </motion.div>
                     </div>

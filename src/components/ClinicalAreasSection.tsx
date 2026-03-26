@@ -3,8 +3,8 @@ import { Activity, Layers, Dna } from "lucide-react";
 
 const areas = [
     {
-        title: "Pain Medicine",
-        description: "Interventional techniques for acute and chronic pain, including cryoanalgesia, nerve blocks, and neuromodulation.",
+        title: "Pain Management",
+        description: "Interventional techniques for acute and chronic pain, including cryoanalgesia, nerve blocks, pre-, intra-, and postoperative pain management.",
         color: "text-blue-500",
         bg: "bg-blue-500/10",
         icon: Activity,

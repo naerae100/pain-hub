@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Stethoscope, Eye, ClipboardList, ShieldCheck, ArrowRight, FileText, Download, Globe } from "lucide-react";
+import { MapPin, Stethoscope, Eye, Snowflake, Minimize2, Zap, Dna, ArrowRight, FileText, Download, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageHero from "@/components/PageHero";
 import referenceHero from "@/assets/Dr Chalk teaches intercostal cryo nerve block.jpg";
@@ -22,22 +22,28 @@ const enquiryItems = [
 
 const resources = [
     {
-        title: "Clinical Observation Guidelines",
-        description: "Best-practice framework for clinical observation sessions in interventional pain settings.",
-        icon: ClipboardList,
-        href: "/resources",
+        title: "Cryoanalgesia & Cryoneurolysis",
+        description: "155 peer-reviewed studies across 9 anatomical areas.",
+        icon: Snowflake,
+        href: "/resources#cryo",
     },
     {
-        title: "Procedural Safety Protocols",
-        description: "Standardised safety protocols for minimally invasive spine and pain procedures.",
-        icon: ShieldCheck,
-        href: "/resources",
+        title: "Epidural Adhesiolysis & Balloon Technologies",
+        description: "Systematic reviews, RCTs, and health economics.",
+        icon: Minimize2,
+        href: "/resources#balloon",
     },
     {
-        title: "Contact us for a Reference Centre Visit",
-        description: "Enquire about scheduling a clinical observation visit at one of our reference centres.",
-        icon: FileText,
-        href: "/about#contact",
+        title: "PRP & Bone Marrow–derived Biologics",
+        description: "Superdose PRP and orthobiologic studies.",
+        icon: Dna,
+        href: "/resources#prp",
+    },
+    {
+        title: "Percutaneous Laser Disc Decompression (PLDD)",
+        description: "Clinical outcomes and radiological analysis.",
+        icon: Zap,
+        href: "/resources#pldd",
     },
 ];
 
@@ -50,12 +56,13 @@ const ClinicalReferenceCentres = () => {
                 title="Clinical Reference Centres"
                 subtitle="Observe real-world interventional pain and spine procedures in established clinical environments."
                 breadcrumbs={[{ label: "Clinical Education", href: "/clinical-education" }, { label: "Reference Centres" }]}
+                imagePosition="object-top"
             />
 
             {/* Overview */}
             <section className="py-20 lg:py-24">
                 <div className="section-container">
-                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                         <div>
                             <div className="flex items-center gap-3 text-primary uppercase tracking-wider font-bold text-sm mb-4">
                                 <span className="w-8 h-[2px] bg-primary"></span>
@@ -130,7 +137,7 @@ const ClinicalReferenceCentres = () => {
                                 {observationItems.map((item) => (
                                     <li key={item} className="flex items-start gap-3">
                                         <Eye className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                                        <span className="text-muted-foreground text-base">{item}</span>
+                                        <span className="text-muted-foreground text-lg">{item}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -171,7 +178,7 @@ const ClinicalReferenceCentres = () => {
                                 {enquiryItems.map((item) => (
                                     <li key={item} className="flex items-start gap-3">
                                         <ArrowRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                                        <span className="text-muted-foreground text-base">{item}</span>
+                                        <span className="text-muted-foreground text-lg">{item}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -199,7 +206,7 @@ const ClinicalReferenceCentres = () => {
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {resources.map((resource) => (
                             <Link
                                 key={resource.title}
@@ -210,19 +217,10 @@ const ClinicalReferenceCentres = () => {
                                     <resource.icon className="w-6 h-6" />
                                 </div>
                                 <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{resource.title}</h3>
-                                <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-grow">{resource.description}</p>
+                                <p className="text-muted-foreground text-base leading-relaxed mb-4 flex-grow">{resource.description}</p>
                                 <div className="flex items-center gap-2 text-sm font-medium text-primary">
-                                    {resource.title.includes("Contact") ? (
-                                        <>
-                                            <ArrowRight className="w-4 h-4" />
-                                            Enquire Now
-                                        </>
-                                    ) : (
-                                        <>
-                                            <Download className="w-4 h-4" />
-                                            View Resource
-                                        </>
-                                    )}
+                                    <ArrowRight className="w-4 h-4" />
+                                    View Evidence
                                 </div>
                             </Link>
                         ))}
