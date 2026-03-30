@@ -85,9 +85,9 @@ const ClinicalReferenceCentres = () => {
                         </div>
                     </div>
 
-                    <div className="mt-16 max-w-4xl mx-auto">
-                        <div className="content-img-wrap content-img-wrap--wide shadow-lg">
-                            <img src={referenceCentresImg} alt="Clinical Reference Centres" className="content-img" />
+                    <div className="mt-12 lg:mt-16">
+                        <div className="w-full rounded-2xl overflow-hidden shadow-lg aspect-[16/6] md:aspect-[16/7]">
+                            <img src={referenceCentresImg} alt="Clinical Reference Centres" className="w-full h-full object-cover object-center" />
                         </div>
                     </div>
                 </div>

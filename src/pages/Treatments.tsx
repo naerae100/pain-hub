@@ -13,56 +13,6 @@ const Treatments = () => {
                 breadcrumbs={[{ label: "Procedures" }]}
             />
 
-            {/* Introductory Text Below Hero */}
-            <section className="py-16 lg:py-20">
-                <div className="section-container">
-                    <div className="max-w-4xl mx-auto text-center space-y-6">
-                        <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                            IPMA supports image-guided, minimally invasive procedures designed to reduce tissue disruption, support recovery, and expand treatment options for patients who have not responded to conventional therapies.
-                        </p>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
-                            These procedures are grounded in evidence-based interventional pain and spine practice and are delivered within structured clinical governance frameworks.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Procedures Grid */}
-            <section className="py-16 lg:py-20 bg-secondary/20 border-y border-slate-100">
-                <div className="section-container">
-                    <div className="text-center max-w-3xl mx-auto mb-16">
-                        <span className="pill mb-6">Procedural Platforms</span>
-                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
-                            Interventional Procedures
-                        </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
-                            Image-guided procedures enabling minimally invasive interventional pain and spine care.
-                        </p>
-                    </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {treatments.map((treatment) => (
-                            <Link
-                                key={treatment.id}
-                                to={`/procedures/${treatment.slug}`}
-                                className="bg-card border border-slate-100 p-8 rounded-xl hover:shadow-lg transition-all duration-300 group flex flex-col h-full"
-                            >
-                                <h3 className="text-xl font-display font-bold text-foreground mb-4 group-hover:text-primary transition-colors leading-tight">
-                                    {treatment.title}
-                                </h3>
-
-                                <p className="text-muted-foreground leading-relaxed mb-8 flex-grow text-sm">
-                                    {treatment.summary}
-                                </p>
-
-                                <div className="flex items-center text-primary font-bold mt-auto text-sm">
-                                    Read More →
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* Why Minimally Invasive Interventional Care */}
             <section className="py-20 lg:py-24">
                 <div className="section-container">
@@ -100,8 +50,71 @@ const Treatments = () => {
                 </div>
             </section>
 
+            {/* Core Mission / Introductory Text (Restyled to be grounded) */}
+            <section className="py-16 lg:py-24 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500/5 to-transparent rounded-full blur-3xl" />
+
+                <div className="section-container relative z-10">
+                    <div className="max-w-4xl mx-auto text-center space-y-8">
+                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white shadow-sm border border-slate-200 text-primary">
+                            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h2 className="text-2xl lg:text-3xl font-display font-semibold text-slate-800">
+                            Clinical Governance & Excellence
+                        </h2>
+                        <div className="space-y-6 text-lg lg:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+                            <p>
+                                <strong className="text-primary font-semibold">IPMA</strong> supports image-guided, minimally invasive procedures designed to reduce tissue disruption, support recovery, and expand treatment options for patients who have not responded to conventional therapies.
+                            </p>
+                            <p>
+                                These procedures are grounded in evidence-based interventional pain and spine practice and are delivered within structured clinical governance frameworks.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Procedures Grid */}
+            <section className="py-16 lg:py-24">
+                <div className="section-container">
+                    <div className="text-center max-w-3xl mx-auto mb-16">
+                        <span className="pill mb-6">Procedural Platforms</span>
+                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
+                            Interventional Procedures
+                        </h2>
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                            Image-guided procedures enabling minimally invasive interventional pain and spine care.
+                        </p>
+                    </div>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {treatments.map((treatment) => (
+                            <Link
+                                key={treatment.id}
+                                to={`/procedures/${treatment.slug}`}
+                                className="bg-card border border-slate-100 p-8 rounded-xl hover:shadow-lg transition-all duration-300 group flex flex-col h-full"
+                            >
+                                <h3 className="text-xl font-display font-bold text-foreground mb-4 group-hover:text-primary transition-colors leading-tight">
+                                    {treatment.title}
+                                </h3>
+
+                                <p className="text-muted-foreground leading-relaxed mb-8 flex-grow text-sm">
+                                    {treatment.summary}
+                                </p>
+
+                                <div className="flex items-center text-primary font-bold mt-auto text-sm">
+                                    Read More →
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Call to Action */}
-            <section className="py-16 lg:py-20 bg-secondary/30 border-y border-slate-100">
+            <section className="py-16 lg:py-20 bg-secondary/30 border-t border-slate-100">
                 <div className="section-container">
                     <div className="max-w-4xl mx-auto">
                         <div className="relative bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-10 lg:p-16 text-white shadow-2xl overflow-hidden">

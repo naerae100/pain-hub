@@ -92,16 +92,18 @@ const AboutSection = () => {
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
           </div>
-          <div className="hidden md:block absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-xl rounded-xl p-4 max-w-[240px] border border-slate-100 shadow-lg">
-            <div className="aspect-[4/3] rounded-lg overflow-hidden mb-3 border border-slate-100">
+          <div className="hidden md:block absolute -bottom-10 -left-12 bg-white/95 backdrop-blur-2xl rounded-[2rem] p-6 w-[360px] lg:w-[420px] border border-white/60 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] ring-1 ring-black/5 z-10">
+            <div className="aspect-[4/3] rounded-[1.25rem] overflow-hidden mb-5 border border-slate-100/50 shadow-inner">
               <img
                 src={sydneyWorkshop3}
                 alt="Workshop in session"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 hover:rotate-1"
               />
             </div>
-            <div className="text-base font-bold text-slate-800">Live workshops</div>
-            <div className="text-sm text-slate-500">Hands-on, ultrasound-guided practice.</div>
+            <div className="px-2 pb-1">
+                <div className="text-xl font-display font-bold text-slate-800 mb-1">Live workshops</div>
+                <div className="text-base text-slate-500 font-medium">Hands-on, ultrasound-guided practice.</div>
+            </div>
           </div>
         </motion.div>
       </div>

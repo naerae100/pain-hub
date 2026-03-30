@@ -95,7 +95,7 @@ const TreatmentsSection = () => {
                 <motion.img
                   src={treatment.image}
                   alt={treatment.title}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full object-cover ${index === 0 ? 'object-bottom' : ''}`}
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.6 }}
                 />

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Activity, Layers, Dna } from "lucide-react";
 
 const areas = [
@@ -8,6 +9,7 @@ const areas = [
         color: "text-blue-500",
         bg: "bg-blue-500/10",
         icon: Activity,
+        href: "/procedures/cryoanalgesia",
     },
     {
         title: "Spine",
@@ -15,6 +17,7 @@ const areas = [
         color: "text-violet-500",
         bg: "bg-violet-500/10",
         icon: Layers,
+        href: "/procedures/epidural-balloon-decompression",
     },
     {
         title: "Orthopaedics",
@@ -22,6 +25,7 @@ const areas = [
         color: "text-emerald-500",
         bg: "bg-emerald-500/10",
         icon: Dna,
+        href: "/procedures/orthobiologic-therapies",
     },
 ];
 
@@ -50,27 +54,34 @@ const ClinicalAreasSection = () => {
             {/* Cards */}
             <div className="relative grid md:grid-cols-3 gap-5 md:gap-6">
                 {areas.map((area, index) => (
-                    <motion.div
+                    <Link
                         key={area.title}
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, delay: index * 0.12, ease: [0.4, 0, 0.2, 1] }}
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="group bg-white rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500 p-6 md:p-8"
+                        to={area.href}
+                        className="group bg-white rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500 p-6 md:p-8 block"
                     >
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className={`w-10 h-10 rounded-xl ${area.bg} flex items-center justify-center`}>
-                                <area.icon className={`w-5 h-5 ${area.color}`} />
+                        <motion.div
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7, delay: index * 0.12, ease: [0.4, 0, 0.2, 1] }}
+                            viewport={{ once: true, margin: "-50px" }}
+                        >
+                            <div className="flex items-center gap-3 mb-4">
+                                <div className={`w-10 h-10 rounded-xl ${area.bg} flex items-center justify-center`}>
+                                    <area.icon className={`w-5 h-5 ${area.color}`} />
+                                </div>
+                                <span className="text-xs font-bold uppercase tracking-wider text-slate-500">{area.title}</span>
                             </div>
-                            <span className="text-xs font-bold uppercase tracking-wider text-slate-500">{area.title}</span>
-                        </div>
-                        <h3 className="font-display text-xl md:text-2xl font-bold text-slate-800 mb-3">
-                            {area.title}
-                        </h3>
-                        <p className="text-slate-500 text-sm md:text-base leading-relaxed">
-                            {area.description}
-                        </p>
-                    </motion.div>
+                            <h3 className="font-display text-xl md:text-2xl font-bold text-slate-800 mb-3 group-hover:text-primary transition-colors duration-300">
+                                {area.title}
+                            </h3>
+                            <p className="text-slate-500 text-sm md:text-base leading-relaxed mb-4">
+                                {area.description}
+                            </p>
+                            <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all duration-300">
+                                Learn more →
+                            </span>
+                        </motion.div>
+                    </Link>
                 ))}
             </div>
         </section>
