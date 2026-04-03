@@ -62,7 +62,7 @@ const PageHero = ({
         <div className="rounded-[1.6rem] border border-border bg-white/70 p-4">
           <div className="aspect-[4/3] rounded-[1.25rem] overflow-hidden bg-secondary relative">
             {image ? (
-              <img src={image} alt={imageAlt || title} className="w-full h-full object-cover" />
+              <img src={image} alt={imageAlt || title} className="w-full h-full object-contain" />
             ) : (
               <div className="absolute inset-0 pattern-grid" />
             )}
@@ -151,9 +151,9 @@ const ArchiveGrid = ({ title, items }: { title?: string; items: WpItem[] }) => (
           <Link key={item.id} to={item.path} className="surface-card p-5">
             <div className="aspect-[4/3] rounded-[1.2rem] overflow-hidden bg-secondary mb-5">
               {item.featuredImage ? (
-                <img src={item.featuredImage} alt={item.featuredAlt || item.titleText} className="w-full h-full object-cover" />
+                <img src={item.featuredImage} alt={item.featuredAlt || item.titleText} className="w-full h-full object-contain" />
               ) : (
-                <img src={heroMedical} alt="IPMA placeholder" className="w-full h-full object-cover" />
+                <img src={heroMedical} alt="IPMA placeholder" className="w-full h-full object-contain" />
               )}
             </div>
             {item.date && (
@@ -187,7 +187,7 @@ const TaxonomyGrid = ({
       {items.map((item) => (
         <Link key={item.id} to={wpLinkToPath(item.link)} className="surface-card p-6">
           <div className="aspect-[4/3] rounded-[1.2rem] overflow-hidden bg-secondary mb-5">
-            <img src={heroMedical} alt="IPMA placeholder" className="w-full h-full object-cover" />
+            <img src={heroMedical} alt="IPMA placeholder" className="w-full h-full object-contain" />
           </div>
           <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
             {item.taxonomy === "product_cat" ? "Product Category" : "Category"}
@@ -212,9 +212,9 @@ const ChildPagesGrid = ({ title, pages }: { title: string; pages: WpItem[] }) =>
           <Link key={page.id} to={page.path} className="surface-card p-6">
             <div className="aspect-[4/3] rounded-[1.2rem] overflow-hidden bg-secondary mb-5">
               {page.featuredImage ? (
-                <img src={page.featuredImage} alt={page.featuredAlt || page.titleText} className="w-full h-full object-cover" />
+                <img src={page.featuredImage} alt={page.featuredAlt || page.titleText} className="w-full h-full object-contain" />
               ) : (
-                <img src={heroMedical} alt="IPMA placeholder" className="w-full h-full object-cover" />
+                <img src={heroMedical} alt="IPMA placeholder" className="w-full h-full object-contain" />
               )}
             </div>
             <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Page</div>
@@ -319,9 +319,9 @@ const ResourceExplorer = ({
             <Link key={item.id} to={item.path} className="surface-card p-5">
               <div className="aspect-[4/3] rounded-[1.2rem] overflow-hidden bg-secondary mb-5">
                 {item.featuredImage ? (
-                  <img src={item.featuredImage} alt={item.featuredAlt || item.titleText} className="w-full h-full object-cover" />
+                  <img src={item.featuredImage} alt={item.featuredAlt || item.titleText} className="w-full h-full object-contain" />
                 ) : (
-                  <img src={heroMedical} alt="IPMA placeholder" className="w-full h-full object-cover" />
+                  <img src={heroMedical} alt="IPMA placeholder" className="w-full h-full object-contain" />
                 )}
               </div>
               {item.date && (

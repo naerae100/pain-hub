@@ -118,7 +118,7 @@ const ResearchSection = () => {
                 <motion.img
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.6 }}
                 />

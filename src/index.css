@@ -6,26 +6,26 @@
 
 @layer base {
   :root {
-    /* Modern Clinical Palette */
-    --background: 210 30% 98%;
-    --foreground: 222 32% 12%;
+    /* Clean Clinical Palette */
+    --background: 0 0% 100%;
+    --foreground: 222 32% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 32% 12%;
+    --card-foreground: 222 32% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 32% 12%;
+    --popover-foreground: 222 32% 10%;
 
     /* Primary - IPMA Navy Blue #004A8F */
     --primary: 209 100% 28%;
     --primary-foreground: 210 40% 98%;
 
-    /* Secondary - Cool Gray */
-    --secondary: 210 24% 95%;
-    --secondary-foreground: 222 20% 20%;
+    /* Secondary - Very light gray */
+    --secondary: 210 16% 96%;
+    --secondary-foreground: 222 20% 18%;
 
-    --muted: 210 20% 92%;
-    --muted-foreground: 220 10% 48%;
+    --muted: 210 16% 93%;
+    --muted-foreground: 222 14% 36%;
 
     /* Accent - IPMA Sky Blue #3C9CD7 */
     --accent: 204 62% 54%;
@@ -34,8 +34,8 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 24% 88%;
-    --input: 210 24% 88%;
+    --border: 210 16% 90%;
+    --input: 210 16% 90%;
     --ring: 209 100% 28%;
 
     --radius: 0.75rem;
@@ -63,13 +63,9 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Calibri', 'Manrope', system-ui, sans-serif;
+    font-family: 'Inter', 'Calibri', 'Manrope', system-ui, sans-serif;
     font-weight: 400;
     letter-spacing: -0.005em;
-    background-image:
-      radial-gradient(circle at 10% 10%, hsl(var(--primary) / 0.08), transparent 40%),
-      radial-gradient(circle at 90% 0%, hsl(var(--accent) / 0.06), transparent 35%);
-    background-attachment: fixed;
   }
 
   h1,
@@ -394,10 +390,10 @@
 @layer utilities {
 
   /* ── Standardised Content Image Containers ── */
+  /* Default: show the full image at its natural aspect ratio, no crop */
   .content-img-wrap {
-    @apply w-full overflow-hidden rounded-xl bg-secondary/20;
-    aspect-ratio: 4 / 3;
-    /* uniform height across all images   */
+    @apply w-full overflow-hidden rounded-2xl;
+    /* No forced aspect-ratio — image dictates its own height */
   }
 
   .content-img-wrap--wide {
@@ -410,11 +406,18 @@
 
   .content-img-wrap--auto {
     aspect-ratio: auto;
-    /* for images that must keep native ratio */
   }
 
+  /* Full image shown, no crop */
   .content-img {
-    @apply w-full h-full object-contain;
+    @apply w-full h-auto block;
+    object-fit: contain;
+  }
+
+  /* Readable body text — replaces text-muted-foreground for long copy */
+  .prose-body {
+    color: hsl(222 14% 30%);
+    line-height: 1.75;
   }
 
   /* Animation Delays */

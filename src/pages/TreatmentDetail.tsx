@@ -51,7 +51,7 @@ const TreatmentDetail = () => {
                                 <img
                                     src={treatment.breakthroughCard.image}
                                     alt="Treatment Procedure"
-                                    className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"
+                                    className="absolute inset-0 w-full h-full object-contain opacity-40 group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="relative z-10 p-10 lg:p-12 flex flex-col h-full bg-gradient-to-t from-[#0a4b8f] via-[#0a4b8f]/60 to-transparent">
                                     <div className="mt-auto">
@@ -71,7 +71,7 @@ const TreatmentDetail = () => {
                         {/* Placeholder if no breakthrough card */}
                         {!treatment.breakthroughCard && (
                             <div className="relative rounded-2xl overflow-hidden bg-secondary min-h-[400px] flex items-center justify-center border border-slate-100">
-                                <img src={treatment.heroImage} className="absolute inset-0 w-full h-full object-cover opacity-50" />
+                                <img src={treatment.heroImage} className="absolute inset-0 w-full h-full object-contain opacity-50" />
                                 <div className="relative z-10 bg-background/80 backdrop-blur-md p-8 rounded-3xl text-center max-w-sm m-4">
                                     <h3 className="text-2xl font-bold mb-2">Learn More</h3>
                                     <p className="text-muted-foreground text-sm">Discover how {treatment.title} can help your patients.</p>
@@ -229,7 +229,7 @@ const TreatmentDetail = () => {
                                 {treatment.socialPosts.map((post, index) => (
                                     <div key={index} className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                                         <div className="flex items-center gap-3 mb-4">
-                                            <img src={post.avatar} alt={post.author} className="w-10 h-10 rounded-full bg-gray-200 object-cover" />
+                                            <img src={post.avatar} alt={post.author} className="w-10 h-10 rounded-full bg-gray-200 object-contain" />
                                             <div className="flex flex-col">
                                                 <span className="text-sm font-bold text-gray-900">{post.author}</span>
                                                 <span className="text-xs text-gray-500">{post.role} • {post.time}</span>
@@ -240,7 +240,7 @@ const TreatmentDetail = () => {
                                             {post.content}
                                         </p>
                                         <div className="relative rounded-lg overflow-hidden aspect-[4/5] bg-black group cursor-pointer">
-                                            <img src={post.image} alt="Post Content" className="w-full h-full object-cover opacity-80" />
+                                            <img src={post.image} alt="Post Content" className="w-full h-full object-contain opacity-80" />
                                             <div className="absolute inset-0 flex items-center justify-center">
                                                 <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/40 group-hover:scale-110 transition-transform">
                                                     <Play className="w-5 h-5 text-white fill-white ml-0.5" />

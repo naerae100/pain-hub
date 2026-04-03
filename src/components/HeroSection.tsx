@@ -98,7 +98,7 @@ const HeroSection = () => {
                   <img
                     src={slides[currentSlide].image}
                     alt={slides[currentSlide].title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 lg:from-[hsl(222,32%,12%)/0.6] via-transparent to-transparent" />
                   <div className="hidden lg:block absolute bottom-6 left-6 glass-effect rounded-2xl px-4 py-3">

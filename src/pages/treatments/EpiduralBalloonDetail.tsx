@@ -30,11 +30,10 @@ const EpiduralBalloonDetail = () => {
             <section className="py-20 lg:py-24">
                 <div className="section-container">
                     <div className="max-w-4xl mx-auto">
-                        <span className="pill mb-6">Overview</span>
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-8">
                             What is Epidural Balloon Decompression?
                         </h2>
-                        <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                        <div className="space-y-6 text-lg text-foreground/70 leading-relaxed">
                             <p>
                                 Spinal Epidural Balloon Decompression and Adhesiolysis is a minimally invasive, non-surgical interventional technique developed to address persistent lumbar spinal stenosis, disc-related radicular pain, and epidural adhesions in patients who have not responded to conventional therapy.
                             </p>
@@ -53,45 +52,37 @@ const EpiduralBalloonDetail = () => {
             <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
                 <div className="section-container">
                     <div className="max-w-6xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Science</span>
+                        <div className="mb-16">
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 Mechanisms of Action
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-lg text-foreground/70 leading-relaxed max-w-3xl">
                                 Pain and functional limitation may improve through several complementary mechanisms:
                             </p>
                         </div>
 
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
                             {[
                                 {
-                                    icon: Expand,
                                     title: "Mechanical Decompression",
                                     desc: "Balloon expansion creates additional space within the spinal canal or neural foramen, reducing neural crowding and improving nerve mobility."
                                 },
                                 {
-                                    icon: Droplets,
                                     title: "Microcirculatory Improvement",
                                     desc: "Expansion of restricted regions may restore local blood flow and reduce ischemia-related neural dysfunction contributing to claudication."
                                 },
                                 {
-                                    icon: Move,
                                     title: "Enhanced Adhesiolysis",
                                     desc: "Balloon dilation disrupts fibrotic adhesions across a broader area than conventional catheter manipulation, improving catheter mobility and medication distribution."
                                 },
                                 {
-                                    icon: Layers,
                                     title: "Retrodiscal Decompression",
                                     desc: "In selected cases, balloon expansion within the anterior or retrodiscal epidural space may improve mechanical dynamics without removal of disc material."
                                 }
                             ].map((item, idx) => (
-                                <div key={idx} className="bg-background border border-border rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow text-center">
-                                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-6">
-                                        <item.icon className="w-7 h-7" />
-                                    </div>
+                                <div key={idx} className="border-l-2 border-primary/30 pl-6">
                                     <h3 className="text-lg font-display font-bold text-foreground mb-3">{item.title}</h3>
-                                    <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                                    <p className="text-foreground/70 leading-relaxed">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -105,11 +96,10 @@ const EpiduralBalloonDetail = () => {
                     <div className="max-w-5xl mx-auto">
                         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                             <div>
-                                <span className="pill mb-6">Clinical Positioning</span>
                                 <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                                     Where It Fits Clinically
                                 </h2>
-                                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                                <p className="text-lg text-foreground/70 leading-relaxed mb-6">
                                     Epidural balloon decompression may be considered in patients with:
                                 </p>
                                 <ul className="space-y-3 mb-8">
@@ -121,7 +111,7 @@ const EpiduralBalloonDetail = () => {
                                         "Post-spinal surgery pain syndrome",
                                         "Neurogenic claudication (leg pain, heaviness, weakness, or numbness that occurs with walking or prolonged standing due to compression of spinal nerves)"
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                                        <li key={i} className="flex items-start gap-3 text-foreground/75">
                                             <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />{item}
                                         </li>
                                     ))}
@@ -134,13 +124,13 @@ const EpiduralBalloonDetail = () => {
                                         "Limited response to physiotherapy",
                                         "Inadequate durability following standard epidural injections or conventional neuroplasty"
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                        <li key={i} className="flex items-start gap-2 text-foreground/75 text-sm">
                                             <ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" />{item}
                                         </li>
                                     ))}
                                 </ul>
 
-                                <p className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4 py-2">
+                                <p className="text-sm text-foreground/75 italic border-l-4 border-primary pl-4 py-2">
                                     Within multidisciplinary care models, it is typically positioned between repeat epidural therapy and surgical intervention.
                                 </p>
                             </div>
@@ -151,7 +141,7 @@ const EpiduralBalloonDetail = () => {
                                     <img src={adhesiolysisImg} alt="Percutaneous epidural adhesiolysis combined with balloon decompression case study" className="w-full h-auto object-contain" />
                                 </div>
                                 <div className="mt-4 bg-secondary/30 border border-border rounded-2xl p-4">
-                                    <p className="text-xs text-muted-foreground leading-relaxed">
+                                    <p className="text-xs text-foreground/70 leading-relaxed">
                                         <strong>Figure:</strong> Percutaneous epidural adhesiolysis combined with balloon decompression in a patient with lumbar post-laminectomy syndrome. A 61-year-old male with a history of L4-5 partial laminectomy and flavectomy 1 year prior underwent combined epidural adhesiolysis and balloon decompression. (A) Adhesive cauda equina in cross-sectional MRI at L4-5. (B) Sagittal MRI showing well-decompressed state. (C) AP fluoroscopic view showing contrast filling defect. (D) Lateral fluoroscopic image showing filling defect. (E) Inflatable balloon catheter placed with contrast medium. (F) Contrast flow detected after balloon procedure.
                                     </p>
                                 </div>
@@ -165,20 +155,16 @@ const EpiduralBalloonDetail = () => {
             <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
                 <div className="section-container">
                     <div className="max-w-6xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Patient Selection</span>
+                        <div className="mb-16">
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 Indications and Patient Selection
                             </h2>
                         </div>
 
-                        <div className="grid lg:grid-cols-2 gap-12 items-start">
-                            <div className="space-y-8">
-                                {/* Key Indications */}
-                                <div className="bg-background border border-border rounded-3xl p-8 shadow-sm">
-                                    <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                                        <Target className="w-6 h-6 text-primary" /> Key Indications
-                                    </h3>
+                        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                            <div className="space-y-10">
+                                <div className="border-l-2 border-primary/30 pl-6">
+                                    <h3 className="text-xl font-bold text-foreground mb-4">Key Indications</h3>
                                     <ul className="space-y-3">
                                         {[
                                             "Lumbar spinal stenosis (central or foraminal)",
@@ -186,25 +172,22 @@ const EpiduralBalloonDetail = () => {
                                             "Epidural adhesions",
                                             "Post-spinal surgery pain syndrome"
                                         ].map((item, i) => (
-                                            <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                                            <li key={i} className="flex items-start gap-3 text-foreground/75">
                                                 <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />{item}
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
 
-                                {/* Predictors of Favourable Response */}
-                                <div className="bg-background border border-border rounded-3xl p-8 shadow-sm">
-                                    <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                                        <TrendingUp className="w-6 h-6 text-green-500" /> Predictors of Favourable Response
-                                    </h3>
+                                <div className="border-l-2 border-green-400 pl-6">
+                                    <h3 className="text-xl font-bold text-foreground mb-4">Predictors of Favourable Response</h3>
                                     <ul className="space-y-3">
                                         {[
                                             "Prior temporary relief from epidural block or neuroplasty",
                                             "Imaging consistent with compressive or adhesive pathology",
                                             "Predominantly mechanical or claudicant symptom profile"
                                         ].map((item, i) => (
-                                            <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                                            <li key={i} className="flex items-start gap-3 text-foreground/75">
                                                 <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />{item}
                                             </li>
                                         ))}
@@ -213,20 +196,19 @@ const EpiduralBalloonDetail = () => {
                             </div>
 
                             <div className="space-y-8">
-                                {/* Inflated Balloon Image */}
+                                {/* Inflated Balloon Image — frameless */}
                                 <div>
-                                    <div className="content-img-wrap shadow-xl">
-                                        <img src={inflatedBalloonImg} alt="Inflated balloon during procedure" className="content-img" />
+                                    <div className="w-full rounded-2xl overflow-hidden shadow-xl">
+                                        <img src={inflatedBalloonImg} alt="Inflated balloon during procedure" className="w-full h-auto object-contain" />
                                     </div>
-                                    <p className="text-center text-xs text-muted-foreground mt-3 font-medium">
+                                    <p className="text-center text-sm text-foreground/75 mt-3 font-medium">
                                         Showing the inflated balloon during procedure
                                     </p>
                                 </div>
 
-                                {/* Factors Associated with Reduced Response */}
-                                <div className="bg-background border border-amber-200 rounded-3xl p-8 shadow-sm">
-                                    <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                                        <AlertTriangle className="w-6 h-6 text-amber-500" /> Factors Associated with Reduced Response
+                                <div className="border-l-2 border-amber-400 pl-6">
+                                    <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+                                        <AlertTriangle className="w-5 h-5 text-amber-500" /> Factors Associated with Reduced Response
                                     </h3>
                                     <ul className="space-y-3">
                                         {[
@@ -235,12 +217,12 @@ const EpiduralBalloonDetail = () => {
                                             "Redundant nerve roots on MRI",
                                             "Significant psychological comorbidity"
                                         ].map((item, i) => (
-                                            <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                                            <li key={i} className="flex items-start gap-3 text-foreground/75">
                                                 <ChevronRight className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />{item}
                                             </li>
                                         ))}
                                     </ul>
-                                    <p className="text-sm text-muted-foreground mt-4 italic">
+                                    <p className="text-sm text-foreground/75 mt-4 italic">
                                         Careful clinical and radiological correlation is essential.
                                     </p>
                                 </div>
@@ -254,15 +236,14 @@ const EpiduralBalloonDetail = () => {
             <section className="py-20 lg:py-24">
                 <div className="section-container">
                     <div className="max-w-5xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Technique</span>
+                        <div className="mb-16">
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 What the Procedure Involves
                             </h2>
                         </div>
 
-                        <div className="bg-card border border-border rounded-3xl p-8 lg:p-12 shadow-sm mb-12">
-                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                        <div className="mb-12">
+                            <p className="text-lg text-foreground/70 leading-relaxed mb-8">
                                 Under fluoroscopic guidance, a small inflatable balloon catheter is introduced into the epidural space, most commonly via a caudal approach. Transforaminal or interlaminar access may be used for focal pathology.
                             </p>
                             <h3 className="text-xl font-bold text-foreground mb-6">Controlled balloon inflation is used to:</h3>
@@ -280,7 +261,7 @@ const EpiduralBalloonDetail = () => {
                                     </div>
                                 ))}
                             </div>
-                            <p className="text-muted-foreground leading-relaxed mb-4">
+                            <p className="text-foreground/70 leading-relaxed mb-4">
                                 Compared with conventional epidural catheter techniques, balloon dilation enables mechanical expansion of restricted compartments rather than medication delivery alone.
                             </p>
                             <p className="text-foreground font-medium italic border-l-4 border-primary pl-4 py-2">
@@ -295,11 +276,10 @@ const EpiduralBalloonDetail = () => {
             <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
                 <div className="section-container">
                     <div className="max-w-4xl mx-auto">
-                        <span className="pill mb-6">Procedural Safety</span>
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-8">
                             Procedural Overview and Safety
                         </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                        <p className="text-lg text-foreground/70 leading-relaxed mb-8">
                             Balloon decompression is most commonly performed via a caudal epidural approach, with transforaminal or interlaminar access selected based on anatomical and pathological considerations.
                         </p>
                         <h3 className="text-xl font-bold text-foreground mb-6">Key procedural considerations include:</h3>
@@ -310,12 +290,12 @@ const EpiduralBalloonDetail = () => {
                                 "Continuous fluoroscopic guidance",
                                 "Correlation of catheter contact or symptom reproduction with the patient's typical pain pattern"
                             ].map((item, i) => (
-                                <li key={i} className="flex items-start gap-3 text-muted-foreground bg-background border border-border rounded-xl p-4">
+                                <li key={i} className="flex items-start gap-3 text-foreground/75">
                                     <Shield className="w-5 h-5 text-primary shrink-0 mt-0.5" />{item}
                                 </li>
                             ))}
                         </ul>
-                        <p className="text-muted-foreground italic">
+                        <p className="text-foreground/75 italic">
                             The procedure is performed under image guidance to support accuracy and procedural safety.
                         </p>
                     </div>
@@ -326,8 +306,7 @@ const EpiduralBalloonDetail = () => {
             <section className="py-20 lg:py-24">
                 <div className="section-container">
                     <div className="max-w-5xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Evidence</span>
+                        <div className="mb-16">
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 Clinical Evidence and Outcomes
                             </h2>
@@ -367,7 +346,7 @@ const EpiduralBalloonDetail = () => {
                                         </li>
                                     ))}
                                 </ul>
-                                <p className="text-sm text-muted-foreground mt-6 border-t border-border pt-4">
+                                <p className="text-sm text-foreground/75 mt-6 border-t border-border pt-4">
                                     Randomised comparisons suggest higher patient satisfaction and longer-lasting benefit compared with conventional neuroplasty techniques in selected populations.
                                 </p>
                             </div>
@@ -376,7 +355,7 @@ const EpiduralBalloonDetail = () => {
                         {/* Expanded Summary */}
                         <div className="bg-primary/5 border border-primary/20 rounded-3xl p-8 lg:p-12 mb-12">
                             <h3 className="text-2xl font-display font-bold text-foreground mb-4">Expanded Clinical Evidence Summary</h3>
-                            <p className="text-muted-foreground leading-relaxed mb-8">
+                            <p className="text-foreground/70 leading-relaxed mb-8">
                                 Percutaneous epidural adhesiolysis addresses epidural fibrosis by mechanically disrupting scar tissue and restoring access to the affected nerve root. Balloon catheter systems enhance this mechanical disruption.
                             </p>
                             <div className="grid md:grid-cols-2 gap-8">
@@ -395,14 +374,14 @@ const EpiduralBalloonDetail = () => {
                                     <h4 className="font-bold text-foreground mb-4 flex items-center gap-2">
                                         <Activity className="w-5 h-5 text-primary" /> 10-Year Long-Term Follow-up
                                     </h4>
-                                    <p className="text-sm text-muted-foreground leading-relaxed">
+                                    <p className="text-sm text-foreground/70 leading-relaxed">
                                         A landmark 10-year RCT follow-up demonstrated sustained clinical benefit — the <strong className="text-foreground">longest follow-up evidence</strong> available for a minimally invasive intervention in this population.
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        <p className="text-center text-muted-foreground italic max-w-3xl mx-auto">
+                        <p className="text-center text-foreground/75 italic max-w-3xl mx-auto">
                             As with all interventional procedures, outcomes depend on appropriate patient selection and operator expertise.
                         </p>
                     </div>
@@ -413,11 +392,10 @@ const EpiduralBalloonDetail = () => {
             <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
                 <div className="section-container">
                     <div className="max-w-4xl mx-auto">
-                        <span className="pill mb-6">Safety</span>
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-8">
                             Risks and Limitations
                         </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                        <p className="text-lg text-foreground/70 leading-relaxed mb-8">
                             As with any epidural intervention, potential risks include:
                         </p>
                         <div className="grid sm:grid-cols-2 gap-4 mb-8">
@@ -434,10 +412,10 @@ const EpiduralBalloonDetail = () => {
                                 </div>
                             ))}
                         </div>
-                        <p className="text-muted-foreground leading-relaxed mb-4">
+                        <p className="text-foreground/70 leading-relaxed mb-4">
                             Balloon decompression is not indicated in all cases of spinal stenosis and should be integrated within a structured spine care pathway.
                         </p>
-                        <p className="text-muted-foreground leading-relaxed italic">
+                        <p className="text-foreground/70 leading-relaxed italic">
                             Careful patient selection, image guidance, and procedural expertise are essential to minimise complications.
                         </p>
                     </div>
@@ -449,11 +427,10 @@ const EpiduralBalloonDetail = () => {
                 <div className="section-container">
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center mb-10">
-                            <span className="pill mb-6">Training</span>
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 Education and Further Information
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-lg text-foreground/70 leading-relaxed max-w-3xl">
                                 Epidural balloon decompression requires structured training in:
                             </p>
                         </div>

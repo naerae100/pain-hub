@@ -62,32 +62,29 @@ const ClinicalReferenceCentres = () => {
             {/* Overview */}
             <section className="py-20 lg:py-24">
                 <div className="section-container">
-                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         <div>
-                            <div className="flex items-center gap-3 text-primary uppercase tracking-wider font-bold text-sm mb-4">
+                            <div className="flex items-center gap-3 text-primary uppercase tracking-wider font-bold text-sm mb-6">
                                 <span className="w-8 h-[2px] bg-primary"></span>
                                 Overview
                             </div>
-                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
+                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-8">
                                 Real-world clinical observation for deeper procedural understanding
                             </h2>
+                            <div className="flex flex-col gap-5">
+                                <p className="text-lg text-foreground/75 leading-relaxed">
+                                    IPMA Clinical Reference Centres provide clinicians with the opportunity to observe image-guided interventional pain and spine procedures within established, real-world clinical environments.
+                                </p>
+                                <p className="text-lg text-foreground/75 leading-relaxed">
+                                    The centres support deeper procedural understanding through direct exposure to clinical workflow, patient selection, technical execution, and peri-procedural care in routine practice.
+                                </p>
+                                <p className="text-lg text-foreground/75 leading-relaxed">
+                                    Observation within a functioning clinical service enables visiting clinicians to contextualise minimally invasive techniques within everyday clinical decision-making and patient management.
+                                </p>
+                            </div>
                         </div>
-                        <div className="flex flex-col gap-5">
-                            <p className="text-lg text-muted-foreground leading-relaxed">
-                                IPMA Clinical Reference Centres provide clinicians with the opportunity to observe image-guided interventional pain and spine procedures within established, real-world clinical environments.
-                            </p>
-                            <p className="text-lg text-muted-foreground leading-relaxed">
-                                The centres support deeper procedural understanding through direct exposure to clinical workflow, patient selection, technical execution, and peri-procedural care in routine practice.
-                            </p>
-                            <p className="text-lg text-muted-foreground leading-relaxed">
-                                Observation within a functioning clinical service enables visiting clinicians to contextualise minimally invasive techniques within everyday clinical decision-making and patient management.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="mt-12 lg:mt-16">
-                        <div className="w-full rounded-2xl overflow-hidden shadow-lg aspect-[16/6] md:aspect-[16/7]">
-                            <img src={referenceCentresImg} alt="Clinical Reference Centres" className="w-full h-full object-cover object-center" />
+                        <div className="w-full rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
+                            <img src={referenceCentresImg} alt="Clinical Reference Centres" className="w-full h-full object-contain object-center" />
                         </div>
                     </div>
                 </div>
@@ -165,7 +162,7 @@ const ClinicalReferenceCentres = () => {
                                     Expansion across Australia
                                 </h2>
                             </div>
-                            <p className="text-lg text-muted-foreground leading-relaxed">
+                            <p className="text-lg text-foreground/75 leading-relaxed">
                                 IPMA is progressively developing a national network of Clinical Reference Centres to support clinician education across multiple regions.
                             </p>
                         </div>
@@ -201,7 +198,7 @@ const ClinicalReferenceCentres = () => {
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                             Related Resources
                         </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             Supporting materials for clinicians planning or preparing for reference centre observation.
                         </p>
                     </div>

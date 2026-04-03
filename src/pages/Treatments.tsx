@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { treatments } from "@/data/treatments";
 import PageHero from "@/components/PageHero";
 import proceduresHero from "@/assets/Cryoanalgesia procedure in OR (1).png";
+import governanceImg from "@/assets/IPMA Clinical Governance.png";
 
 const Treatments = () => {
     return (
@@ -16,17 +17,16 @@ const Treatments = () => {
             {/* Why Minimally Invasive Interventional Care */}
             <section className="py-20 lg:py-24">
                 <div className="section-container">
-                    <div className="text-center max-w-3xl mx-auto mb-16">
-                        <span className="pill mb-6">Approach</span>
+                    <div className="max-w-3xl mb-16">
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                             Why Minimally Invasive Interventional Care?
                         </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             Conventional pain management pathways often rely on prolonged pharmacotherapy or major surgical intervention. Image-guided interventional techniques provide an alternative approach — targeting the anatomical source of pain through precise, minimally invasive procedures.
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
                         {[
                             {
                                 title: "Reduced Tissue Disruption",
@@ -41,37 +41,34 @@ const Treatments = () => {
                                 desc: "Interventional approaches may provide alternatives for patients who have not responded to conservative therapy or who are seeking options other than major surgery."
                             }
                         ].map((feature, idx) => (
-                            <div key={idx} className="bg-card border border-slate-100 rounded-xl p-8 text-center hover:shadow-lg transition-all duration-300">
-                                <h3 className="text-xl font-display font-bold text-foreground mb-4">{feature.title}</h3>
-                                <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
+                            <div key={idx} className="border-l-2 border-primary/30 pl-6">
+                                <h3 className="text-xl font-display font-bold text-foreground mb-3">{feature.title}</h3>
+                                <p className="text-foreground/70 leading-relaxed">{feature.desc}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Core Mission / Introductory Text (Restyled to be grounded) */}
-            <section className="py-16 lg:py-24 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500/5 to-transparent rounded-full blur-3xl" />
-
-                <div className="section-container relative z-10">
-                    <div className="max-w-4xl mx-auto text-center space-y-8">
-                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white shadow-sm border border-slate-200 text-primary">
-                            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+            {/* Clinical Governance Section */}
+            <section className="py-16 lg:py-24 bg-slate-50 border-y border-slate-100">
+                <div className="section-container">
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        <div className="w-full rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
+                            <img src={governanceImg} alt="IPMA Clinical Governance" className="w-full h-full object-contain object-center" />
                         </div>
-                        <h2 className="text-2xl lg:text-3xl font-display font-semibold text-slate-800">
-                            Clinical Governance & Excellence
-                        </h2>
-                        <div className="space-y-6 text-lg lg:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-                            <p>
-                                <strong className="text-primary font-semibold">IPMA</strong> supports image-guided, minimally invasive procedures designed to reduce tissue disruption, support recovery, and expand treatment options for patients who have not responded to conventional therapies.
-                            </p>
-                            <p>
-                                These procedures are grounded in evidence-based interventional pain and spine practice and are delivered within structured clinical governance frameworks.
-                            </p>
+                        <div>
+                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-slate-800 mb-6">
+                                Clinical Governance &amp; Excellence
+                            </h2>
+                            <div className="space-y-5 text-lg text-slate-600 leading-relaxed">
+                                <p>
+                                    <strong className="text-primary font-semibold">IPMA</strong> supports image-guided, minimally invasive procedures designed to reduce tissue disruption, support recovery, and expand treatment options for patients who have not responded to conventional therapies.
+                                </p>
+                                <p>
+                                    These procedures are grounded in evidence-based interventional pain and spine practice and are delivered within structured clinical governance frameworks.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -85,7 +82,7 @@ const Treatments = () => {
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                             Interventional Procedures
                         </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             Image-guided procedures enabling minimally invasive interventional pain and spine care.
                         </p>
                     </div>

@@ -10,7 +10,7 @@ const EvidenceBalloon = () => {
             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                 Epidural Adhesiolysis and Balloon Catheter Technologies
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+            <p className="text-lg text-foreground/75 leading-relaxed mb-10">
                 Chronic lumbar radicular pain and spinal stenosis remain significant clinical challenges. Epidural fibrosis and adhesions can limit the effectiveness of epidural injections and contribute to persistent nerve root irritation. Percutaneous epidural adhesiolysis was developed to address this problem by mechanically disrupting epidural scar tissue.
             </p>
 

@@ -41,10 +41,10 @@ const About = () => {
                         <p className="text-xl text-foreground font-medium leading-relaxed">
                             Interventional Pain Management Australia (IPMA) is an educational and clinical collaboration platform dedicated to advancing evidence-informed interventional pain and minimally invasive spine care.
                         </p>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             IPMA brings together clinicians, researchers, and procedural specialists to share knowledge, refine techniques, and support the responsible adoption of modern interventional technologies.
                         </p>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             Through structured education programs, reference centre observation, and clinical resources, IPMA promotes safe and effective integration of procedures that target the underlying causes of pain while minimising tissue disruption.
                         </p>
                     </div>

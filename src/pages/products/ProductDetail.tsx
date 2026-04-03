@@ -110,7 +110,7 @@ const ExperienceBadgeSection = ({ section }: { section: Extract<ProductSection, 
     <section className="section-container py-24 md:py-32">
         <div className="relative rounded-2xl overflow-hidden bg-foreground text-background">
             <div className="absolute inset-0">
-                <img src={section.image} alt="Background" className="w-full h-full object-cover opacity-20" />
+                <img src={section.image} alt="Background" className="w-full h-full object-contain opacity-20" />
             </div>
             <div className="relative z-10 p-12 md:p-24 grid lg:grid-cols-2 gap-16 items-center">
                 <div>
@@ -165,7 +165,7 @@ const ProductDetail = () => {
 
                             <div className="flex flex-col gap-4 pl-6 border-l-4 border-primary/20">
                                 {product.description.map((desc, i) => (
-                                    <p key={i} className="text-lg text-muted-foreground leading-relaxed">
+                                    <p key={i} className="text-lg text-foreground/75 leading-relaxed">
                                         {desc}
                                     </p>
                                 ))}

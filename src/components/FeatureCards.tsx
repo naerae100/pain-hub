@@ -70,7 +70,7 @@ const FeatureCards = () => {
               <motion.img
                 src={feature.image}
                 alt={feature.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 initial={{ scale: 1 }}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}

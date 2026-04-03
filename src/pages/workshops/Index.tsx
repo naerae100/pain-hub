@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { workshops } from "@/data/workshops";
+import { webinars } from "@/data/webinars";
 import {
     Calendar, MapPin, ArrowRight, BookOpen, Microscope, Eye, UserCheck, Sparkles, ChevronRight, Users, Video, FileText, UserPlus, Award
 } from "lucide-react";
@@ -85,6 +86,13 @@ const WorkshopIndex = () => {
         if (filter === "ALL") return true;
         if (filter === "UPCOMING") return workshop.status === "OPEN" || workshop.status === "WAITLIST";
         if (filter === "PAST") return workshop.status === "CLOSED";
+        return true;
+    });
+
+    const filteredWebinars = webinars.filter((webinar) => {
+        if (filter === "ALL") return true;
+        if (filter === "UPCOMING") return webinar.status === "UPCOMING";
+        if (filter === "PAST") return webinar.status === "PAST";
         return true;
     });
 
@@ -310,10 +318,10 @@ const WorkshopIndex = () => {
                 <div className="section-container">
                     <div className="text-center max-w-2xl mx-auto mb-12">
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
-                            Upcoming Workshops
+                            Upcoming Events &amp; Webinars
                         </h2>
                         <p className="text-lg text-muted-foreground leading-relaxed">
-                            Browse our scheduled workshops and secure your place.
+                            Browse our scheduled workshops, webinars and events.
                         </p>
                     </div>
 
@@ -332,6 +340,56 @@ const WorkshopIndex = () => {
                             </button>
                         ))}
                     </div>
+
+                    {/* Webinar Series Card — shown in ALL and UPCOMING */}
+                    {(filter === "ALL" || filter === "UPCOMING") && (
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                            className="mb-8"
+                        >
+                            <Link to="/clinical-education/webinars-h1-2026" className="group block">
+                                <div className="relative rounded-2xl overflow-hidden border border-[#d9522a]/20 hover:shadow-xl transition-all duration-300" style={{ background: "linear-gradient(135deg, #d9522a 0%, #e8673c 60%, #c44420 100%)" }}>
+                                    {/* Decorative shapes */}
+                                    <div className="absolute top-0 right-0 w-40 h-40 border-[3px] border-white/15 rounded-none translate-x-1/4 -translate-y-1/4 pointer-events-none" />
+                                    <div className="absolute bottom-2 right-16 w-20 h-20 border-[2px] border-white/10 rounded-none pointer-events-none" />
+                                    <div className="p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-8 relative z-10">
+                                        {/* Icon */}
+                                        <div className="shrink-0 w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center">
+                                            <Video className="w-8 h-8 text-white" />
+                                        </div>
+                                        {/* Info */}
+                                        <div className="flex-1">
+                                            <div className="flex flex-wrap items-center gap-3 mb-3">
+                                                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider border border-white/30">
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-green-300 animate-pulse" />
+                                                    Upcoming Series
+                                                </span>
+                                                <span className="text-white/75 text-xs">Apr – Jul 2026 &nbsp;·&nbsp; 7 sessions &nbsp;·&nbsp; Free online</span>
+                                            </div>
+                                            <h3 className="text-2xl font-display font-bold text-white mb-1 group-hover:underline decoration-white/40">
+                                                Metrum Cryoflex Webinar Series — H1 2026
+                                            </h3>
+                                            <p className="text-white/80 text-sm leading-relaxed max-w-xl">
+                                                Seven live online webinars featuring internationally recognised experts covering cryoanalgesia, laser therapy, phlebology, and interventional pain management. Free to attend.
+                                            </p>
+                                        </div>
+                                        {/* Speakers preview */}
+                                        <div className="shrink-0 hidden lg:block text-right">
+                                            <p className="text-white/60 text-xs uppercase tracking-wider font-semibold mb-2">Speakers include</p>
+                                            {webinars.slice(0, 3).map((w) => (
+                                                <p key={w.id} className="text-white/90 text-sm font-medium">{w.speaker}</p>
+                                            ))}
+                                            <p className="text-white/60 text-xs mt-1">+ {webinars.length - 3} more</p>
+                                        </div>
+                                        {/* Arrow */}
+                                        <ArrowRight className="shrink-0 hidden lg:block w-6 h-6 text-white/60 group-hover:text-white group-hover:translate-x-1 transition-all duration-200" />
+                                    </div>
+                                </div>
+                            </Link>
+                        </motion.div>
+                    )}
 
                     {/* Workshop Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -380,6 +438,62 @@ const WorkshopIndex = () => {
                                             <div className="flex items-center gap-3 text-sm text-muted-foreground">
                                                 <MapPin className="w-4 h-4 text-primary" />
                                                 <span>{workshop.location}</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="mt-6 pt-6 border-t border-border flex items-center justify-between text-sm font-medium text-primary">
+                                            <span>View details</span>
+                                            <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                                        </div>
+                                    </div>
+                                </Link>
+                            </motion.div>
+                        ))}
+
+                        {/* Individual Webinars */}
+                        {filteredWebinars.map((webinar, index) => (
+                            <motion.div
+                                key={webinar.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: (filteredWorkshops.length + index) * 0.1 }}
+                                className="group relative bg-card rounded-2xl overflow-hidden border border-border/50 hover:shadow-glow-lg transition-all duration-300"
+                            >
+                                <Link to={`/clinical-education/webinar/${webinar.slug}`} className="block h-full flex flex-col">
+                                    <div className="relative h-48 overflow-hidden bg-secondary">
+                                        <img
+                                            src={webinar.image}
+                                            alt={webinar.topic}
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
+                                        <div className="absolute top-4 right-4">
+                                            <Badge
+                                                className={`${webinar.status === "UPCOMING"
+                                                    ? "bg-[#d9522a] hover:bg-[#c44420]"
+                                                    : "bg-slate-500 hover:bg-slate-600"
+                                                    } text-white border-none shadow-sm`}
+                                            >
+                                                {webinar.status}
+                                            </Badge>
+                                        </div>
+                                    </div>
+
+                                    <div className="p-6 flex-1 flex flex-col">
+                                        <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                                            {webinar.topic}
+                                        </h3>
+                                        <p className="text-muted-foreground text-sm line-clamp-2 mb-6">
+                                            {webinar.speaker} — {webinar.speakerCredentials}
+                                        </p>
+
+                                        <div className="mt-auto space-y-3">
+                                            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                                                <Calendar className="w-4 h-4 text-primary" />
+                                                <span>{webinar.date} ({webinar.timing})</span>
+                                            </div>
+                                            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                                                <MapPin className="w-4 h-4 text-primary" />
+                                                <span>Online Webinar</span>
                                             </div>
                                         </div>
 

@@ -34,7 +34,7 @@ const LaserSystems = () => {
                             <span className="w-8 h-[2px] bg-primary"></span>
                             Technology Overview
                         </div>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             Medical laser systems used in interventional spine care are designed to deliver controlled energy to targeted tissue structures through percutaneous access. In spine applications, diode laser platforms support procedures such as:
                         </p>
                         <ul className="space-y-3 mt-4 mb-6">
@@ -68,7 +68,7 @@ const LaserSystems = () => {
                                 <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                     Diode Laser Technology
                                 </h2>
-                                <p className="text-lg text-muted-foreground leading-relaxed">
+                                <p className="text-lg text-foreground/75 leading-relaxed">
                                     Contemporary spine-focused systems utilize a 1470nm wavelength diode laser platform.
                                 </p>
                             </div>
@@ -138,7 +138,7 @@ const LaserSystems = () => {
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                             Procedural Integration: PLDD
                         </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             Percutaneous Laser Disc Decompression (PLDD) is a minimally invasive intradiscal procedure performed under local anesthesia.
                         </p>
                     </div>

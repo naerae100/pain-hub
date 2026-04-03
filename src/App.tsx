@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import WorkshopIndex from "./pages/workshops/Index";
 import WorkshopDetail from "./pages/workshops/WorkshopDetail";
 import ClinicalReferenceCentres from "./pages/workshops/ClinicalReferenceCentres";
+import WebinarSeriesPage from "./pages/workshops/WebinarSeriesPage";
+import WebinarDetail from "./pages/workshops/WebinarDetail";
 import Auth from "./pages/Auth";
 import Checkout from "./pages/checkout/Checkout";
 import Cart from "./pages/checkout/Cart";
@@ -75,6 +77,8 @@ const App = () => (
                   {/* Clinical Education (formerly Workshops) Routes */}
                   <Route path="/clinical-education" element={<WorkshopIndex />} />
                   <Route path="/clinical-education/reference-centres" element={<ClinicalReferenceCentres />} />
+                  <Route path="/clinical-education/webinars-h1-2026" element={<WebinarSeriesPage />} />
+                  <Route path="/clinical-education/webinar/:slug" element={<WebinarDetail />} />
                   <Route path="/clinical-education/:slug" element={<WorkshopDetail />} />
                   <Route path="/auth" element={<Auth />} />
                   <Route path="/cart" element={<Cart />} />

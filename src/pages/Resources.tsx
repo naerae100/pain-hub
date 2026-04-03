@@ -71,7 +71,7 @@ const YtEmbedCard = ({ url, title, onClick }: { url: string; title: string; onCl
                 <img 
                     src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`} 
                     alt={title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                     <div className="w-14 h-14 bg-white/95 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">

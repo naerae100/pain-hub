@@ -26,10 +26,10 @@ const Cryotherapy = () => {
                             <span className="w-8 h-[2px] bg-primary"></span>
                             Overview
                         </div>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             Modern cryotherapy systems used in interventional pain and spine medicine generate controlled low temperatures at the probe tip to temporarily interrupt peripheral nerve conduction while preserving the structural framework of the nerve.
                         </p>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             Unlike thermal neurodestructive technologies, cryoneurolysis produces a reversible conduction block through selective axonal injury while maintaining connective tissue architecture. This biological reversibility underpins its role in contemporary minimally invasive pain management.
                         </p>
                     </div>
@@ -104,7 +104,7 @@ const Cryotherapy = () => {
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                                 Cryophysics: How the Technology Works
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                            <p className="text-lg text-foreground/75 leading-relaxed mb-6">
                                 Modern cryotherapy systems exploit the Joule–Thomson effect, in which high-pressure gases expand and absorb heat, creating rapid cooling.
                             </p>
                             <h3 className="text-xl font-bold text-foreground mb-4">Representative gases used in clinical systems include:</h3>
@@ -146,7 +146,7 @@ const Cryotherapy = () => {
                             Platform Architecture: Cryo-S Painless System
                         </h2>
                         <h3 className="text-xl text-primary font-medium mb-4">Advanced Cryoanalgesia – TGA Registered in Australia</h3>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             The CRYO-S Painless cryosurgery system is TGA registered and available in Australia, supporting minimally invasive management of acute and chronic pain conditions within interventional practice.
                         </p>
                     </div>
@@ -194,7 +194,7 @@ const Cryotherapy = () => {
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                             Cryoprobe Ecosystem
                         </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             Cryotherapy effectiveness is strongly influenced by probe geometry, diameter, and tip configuration. The Cryo-S Painless system supports multiple cryoprobe types.
                         </p>
                     </div>
@@ -348,7 +348,7 @@ const Cryotherapy = () => {
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                                 Lesion Geometry & Ice-Ball Control
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                            <p className="text-lg text-foreground/75 leading-relaxed mb-6">
                                 Cryolesion is visible under ultrasound, allowing:
                             </p>
                             <ul className="space-y-4 mb-8 text-lg">
@@ -389,7 +389,7 @@ const Cryotherapy = () => {
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 Safety and Procedural Integration
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed">
+                            <p className="text-lg text-foreground/75 leading-relaxed">
                                 Cryoablation technology is integrated within image-guided interventional workflows (ultrasound and/or fluoroscopy) to support procedural excellence.
                             </p>
                         </div>
@@ -432,7 +432,7 @@ const Cryotherapy = () => {
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                                 How Cryotherapy Fits Within IPMA
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                            <p className="text-lg text-foreground/75 leading-relaxed mb-6">
                                 Cryoanalgesia technology is presented within IPMA as an enabling platform that supports:
                             </p>
                             <ul className="space-y-4 text-foreground mb-8 text-lg">

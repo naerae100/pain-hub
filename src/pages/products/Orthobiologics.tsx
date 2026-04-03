@@ -29,7 +29,7 @@ const Orthobiologics = () => {
                             <span className="w-8 h-[2px] bg-primary"></span>
                             Technology Overview
                         </div>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             Orthobiologic technologies support the controlled harvesting, processing, and delivery of autologous biologic materials used in interventional spine and musculoskeletal medicine.
                         </p>
                         <p className="text-muted-foreground leading-relaxed mb-4">These platforms are designed to optimise:</p>
@@ -70,7 +70,7 @@ const Orthobiologics = () => {
                             Bone Marrow Aspiration Technology
                         </h2>
                         <h3 className="text-xl text-primary font-medium mb-6">Liquid Autograft Collection Systems</h3>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             Bone marrow aspiration systems used in interventional practice are designed for controlled retrieval of autologous marrow from multiple zones within the medullary space.
                         </p>
                     </div>
@@ -188,7 +188,7 @@ const Orthobiologics = () => {
                                     Marrow Aspiration & Cancellous Bone Graft Technologies
                                 </h2>
                                 <h3 className="text-xl text-primary font-medium mb-6">Liquid and Structural Autograft Integration</h3>
-                                <p className="text-lg text-muted-foreground leading-relaxed border-l-4 border-border pl-4">
+                                <p className="text-lg text-foreground/75 leading-relaxed border-l-4 border-border pl-4">
                                     Modern marrow aspiration and bone harvesting systems enable clinicians to combine high-quality bone marrow aspirate (BMA) with percutaneously harvested cancellous bone autograft within a single procedural workflow.
                                 </p>
                             </div>
@@ -212,7 +212,7 @@ const Orthobiologics = () => {
 
                             <div className="space-y-6">
                                 <h3 className="text-2xl font-bold text-foreground">Biological Rationale</h3>
-                                <p className="text-muted-foreground leading-relaxed">
+                                <p className="text-foreground/70 leading-relaxed">
                                     Harvesting intact cancellous bone cores without disrupting highly vascularised and organised trabecular architecture preserves:
                                 </p>
                                 <ul className="grid sm:grid-cols-3 gap-4 mb-6">
@@ -352,7 +352,7 @@ const Orthobiologics = () => {
 
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto mb-20">
                         <div className="space-y-8">
-                            <p className="text-lg text-muted-foreground leading-relaxed">
+                            <p className="text-lg text-foreground/75 leading-relaxed">
                                 Modern PRP systems increasingly recognise that therapeutic effect depends not only on platelet concentration but on:
                             </p>
 

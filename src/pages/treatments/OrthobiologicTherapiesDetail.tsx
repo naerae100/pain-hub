@@ -32,11 +32,10 @@ const OrthobiologicTherapiesDetail = () => {
             <section className="py-20 lg:py-24">
                 <div className="section-container">
                     <div className="max-w-4xl mx-auto">
-                        <span className="pill mb-6">Overview</span>
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-8">
                             What are Orthobiologic Therapies?
                         </h2>
-                        <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                        <div className="space-y-6 text-lg text-foreground/70 leading-relaxed">
                             <p>
                                 Orthobiologic therapies utilise autologous biologic materials to support tissue repair and structural healing in spine and musculoskeletal pathology.
                             </p>
@@ -58,28 +57,24 @@ const OrthobiologicTherapiesDetail = () => {
             <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
                 <div className="section-container">
                     <div className="max-w-6xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Science</span>
+                        <div className="mb-16">
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 Mechanism of Action
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-lg text-foreground/70 leading-relaxed max-w-3xl">
                                 Orthobiologic therapies act through multiple regenerative pathways:
                             </p>
                         </div>
 
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-16">
                             {[
-                                { icon: Droplets, title: "Delivery of platelets and growth factors" },
-                                { icon: Activity, title: "Modulation of the inflammatory cascade" },
-                                { icon: Users, title: "Recruitment of progenitor and reparative cells" },
-                                { icon: TrendingUp, title: "Enhancement of tissue repair pathways" }
+                                { title: "Delivery of platelets and growth factors" },
+                                { title: "Modulation of the inflammatory cascade" },
+                                { title: "Recruitment of progenitor and reparative cells" },
+                                { title: "Enhancement of tissue repair pathways" }
                             ].map((item, idx) => (
-                                <div key={idx} className="bg-background border border-border rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
-                                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
-                                        <item.icon className="w-6 h-6" />
-                                    </div>
-                                    <p className="text-sm font-medium text-foreground">{item.title}</p>
+                                <div key={idx} className="border-l-2 border-primary/30 pl-6">
+                                    <p className="text-foreground font-medium">{item.title}</p>
                                 </div>
                             ))}
                         </div>
@@ -89,7 +84,7 @@ const OrthobiologicTherapiesDetail = () => {
                             <h3 className="text-2xl font-display font-bold text-foreground mb-6">
                                 Platelet Alpha Granule Contents
                             </h3>
-                            <p className="text-muted-foreground leading-relaxed mb-6">
+                            <p className="text-foreground/70 leading-relaxed mb-6">
                                 Platelets contain alpha granules rich in growth factors and mediators:
                             </p>
                             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
@@ -102,11 +97,11 @@ const OrthobiologicTherapiesDetail = () => {
                                 ].map((gf, i) => (
                                     <div key={i} className="bg-primary/5 border border-primary/20 rounded-xl p-4">
                                         <span className="text-primary font-bold text-sm">{gf.abbr}</span>
-                                        <p className="text-xs text-muted-foreground mt-1">{gf.full}</p>
+                                        <p className="text-xs text-foreground/75 mt-1">{gf.full}</p>
                                     </div>
                                 ))}
                             </div>
-                            <p className="text-muted-foreground leading-relaxed mb-4">
+                            <p className="text-foreground/70 leading-relaxed mb-4">
                                 These mediators influence cellular proliferation, angiogenesis, matrix synthesis, and local immune signalling.
                             </p>
                             <p className="text-foreground font-medium italic border-l-4 border-primary pl-4 py-2">
@@ -123,14 +118,13 @@ const OrthobiologicTherapiesDetail = () => {
                     <div className="max-w-5xl mx-auto">
                         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                             <div>
-                                <span className="pill mb-6">Dosing</span>
                                 <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                                     Platelet Dose & Blood Volume: Why It Matters
                                 </h2>
-                                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                                <p className="text-lg text-foreground/70 leading-relaxed mb-6">
                                     Increasingly, literature suggests that therapeutic response correlates not only with concentration factor, but with total platelet dose delivered.
                                 </p>
-                                <p className="text-muted-foreground leading-relaxed mb-6">
+                                <p className="text-foreground/70 leading-relaxed mb-6">
                                     While many systems advertise "x-times baseline concentration," clinical relevance depends on:
                                 </p>
                                 <ul className="space-y-3 mb-8">
@@ -139,14 +133,14 @@ const OrthobiologicTherapiesDetail = () => {
                                         "Final injected volume",
                                         "Absolute platelet number delivered"
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                                        <li key={i} className="flex items-start gap-3 text-foreground/75">
                                             <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />{item}
                                         </li>
                                     ))}
                                 </ul>
 
                                 <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6 mb-6">
-                                    <p className="text-sm text-muted-foreground leading-relaxed">
+                                    <p className="text-sm text-foreground/70 leading-relaxed">
                                         A 2021 peer-reviewed publication in <strong>Nature</strong> (Basal et al.) investigating knee osteoarthritis demonstrated that sustained chondroprotective effects were associated with preparations delivering approximately <strong>≥10 billion platelets</strong> in moderate OA cohorts over one year.
                                     </p>
                                 </div>
@@ -160,11 +154,9 @@ const OrthobiologicTherapiesDetail = () => {
 
                             {/* The Volume Advantage */}
                             <div className="space-y-8">
-                                <div className="bg-card border border-border rounded-3xl p-8 shadow-sm">
-                                    <h3 className="text-xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
-                                        <FlaskConical className="w-6 h-6 text-primary" /> The Volume Advantage
-                                    </h3>
-                                    <p className="text-muted-foreground leading-relaxed mb-6">
+                                <div className="border-l-2 border-primary/30 pl-6">
+                                    <h3 className="text-xl font-bold text-foreground mb-4">The Volume Advantage</h3>
+                                    <p className="text-foreground/70 leading-relaxed mb-6">
                                         Low-volume PRP systems (10–20mL blood draw) are physically limited in the absolute platelet dose they can generate. Higher initial blood volumes allow:
                                     </p>
                                     <ul className="space-y-3">
@@ -174,21 +166,18 @@ const OrthobiologicTherapiesDetail = () => {
                                             "Reduced hematocrit contamination",
                                             "Achievement of meaningful therapeutic dose within practical injection volumes"
                                         ].map((item, i) => (
-                                            <li key={i} className="flex items-start gap-3 text-muted-foreground text-sm">
+                                            <li key={i} className="flex items-start gap-3 text-foreground/75">
                                                 <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />{item}
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
 
-                                <div className="bg-gradient-to-br from-primary/5 to-transparent border border-border rounded-2xl p-6">
-                                    <p className="text-foreground font-medium leading-relaxed mb-2">From a biologic perspective:</p>
-                                    <p className="text-muted-foreground text-sm">
-                                        Higher blood draw → Higher platelet capture → Greater ability to reach therapeutic threshold.
-                                    </p>
-                                </div>
+                                <p className="text-foreground/75 italic border-l-4 border-primary/30 pl-4 py-2">
+                                    Higher blood draw → Higher platelet capture → Greater ability to reach therapeutic threshold.
+                                </p>
 
-                                <p className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4 py-2">
+                                <p className="text-sm text-foreground/75 italic border-l-4 border-primary pl-4 py-2">
                                     IPMA encourages clinicians to understand and calculate total platelet delivery rather than relying solely on concentration multipliers.
                                 </p>
                             </div>
@@ -201,12 +190,11 @@ const OrthobiologicTherapiesDetail = () => {
             <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
                 <div className="section-container">
                     <div className="max-w-6xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Quality Assessment</span>
+                        <div className="mb-16">
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 IPMA Evaluation & Biologic Quality Assessment
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-lg text-foreground/70 leading-relaxed max-w-3xl">
                                 IPMA has undertaken internal evaluation of PRP preparation protocols across varying blood draw volumes, centrifugation strategies, leukocyte profiles, and final injection volumes.
                             </p>
                         </div>
@@ -216,24 +204,24 @@ const OrthobiologicTherapiesDetail = () => {
                                 <h3 className="text-xl font-bold text-foreground mb-6">
                                     Laboratory analysis has demonstrated significant variability between preparation methods in:
                                 </h3>
-                                <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                                <ul className="space-y-3 mb-8">
                                     {[
                                         "Platelet concentration",
                                         "Hematocrit contamination",
                                         "White cell distribution",
                                         "Final absolute platelet dose"
                                     ].map((item, i) => (
-                                        <div key={i} className="bg-background border border-border rounded-xl p-4 flex items-start gap-2 text-sm text-foreground">
-                                            <Microscope className="w-5 h-5 text-primary shrink-0" />{item}
-                                        </div>
+                                        <li key={i} className="flex items-start gap-2 text-foreground">
+                                            <ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" />{item}
+                                        </li>
                                     ))}
-                                </div>
+                                </ul>
 
                                 {/* PRP Analysis Image */}
                                 <div className="content-img-wrap shadow-xl mb-4">
                                     <img src={prpAnalysisImg} alt="PRP haematology report — sample analysis" className="content-img" />
                                 </div>
-                                <p className="text-xs text-center text-muted-foreground italic">PRP haematology report — sample analysis</p>
+                                <p className="text-xs text-center text-foreground/75 italic">PRP haematology report — sample analysis</p>
                             </div>
 
                             <div className="space-y-8">
@@ -241,24 +229,24 @@ const OrthobiologicTherapiesDetail = () => {
                                 <div className="content-img-wrap shadow-xl mb-4">
                                     <img src={prpProtocolsImg} alt="Multiple PRP preparations generated under different protocols" className="content-img" />
                                 </div>
-                                <p className="text-xs text-center text-muted-foreground italic mb-6">Multiple PRP preparations generated under different protocols</p>
+                                <p className="text-xs text-center text-foreground/75 italic mb-6">Multiple PRP preparations generated under different protocols</p>
 
                                 {/* Key takeaways */}
-                                <div className="bg-background border border-border rounded-3xl p-8 shadow-sm">
+                                <div className="border-l-2 border-primary/30 pl-6">
                                     <h3 className="text-lg font-bold text-foreground mb-4">These comparisons reinforce that:</h3>
-                                    <ul className="space-y-3">
+                                    <ul className="space-y-3 mb-6">
                                         {[
                                             "Visual appearance does not determine biologic quality",
                                             "Hematocrit contamination must be controlled",
                                             "Leukocyte inclusion should be intentional",
                                             "Absolute platelet dose should be calculated"
                                         ].map((item, i) => (
-                                            <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                                            <li key={i} className="flex items-start gap-3 text-foreground/75">
                                                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />{item}
                                             </li>
                                         ))}
                                     </ul>
-                                    <p className="text-foreground font-medium mt-6 italic border-l-4 border-primary pl-4 py-2">
+                                    <p className="text-foreground font-medium italic border-l-4 border-primary pl-4 py-2">
                                         IPMA's educational framework emphasises biologic literacy in regenerative practice.
                                     </p>
                                 </div>
@@ -272,18 +260,15 @@ const OrthobiologicTherapiesDetail = () => {
             <section className="py-20 lg:py-24">
                 <div className="section-container">
                     <div className="max-w-5xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Clinical Positioning</span>
+                        <div className="mb-16">
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 Where It Fits Clinically
                             </h2>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-8">
-                            <div className="bg-card border border-green-200 rounded-3xl p-8 shadow-sm">
-                                <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                                    <CheckCircle2 className="w-6 h-6 text-green-500" /> May be considered for:
-                                </h3>
+                        <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
+                            <div className="border-l-2 border-green-400 pl-6">
+                                <h3 className="text-xl font-bold text-foreground mb-4">May be considered for:</h3>
                                 <ul className="space-y-3">
                                     {[
                                         "Tendinopathy",
@@ -292,29 +277,27 @@ const OrthobiologicTherapiesDetail = () => {
                                         "Early degenerative joint disease",
                                         "Adjunct to structural procedures"
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-2 text-muted-foreground">
+                                        <li key={i} className="flex items-start gap-2 text-foreground/75">
                                             <ChevronRight className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />{item}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
 
-                            <div className="bg-card border border-amber-200 rounded-3xl p-8 shadow-sm">
-                                <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                                    <AlertTriangle className="w-6 h-6 text-amber-500" /> Not substitutes for:
-                                </h3>
-                                <ul className="space-y-3">
+                            <div className="border-l-2 border-amber-400 pl-6">
+                                <h3 className="text-xl font-bold text-foreground mb-4">Not substitutes for:</h3>
+                                <ul className="space-y-3 mb-4">
                                     {[
                                         "Mechanical decompression in stenosis",
                                         "Structural correction in advanced instability",
                                         "Neuroablative interventions for clear nerve-mediated pain"
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-2 text-muted-foreground">
+                                        <li key={i} className="flex items-start gap-2 text-foreground/75">
                                             <ChevronRight className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />{item}
                                         </li>
                                     ))}
                                 </ul>
-                                <p className="text-sm text-muted-foreground mt-4 italic">Appropriate indication selection is essential.</p>
+                                <p className="text-sm text-foreground/75 italic">Appropriate indication selection is essential.</p>
                             </div>
                         </div>
                     </div>
@@ -325,41 +308,34 @@ const OrthobiologicTherapiesDetail = () => {
             <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
                 <div className="section-container">
                     <div className="max-w-6xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Patient Selection</span>
+                        <div className="mb-16">
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 Indications & Patient Selection
                             </h2>
                         </div>
 
-                        <div className="grid lg:grid-cols-3 gap-8">
-                            {/* Indications */}
-                            <div className="bg-background border border-border rounded-3xl p-8 shadow-sm">
-                                <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                                    <Target className="w-6 h-6 text-primary" /> Indications
-                                </h3>
-                                <ul className="space-y-3">
+                        <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
+                            <div className="border-l-2 border-primary/30 pl-6">
+                                <h3 className="text-xl font-bold text-foreground mb-4">Indications</h3>
+                                <ul className="space-y-3 mb-4">
                                     {[
                                         "Chronic tendon pathology",
                                         "Enthesopathy",
                                         "Degenerative joint conditions",
                                         "Selected discogenic pain (investigational context)"
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                        <li key={i} className="flex items-start gap-2 text-foreground/75">
                                             <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />{item}
                                         </li>
                                     ))}
                                 </ul>
-                                <p className="text-xs text-muted-foreground mt-4 italic">
+                                <p className="text-xs text-foreground/75 italic">
                                     Use should align with current evidence and regulatory frameworks.
                                 </p>
                             </div>
 
-                            {/* Best Suited */}
-                            <div className="bg-background border border-green-200 rounded-3xl p-8 shadow-sm">
-                                <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                                    <CheckCircle2 className="w-6 h-6 text-green-500" /> Best Suited For
-                                </h3>
+                            <div className="border-l-2 border-green-400 pl-6">
+                                <h3 className="text-xl font-bold text-foreground mb-4">Best Suited For</h3>
                                 <ul className="space-y-3">
                                     {[
                                         "Degenerative or inflammatory soft tissue pathology",
@@ -367,30 +343,27 @@ const OrthobiologicTherapiesDetail = () => {
                                         "Patients seeking non-ablative options",
                                         "Individuals without advanced structural collapse"
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                        <li key={i} className="flex items-start gap-2 text-foreground/75">
                                             <ChevronRight className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />{item}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
 
-                            {/* Less Suited */}
-                            <div className="bg-background border border-amber-200 rounded-3xl p-8 shadow-sm">
-                                <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                                    <AlertTriangle className="w-6 h-6 text-amber-500" /> Less Suited For
-                                </h3>
-                                <ul className="space-y-3">
+                            <div className="border-l-2 border-amber-400 pl-6">
+                                <h3 className="text-xl font-bold text-foreground mb-4">Less Suited For</h3>
+                                <ul className="space-y-3 mb-4">
                                     {[
                                         "Severe mechanical compression",
                                         "Advanced joint destruction",
                                         "Unstable structural pathology requiring surgical correction"
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                        <li key={i} className="flex items-start gap-2 text-foreground/75">
                                             <ChevronRight className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />{item}
                                         </li>
                                     ))}
                                 </ul>
-                                <p className="text-xs text-muted-foreground mt-4 italic">
+                                <p className="text-xs text-foreground/75 italic">
                                     Expectation management is critical, as regenerative response may be gradual.
                                 </p>
                             </div>
@@ -403,15 +376,14 @@ const OrthobiologicTherapiesDetail = () => {
             <section className="py-20 lg:py-24">
                 <div className="section-container">
                     <div className="max-w-5xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Technique</span>
+                        <div className="mb-16">
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 Procedural Overview
                             </h2>
                         </div>
 
                         <div className="grid lg:grid-cols-2 gap-12 items-start">
-                            <div className="space-y-6">
+                            <div className="space-y-8">
                                 {[
                                     { step: "01", title: "Blood Draw or Marrow Aspiration", desc: "Autologous blood draw or marrow aspiration" },
                                     { step: "02", title: "Controlled Processing", desc: "Controlled processing under sterile conditions" },
@@ -419,13 +391,13 @@ const OrthobiologicTherapiesDetail = () => {
                                     { step: "04", title: "Image-Guided Injection", desc: "Image-guided injection into target tissue" },
                                     { step: "05", title: "Outpatient Procedure", desc: "Outpatient procedure with minimal recovery time" }
                                 ].map((item, i) => (
-                                    <div key={i} className="flex items-start gap-4 bg-card border border-border rounded-2xl p-6 shadow-sm">
-                                        <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white text-sm font-bold shrink-0">
+                                    <div key={i} className="flex items-start gap-5">
+                                        <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold shrink-0 mt-0.5">
                                             {item.step}
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-foreground mb-1">{item.title}</h4>
-                                            <p className="text-sm text-muted-foreground">{item.desc}</p>
+                                            <p className="text-foreground/75">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -439,7 +411,7 @@ const OrthobiologicTherapiesDetail = () => {
                                 <div className="content-img-wrap shadow-xl mb-4">
                                     <img src={marrowAspirationImg} alt="Bone marrow aspiration procedure" className="content-img" />
                                 </div>
-                                <p className="text-xs text-center text-muted-foreground">Bone marrow aspiration procedure</p>
+                                <p className="text-xs text-center text-foreground/75">Bone marrow aspiration procedure</p>
                             </div>
                         </div>
                     </div>
@@ -450,14 +422,13 @@ const OrthobiologicTherapiesDetail = () => {
             <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
                 <div className="section-container">
                     <div className="max-w-4xl mx-auto">
-                        <span className="pill mb-6">Evidence</span>
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-8">
                             Clinical Outcomes & Evidence
                         </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                        <p className="text-lg text-foreground/70 leading-relaxed mb-6">
                             Evidence varies by indication and biologic preparation protocol. Outcomes depend on:
                         </p>
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                        <ul className="space-y-3 mb-8">
                             {[
                                 "Absolute platelet dose",
                                 "Leukocyte composition",
@@ -465,12 +436,12 @@ const OrthobiologicTherapiesDetail = () => {
                                 "Accurate tissue targeting",
                                 "Proper patient selection"
                             ].map((item, i) => (
-                                <div key={i} className="bg-background border border-border rounded-xl p-4 flex items-start gap-2 text-sm text-foreground">
-                                    <BarChart3 className="w-5 h-5 text-primary shrink-0" />{item}
-                                </div>
+                                <li key={i} className="flex items-start gap-2 text-foreground/75">
+                                    <ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" />{item}
+                                </li>
                             ))}
-                        </div>
-                        <p className="text-muted-foreground leading-relaxed mb-8">
+                        </ul>
+                        <p className="text-foreground/70 leading-relaxed mb-8">
                             In knee osteoarthritis and selected musculoskeletal conditions, higher platelet doses have been associated with improved structural and symptomatic outcomes in moderate disease cohorts. Current evidence supports symptom relief and functional improvement, though claims of reliable cartilage regeneration are not yet clinically proven. Patients should be counselled with realistic expectations.
                         </p>
 
@@ -487,13 +458,13 @@ const OrthobiologicTherapiesDetail = () => {
                                 ].map((r, i) => (
                                     <div key={i} className="bg-background border border-border rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition-shadow">
                                         <p className="text-sm font-bold text-foreground mb-1">{r.t}</p>
-                                        <p className="text-xs text-muted-foreground leading-relaxed">{r.d}</p>
+                                        <p className="text-xs text-foreground/70 leading-relaxed">{r.d}</p>
                                     </div>
                                 ))}
                             </div>
                         </div>
 
-                        <p className="text-center text-muted-foreground leading-relaxed italic">
+                        <p className="text-center text-foreground/70 leading-relaxed italic">
                             IPMA supports ongoing appraisal of emerging regenerative literature.
                         </p>
                     </div>
@@ -504,27 +475,25 @@ const OrthobiologicTherapiesDetail = () => {
             <section className="py-20 lg:py-24">
                 <div className="section-container">
                     <div className="max-w-4xl mx-auto">
-                        <span className="pill mb-6">Safety</span>
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-8">
                             Risks & Limitations
                         </h2>
-                        <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                        <ul className="space-y-3 mb-8">
                             {[
                                 "Post-injection soreness",
                                 "Variable response",
                                 "Delayed onset of benefit",
                                 "Temporary inflammatory flare"
                             ].map((item, i) => (
-                                <div key={i} className="bg-card border border-border rounded-xl p-4 flex items-start gap-2">
-                                    <AlertTriangle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
-                                    <span className="text-sm text-muted-foreground">{item}</span>
-                                </div>
+                                <li key={i} className="flex items-start gap-2 text-foreground/75">
+                                    <ChevronRight className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />{item}
+                                </li>
                             ))}
-                        </div>
-                        <p className="text-muted-foreground leading-relaxed mb-4">
+                        </ul>
+                        <p className="text-foreground/70 leading-relaxed mb-4">
                             Orthobiologics are not immediate analgesic interventions. Their effect is biologic and time-dependent.
                         </p>
-                        <p className="text-muted-foreground leading-relaxed italic">
+                        <p className="text-foreground/70 leading-relaxed italic">
                             They should not replace mechanical decompression where structural pathology is dominant.
                         </p>
                     </div>
@@ -535,8 +504,7 @@ const OrthobiologicTherapiesDetail = () => {
             <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
                 <div className="section-container">
                     <div className="max-w-5xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Comparison</span>
+                        <div className="mb-16">
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 How It Differs from Other Interventions
                             </h2>
@@ -573,10 +541,10 @@ const OrthobiologicTherapiesDetail = () => {
                         </div>
 
                         <div className="text-center">
-                            <p className="text-muted-foreground leading-relaxed mb-2">
+                            <p className="text-foreground/70 leading-relaxed mb-2">
                                 Each modality addresses a different pain pathway: <strong>Neural</strong>, <strong>Structural</strong>, <strong>Biological</strong>.
                             </p>
-                            <p className="text-muted-foreground italic">
+                            <p className="text-foreground/75 italic">
                                 Appropriate integration requires clinical discernment.
                             </p>
                         </div>

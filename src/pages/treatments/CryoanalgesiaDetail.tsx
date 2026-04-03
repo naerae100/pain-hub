@@ -55,11 +55,10 @@ const CryoanalgesiaDetail = () => {
             <section className="py-20 lg:py-24">
                 <div className="section-container">
                     <div className="max-w-4xl mx-auto">
-                        <span className="pill mb-6">Overview</span>
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-8">
                             What is Cryoanalgesia?
                         </h2>
-                        <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                        <div className="space-y-6 text-lg text-foreground/70 leading-relaxed">
                             <p>
                                 Cryoanalgesia (cryoneurolysis) is a minimally invasive, image-guided technique that produces controlled axonotmesis, resulting in temporary interruption of peripheral nerve conduction through Wallerian degeneration.
                             </p>
@@ -75,41 +74,34 @@ const CryoanalgesiaDetail = () => {
             <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
                 <div className="section-container">
                     <div className="max-w-5xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Science</span>
-                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
+                        <div className="mb-16">
+                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                                 Mechanism of Action
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-lg text-foreground/70 leading-relaxed max-w-3xl">
                                 Cryoneurolysis works by applying extreme cold to a peripheral nerve, inducing a controlled Sunderland Grade II injury (Axonotmesis). This process triggers Wallerian degeneration distal to the treatment site, effectively silencing pain signals while maintaining the physical pathway for the nerve to eventually heal.
                             </p>
                         </div>
 
                         {/* Key Structural Advantages */}
-                        <div className="grid md:grid-cols-3 gap-8 mb-16">
+                        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-16">
                             {[
                                 {
-                                    icon: Shield,
                                     title: "Intact Nerve Sheath",
                                     desc: "The endoneurium, perineurium, and epineurium remain structurally sound."
                                 },
                                 {
-                                    icon: Layers,
                                     title: "Preserved Scaffolding",
                                     desc: "Because the internal 'tubes' (the basal lamina) are not destroyed, they provide the essential structural guidance for axonal regeneration."
                                 },
                                 {
-                                    icon: Clock,
                                     title: "Predictable Regrowth",
                                     desc: "Axonal regrowth occurs predictably over time — typically at a rate of 1mm per day — ensuring the return of normal sensation and function without the risk of neuroma formation."
                                 }
                             ].map((item, idx) => (
-                                <div key={idx} className="bg-background border border-border rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6">
-                                        <item.icon className="w-7 h-7" />
-                                    </div>
+                                <div key={idx} className="border-l-2 border-primary/30 pl-6">
                                     <h3 className="text-xl font-display font-bold text-foreground mb-3">{item.title}</h3>
-                                    <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                                    <p className="text-foreground/70 leading-relaxed">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -120,32 +112,32 @@ const CryoanalgesiaDetail = () => {
                                 <Zap className="w-6 h-6 text-primary" />
                                 Cryoneurolysis vs. Radiofrequency (RF) vs. PRF
                             </h3>
-                            <p className="text-muted-foreground leading-relaxed mb-8">
+                            <p className="text-foreground/70 leading-relaxed mb-8">
                                 The clinical distinction between these modalities lies in the degree of tissue destruction:
                             </p>
 
-                            <div className="space-y-6 mb-8">
-                                <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6">
-                                    <h4 className="font-bold text-foreground mb-2 flex items-center gap-2">
+                            <div className="space-y-8 mb-8">
+                                <div className="border-l-4 border-blue-400 pl-6">
+                                    <h4 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
                                         <Snowflake className="w-5 h-5 text-blue-500" /> Cryoneurolysis
                                     </h4>
-                                    <p className="text-muted-foreground text-sm leading-relaxed">
+                                    <p className="text-foreground/75 text-base leading-relaxed">
                                         Produces a reversible interruption of axonal continuity. Because it spares the connective tissue matrix, it is classified as a Grade II injury, which carries a 100% prognosis for functional recovery.
                                     </p>
                                 </div>
-                                <div className="bg-red-50 border border-red-200 rounded-2xl p-6">
-                                    <h4 className="font-bold text-foreground mb-2 flex items-center gap-2">
+                                <div className="border-l-4 border-red-400 pl-6">
+                                    <h4 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
                                         <Thermometer className="w-5 h-5 text-red-500" /> Thermal Radiofrequency (Neurotomy)
                                     </h4>
-                                    <p className="text-muted-foreground text-sm leading-relaxed">
+                                    <p className="text-foreground/75 text-base leading-relaxed">
                                         Unlike cryo, traditional thermal RF uses high-frequency heat (60°C to 80°C) to create a Grade IV or V injury (Neurotmesis). This destroys the internal architecture of the nerve (including the endoneurium and perineurium).
                                     </p>
                                 </div>
-                                <div className="bg-purple-50 border border-purple-200 rounded-2xl p-6">
-                                    <h4 className="font-bold text-foreground mb-2 flex items-center gap-2">
+                                <div className="border-l-4 border-purple-400 pl-6">
+                                    <h4 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
                                         <Activity className="w-5 h-5 text-purple-500" /> Pulsed Radiofrequency
                                     </h4>
-                                    <p className="text-muted-foreground text-sm leading-relaxed">
+                                    <p className="text-foreground/75 text-base leading-relaxed">
                                         Operates differently by using electromagnetic fields to alter nerve signaling via gene expression and cytokine modulation without causing structural disruption.
                                     </p>
                                 </div>
@@ -155,7 +147,7 @@ const CryoanalgesiaDetail = () => {
                             <div className="content-img-wrap content-img-wrap--wide shadow-md mb-6">
                                 <img src={nerveInjuryImg} alt="Nerve injury grade mechanism — Cryoneurolysis Grade II vs Radiofrequency Grade IV" className="content-img" />
                             </div>
-                            <p className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4">
+                            <p className="text-sm text-foreground/75 italic border-l-4 border-primary pl-4">
                                 <strong>Clinical Note:</strong> While RF aims to "destroy" the nerve's signaling ability through thermal coagulation of the entire nerve bundle, cryoneurolysis selectively disrupts the axon while leaving the "blueprint" of the nerve intact.
                             </p>
                         </div>
@@ -167,40 +159,33 @@ const CryoanalgesiaDetail = () => {
             <section className="py-20 lg:py-24">
                 <div className="section-container">
                     <div className="max-w-5xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Clinical Positioning</span>
-                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
+                        <div className="mb-16">
+                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                                 Where Cryoanalgesia Fits
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-lg text-foreground/70 leading-relaxed max-w-3xl">
                                 Cryoanalgesia is used in patients with focal neuropathic, peripheral, orthopaedic, and spine-related pain who have not achieved adequate relief with conservative therapy or injections. It may be integrated into various stages of patient care:
                             </p>
                         </div>
 
-                        <div className="grid md:grid-cols-3 gap-8">
+                        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
                             {[
                                 {
-                                    icon: Target,
                                     title: "Standalone Intervention",
                                     desc: "Utilized as a primary outpatient or perioperative procedure for targeted pain relief."
                                 },
                                 {
-                                    icon: Syringe,
                                     title: "Intraoperative",
                                     desc: "Applied during surgery to facilitate prolonged postoperative analgesia, potentially reducing opioid requirements during recovery."
                                 },
                                 {
-                                    icon: Layers,
                                     title: "Multimodal Strategy",
                                     desc: "Incorporated as a key component of a comprehensive interventional pain management plan."
                                 }
                             ].map((item, idx) => (
-                                <div key={idx} className="bg-card border border-border rounded-3xl p-8 text-center hover:shadow-lg transition-all">
-                                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-6">
-                                        <item.icon className="w-7 h-7" />
-                                    </div>
-                                    <h3 className="text-lg font-display font-bold text-foreground mb-3">{item.title}</h3>
-                                    <p className="text-muted-foreground leading-relaxed text-sm">{item.desc}</p>
+                                <div key={idx} className="border-l-2 border-primary/30 pl-6">
+                                    <h3 className="text-xl font-display font-bold text-foreground mb-3">{item.title}</h3>
+                                    <p className="text-foreground/70 leading-relaxed">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -212,83 +197,56 @@ const CryoanalgesiaDetail = () => {
             <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
                 <div className="section-container">
                     <div className="max-w-6xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Indications</span>
-                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
+                        <div className="mb-16">
+                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                                 Clinical Applications
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-lg text-foreground/70 leading-relaxed max-w-3xl">
                                 Cryoanalgesia is utilised across multiple interventional pain and surgical contexts.
                             </p>
                         </div>
 
-                        <div className="grid lg:grid-cols-2 gap-12 items-start">
-                            <div className="space-y-8">
-                                {/* Peripheral Neuralgia */}
-                                <div className="bg-background border border-border rounded-2xl p-6 shadow-sm">
-                                    <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                                        <Brain className="w-5 h-5 text-primary" /> Peripheral Neuralgia
-                                    </h3>
-                                    <ul className="space-y-2 text-sm text-muted-foreground">
-                                        {["Trigeminal neuralgia", "Occipital neuralgia", "Suprascapular neuralgia", "Ilioinguinal and genitofemoral neuralgia"].map((item, i) => (
-                                            <li key={i} className="flex items-center gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0" />{item}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Spine-Related Pain */}
-                                <div className="bg-background border border-border rounded-2xl p-6 shadow-sm">
-                                    <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                                        <Activity className="w-5 h-5 text-primary" /> Spine-Related Pain
-                                    </h3>
-                                    <ul className="space-y-2 text-sm text-muted-foreground">
-                                        {["Facet-mediated lumbar, thoracic, and cervical pain", "Selected radicular contributors"].map((item, i) => (
-                                            <li key={i} className="flex items-center gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0" />{item}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Orthopaedic Applications */}
-                                <div className="bg-background border border-border rounded-2xl p-6 shadow-sm">
-                                    <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                                        <CircleDot className="w-5 h-5 text-primary" /> Orthopaedic Applications
-                                    </h3>
-                                    <ul className="space-y-2 text-sm text-muted-foreground">
-                                        {["Genicular nerve-mediated knee pain", "Shoulder and hip-related peripheral nerve pain"].map((item, i) => (
-                                            <li key={i} className="flex items-center gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0" />{item}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {/* Postoperative Pain */}
-                                <div className="bg-background border border-border rounded-2xl p-6 shadow-sm">
-                                    <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                                        <Heart className="w-5 h-5 text-primary" /> Postoperative Pain
-                                    </h3>
-                                    <ul className="space-y-2 text-sm text-muted-foreground">
-                                        {["Thoracic surgery", "Chest wall procedures", "Intraoperative intercostal cryoanalgesia"].map((item, i) => (
-                                            <li key={i} className="flex items-center gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0" />{item}</li>
-                                        ))}
-                                    </ul>
-                                </div>
+                        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                            <div className="space-y-10">
+                                {[
+                                    {
+                                        title: "Peripheral Neuralgia",
+                                        items: ["Trigeminal neuralgia", "Occipital neuralgia", "Suprascapular neuralgia", "Ilioinguinal and genitofemoral neuralgia"]
+                                    },
+                                    {
+                                        title: "Spine-Related Pain",
+                                        items: ["Facet-mediated lumbar, thoracic, and cervical pain", "Selected radicular contributors"]
+                                    },
+                                    {
+                                        title: "Orthopaedic Applications",
+                                        items: ["Genicular nerve-mediated knee pain", "Shoulder and hip-related peripheral nerve pain"]
+                                    },
+                                    {
+                                        title: "Postoperative Pain",
+                                        items: ["Thoracic surgery", "Chest wall procedures", "Intraoperative intercostal cryoanalgesia"]
+                                    },
+                                    {
+                                        title: "Neuromas & Neuropathic Syndromes",
+                                        items: ["Post-surgical neuromas", "Post-amputation pain", "Phantom limb pain"]
+                                    }
+                                ].map((group, idx) => (
+                                    <div key={idx} className="border-l-2 border-primary/30 pl-6">
+                                        <h3 className="text-lg font-bold text-foreground mb-3">{group.title}</h3>
+                                        <ul className="space-y-2">
+                                            {group.items.map((item, i) => (
+                                                <li key={i} className="flex items-start gap-2 text-foreground/75">
+                                                    <ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" />{item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
                             </div>
 
-                            <div className="space-y-8">
-                                {/* Knee Cryo Image */}
-                                <div className="content-img-wrap shadow-xl">
-                                    <img src={kneeCryoImg} alt="Knee cryoanalgesia under ultrasound guidance" className="content-img" />
-                                </div>
-
-                                {/* Neuromas & Neuropathic Syndromes */}
-                                <div className="bg-background border border-border rounded-2xl p-6 shadow-sm">
-                                    <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                                        <Zap className="w-5 h-5 text-primary" /> Neuromas & Neuropathic Syndromes
-                                    </h3>
-                                    <ul className="space-y-2 text-sm text-muted-foreground">
-                                        {["Post-surgical neuromas", "Post-amputation pain", "Phantom limb pain"].map((item, i) => (
-                                            <li key={i} className="flex items-center gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0" />{item}</li>
-                                        ))}
-                                    </ul>
+                            <div className="space-y-10">
+                                {/* Knee Cryo Image — frameless */}
+                                <div className="w-full rounded-2xl overflow-hidden shadow-xl">
+                                    <img src={kneeCryoImg} alt="Knee cryoanalgesia under ultrasound guidance" className="w-full h-auto object-contain" />
                                 </div>
 
                                 {/* Spasticity */}
@@ -296,7 +254,7 @@ const CryoanalgesiaDetail = () => {
                                     <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
                                         <Microscope className="w-5 h-5 text-primary" /> Spasticity-Associated Pain
                                     </h3>
-                                    <p className="text-sm text-muted-foreground mb-4">
+                                    <p className="text-sm text-foreground/75 mb-4">
                                         Upper and lower limb spasticity where motor nerve targeting is clinically appropriate.
                                     </p>
                                     <a
@@ -322,11 +280,11 @@ const CryoanalgesiaDetail = () => {
                         <h3 className="text-2xl font-display font-bold text-foreground mb-4 flex items-center gap-3">
                             <Syringe className="w-6 h-6 text-primary" /> Intraoperative Use
                         </h3>
-                        <p className="text-muted-foreground leading-relaxed mb-6">
+                        <p className="text-foreground/70 leading-relaxed mb-6">
                             Cryoanalgesia is widely applied intraoperatively, particularly in thoracic and selected cardiac procedures, to provide prolonged postoperative analgesia and reduce opioid requirements within enhanced recovery pathways.
                         </p>
                         <div className="flex flex-wrap gap-3">
-                            <Link to="/videos" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-colors">
+                            <Link to="/resources" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-colors">
                                 <Video className="w-4 h-4" /> View Procedural Videos
                             </Link>
                             <Link to="/resources" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-primary text-primary text-sm font-bold hover:bg-primary/5 transition-colors">
@@ -341,36 +299,31 @@ const CryoanalgesiaDetail = () => {
             <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border">
                 <div className="section-container">
                     <div className="max-w-5xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Patient Selection</span>
+                        <div className="mb-16">
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 Ideal Candidates
                             </h2>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-8 mb-12">
-                            <div className="bg-background border border-border rounded-3xl p-8 shadow-sm">
-                                <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                                    <Users className="w-6 h-6 text-primary" /> Appropriate Candidates
-                                </h3>
+                        <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
+                            <div className="border-l-2 border-green-400 pl-6">
+                                <h3 className="text-xl font-bold text-foreground mb-4">Appropriate Candidates</h3>
                                 <ul className="space-y-3">
                                     {[
                                         "Patients with focal peripheral nerve–mediated pain",
                                         "Individuals who have not responded adequately to conservative therapy",
                                         "Patients seeking minimally invasive alternatives to long-term pharmacotherapy or major surgery"
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-3 text-muted-foreground">
+                                        <li key={i} className="flex items-start gap-3 text-foreground/75">
                                             <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
                                             {item}
                                         </li>
                                     ))}
                                 </ul>
                             </div>
-                            <div className="bg-background border border-border rounded-3xl p-8 shadow-sm">
-                                <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                                    <Info className="w-6 h-6 text-primary" /> Important Note
-                                </h3>
-                                <p className="text-muted-foreground leading-relaxed">
+                            <div className="border-l-2 border-primary/30 pl-6">
+                                <h3 className="text-xl font-bold text-foreground mb-4">Important Note</h3>
+                                <p className="text-foreground/70 leading-relaxed">
                                     Careful anatomical correlation and image-guided technique are essential. Cryoanalgesia produces temporary, controlled axonal interruption (axonotmesis) rather than permanent neurodestruction. As the nerve regenerates, symptoms may recur over time. Repeat treatment may be considered where clinically appropriate.
                                 </p>
                             </div>
@@ -383,8 +336,7 @@ const CryoanalgesiaDetail = () => {
             <section className="py-20 lg:py-24">
                 <div className="section-container">
                     <div className="max-w-6xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Advantages</span>
+                        <div className="mb-16">
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 Key Clinical Advantages
                             </h2>
@@ -463,7 +415,7 @@ const CryoanalgesiaDetail = () => {
                         <h3 className="text-2xl font-display font-bold text-foreground mb-4 flex items-center gap-3">
                             <AlertTriangle className="w-6 h-6 text-amber-500" /> Contraindications
                         </h3>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="text-foreground/70 leading-relaxed">
                             Contraindications and risk considerations are reviewed during formal training and outlined within procedural guidelines.
                         </p>
                     </div>
@@ -474,12 +426,11 @@ const CryoanalgesiaDetail = () => {
             <section className="py-20 lg:py-24 bg-background border-t border-border">
                 <div className="section-container">
                     <div className="max-w-5xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">Evidence base</span>
+                        <div className="mb-16">
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 Clinical Evidence Summary
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                            <p className="text-lg text-foreground/70 leading-relaxed max-w-3xl">
                                 The current clinical literature demonstrates a predominantly favorable evidence base for targeted cryoanalgesia and cryoneurolysis.
                             </p>
                         </div>
@@ -513,7 +464,7 @@ const CryoanalgesiaDetail = () => {
                                         <span className="text-sm font-medium px-3 py-1 bg-primary/10 text-primary rounded-full">76 studies</span>
                                     </h4>
                                     <p className="text-primary font-semibold mb-3">60 Pro · 9 Mixed · 7 Con</p>
-                                    <p className="text-muted-foreground leading-relaxed text-sm">
+                                    <p className="text-foreground/70 leading-relaxed text-sm">
                                         Largest evidence body. Contains most cautionary reports — technique and patient selection critical.
                                     </p>
                                 </div>
@@ -523,7 +474,7 @@ const CryoanalgesiaDetail = () => {
                                         <span className="text-sm font-medium px-3 py-1 bg-primary/10 text-primary rounded-full">29 studies</span>
                                     </h4>
                                     <p className="text-primary font-semibold mb-3">25 Pro · 4 Mixed · 0 Con</p>
-                                    <p className="text-muted-foreground leading-relaxed text-sm">
+                                    <p className="text-foreground/70 leading-relaxed text-sm">
                                         Highly consistent results. Strongly supports cryoanalgesia in TKA perioperative pain management.
                                     </p>
                                 </div>
@@ -568,15 +519,15 @@ const CryoanalgesiaDetail = () => {
                                 <ul className="space-y-4">
                                     <li className="flex items-start gap-3">
                                         <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                                        <p className="text-sm text-muted-foreground leading-relaxed"><strong className="text-foreground">High-Level (I & II):</strong> 33 studies (25 Pro, 4 Mix, 4 Con). Comprising randomized trials, prospective studies, and systematic reviews.</p>
+                                        <p className="text-sm text-foreground/70 leading-relaxed"><strong className="text-foreground">High-Level (I & II):</strong> 33 studies (25 Pro, 4 Mix, 4 Con). Comprising randomized trials, prospective studies, and systematic reviews.</p>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                                        <p className="text-sm text-muted-foreground leading-relaxed"><strong className="text-foreground">Observational (III & IV):</strong> 82 studies (79 Pro, 1 Mix, 2 Con). Reflecting real-world clinical practice.</p>
+                                        <p className="text-sm text-foreground/70 leading-relaxed"><strong className="text-foreground">Observational (III & IV):</strong> 82 studies (79 Pro, 1 Mix, 2 Con). Reflecting real-world clinical practice.</p>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                                        <p className="text-sm text-muted-foreground leading-relaxed"><strong className="text-foreground">Expert Commentary (V):</strong> 37 publications (19 Pro, 16 Mix, 2 Con). Focused on protocol optimization and emerging indications.</p>
+                                        <p className="text-sm text-foreground/70 leading-relaxed"><strong className="text-foreground">Expert Commentary (V):</strong> 37 publications (19 Pro, 16 Mix, 2 Con). Focused on protocol optimization and emerging indications.</p>
                                     </li>
                                 </ul>
                             </div>
@@ -618,8 +569,7 @@ const CryoanalgesiaDetail = () => {
             <section className="py-20 lg:py-24">
                 <div className="section-container">
                     <div className="max-w-4xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="pill mb-6">FAQ</span>
+                        <div className="mb-16">
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                                 Frequently Asked Questions
                             </h2>
@@ -632,7 +582,7 @@ const CryoanalgesiaDetail = () => {
                                     <HelpCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                                     How does cryoanalgesia work?
                                 </h4>
-                                <p className="text-muted-foreground leading-relaxed pl-8">
+                                <p className="text-foreground/70 leading-relaxed pl-8">
                                     Cryoanalgesia involves placing a probe adjacent to a peripheral nerve and applying controlled low temperatures (typically approximately −70°C). This produces temporary axonal interruption via Wallerian degeneration while preserving the connective tissue structure, allowing regeneration over time.
                                 </p>
                             </div>
@@ -643,7 +593,7 @@ const CryoanalgesiaDetail = () => {
                                     <HelpCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                                     How long does the pain relief last?
                                 </h4>
-                                <p className="text-muted-foreground leading-relaxed pl-8">
+                                <p className="text-foreground/70 leading-relaxed pl-8">
                                     Analgesia typically lasts between 3 and 12 months, corresponding to the time required for axonal regeneration. In selected cohorts, relief has been documented beyond 12 months. As regeneration occurs, symptoms may gradually return, and repeat treatment may be considered where clinically appropriate.
                                 </p>
                             </div>
@@ -654,7 +604,7 @@ const CryoanalgesiaDetail = () => {
                                     <HelpCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                                     How is cryoanalgesia different from RFA and PRF?
                                 </h4>
-                                <p className="text-muted-foreground leading-relaxed pl-8 mb-6">
+                                <p className="text-foreground/70 leading-relaxed pl-8 mb-6">
                                     Cryoanalgesia produces controlled, reversible axonal interruption while preserving nerve connective tissue architecture. Thermal radiofrequency ablation produces heat-mediated neurodestruction. Pulsed radiofrequency alters neural signalling without structural axonal disruption. Cryoneurolysis is associated with a lower risk of neuroma formation compared with thermal neurodestructive techniques.
                                 </p>
                                 <div className="overflow-x-auto pl-8">
@@ -693,7 +643,7 @@ const CryoanalgesiaDetail = () => {
                                     <HelpCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                                     Is image guidance used?
                                 </h4>
-                                <p className="text-muted-foreground leading-relaxed pl-8">
+                                <p className="text-foreground/70 leading-relaxed pl-8">
                                     Yes. Cryoanalgesia is performed under ultrasound or fluoroscopic guidance to ensure accurate probe positioning and procedural safety.
                                 </p>
                             </div>
@@ -704,7 +654,7 @@ const CryoanalgesiaDetail = () => {
                                     <HelpCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                                     What are the risks of cryoanalgesia?
                                 </h4>
-                                <p className="text-muted-foreground leading-relaxed pl-8 mb-6">
+                                <p className="text-foreground/70 leading-relaxed pl-8 mb-6">
                                     Cryoanalgesia is generally well tolerated when performed by trained clinicians under image guidance.
                                 </p>
                                 <div className="pl-8 space-y-4">
@@ -735,7 +685,7 @@ const CryoanalgesiaDetail = () => {
                                     </div>
                                     <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
                                         <h5 className="font-bold text-foreground text-sm mb-2">Risk Mitigation</h5>
-                                        <p className="text-sm text-muted-foreground mb-2">The risk profile of cryoanalgesia is minimized through:</p>
+                                        <p className="text-sm text-foreground/75 mb-2">The risk profile of cryoanalgesia is minimized through:</p>
                                         <ul className="space-y-1 text-sm text-muted-foreground">
                                             {["Careful patient selection", "Use of image guidance (ultrasound or fluoroscopy)", "Appropriate probe positioning and temperature control", "Clinician training and adherence to established procedural protocols"].map((r, i) => (
                                                 <li key={i} className="flex items-center gap-2"><CheckCircle2 className="w-3 h-3 text-blue-500" />{r}</li>

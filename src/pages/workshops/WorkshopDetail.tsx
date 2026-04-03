@@ -78,7 +78,7 @@ const WorkshopDetail = () => {
 
                     <div className="order-1 lg:order-2">
                         <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border border-white/20">
-                            <img src={workshop.image} alt={workshop.title} className="w-full h-full object-cover" />
+                            <img src={workshop.image} alt={workshop.title} className="w-full h-full object-contain" />
                             <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none" />
                         </div>
                     </div>
@@ -155,7 +155,7 @@ const WorkshopDetail = () => {
                                 {workshop.faculty.map((member, i) => (
                                     <div key={i} className="bg-white border border-slate-100 shadow-sm rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 md:gap-12 hover:shadow-md transition-shadow">
                                         <div className="w-32 h-32 md:w-48 md:h-48 rounded-[2rem] overflow-hidden border-4 border-slate-50 shrink-0 shadow-lg">
-                                            <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                                            <img src={member.image} alt={member.name} className="w-full h-full object-contain" />
                                         </div>
                                         <div className="flex-1">
                                             <h4 className="font-bold text-2xl md:text-3xl text-foreground mb-2">{member.name}</h4>
@@ -185,7 +185,7 @@ const WorkshopDetail = () => {
                                     </div>
                                     <div>
                                         <h3 className="text-2xl font-bold text-foreground mb-3">{workshop.venue.name}</h3>
-                                        <p className="text-lg text-muted-foreground leading-relaxed max-w-md">{workshop.venue.address}</p>
+                                        <p className="text-lg text-foreground/75 leading-relaxed max-w-md">{workshop.venue.address}</p>
                                     </div>
                                 </div>
 

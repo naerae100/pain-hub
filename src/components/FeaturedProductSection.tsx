@@ -98,7 +98,7 @@ const FeaturedProductSection = () => {
               <img
                 src={cryoDevice}
                 alt="CRYO-S Painless Device"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
               {/* Overlay with Temperature */}
               <div className="absolute inset-0 bg-gradient-to-t from-[hsl(222,32%,12%)/0.6] to-transparent flex items-end justify-start p-10">

@@ -87,7 +87,7 @@ const AboutSection = () => {
             <img
               src={educationHero}
               alt="Interventional training session"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
@@ -97,7 +97,7 @@ const AboutSection = () => {
               <img
                 src={sydneyWorkshop3}
                 alt="Workshop in session"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 hover:rotate-1"
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-700 hover:rotate-1"
               />
             </div>
             <div className="px-2 pb-1">

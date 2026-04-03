@@ -20,7 +20,7 @@ const PageHero = ({ image, title, subtitle, breadcrumbs, imagePosition }: PageHe
             <img
                 src={image}
                 alt={title}
-                className={`absolute inset-0 w-full h-full object-cover ${imagePosition || ''}`}
+                className={`absolute inset-0 w-full h-full object-cover ${imagePosition || 'object-center'}`}
                 loading="eager"
             />
 

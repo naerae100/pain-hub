@@ -35,10 +35,10 @@ const BalloonTechnology = () => {
                             <span className="w-8 h-[2px] bg-primary"></span>
                             Overview
                         </div>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             Balloon catheter technology enables controlled mechanical expansion within the epidural space to address stenosis, adhesions, and restricted neural mobility.
                         </p>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             Unlike intradiscal decompression (PLDD) or peripheral nerve cryotherapy, balloon systems act directly within the epidural compartment to:
                         </p>
                         <ul className="space-y-3 mt-4 mb-6">
@@ -67,7 +67,7 @@ const BalloonTechnology = () => {
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                                 Platform Concept
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                            <p className="text-lg text-foreground/75 leading-relaxed mb-6">
                                 Modern epidural balloon systems incorporate:
                             </p>
                             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -77,7 +77,7 @@ const BalloonTechnology = () => {
                                 <li className="flex items-center gap-3 bg-background p-3 rounded-xl border border-border/50 text-muted-foreground shadow-sm"><Circle className="w-4 h-4 text-primary" /> Guide-needle compatibility</li>
                                 <li className="flex items-center gap-3 bg-background p-3 rounded-xl border border-border/50 text-muted-foreground shadow-sm col-span-1 sm:col-span-2"><Circle className="w-4 h-4 text-primary" /> Fluoroscopic visibility</li>
                             </ul>
-                            <p className="text-muted-foreground leading-relaxed">
+                            <p className="text-foreground/70 leading-relaxed">
                                 These design elements support navigation into stenosed foraminal or epidural regions where standard catheters may fail to access or mechanically modify pathology. Representative systems include the ZINeu Epidural Balloon Catheter Series, described as an epidural balloon platform for nerve block and neuroplasty applications.
                             </p>
                         </div>
@@ -96,7 +96,7 @@ const BalloonTechnology = () => {
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                                 Mechanical Principle of Action
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                            <p className="text-lg text-foreground/75 leading-relaxed mb-6">
                                 Balloon expansion produces controlled radial force within the epidural space. This may result in:
                             </p>
                             <ul className="space-y-4 mb-8">
@@ -128,7 +128,7 @@ const BalloonTechnology = () => {
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                             Catheter Architecture
                         </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/75 leading-relaxed">
                             Balloon catheter systems are available in multiple configurations to support anatomical variation.
                         </p>
                     </div>
