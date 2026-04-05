@@ -106,7 +106,7 @@ const CryoanalgesiaDetail = () => {
                             ))}
                         </div>
 
-                        {/* Cryo vs RF vs PRF */}
+                        {/* Cryo vs RF vs PRF — written comparison */}
                         <div className="bg-background border border-border rounded-3xl p-8 lg:p-12 shadow-sm">
                             <h3 className="text-2xl font-display font-bold text-foreground mb-6 flex items-center gap-3">
                                 <Zap className="w-6 h-6 text-primary" />
@@ -116,7 +116,7 @@ const CryoanalgesiaDetail = () => {
                                 The clinical distinction between these modalities lies in the degree of tissue destruction:
                             </p>
 
-                            <div className="space-y-8 mb-8">
+                            <div className="space-y-8">
                                 <div className="border-l-4 border-blue-400 pl-6">
                                     <h4 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
                                         <Snowflake className="w-5 h-5 text-blue-500" /> Cryoneurolysis
@@ -142,7 +142,19 @@ const CryoanalgesiaDetail = () => {
                                     </p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
+            {/* Nerve Injury Grade Diagram — separate section with bridging text */}
+            <section className="py-16 lg:py-20">
+                <div className="section-container">
+                    <div className="max-w-5xl mx-auto">
+                        <p className="text-lg text-foreground/70 leading-relaxed mb-10 max-w-3xl">
+                            The Seddon–Sunderland classification provides the anatomical framework for understanding why cryoneurolysis targets Grade II injury specifically — ensuring Wallerian degeneration proceeds with a 100% prognosis for recovery, unlike higher-grade injuries common with thermal techniques.
+                        </p>
+                        <div className="bg-background border border-border rounded-3xl p-6 shadow-sm">
                             {/* Nerve Injury Image */}
                             <div className="content-img-wrap content-img-wrap--wide shadow-md mb-6">
                                 <img src={nerveInjuryImg} alt="Nerve injury grade mechanism — Cryoneurolysis Grade II vs Radiofrequency Grade IV" className="content-img" />
@@ -249,23 +261,29 @@ const CryoanalgesiaDetail = () => {
                                     <img src={kneeCryoImg} alt="Knee cryoanalgesia under ultrasound guidance" className="w-full h-auto object-contain" />
                                 </div>
 
-                                {/* Spasticity */}
-                                <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 shadow-sm">
-                                    <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                                        <Microscope className="w-5 h-5 text-primary" /> Spasticity-Associated Pain
-                                    </h3>
-                                    <p className="text-sm text-foreground/75 mb-4">
-                                        Upper and lower limb spasticity where motor nerve targeting is clinically appropriate.
-                                    </p>
-                                    <a
-                                        href="https://ipmaustralia.com.au/cryoanalgesia/spasticity/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline"
-                                    >
-                                        <ExternalLink className="w-4 h-4" />
-                                        View Spasticity Programme & Case Examples
-                                    </a>
+                                {/* Spasticity — prominent featured block */}
+                                <div className="rounded-2xl overflow-hidden shadow-lg border border-primary/20" style={{ background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.82) 100%)' }}>
+                                    <div className="p-8">
+                                        <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-5">
+                                            <Microscope className="w-6 h-6 text-white" />
+                                        </div>
+                                        <h3 className="text-xl font-bold text-white mb-3">Spasticity-Associated Pain</h3>
+                                        <p className="text-white/85 leading-relaxed mb-3">
+                                            Cryoneurolysis is an effective emerging modality for upper and lower limb spasticity, targeting motor and mixed nerves to reduce muscle overactivity, improve function, and relieve associated pain without permanent neurodestruction.
+                                        </p>
+                                        <p className="text-white/70 text-sm leading-relaxed mb-6">
+                                            It offers a reversible, repeatable alternative to chemical neurolysis — particularly valuable where a prolonged or titratable effect is needed.
+                                        </p>
+                                        <a
+                                            href="https://ipmaustralia.com.au/cryoanalgesia/spasticity/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-primary font-bold text-sm hover:bg-white/90 transition-colors"
+                                        >
+                                            <ExternalLink className="w-4 h-4" />
+                                            View Spasticity Programme &amp; Case Examples
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -512,31 +530,32 @@ const CryoanalgesiaDetail = () => {
                             </div>
                         </div>
 
-                        {/* Quality of Evidence & Interpretation */}
-                        <div className="grid md:grid-cols-2 gap-8">
-                            <div className="bg-secondary/30 rounded-3xl p-8 border border-border">
-                                <h3 className="text-xl font-display font-bold text-foreground mb-6">Quality of Evidence</h3>
-                                <ul className="space-y-4">
-                                    <li className="flex items-start gap-3">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                                        <p className="text-sm text-foreground/70 leading-relaxed"><strong className="text-foreground">High-Level (I & II):</strong> 33 studies (25 Pro, 4 Mix, 4 Con). Comprising randomized trials, prospective studies, and systematic reviews.</p>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                                        <p className="text-sm text-foreground/70 leading-relaxed"><strong className="text-foreground">Observational (III & IV):</strong> 82 studies (79 Pro, 1 Mix, 2 Con). Reflecting real-world clinical practice.</p>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
-                                        <p className="text-sm text-foreground/70 leading-relaxed"><strong className="text-foreground">Expert Commentary (V):</strong> 37 publications (19 Pro, 16 Mix, 2 Con). Focused on protocol optimization and emerging indications.</p>
-                                    </li>
-                                </ul>
+                        {/* Quality of Evidence — flattened, then highlighted Interpretation below */}
+                        <div className="mb-8">
+                            <h3 className="text-xl font-display font-bold text-foreground mb-6">Quality of Evidence</h3>
+                            <div className="grid md:grid-cols-3 gap-8">
+                                {[
+                                    { label: "High-Level (I & II)", detail: "33 studies (25 Pro, 4 Mix, 4 Con). Comprising randomized trials, prospective studies, and systematic reviews." },
+                                    { label: "Observational (III & IV)", detail: "82 studies (79 Pro, 1 Mix, 2 Con). Reflecting real-world clinical practice." },
+                                    { label: "Expert Commentary (V)", detail: "37 publications (19 Pro, 16 Mix, 2 Con). Focused on protocol optimization and emerging indications." },
+                                ].map(({ label, detail }, i) => (
+                                    <div key={i} className="border-l-2 border-primary/30 pl-5">
+                                        <p className="font-bold text-foreground mb-2">{label}</p>
+                                        <p className="text-sm text-foreground/70 leading-relaxed">{detail}</p>
+                                    </div>
+                                ))}
                             </div>
-                            <div className="bg-primary text-primary-foreground rounded-3xl p-8 shadow-lg flex flex-col justify-center">
-                                <h3 className="text-xl font-display font-bold mb-4">Overall Interpretation</h3>
-                                <p className="leading-relaxed opacity-90">
-                                    Across 155 peer-reviewed studies, cryoanalgesia is <strong>widely studied</strong>, <strong>predominantly positive</strong>, and <strong>supported by expanding higher-quality evidence</strong>. However, outcomes depend strongly on clinical indication, nerve selection, technique, and patient selection.
-                                </p>
-                            </div>
+                        </div>
+
+                        {/* Overall Interpretation — prominent highlight */}
+                        <div className="rounded-3xl p-8 lg:p-12 shadow-lg" style={{ background: "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.85) 100%)" }}>
+                            <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-3">Overall Interpretation</p>
+                            <p className="text-2xl lg:text-3xl font-display font-bold text-white leading-snug mb-4">
+                                Across 155 peer-reviewed studies, cryoanalgesia is widely studied, predominantly positive, and supported by expanding higher-quality evidence.
+                            </p>
+                            <p className="text-white/80 leading-relaxed">
+                                However, outcomes depend strongly on clinical indication, nerve selection, technique, and patient selection.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -551,14 +570,21 @@ const CryoanalgesiaDetail = () => {
                         </div>
                         <div className="flex flex-col gap-4">
                             {researchData.cryo.map((item) => (
-                                <div key={item.id} className="bg-background border border-border p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-                                    <h4 className="text-lg font-bold text-blue-900 mb-2 leading-snug">{item.title}</h4>
-                                    <div className="text-sm text-muted-foreground">
+                                <a
+                                    key={item.id}
+                                    href={item.link || `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(item.title)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block bg-background border border-border p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-200 group"
+                                >
+                                    <h4 className="text-lg font-bold text-primary group-hover:underline mb-2 leading-snug">{item.title}</h4>
+                                    <div className="text-sm text-muted-foreground flex items-center gap-2">
                                         <span className="font-semibold text-slate-700">{item.author}</span>
-                                        <span className="mx-2 text-slate-300">•</span>
+                                        <span className="text-slate-300">•</span>
                                         <span className="italic">{item.journal}</span>
+                                        <ExternalLink className="w-3.5 h-3.5 ml-auto text-primary/40 group-hover:text-primary transition-colors shrink-0" />
                                     </div>
-                                </div>
+                                </a>
                             ))}
                         </div>
                     </div>

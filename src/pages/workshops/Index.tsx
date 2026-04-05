@@ -109,7 +109,8 @@ const WorkshopIndex = () => {
             {/* ── Intro Section ── */}
             <section className="py-20 lg:py-24">
                 <div className="section-container">
-                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div className="grid lg:grid-cols-[1fr_1fr_1fr] gap-12 lg:gap-16 items-center">
+                        {/* Left — heading */}
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -125,9 +126,10 @@ const WorkshopIndex = () => {
                             </h2>
                         </motion.div>
 
+                        {/* Middle — description + bullets */}
                         <motion.div
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             viewport={{ once: true }}
                         >
@@ -149,26 +151,16 @@ const WorkshopIndex = () => {
                                 ))}
                             </ul>
                         </motion.div>
-                    </div>
 
-                    <div className="grid md:grid-cols-2 gap-6 mt-16 max-w-4xl mx-auto">
+                        {/* Right — image */}
                         <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.7, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="content-img-wrap shadow-xl"
+                            className="w-full rounded-2xl overflow-hidden shadow-xl"
                         >
-                            <img src={sydneyWorkshop1} alt="Sydney Workshop 1" className="w-full h-full object-cover" />
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.1 }}
-                            viewport={{ once: true }}
-                            className="content-img-wrap shadow-xl"
-                        >
-                            <img src={sydneyWorkshop2} alt="Sydney Workshop 2" className="w-full h-full object-cover" />
+                            <img src={sydneyWorkshop1} alt="Ultrasound-guided cryoanalgesia workshop" className="w-full h-auto object-cover" />
                         </motion.div>
                     </div>
                 </div>
