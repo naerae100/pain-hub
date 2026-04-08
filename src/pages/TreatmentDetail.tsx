@@ -16,7 +16,7 @@ const TreatmentDetail = () => {
             {/* Hero Title Only */}
             <section className="bg-secondary/30 pt-32 pb-16 border-b border-border">
                 <div className="section-container text-center">
-                    <h1 className="text-5xl md:text-6xl font-display font-bold text-foreground mb-4 text-blue-900">
+                    <h1 className="text-5xl md:text-6xl font-display font-bold text-foreground mb-4 text-foreground">
                         {treatment.title}
                     </h1>
                     <div className="flex items-center justify-center gap-2 text-muted-foreground">
@@ -35,7 +35,7 @@ const TreatmentDetail = () => {
                     <div className="grid lg:grid-cols-2 gap-16 items-start">
                         {/* Text Content */}
                         <div className="flex flex-col gap-6">
-                            <h2 className="text-3xl font-display font-bold text-blue-900">
+                            <h2 className="text-3xl font-display font-bold text-foreground">
                                 What is {treatment.title}?
                             </h2>
                             <div className="flex flex-col gap-6 text-lg text-muted-foreground leading-relaxed">
@@ -84,7 +84,7 @@ const TreatmentDetail = () => {
                     {treatment.clinicalOutcomes && (
                         <div className="flex flex-col gap-10">
                             <div>
-                                <h2 className="text-3xl font-display font-bold text-blue-900 mb-4">
+                                <h2 className="text-3xl font-display font-bold text-foreground mb-4">
                                     Evidence and Clinical Outcomes
                                 </h2>
                                 <p className="text-lg text-muted-foreground max-w-3xl">
@@ -142,7 +142,7 @@ const TreatmentDetail = () => {
                                     <div className="flex items-center gap-4 mb-6">
                                         <h3 className="font-bold text-lg">Application Areas</h3>
                                     </div>
-                                    <div className="flex items-center justify-center h-40 text-muted-foreground text-sm italic">
+                                    <div className="flex items-center justify-center h-40 text-muted-foreground text-sm">
                                         [Interactive data visualization]
                                         (Simulated graphic)
                                     </div>
@@ -155,8 +155,8 @@ const TreatmentDetail = () => {
                     {/* Diagram Section */}
                     {treatment.diagram && (
                         <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 lg:p-12 border border-slate-100">
-                            <h2 className="text-3xl font-display font-bold text-blue-900 mb-8 text-center">{treatment.diagram.title}</h2>
-                            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white">
+                            <h2 className="text-3xl font-display font-bold text-foreground mb-8 text-center">{treatment.diagram.title}</h2>
+                            <div className="relative rounded-3xl overflow-hidden bg-white">
                                 <img src={treatment.diagram.image} alt={treatment.diagram.title} className="w-full object-contain" />
                                 <div className="absolute inset-x-0 bottom-0 bg-white/90 backdrop-blur-md p-6 border-t border-border/50">
                                     <p className="text-lg text-foreground/80 leading-relaxed text-center max-w-4xl mx-auto">
@@ -170,10 +170,10 @@ const TreatmentDetail = () => {
                     {/* Videos Section */}
                     {treatment.videos && (
                         <div>
-                            <h2 className="text-3xl font-display font-bold text-blue-900 mb-8">Video Learning Series</h2>
+                            <h2 className="text-3xl font-display font-bold text-foreground mb-8">Video Learning Series</h2>
                             <div className="grid md:grid-cols-2 gap-8">
                                 {treatment.videos.map((video, idx) => (
-                                    <div key={idx} className="group relative rounded-xl overflow-hidden shadow-xl aspect-video cursor-pointer">
+                                    <div key={idx} className="group relative rounded-xl overflow-hidden aspect-video cursor-pointer">
                                         <img src={video.thumbnail} alt={video.title} className="w-full h-full object-contain bg-black group-hover:scale-105 transition-transform duration-700" />
                                         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
                                             <div className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/50 group-hover:scale-110 transition-transform">
@@ -193,7 +193,7 @@ const TreatmentDetail = () => {
                     {/* Articles Section */}
                     {treatment.articles && (
                         <div className="bg-secondary/30 rounded-2xl p-8 lg:p-12 border border-slate-100">
-                            <h2 className="text-3xl font-display font-bold text-blue-900 mb-8">
+                            <h2 className="text-3xl font-display font-bold text-foreground mb-8">
                                 Key Publications
                             </h2>
                             <div className="grid gap-4">
@@ -206,7 +206,7 @@ const TreatmentDetail = () => {
                                                     {article.title}
                                                 </h3>
                                                 <div className="text-muted-foreground text-sm">
-                                                    {article.authors} • <span className="italic">{article.reference}</span>
+                                                    {article.authors} • <span>{article.reference}</span>
                                                 </div>
                                             </div>
                                             <Button variant="ghost" className="shrink-0 text-primary hover:text-primary/80 hover:bg-primary/5 gap-2">
@@ -222,7 +222,7 @@ const TreatmentDetail = () => {
                     {/* Social / Video Section (Existing) */}
                     {treatment.socialPosts && (
                         <div>
-                            <h2 className="text-3xl font-display font-bold text-blue-900 mb-8">
+                            <h2 className="text-3xl font-display font-bold text-foreground mb-8">
                                 Community Insights & Cases
                             </h2>
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -231,12 +231,12 @@ const TreatmentDetail = () => {
                                         <div className="flex items-center gap-3 mb-4">
                                             <img src={post.avatar} alt={post.author} className="w-10 h-10 rounded-full bg-gray-200 object-contain" />
                                             <div className="flex flex-col">
-                                                <span className="text-sm font-bold text-gray-900">{post.author}</span>
-                                                <span className="text-xs text-gray-500">{post.role} • {post.time}</span>
+                                                <span className="text-sm font-bold text-foreground">{post.author}</span>
+                                                <span className="text-xs text-foreground/90">{post.role} • {post.time}</span>
                                             </div>
                                             <Linkedin className="w-5 h-5 text-[#0077b5] ml-auto" />
                                         </div>
-                                        <p className="text-sm text-gray-700 mb-4 line-clamp-3 leading-relaxed">
+                                        <p className="text-sm text-foreground mb-4 line-clamp-3 leading-relaxed">
                                             {post.content}
                                         </p>
                                         <div className="relative rounded-lg overflow-hidden aspect-[4/5] bg-black group cursor-pointer">
@@ -252,7 +252,7 @@ const TreatmentDetail = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="flex items-center gap-4 mt-4 pt-4 border-t border-gray-100 text-gray-500 text-sm">
+                                        <div className="flex items-center gap-4 mt-4 pt-4 border-t border-gray-100 text-foreground/90 text-sm">
                                             <span className="hover:text-blue-600 cursor-pointer">Like</span>
                                             <span className="hover:text-blue-600 cursor-pointer">Comment</span>
                                             <span className="hover:text-blue-600 cursor-pointer ml-auto">Share</span>

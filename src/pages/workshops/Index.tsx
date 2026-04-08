@@ -109,8 +109,8 @@ const WorkshopIndex = () => {
             {/* ── Intro Section ── */}
             <section className="py-20 lg:py-24">
                 <div className="section-container">
-                    <div className="grid lg:grid-cols-[1fr_1fr_1fr] gap-12 lg:gap-16 items-center">
-                        {/* Left — heading */}
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        {/* Left — content */}
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -121,22 +121,13 @@ const WorkshopIndex = () => {
                                 <span className="w-8 h-[2px] bg-primary"></span>
                                 Clinical Education Overview
                             </div>
-                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
+                            <h2 className="text-2xl lg:text-3xl font-display font-bold text-foreground mb-6 leading-snug">
                                 IPMA delivers structured educational pathways designed to support safe, evidence-based adoption of minimally invasive procedures.
                             </h2>
-                        </motion.div>
-
-                        {/* Middle — description + bullets */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
-                            viewport={{ once: true }}
-                        >
-                            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                            <p className="text-lg text-foreground/90 leading-relaxed mb-8">
                                 Our programs are built around a philosophy of progressive competency — ensuring practitioners develop both the knowledge and the hands-on confidence to deliver outstanding patient outcomes.
                             </p>
-                            <ul className="space-y-3">
+                            <ul className="space-y-4">
                                 {[
                                     "Scientific foundation & evidence base",
                                     "Hands-on training with real equipment",
@@ -144,9 +135,9 @@ const WorkshopIndex = () => {
                                     "International and domestic faculty",
                                     "Real-world clinical insight",
                                 ].map((item) => (
-                                    <li key={item} className="flex items-start gap-3 text-muted-foreground">
+                                    <li key={item} className="flex items-start gap-3 text-foreground/90">
                                         <ChevronRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                                        <span className="text-base">{item}</span>
+                                        <span className="text-lg">{item}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -158,9 +149,9 @@ const WorkshopIndex = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.7, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="w-full rounded-2xl overflow-hidden shadow-xl"
+                            className="w-full h-full rounded-2xl overflow-hidden"
                         >
-                            <img src={sydneyWorkshop1} alt="Ultrasound-guided cryoanalgesia workshop" className="w-full h-auto object-cover" />
+                            <img src={sydneyWorkshop1} alt="Ultrasound-guided cryoanalgesia workshop" className="w-full h-full object-cover" />
                         </motion.div>
                     </div>
                 </div>
@@ -173,7 +164,7 @@ const WorkshopIndex = () => {
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                             Training Pathways
                         </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/90 leading-relaxed">
                             A clear progression from foundational knowledge to confident independent practice.
                         </p>
                     </div>
@@ -193,7 +184,7 @@ const WorkshopIndex = () => {
                                     {step.step}
                                 </div>
                                 <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
-                                <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
+                                <p className="text-foreground/90 text-base leading-relaxed">{step.description}</p>
 
                                 {/* Arrow connector (hidden on last item and on mobile) */}
                                 {index < pathwaySteps.length - 1 && (
@@ -208,7 +199,7 @@ const WorkshopIndex = () => {
             </section>
 
             {/* ── Anatomy & Clinical Insight ── */}
-            <section className="py-20 lg:py-24 bg-secondary/20 border-y border-border overflow-hidden">
+            <section className="py-20 lg:py-24 bg-secondary/20 overflow-hidden">
                 <div className="section-container">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         <motion.div
@@ -221,27 +212,22 @@ const WorkshopIndex = () => {
                             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                                 Visualising Precision: Anatomy & Procedural Planning
                             </h2>
-                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                            <p className="text-lg text-foreground/90 leading-relaxed">
                                 Deep anatomical understanding is the cornerstone of interventional success. Our workshops use detailed anatomical mapping and high-resolution ultrasound to ensure precision in every procedure.
                             </p>
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="content-img-wrap shadow-sm">
-                                    <img src={shoulderAnatomy1} alt="Shoulder Anatomy Drawing" className="w-full h-full object-cover" />
-                                </div>
-                                <div className="content-img-wrap shadow-sm">
-                                    <img src={shoulderAnatomy2} alt="Shoulder Anatomy Results" className="w-full h-full object-cover" />
-                                </div>
-                            </div>
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, x: 30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="relative"
+                            className="grid grid-cols-2 gap-4"
                         >
-                            <div className="content-img-wrap content-img-wrap--auto shadow-xl rounded-2xl overflow-hidden">
-                                <img src={brisbaneWorkshop} alt="Brisbane Workshop" className="w-full h-auto object-cover" />
+                            <div className="rounded-2xl overflow-hidden">
+                                <img src={shoulderAnatomy1} alt="Shoulder Anatomy Drawing" className="w-full h-full object-cover" />
+                            </div>
+                            <div className="rounded-2xl overflow-hidden">
+                                <img src={shoulderAnatomy2} alt="Shoulder Anatomy Results" className="w-full h-full object-cover" />
                             </div>
                         </motion.div>
                     </div>
@@ -259,7 +245,7 @@ const WorkshopIndex = () => {
                             <h3 className="text-xl md:text-2xl font-display font-bold text-foreground mb-2">
                                 Clinical Reference Centres
                             </h3>
-                            <p className="text-muted-foreground text-lg leading-relaxed">
+                            <p className="text-foreground/90 text-lg leading-relaxed">
                                 IPMA Clinical Reference Centres allow clinicians to observe image-guided interventional pain and spine procedures in real-world practice.
                             </p>
                         </div>
@@ -275,32 +261,29 @@ const WorkshopIndex = () => {
             {/* ── Offerings ── */}
             <section className="py-20 lg:py-24">
                 <div className="section-container">
-                    <div className="text-center max-w-2xl mx-auto mb-16">
+                    <div className="max-w-4xl mx-auto">
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                             Our Offerings
                         </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/90 leading-relaxed mb-12">
                             Comprehensive educational formats designed for every stage of your clinical journey.
                         </p>
-                    </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {offerings.map((offering, index) => (
-                            <motion.div
-                                key={offering.title}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: index * 0.08 }}
-                                viewport={{ once: true }}
-                                className="bg-background border border-border/50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300"
-                            >
-                                <div className={`w-14 h-14 rounded-2xl ${offering.color} flex items-center justify-center mb-6`}>
-                                    <offering.icon className="w-7 h-7" />
-                                </div>
-                                <h3 className="text-xl font-bold text-foreground mb-3">{offering.title}</h3>
-                                <p className="text-muted-foreground leading-relaxed">{offering.description}</p>
-                            </motion.div>
-                        ))}
+                        <div className="space-y-10">
+                            {offerings.map((offering, index) => (
+                                <motion.div
+                                    key={offering.title}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: index * 0.05 }}
+                                    viewport={{ once: true }}
+                                    className={index < offerings.length - 1 ? "pb-10 border-b border-border/50" : ""}
+                                >
+                                    <h3 className="text-2xl font-display font-bold text-foreground mb-3">{offering.title}</h3>
+                                    <p className="text-lg text-foreground/90 leading-relaxed">{offering.description}</p>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
@@ -312,7 +295,7 @@ const WorkshopIndex = () => {
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                             Upcoming Events &amp; Webinars
                         </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground/90 leading-relaxed">
                             Browse our scheduled workshops, webinars and events.
                         </p>
                     </div>
@@ -418,16 +401,16 @@ const WorkshopIndex = () => {
                                         <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                                             {workshop.title}
                                         </h3>
-                                        <p className="text-muted-foreground text-sm line-clamp-2 mb-6">
+                                        <p className="text-foreground/90 text-base line-clamp-2 mb-6">
                                             {workshop.subtitle}
                                         </p>
 
                                         <div className="mt-auto space-y-3">
-                                            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                                            <div className="flex items-center gap-3 text-base text-foreground/90">
                                                 <Calendar className="w-4 h-4 text-primary" />
                                                 <span>{workshop.date}</span>
                                             </div>
-                                            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                                            <div className="flex items-center gap-3 text-base text-foreground/90">
                                                 <MapPin className="w-4 h-4 text-primary" />
                                                 <span>{workshop.location}</span>
                                             </div>
@@ -474,16 +457,16 @@ const WorkshopIndex = () => {
                                         <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                                             {webinar.topic}
                                         </h3>
-                                        <p className="text-muted-foreground text-sm line-clamp-2 mb-6">
+                                        <p className="text-foreground/90 text-base line-clamp-2 mb-6">
                                             {webinar.speaker} — {webinar.speakerCredentials}
                                         </p>
 
                                         <div className="mt-auto space-y-3">
-                                            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                                            <div className="flex items-center gap-3 text-base text-foreground/90">
                                                 <Calendar className="w-4 h-4 text-primary" />
                                                 <span>{webinar.date} ({webinar.timing})</span>
                                             </div>
-                                            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                                            <div className="flex items-center gap-3 text-base text-foreground/90">
                                                 <MapPin className="w-4 h-4 text-primary" />
                                                 <span>Online Webinar</span>
                                             </div>

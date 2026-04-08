@@ -34,7 +34,7 @@ const EvidenceCryo = () => {
                         <p className="text-sm text-red-800 font-medium">Studies (5%) report unfavorable or cautionary outcomes</p>
                     </div>
                 </div>
-                <p className="text-muted-foreground leading-relaxed italic border-l-4 border-primary pl-4">
+                <p className="text-muted-foreground leading-relaxed border-l-4 border-primary pl-4">
                     These findings indicate that cryoanalgesia is widely supported across multiple clinical settings, though results vary depending on anatomical target, patient selection, and clinical context.
                 </p>
             </div>
@@ -58,7 +58,7 @@ const EvidenceCryo = () => {
                             <span className="text-amber-600 flex items-center gap-1"><AlertTriangle className="w-4 h-4"/> 9 Mixed</span>
                             <span className="text-red-500 flex items-center gap-1"><Info className="w-4 h-4"/> 7 Con</span>
                         </div>
-                        <p className="text-xs text-muted-foreground mt-4 italic">
+                        <p className="text-xs text-muted-foreground mt-4">
                             While the majority demonstrates favorable outcomes, this region contains most of the cautionary reports, suggesting technique and patient selection are critical.
                         </p>
                     </div>

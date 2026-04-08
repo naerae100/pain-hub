@@ -39,9 +39,9 @@ const MediaModal = ({
             <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose} />
             <div className="relative w-full max-w-6xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[85vh] md:h-[90vh] animate-in fade-in zoom-in-95 duration-200">
                 <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-gray-50">
-                    <h3 className="text-lg font-bold text-gray-900 truncate pr-4">{title}</h3>
+                    <h3 className="text-lg font-bold text-foreground truncate pr-4">{title}</h3>
                     <button onClick={onClose} className="p-2 bg-gray-200 hover:bg-gray-300 rounded-full transition-colors shrink-0">
-                        <X className="w-5 h-5 text-gray-700" />
+                        <X className="w-5 h-5 text-foreground" />
                     </button>
                 </div>
                 <div className="flex-1 w-full bg-gray-100 relative">
@@ -80,7 +80,7 @@ const YtEmbedCard = ({ url, title, onClick }: { url: string; title: string; onCl
                 </div>
             </div>
             <div className="px-5 py-4 border-t border-gray-100 bg-white flex-1">
-                <p className="text-[15px] font-bold text-gray-900 group-hover:text-primary transition-colors leading-snug line-clamp-2">{title}</p>
+                <p className="text-[15px] font-bold text-foreground group-hover:text-primary transition-colors leading-snug line-clamp-2">{title}</p>
             </div>
         </button>
     );
@@ -91,9 +91,9 @@ const SectionTitle = ({ title, subtitle, id, icon: Icon }: { icon?: React.Elemen
     <div id={id} className="scroll-mt-28 mb-10">
         <div className="flex items-center gap-3 mb-2">
             {Icon && <Icon className="w-6 h-6 text-primary" />}
-            <h2 className="text-xl lg:text-3xl font-bold text-gray-900 tracking-tight">{title}</h2>
+            <h2 className="text-xl lg:text-3xl font-bold text-foreground tracking-tight">{title}</h2>
         </div>
-        {subtitle && <p className="text-[14px] text-gray-500 max-w-3xl ml-0 md:ml-9 mt-1">{subtitle}</p>}
+        {subtitle && <p className="text-lg font-medium text-foreground/90 max-w-3xl ml-0 md:ml-9 mt-1">{subtitle}</p>}
         <div className="h-px bg-gray-200 mt-6" />
     </div>
 );
@@ -109,16 +109,16 @@ const PdfCard = ({ title, badge, onClick }: { title: string; badge?: string; onC
             <FileText className="w-6 h-6" />
         </div>
         <div className="flex-1 min-w-0 w-full">
-            <h4 className="text-[14px] sm:text-[15px] font-bold text-gray-900 leading-snug mb-2 group-hover:text-primary transition-colors line-clamp-2 pr-2">
+            <h4 className="text-[14px] sm:text-[15px] font-bold text-foreground leading-snug mb-2 group-hover:text-primary transition-colors line-clamp-2 pr-2">
                 {title}
             </h4>
             {badge && (
-                <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold bg-gray-100 text-gray-600 border border-gray-200">
+                <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold bg-gray-100 text-foreground/80 border border-gray-200">
                     {badge}
                 </span>
             )}
         </div>
-        <div className="hidden sm:flex w-9 h-9 rounded-full bg-gray-50 items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white text-gray-400 transition-colors border border-gray-100">
+        <div className="hidden sm:flex w-9 h-9 rounded-full bg-gray-50 items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white text-foreground/50 transition-colors border border-gray-100">
             <ExternalLink className="w-4 h-4 ml-0.5" />
         </div>
     </button>
@@ -143,8 +143,8 @@ const PdfLibrary = ({
     <div className="bg-white border flex flex-col border-gray-200 rounded-2xl overflow-hidden shadow-sm mt-5">
         <div className="px-6 py-5 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center gap-4 justify-between bg-gray-50/50">
             <div>
-                <h4 className="text-lg font-bold text-gray-900">{title}</h4>
-                {subtitle && <p className="text-[13px] text-gray-500 mt-1">{subtitle}</p>}
+                <h4 className="text-lg font-bold text-foreground">{title}</h4>
+                {subtitle && <p className="text-base font-medium text-foreground/90 mt-1">{subtitle}</p>}
             </div>
             <span className="text-[12px] font-bold text-primary bg-primary/10 px-3 py-1.5 rounded-lg whitespace-nowrap self-start sm:self-auto">
                 {count} / {total} Documents
@@ -175,10 +175,10 @@ const VideoSection = ({
         <div className="flex flex-wrap gap-1.5 mb-7 bg-gray-100 p-1.5 rounded-xl w-fit">
             {tabs.map(tab => (
                 <button key={tab.key} onClick={() => onTabChange(tab.key)}
-                    className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-[13px] font-bold transition-all ${
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-bold transition-all ${
                         activeTab === tab.key
                             ? "bg-white text-primary shadow-sm"
-                            : "text-gray-500 hover:text-gray-800 hover:bg-black/5"
+                            : "text-foreground/90 hover:text-foreground hover:bg-black/5"
                     }`}>
                     {tab.icon && <tab.icon className="w-4 h-4" />}
                     {tab.label}
@@ -267,7 +267,7 @@ const Resources = () => {
                             { label: "Frameworks", href: "#frameworks" },
                         ].map(n => (
                             <a key={n.label} href={n.href}
-                                className="px-5 py-2.5 rounded-lg text-[14px] font-bold text-gray-600 hover:text-primary hover:bg-primary/5 transition-all whitespace-nowrap">
+                                className="px-5 py-2.5 rounded-lg text-base font-bold text-foreground/80 hover:text-primary hover:bg-primary/5 transition-all whitespace-nowrap">
                                 {n.label}
                             </a>
                         ))}
@@ -279,8 +279,8 @@ const Resources = () => {
             <section className="py-16 bg-white border-b border-gray-200">
                 <div className="container mx-auto px-4 max-w-4xl text-center">
                     <p className="text-[11px] font-extrabold text-primary uppercase tracking-[0.2em] mb-3">Featured Resource</p>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-2">Procedure of the Month</h2>
-                    <p className="text-[14px] text-gray-500 mb-8">Updated monthly — extreme precision techniques and new practices.</p>
+                    <h2 className="text-2xl font-bold text-foreground mb-2">Procedure of the Month</h2>
+                    <p className="text-lg font-medium text-foreground/90 mb-8">Updated monthly — extreme precision techniques and new practices.</p>
                     <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-xl max-w-3xl mx-auto">
                         <div className="aspect-video relative">
                             <iframe className="w-full h-full absolute inset-0"
@@ -301,10 +301,10 @@ const Resources = () => {
 
                     {/* ── CRYO ── */}
                     <div id="cryo" className="mb-20 scroll-mt-28">
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 block border-l-4 border-primary pl-4">
+                        <h3 className="text-xl font-bold text-foreground mb-3 block border-l-4 border-primary pl-4">
                             Cryoanalgesia & Cryoneurolysis
                         </h3>
-                        <p className="text-gray-500 mb-6 max-w-2xl text-[15px] leading-relaxed ml-5">
+                        <p className="text-foreground/90 mb-6 max-w-2xl text-lg font-medium leading-relaxed ml-5">
                             Access the latest clinical studies, anatomical focus reports, and quality of evidence reviews for Cryoanalgesia.
                         </p>
 
@@ -313,17 +313,17 @@ const Resources = () => {
                             filters={
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label className="text-[11px] font-extrabold text-gray-600 uppercase tracking-wider mb-2 block">Anatomical Area</label>
+                                        <label className="text-[11px] font-extrabold text-foreground/80 uppercase tracking-wider mb-2 block">Anatomical Area</label>
                                         <select value={cryoArea} onChange={e => setCryoArea(e.target.value)}
-                                            className="w-full h-11 px-4 rounded-xl border border-gray-300 bg-white text-[14px] text-gray-900 font-bold focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all shadow-sm">
+                                            className="w-full h-11 px-4 rounded-xl border border-gray-300 bg-white text-[14px] text-foreground font-bold focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all shadow-sm">
                                             <option value="All">All Areas</option>
                                             {cryoAnatomicalAreas.map(a => <option key={a} value={a}>{a}</option>)}
                                         </select>
                                     </div>
                                     <div>
-                                        <label className="text-[11px] font-extrabold text-gray-600 uppercase tracking-wider mb-2 block">Level of Evidence</label>
+                                        <label className="text-[11px] font-extrabold text-foreground/80 uppercase tracking-wider mb-2 block">Level of Evidence</label>
                                         <select value={cryoLevel} onChange={e => setCryoLevel(e.target.value)}
-                                            className="w-full h-11 px-4 rounded-xl border border-gray-300 bg-white text-[14px] text-gray-900 font-bold focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all shadow-sm">
+                                            className="w-full h-11 px-4 rounded-xl border border-gray-300 bg-white text-[14px] text-foreground font-bold focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all shadow-sm">
                                             <option value="All">All Levels</option>
                                             {cryoLevelsOfEvidence.map(l => <option key={l} value={l}>{l}</option>)}
                                         </select>
@@ -331,16 +331,16 @@ const Resources = () => {
                                 </div>
                             }>
                             {filteredCryo.map((p, i) => <PdfCard key={i} title={p.title} badge={`${p.anatomicalArea} · ${p.levelOfEvidence}`} onClick={() => openPdf(p)} />)}
-                            {filteredCryo.length === 0 && <p className="col-span-full text-center py-16 text-gray-400 text-[14px] font-medium bg-white rounded-xl border border-dashed border-gray-200">No documents match the selected filters.</p>}
+                            {filteredCryo.length === 0 && <p className="col-span-full text-center py-16 text-foreground/50 text-[14px] font-medium bg-white rounded-xl border border-dashed border-gray-200">No documents match the selected filters.</p>}
                         </PdfLibrary>
                     </div>
 
                     {/* ── BALLOON ── */}
                     <div id="balloon" className="mb-20 scroll-mt-28">
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 block border-l-4 border-primary pl-4">
+                        <h3 className="text-xl font-bold text-foreground mb-3 block border-l-4 border-primary pl-4">
                             Epidural Adhesiolysis & Balloon Technologies
                         </h3>
-                        <p className="text-gray-500 mb-6 max-w-2xl text-[15px] leading-relaxed ml-5">
+                        <p className="text-foreground/90 mb-6 max-w-2xl text-lg font-medium leading-relaxed ml-5">
                             Access the latest clinical studies and balloon technologies documentation.
                         </p>
 
@@ -348,25 +348,25 @@ const Resources = () => {
                             count={filteredBalloon.length} total={balloonPdfs.length}
                             filters={
                                 <div>
-                                    <label className="text-[11px] font-extrabold text-gray-600 uppercase tracking-wider mb-2 block">Category</label>
+                                    <label className="text-[11px] font-extrabold text-foreground/80 uppercase tracking-wider mb-2 block">Category</label>
                                     <select value={balloonCat} onChange={e => setBalloonCat(e.target.value)}
-                                        className="w-full md:w-auto min-w-[300px] h-11 px-4 rounded-xl border border-gray-300 bg-white text-[14px] text-gray-900 font-bold focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all shadow-sm">
+                                        className="w-full md:w-auto min-w-[300px] h-11 px-4 rounded-xl border border-gray-300 bg-white text-[14px] text-foreground font-bold focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all shadow-sm">
                                         <option value="All">All Categories</option>
                                         {balloonCategoryNames.map(c => <option key={c} value={c}>{c}</option>)}
                                     </select>
                                 </div>
                             }>
                             {filteredBalloon.map((p, i) => <PdfCard key={i} title={p.title} badge={p.category} onClick={() => openPdf(p)} />)}
-                            {filteredBalloon.length === 0 && <p className="col-span-full text-center py-16 text-gray-400 text-[14px] font-medium bg-white rounded-xl border border-dashed border-gray-200">No documents match filter.</p>}
+                            {filteredBalloon.length === 0 && <p className="col-span-full text-center py-16 text-foreground/50 text-[14px] font-medium bg-white rounded-xl border border-dashed border-gray-200">No documents match filter.</p>}
                         </PdfLibrary>
                     </div>
 
                     {/* ── PRP ── */}
                     <div id="prp" className="mb-20 scroll-mt-28">
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 block border-l-4 border-primary pl-4">
+                        <h3 className="text-xl font-bold text-foreground mb-3 block border-l-4 border-primary pl-4">
                             Platelet-based & Bone Marrow–derived Biologics
                         </h3>
-                        <p className="text-gray-500 mb-6 max-w-2xl text-[15px] leading-relaxed ml-5">
+                        <p className="text-foreground/90 mb-6 max-w-2xl text-lg font-medium leading-relaxed ml-5">
                             Access the latest clinical studies and literature for Platelet-based & Bone Marrow–derived Biologics.
                         </p>
 
@@ -378,10 +378,10 @@ const Resources = () => {
 
                     {/* ── PLDD ── */}
                     <div id="pldd" className="mb-8 scroll-mt-28">
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 block border-l-4 border-primary pl-4">
+                        <h3 className="text-xl font-bold text-foreground mb-3 block border-l-4 border-primary pl-4">
                             Percutaneous Laser Disc Decompression (PLDD)
                         </h3>
-                        <p className="text-gray-500 mb-6 max-w-2xl text-[15px] leading-relaxed ml-5">
+                        <p className="text-foreground/90 mb-6 max-w-2xl text-lg font-medium leading-relaxed ml-5">
                             Access the latest clinical studies and literature for Percutaneous Laser Disc Decompression.
                         </p>
 
@@ -393,10 +393,10 @@ const Resources = () => {
 
                     {/* ── CLINICAL LITERATURE (from Research data) ── */}
                     <div className="mb-8 mt-20">
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 block border-l-4 border-primary pl-4">
+                        <h3 className="text-xl font-bold text-foreground mb-3 block border-l-4 border-primary pl-4">
                             Selected Clinical Literature & Publications
                         </h3>
-                        <p className="text-gray-500 mb-8 max-w-2xl text-[15px] leading-relaxed ml-5">
+                        <p className="text-foreground/90 mb-8 max-w-2xl text-lg font-medium leading-relaxed ml-5">
                             A curated selection of key peer-reviewed studies and trials supporting our interventional techniques.
                         </p>
                         
@@ -412,13 +412,13 @@ const Resources = () => {
                                     <div className="flex flex-col gap-5">
                                         {items.map((item) => (
                                             <div key={item.id} className="group border-b border-gray-100 pb-5 last:border-0 last:pb-0">
-                                                <p className="text-[14px] font-bold text-gray-900 leading-snug mb-1.5 group-hover:text-primary transition-colors">
+                                                <p className="text-[14px] font-bold text-foreground leading-snug mb-1.5 group-hover:text-primary transition-colors">
                                                     {item.title}
                                                 </p>
-                                                <p className="text-[12px] text-gray-500">
-                                                    <span className="font-semibold text-gray-700">{item.author}</span>
-                                                    <span className="mx-1.5 text-gray-300">•</span>
-                                                    <span className="italic">{item.journal}</span>
+                                                <p className="text-[12px] text-foreground/90">
+                                                    <span className="font-semibold text-foreground">{item.author}</span>
+                                                    <span className="mx-1.5 text-foreground/30">•</span>
+                                                    <span>{item.journal}</span>
                                                 </p>
                                             </div>
                                         ))}
@@ -453,7 +453,7 @@ const Resources = () => {
                             </div>
                         )}
                         {procTab === "laser" && (
-                            <div className="bg-gray-50 border border-dashed border-gray-200 rounded-2xl p-12 text-center text-gray-500 font-medium">
+                            <div className="bg-gray-50 border border-dashed border-gray-200 rounded-2xl p-12 text-center text-foreground/90 font-medium">
                                 Procedural videos for PLDD coming soon.
                             </div>
                         )}
@@ -478,12 +478,12 @@ const Resources = () => {
                             </div>
                         )}
                         {animTab === "ortho" && (
-                            <div className="bg-white border border-dashed border-gray-200 rounded-2xl p-12 text-center text-gray-500 font-medium shadow-sm">
+                            <div className="bg-white border border-dashed border-gray-200 rounded-2xl p-12 text-center text-foreground/90 font-medium shadow-sm">
                                 Biologics MOA animation coming soon.
                             </div>
                         )}
                         {animTab === "laser" && (
-                            <div className="bg-white border border-dashed border-gray-200 rounded-2xl p-12 text-center text-gray-500 font-medium shadow-sm">
+                            <div className="bg-white border border-dashed border-gray-200 rounded-2xl p-12 text-center text-foreground/90 font-medium shadow-sm">
                                 Laser MOA animation coming soon.
                             </div>
                         )}
@@ -538,7 +538,7 @@ const Resources = () => {
                         ].map(link => (
                             <Link key={link.label} to={link.to}
                                 className="group flex items-center justify-center gap-2 p-6 bg-gray-50 border border-gray-200 rounded-2xl hover:border-primary hover:shadow-md hover:-translate-y-1 transition-all text-center">
-                                <span className="text-[15px] font-bold text-gray-800 group-hover:text-primary transition-colors">{link.label}</span>
+                                <span className="text-[15px] font-bold text-foreground group-hover:text-primary transition-colors">{link.label}</span>
                                 <span className="text-primary text-sm group-hover:translate-x-1 transition-transform border border-primary/20 rounded-full w-6 h-6 flex justify-center items-center ml-2 bg-primary/5">→</span>
                             </Link>
                         ))}

@@ -46,7 +46,7 @@ const ClinicalAreasSection = () => {
                 <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-primary/10 to-blue-500/10 text-primary border border-primary/20">
                     Clinical Areas
                 </span>
-                <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mt-6 mb-5">
+                <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-6 mb-5">
                     Clinical Areas We Support
                 </h2>
             </motion.div>
@@ -69,12 +69,12 @@ const ClinicalAreasSection = () => {
                                 <div className={`w-10 h-10 rounded-xl ${area.bg} flex items-center justify-center`}>
                                     <area.icon className={`w-5 h-5 ${area.color}`} />
                                 </div>
-                                <span className="text-xs font-bold uppercase tracking-wider text-slate-500">{area.title}</span>
+                                <span className="text-xs font-bold uppercase tracking-wider text-foreground/80">{area.title}</span>
                             </div>
-                            <h3 className="font-display text-xl md:text-2xl font-bold text-slate-800 mb-3 group-hover:text-primary transition-colors duration-300">
+                            <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                                 {area.title}
                             </h3>
-                            <p className="text-slate-500 text-sm md:text-base leading-relaxed mb-4">
+                            <p className="text-foreground/80 text-sm md:text-base leading-relaxed mb-4">
                                 {area.description}
                             </p>
                             <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all duration-300">

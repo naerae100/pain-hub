@@ -21,7 +21,7 @@ const Treatments = () => {
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                             Why Minimally Invasive Interventional Care?
                         </h2>
-                        <p className="text-lg text-foreground/75 leading-relaxed">
+                        <p className="text-lg text-foreground/90 leading-relaxed">
                             Conventional pain management pathways often rely on prolonged pharmacotherapy or major surgical intervention. Image-guided interventional techniques provide an alternative approach — targeting the anatomical source of pain through precise, minimally invasive procedures.
                         </p>
                     </div>
@@ -43,7 +43,7 @@ const Treatments = () => {
                         ].map((feature, idx) => (
                             <div key={idx} className="border-l-2 border-primary/30 pl-6">
                                 <h3 className="text-xl font-display font-bold text-foreground mb-3">{feature.title}</h3>
-                                <p className="text-foreground/70 leading-relaxed">{feature.desc}</p>
+                                <p className="text-foreground/90 leading-relaxed">{feature.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -54,14 +54,14 @@ const Treatments = () => {
             <section className="py-16 lg:py-24 bg-slate-50 border-y border-slate-100">
                 <div className="section-container">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                        <div className="w-full rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
+                        <div className="w-full rounded-2xl overflow-hidden aspect-[4/3]">
                             <img src={governanceImg} alt="IPMA Clinical Governance" className="w-full h-full object-contain object-center" />
                         </div>
                         <div>
-                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-slate-800 mb-6">
+                            <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                                 Clinical Governance &amp; Excellence
                             </h2>
-                            <div className="space-y-5 text-lg text-slate-600 leading-relaxed">
+                            <div className="space-y-5 text-lg text-foreground/90 leading-relaxed">
                                 <p>
                                     <strong className="text-primary font-semibold">IPMA</strong> supports image-guided, minimally invasive procedures designed to reduce tissue disruption, support recovery, and expand treatment options for patients who have not responded to conventional therapies.
                                 </p>
@@ -82,7 +82,7 @@ const Treatments = () => {
                         <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
                             Interventional Procedures
                         </h2>
-                        <p className="text-lg text-foreground/75 leading-relaxed">
+                        <p className="text-lg text-foreground/90 leading-relaxed">
                             Image-guided procedures enabling minimally invasive interventional pain and spine care.
                         </p>
                     </div>
@@ -97,7 +97,7 @@ const Treatments = () => {
                                     {treatment.title}
                                 </h3>
 
-                                <p className="text-muted-foreground leading-relaxed mb-8 flex-grow text-sm">
+                                <p className="text-muted-foreground leading-relaxed mb-8 flex-grow text-base">
                                     {treatment.summary}
                                 </p>
 

@@ -18,10 +18,10 @@ const EducationEvidenceSection = () => {
                     <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-primary/10 to-blue-500/10 text-primary border border-primary/20">
                         Education + Evidence
                     </span>
-                    <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mt-6 mb-5 leading-tight">
+                    <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-6 mb-5 leading-tight">
                         Built on Evidence.<br />Delivered Through Education.
                     </h2>
-                    <p className="text-slate-600 text-base md:text-lg max-w-2xl leading-relaxed">
+                    <p className="text-foreground/90 text-base md:text-lg max-w-2xl leading-relaxed">
                         IPMA integrates scientific literature with hands-on clinical training to support confident procedural adoption.
                     </p>
                 </motion.div>
@@ -52,10 +52,10 @@ const EducationEvidenceSection = () => {
                                 to={item.href}
                                 className="group bg-white rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500 p-8 md:p-10 flex flex-col h-full"
                             >
-                                <h3 className="font-display text-xl md:text-2xl font-bold text-slate-800 mb-3 group-hover:text-primary transition-colors duration-300">
+                                <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                                     {item.title}
                                 </h3>
-                                <p className="text-slate-500 text-sm md:text-base leading-relaxed mb-6 flex-grow">
+                                <p className="text-foreground/80 text-sm md:text-base leading-relaxed mb-6 flex-grow">
                                     {item.description}
                                 </p>
                                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all duration-300">

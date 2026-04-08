@@ -54,7 +54,7 @@ const EvidenceOrtho = () => {
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     Current evidence supports PRP mainly for <strong>symptom relief and functional improvement</strong>. Claims of reliable cartilage regeneration or disease reversal are not yet proven clinically. Structural MRI or radiographic restoration remains inconsistent.
                 </p>
-                <p className="text-sm text-amber-800 font-medium italic">
+                <p className="text-sm text-amber-800 font-medium">
                     PRP should not be presented as a guaranteed regenerative cure.
                 </p>
             </div>

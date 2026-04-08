@@ -25,7 +25,7 @@
     --secondary-foreground: 222 20% 18%;
 
     --muted: 210 16% 93%;
-    --muted-foreground: 222 14% 36%;
+    --muted-foreground: 222 20% 20%;
 
     /* Accent - IPMA Sky Blue #3C9CD7 */
     --accent: 204 62% 54%;
@@ -64,7 +64,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', 'Calibri', 'Manrope', system-ui, sans-serif;
-    font-weight: 400;
+    font-weight: 450;
     letter-spacing: -0.005em;
   }
 
@@ -416,7 +416,7 @@
 
   /* Readable body text — replaces text-muted-foreground for long copy */
   .prose-body {
-    color: hsl(222 14% 30%);
+    color: hsl(222 20% 15%);
     line-height: 1.75;
   }
 

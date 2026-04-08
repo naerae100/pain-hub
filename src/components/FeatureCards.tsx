@@ -83,7 +83,7 @@ const FeatureCards = () => {
                 <feature.icon className="w-3.5 h-3.5" />
                 {feature.label}
               </span>
-              <h3 className="font-display text-xl md:text-2xl font-semibold text-slate-800 leading-tight group-hover:text-primary transition-colors duration-300">
+              <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground leading-tight group-hover:text-primary transition-colors duration-300">
                 {feature.title}
               </h3>
               <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all duration-300 mt-2">

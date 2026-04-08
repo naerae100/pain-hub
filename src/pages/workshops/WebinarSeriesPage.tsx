@@ -70,7 +70,7 @@ const WebinarSeriesPage = () => {
               <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                 Global Online Education, Free to Attend
               </h2>
-              <p className="text-foreground/70 leading-relaxed text-lg">
+              <p className="text-foreground/90 leading-relaxed text-lg">
                 Seven live webinars from April to July 2026, featuring world-leading specialists in cryoanalgesia, laser therapy, phlebology, and interventional pain management. Each session is practical, evidence-based, and open to a wide range of healthcare professionals at no cost.
               </p>
             </div>
@@ -147,7 +147,7 @@ const WebinarSeriesPage = () => {
                     <div className="mt-3 space-y-2 flex-1">
                       <div className="flex items-center gap-2 text-sm text-foreground/60">
                         <Users className="w-4 h-4 shrink-0" style={{ color: ORANGE }} />
-                        <span className="font-medium text-foreground/75">{webinar.speaker}</span>
+                        <span className="font-medium text-foreground/90">{webinar.speaker}</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-foreground/60">
                         <Calendar className="w-4 h-4 shrink-0" style={{ color: ORANGE }} />
@@ -180,7 +180,7 @@ const WebinarSeriesPage = () => {
       <section className="py-16 border-t border-border">
         <div className="section-container text-center">
           <h3 className="text-2xl font-display font-bold text-foreground mb-4">Register Your Interest</h3>
-          <p className="text-foreground/70 mb-8 max-w-xl mx-auto">
+          <p className="text-foreground/90 mb-8 max-w-xl mx-auto">
             Registration links are published by Metrum Cryoflex closer to each event date. Contact IPMA to register your interest and receive updates.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

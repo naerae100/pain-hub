@@ -100,7 +100,7 @@ const WebinarDetail = () => {
                   <span className="text-[#d9522a] text-sm font-bold uppercase tracking-wider">About This Webinar</span>
                 </div>
                 <h2 className="text-2xl font-display font-bold text-foreground mb-4">Overview</h2>
-                <p className="text-foreground/70 leading-relaxed text-lg">{webinar.description}</p>
+                <p className="text-foreground/90 leading-relaxed text-lg">{webinar.description}</p>
               </div>
 
               {/* Target audience */}
@@ -112,7 +112,7 @@ const WebinarDetail = () => {
                 <h2 className="text-2xl font-display font-bold text-foreground mb-6">Target Audience</h2>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {webinar.targetGroups.map((group, i) => (
-                    <div key={i} className="flex items-start gap-3 text-foreground/75">
+                    <div key={i} className="flex items-start gap-3 text-foreground/90">
                       <CheckCircle2 className="w-5 h-5 text-[#d9522a] shrink-0 mt-0.5" />
                       <span>{group}</span>
                     </div>
@@ -135,7 +135,7 @@ const WebinarDetail = () => {
                   ].map(({ icon: Icon, label, value }, i) => (
                     <div key={i} className="border-l-2 border-[#d9522a]/30 pl-5">
                       <Icon className="w-5 h-5 text-[#d9522a] mb-2" />
-                      <p className="text-xs text-foreground/50 uppercase tracking-wider font-semibold mb-1">{label}</p>
+                      <p className="text-xs text-foreground/70 uppercase tracking-wider font-semibold mb-1">{label}</p>
                       <p className="font-bold text-foreground">{value}</p>
                     </div>
                   ))}
@@ -144,7 +144,7 @@ const WebinarDetail = () => {
 
               {/* CTA */}
               <div className="border-l-4 border-[#d9522a] pl-6 py-2">
-                <p className="text-foreground/70 text-sm mb-4">Registration details will be announced closer to the event date. Contact IPMA or visit the Metrum Cryoflex website to register your interest.</p>
+                <p className="text-foreground/90 text-sm mb-4">Registration details will be announced closer to the event date. Contact IPMA or visit the Metrum Cryoflex website to register your interest.</p>
                 <div className="flex flex-wrap gap-3">
                   <a
                     href="https://www.metrumcryoflex.com"
@@ -178,21 +178,21 @@ const WebinarDetail = () => {
                   <div className="flex items-start gap-3">
                     <Calendar className="w-5 h-5 text-[#d9522a] shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-xs text-foreground/50 uppercase tracking-wider font-semibold">Date</p>
+                      <p className="text-xs text-foreground/70 uppercase tracking-wider font-semibold">Date</p>
                       <p className="font-bold text-foreground">{formatDate(webinar.date)}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Clock className="w-5 h-5 text-[#d9522a] shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-xs text-foreground/50 uppercase tracking-wider font-semibold">Time</p>
+                      <p className="text-xs text-foreground/70 uppercase tracking-wider font-semibold">Time</p>
                       <p className="font-bold text-foreground">{webinar.timing}</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Users className="w-5 h-5 text-[#d9522a] shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-xs text-foreground/50 uppercase tracking-wider font-semibold">Speaker</p>
+                      <p className="text-xs text-foreground/70 uppercase tracking-wider font-semibold">Speaker</p>
                       <p className="font-bold text-foreground">{webinar.speaker}</p>
                       <p className="text-foreground/60 text-xs">{webinar.speakerCredentials}</p>
                     </div>
@@ -200,7 +200,7 @@ const WebinarDetail = () => {
                   <div className="flex items-start gap-3">
                     <Monitor className="w-5 h-5 text-[#d9522a] shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-xs text-foreground/50 uppercase tracking-wider font-semibold">Format</p>
+                      <p className="text-xs text-foreground/70 uppercase tracking-wider font-semibold">Format</p>
                       <p className="font-bold text-foreground">Online · Free</p>
                     </div>
                   </div>
@@ -230,7 +230,7 @@ const WebinarDetail = () => {
                     >
                       <p className="text-xs text-[#d9522a] font-semibold mb-1">{w.date}</p>
                       <p className="text-sm font-medium text-foreground group-hover:text-[#d9522a] leading-snug">{w.topic}</p>
-                      <p className="text-xs text-foreground/50 mt-1">{w.speaker}</p>
+                      <p className="text-xs text-foreground/70 mt-1">{w.speaker}</p>
                     </Link>
                   ))}
                   <Link

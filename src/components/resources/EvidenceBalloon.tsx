@@ -10,7 +10,7 @@ const EvidenceBalloon = () => {
             <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-6">
                 Epidural Adhesiolysis and Balloon Catheter Technologies
             </h2>
-            <p className="text-lg text-foreground/75 leading-relaxed mb-10">
+            <p className="text-lg text-foreground/90 leading-relaxed mb-10">
                 Chronic lumbar radicular pain and spinal stenosis remain significant clinical challenges. Epidural fibrosis and adhesions can limit the effectiveness of epidural injections and contribute to persistent nerve root irritation. Percutaneous epidural adhesiolysis was developed to address this problem by mechanically disrupting epidural scar tissue.
             </p>
 
@@ -37,7 +37,7 @@ const EvidenceBalloon = () => {
                         A landmark 10-year follow-up of a randomized placebo-controlled trial demonstrated sustained clinical benefit following percutaneous epidural neurolysis.
                     </p>
                     <div className="bg-amber-50 border border-amber-200 p-4 rounded-xl">
-                        <p className="text-sm text-amber-800 font-medium italic">
+                        <p className="text-sm text-amber-800 font-medium">
                             Importantly, this represents the longest follow-up evidence available for a minimally invasive intervention in this patient population.
                         </p>
                     </div>

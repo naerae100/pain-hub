@@ -59,7 +59,7 @@ const Footer = () => {
                 className="h-12 w-auto brightness-0 invert opacity-90"
               />
             </Link>
-            <p className="text-blue-200 max-w-md mb-10 leading-relaxed text-lg font-light">
+            <p className="text-blue-200 max-w-md mb-10 leading-relaxed text-lg font-normal">
               Australia's hub for advanced interventional pain management education,
               techniques, and tools. Empowering clinicians to make a difference.
             </p>

@@ -27,7 +27,7 @@ const EvidencePLDD = () => {
                         <li className="flex items-center gap-2 text-sm text-foreground"><CheckCircle2 className="w-4 h-4 text-primary shrink-0"/> Higher reoperation rates compared with microdiscectomy</li>
                         <li className="flex items-center gap-2 text-sm text-foreground"><CheckCircle2 className="w-4 h-4 text-primary shrink-0"/> ~50% of patients treated with PLDD avoided open surgery</li>
                     </ul>
-                    <p className="text-xs text-muted-foreground mt-4 italic">
+                    <p className="text-xs text-muted-foreground mt-4">
                         These findings suggest that PLDD may serve as a less invasive step before surgical decompression in selected patients.
                     </p>
                 </div>
@@ -45,7 +45,7 @@ const EvidencePLDD = () => {
                         <li>• Complication rates are generally low, reflecting minimally invasive nature</li>
                     </ul>
                     <div className="bg-amber-50 border border-amber-200 p-4 rounded-xl mt-4">
-                        <p className="text-sm text-amber-800 font-medium italic">
+                        <p className="text-sm text-amber-800 font-medium">
                             Evidence base remains limited by heterogeneity in patient selection, technique, and laser systems used. Further high-quality RCTs are recommended.
                         </p>
                     </div>

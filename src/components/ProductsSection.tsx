@@ -71,10 +71,10 @@ const ProductsSection = () => {
         <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-primary/10 to-blue-500/10 text-primary border border-primary/20">
           Technology
         </span>
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mt-6 mb-5">
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-6 mb-5">
           Advanced Technology Platforms
         </h2>
-        <p className="text-slate-600 text-base md:text-lg max-w-2xl leading-relaxed">
+        <p className="text-foreground/90 text-base md:text-lg max-w-2xl leading-relaxed">
           IPMA evaluates and introduces technologies that align with modern minimally invasive care pathways.
         </p>
       </motion.div>
@@ -108,10 +108,10 @@ const ProductsSection = () => {
 
             {/* Content */}
             <div className="p-4 md:p-5">
-              <h3 className="font-display text-base md:text-lg font-bold text-slate-800 mb-1 group-hover:text-primary transition-colors duration-300">
+              <h3 className="font-display text-base md:text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                 {product.title}
               </h3>
-              <p className="text-slate-500 text-xs md:text-sm mb-3">
+              <p className="text-foreground/80 text-xs md:text-sm mb-3">
                 {product.description}
               </p>
               <span className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-300">

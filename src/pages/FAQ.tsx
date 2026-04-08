@@ -7,7 +7,7 @@ const FAQ = () => {
         <div className="min-h-screen bg-background flex flex-col pt-32 pb-20">
             <div className="section-container max-w-4xl mx-auto">
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-display font-bold text-blue-950 mb-6">
+                    <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
                         Frequently Asked Questions
                     </h1>
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -18,7 +18,7 @@ const FAQ = () => {
                 <div className="bg-secondary/30 rounded-[2.5rem] p-8 md:p-12 mb-16 border border-border">
                     <Accordion type="single" collapsible className="w-full space-y-4">
                         <AccordionItem value="item-1" className="border-b-0">
-                            <AccordionTrigger className="bg-white px-6 rounded-2xl text-lg font-bold text-blue-900 hover:text-primary hover:no-underline shadow-sm hover:shadow-md transition-all">
+                            <AccordionTrigger className="bg-white px-6 rounded-2xl text-lg font-bold text-foreground hover:text-primary hover:no-underline shadow-sm hover:shadow-md transition-all">
                                 How does cryoanalgesia work?
                             </AccordionTrigger>
                             <AccordionContent className="px-6 pt-4 text-muted-foreground leading-relaxed text-base">
@@ -27,7 +27,7 @@ const FAQ = () => {
                         </AccordionItem>
 
                         <AccordionItem value="item-2" className="border-b-0">
-                            <AccordionTrigger className="bg-white px-6 rounded-2xl text-lg font-bold text-blue-900 hover:text-primary hover:no-underline shadow-sm hover:shadow-md transition-all">
+                            <AccordionTrigger className="bg-white px-6 rounded-2xl text-lg font-bold text-foreground hover:text-primary hover:no-underline shadow-sm hover:shadow-md transition-all">
                                 How long does the pain relief last?
                             </AccordionTrigger>
                             <AccordionContent className="px-6 pt-4 text-muted-foreground leading-relaxed text-base">
@@ -36,7 +36,7 @@ const FAQ = () => {
                         </AccordionItem>
 
                         <AccordionItem value="item-3" className="border-b-0">
-                            <AccordionTrigger className="bg-white px-6 rounded-2xl text-lg font-bold text-blue-900 hover:text-primary hover:no-underline shadow-sm hover:shadow-md transition-all">
+                            <AccordionTrigger className="bg-white px-6 rounded-2xl text-lg font-bold text-foreground hover:text-primary hover:no-underline shadow-sm hover:shadow-md transition-all">
                                 What types of pain are best treated with cryoanalgesia?
                             </AccordionTrigger>
                             <AccordionContent className="px-6 pt-4 text-muted-foreground leading-relaxed text-base">
@@ -45,7 +45,7 @@ const FAQ = () => {
                         </AccordionItem>
 
                         <AccordionItem value="item-4" className="border-b-0">
-                            <AccordionTrigger className="bg-white px-6 rounded-2xl text-lg font-bold text-blue-900 hover:text-primary hover:no-underline shadow-sm hover:shadow-md transition-all">
+                            <AccordionTrigger className="bg-white px-6 rounded-2xl text-lg font-bold text-foreground hover:text-primary hover:no-underline shadow-sm hover:shadow-md transition-all">
                                 What are the risks or side effects?
                             </AccordionTrigger>
                             <AccordionContent className="px-6 pt-4 text-muted-foreground leading-relaxed text-base">
@@ -54,7 +54,7 @@ const FAQ = () => {
                         </AccordionItem>
 
                         <AccordionItem value="item-5" className="border-b-0">
-                            <AccordionTrigger className="bg-white px-6 rounded-2xl text-lg font-bold text-blue-900 hover:text-primary hover:no-underline shadow-sm hover:shadow-md transition-all">
+                            <AccordionTrigger className="bg-white px-6 rounded-2xl text-lg font-bold text-foreground hover:text-primary hover:no-underline shadow-sm hover:shadow-md transition-all">
                                 How is cryoanalgesia different from radiofrequency ablation (RFA)?
                             </AccordionTrigger>
                             <AccordionContent className="px-6 pt-4 text-muted-foreground leading-relaxed text-base">
@@ -63,7 +63,7 @@ const FAQ = () => {
                         </AccordionItem>
 
                         <AccordionItem value="item-6" className="border-b-0">
-                            <AccordionTrigger className="bg-white px-6 rounded-2xl text-lg font-bold text-blue-900 hover:text-primary hover:no-underline shadow-sm hover:shadow-md transition-all">
+                            <AccordionTrigger className="bg-white px-6 rounded-2xl text-lg font-bold text-foreground hover:text-primary hover:no-underline shadow-sm hover:shadow-md transition-all">
                                 Can the procedure be done under ultrasound guidance?
                             </AccordionTrigger>
                             <AccordionContent className="px-6 pt-4 text-muted-foreground leading-relaxed text-base">
@@ -72,7 +72,7 @@ const FAQ = () => {
                         </AccordionItem>
 
                         <AccordionItem value="item-7" className="border-b-0">
-                            <AccordionTrigger className="bg-white px-6 rounded-2xl text-lg font-bold text-blue-900 hover:text-primary hover:no-underline shadow-sm hover:shadow-md transition-all">
+                            <AccordionTrigger className="bg-white px-6 rounded-2xl text-lg font-bold text-foreground hover:text-primary hover:no-underline shadow-sm hover:shadow-md transition-all">
                                 Why Choose the CRYO-S Painless?
                             </AccordionTrigger>
                             <AccordionContent className="px-6 pt-4 text-muted-foreground leading-relaxed text-base">
@@ -83,7 +83,7 @@ const FAQ = () => {
                 </div>
 
                 <div className="text-center">
-                    <h3 className="text-2xl font-bold text-blue-900 mb-6">Do you still have questions?</h3>
+                    <h3 className="text-2xl font-bold text-foreground mb-6">Do you still have questions?</h3>
                     <div className="flex justify-center gap-4">
                         <Link to="/contact">
                             <Button className="rounded-full px-8 py-6 text-lg bg-primary hover:bg-primary/90 font-bold shadow-lg hover:shadow-xl transition-all">

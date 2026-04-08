@@ -23,7 +23,7 @@ const Contact = () => {
                         {/* Left Column: Contact Info */}
                         <div className="lg:col-span-5 flex flex-col gap-10 animate-in slide-in-from-left duration-700 fade-in order-2 lg:order-1">
                             <div className="flex flex-col gap-6">
-                                <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground text-blue-900 leading-tight">
+                                <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground text-foreground leading-tight">
                                     We'd love to hear{" "}
                                     <span className="text-primary block mt-2">from you!</span>
                                 </h1>
@@ -72,7 +72,7 @@ const Contact = () => {
                         {/* Right Column: Form */}
                         <div className="lg:col-span-7 w-full animate-in slide-in-from-right duration-700 fade-in order-1 lg:order-2">
                             <div className="bg-slate-50 p-8 lg:p-12 rounded-2xl border border-slate-100 shadow-xl relative overflow-hidden">
-                                <h2 className="text-2xl font-display font-bold text-blue-900 mb-8 border-l-4 border-primary pl-4">
+                                <h2 className="text-2xl font-display font-bold text-foreground mb-8 border-l-4 border-primary pl-4">
                                     Send an Enquiry
                                 </h2>
 

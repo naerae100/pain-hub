@@ -69,10 +69,10 @@ const TreatmentsSection = () => {
           <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-primary/10 to-blue-500/10 text-primary border border-primary/20">
             Featured Procedures
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-slate-800 mt-6 mb-5">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-6 mb-5">
             Procedural Platforms
           </h2>
-          <p className="text-slate-600 text-base md:text-lg max-w-2xl leading-relaxed">
+          <p className="text-foreground/90 text-base md:text-lg max-w-2xl leading-relaxed">
             Structured training and clinical evidence support every procedure we teach.
           </p>
         </motion.div>
@@ -95,7 +95,7 @@ const TreatmentsSection = () => {
                 <motion.img
                   src={treatment.image}
                   alt={treatment.title}
-                  className={`w-full h-full object-contain ${index === 0 ? 'object-bottom' : ''}`}
+                  className="w-full h-full object-cover"
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.6 }}
                 />
@@ -107,12 +107,12 @@ const TreatmentsSection = () => {
                   <div className={`w-8 h-8 rounded-full ${treatment.bg} flex items-center justify-center`}>
                     <treatment.icon className={`w-4 h-4 ${treatment.color}`} />
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-500">{treatment.category}</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-foreground/80">{treatment.category}</span>
                 </div>
-                <h3 className="font-display text-xl md:text-2xl font-bold text-slate-800 mb-3 group-hover:text-primary transition-colors duration-300">
+                <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {treatment.title}
                 </h3>
-                <p className="text-slate-500 text-sm md:text-base mb-4 leading-relaxed line-clamp-2">
+                <p className="text-foreground/80 text-sm md:text-base mb-4 leading-relaxed line-clamp-2">
                   {treatment.description}
                 </p>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all duration-300">

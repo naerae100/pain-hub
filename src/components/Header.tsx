@@ -111,7 +111,7 @@ const Header = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 + index * 0.05 }}
-                    className="flex items-center gap-1 text-sm font-semibold text-foreground/75 hover:text-primary transition-colors duration-200 py-2"
+                    className="flex items-center gap-1 text-sm font-semibold text-foreground/90 hover:text-primary transition-colors duration-200 py-2"
                   >
                     {link.label}
                     {link.children && <ChevronDown className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100 transition-opacity ml-0.5" />}
@@ -143,7 +143,7 @@ const Header = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="hidden lg:flex items-center gap-5 text-blue-900"
+              className="hidden lg:flex items-center gap-5 text-foreground"
             >
               <button className="hover:text-primary transition-colors hover:scale-110 transform duration-200" aria-label="Search">
                 <Search className="w-5 h-5 stroke-[2.5]" />
