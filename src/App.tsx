@@ -33,6 +33,7 @@ import CryoanalgesiaDetail from "./pages/treatments/CryoanalgesiaDetail";
 import EpiduralBalloonDetail from "./pages/treatments/EpiduralBalloonDetail";
 import OrthobiologicTherapiesDetail from "./pages/treatments/OrthobiologicTherapiesDetail";
 import PLDDDetail from "./pages/treatments/PLDDDetail";
+import SpasticityPage from "./pages/treatments/SpasticityPage";
 
 import Resources from "./pages/Resources";
 import FAQ from "./pages/FAQ";
@@ -69,6 +70,7 @@ const App = () => (
                   {/* Treatment / Procedures Routes */}
                   <Route path="/procedures" element={<Treatments />} />
                   <Route path="/procedures/cryoanalgesia" element={<CryoanalgesiaDetail />} />
+                  <Route path="/procedures/cryoanalgesia/spasticity" element={<SpasticityPage />} />
                   <Route path="/procedures/epidural-balloon-decompression" element={<EpiduralBalloonDetail />} />
                   <Route path="/procedures/orthobiologic-therapies" element={<OrthobiologicTherapiesDetail />} />
                   <Route path="/procedures/pldd" element={<PLDDDetail />} />

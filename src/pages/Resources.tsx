@@ -284,7 +284,7 @@ const Resources = () => {
                     <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-xl max-w-3xl mx-auto">
                         <div className="aspect-video relative">
                             <iframe className="w-full h-full absolute inset-0"
-                                src={`https://www.youtube.com/embed/${ytId("https://youtu.be/NTVysvvxH1A")}`}
+                                src={`https://www.youtube.com/embed/${ytId("https://www.youtube.com/watch?v=8TwRFLcKPSU")}`}
                                 title="Procedure of the Month" frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen />
@@ -400,30 +400,36 @@ const Resources = () => {
                             A curated selection of key peer-reviewed studies and trials supporting our interventional techniques.
                         </p>
                         
-                        <div className="grid md:grid-cols-2 gap-6 pl-5">
+                        <div className="space-y-0 divide-y divide-gray-200">
                             {Object.entries(researchData).map(([category, items]) => (
-                                <div key={category} className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-                                    <h4 className="text-sm font-extrabold text-primary uppercase tracking-widest mb-4">
-                                        {category === "cryo" ? "Cryoanalgesia" :
-                                         category === "thoracic" ? "Thoracic" :
-                                         category === "spasticity" ? "Spasticity" : 
-                                         "Additional Anatomical Regions"}
-                                    </h4>
-                                    <div className="flex flex-col gap-5">
-                                        {items.map((item) => (
-                                            <div key={item.id} className="group border-b border-gray-100 pb-5 last:border-0 last:pb-0">
-                                                <p className="text-[14px] font-bold text-foreground leading-snug mb-1.5 group-hover:text-primary transition-colors">
-                                                    {item.title}
-                                                </p>
-                                                <p className="text-[12px] text-foreground/90">
-                                                    <span className="font-semibold text-foreground">{item.author}</span>
-                                                    <span className="mx-1.5 text-foreground/30">•</span>
-                                                    <span>{item.journal}</span>
-                                                </p>
-                                            </div>
-                                        ))}
+                                <React.Fragment key={category}>
+                                    <div className="pt-8 pb-2 first:pt-0">
+                                        <h4 className="text-sm font-extrabold text-primary uppercase tracking-widest">
+                                            {category === "cryo" ? "Cryoanalgesia" :
+                                             category === "thoracic" ? "Thoracic" :
+                                             category === "spasticity" ? "Spasticity" :
+                                             "Additional Anatomical Regions"}
+                                        </h4>
                                     </div>
-                                </div>
+                                    {items.map((item) => (
+                                        <a
+                                            key={item.id}
+                                            href={item.link || `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(item.title)}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-4 group hover:bg-gray-50 -mx-4 px-4 transition-colors"
+                                        >
+                                            <p className="text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors flex-1">
+                                                {item.title}
+                                            </p>
+                                            <p className="text-sm text-foreground/70 shrink-0 whitespace-nowrap">
+                                                <span className="font-semibold text-foreground/80">{item.author}</span>
+                                                <span className="mx-1.5 text-foreground/30">·</span>
+                                                <span>{item.journal}</span>
+                                            </p>
+                                        </a>
+                                    ))}
+                                </React.Fragment>
                             ))}
                         </div>
                     </div>

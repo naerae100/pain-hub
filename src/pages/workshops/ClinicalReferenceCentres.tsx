@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MapPin, Stethoscope, Eye, Snowflake, Minimize2, Zap, Dna, ArrowRight, FileText, Download, Globe } from "lucide-react";
+import { MapPin, Stethoscope, Eye, Snowflake, Minimize2, Zap, Dna, ArrowRight, FileText, Download, Globe, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageHero from "@/components/PageHero";
 import referenceHero from "@/assets/Dr Chalk teaches intercostal cryo nerve block.jpg";
@@ -48,8 +49,31 @@ const resources = [
 ];
 
 const ClinicalReferenceCentres = () => {
+    const [showPdf, setShowPdf] = useState(false);
+
     return (
         <div className="min-h-screen bg-background">
+            {/* PDF Modal */}
+            {showPdf && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+                    <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setShowPdf(false)} />
+                    <div className="relative w-full max-w-6xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[85vh] md:h-[90vh]">
+                        <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-secondary/30">
+                            <h3 className="text-lg font-bold text-foreground truncate pr-4">IPMA Clinical Observation Guidelines</h3>
+                            <button onClick={() => setShowPdf(false)} className="p-2 bg-secondary hover:bg-muted rounded-full transition-colors shrink-0">
+                                <X className="w-5 h-5 text-foreground" />
+                            </button>
+                        </div>
+                        <div className="flex-1 w-full bg-secondary relative">
+                            <iframe
+                                src="/IPMA_Clinical_Observation_Guidelines.pdf"
+                                className="w-full h-full border-0 absolute inset-0"
+                                title="IPMA Clinical Observation Guidelines"
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
             {/* Hero */}
             <PageHero
                 image={referenceHero}
@@ -83,8 +107,8 @@ const ClinicalReferenceCentres = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="w-full rounded-2xl overflow-hidden aspect-[4/3]">
-                            <img src={referenceCentresImg} alt="Clinical Reference Centres" className="w-full h-full object-contain object-center" />
+                        <div className="w-full rounded-2xl overflow-hidden">
+                            <img src={referenceCentresImg} alt="Clinical Reference Centres" className="w-full h-full object-cover rounded-2xl" />
                         </div>
                     </div>
                 </div>
@@ -187,6 +211,34 @@ const ClinicalReferenceCentres = () => {
                                 </Button>
                             </Link>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Clinical Observation Guidelines PDF */}
+            <section className="py-16 lg:py-20">
+                <div className="section-container">
+                    <div>
+                        <button
+                            onClick={() => setShowPdf(true)}
+                            className="w-full flex items-center gap-6 p-6 lg:p-8 rounded-2xl border border-border bg-secondary/20 hover:bg-secondary/40 hover:shadow-md transition-all duration-300 text-left group"
+                        >
+                            <div className="w-14 h-14 rounded-xl bg-red-50 flex items-center justify-center shrink-0 group-hover:bg-red-100 transition-colors">
+                                <FileText className="w-7 h-7 text-red-500" />
+                            </div>
+                            <div className="flex-1">
+                                <h3 className="text-xl font-display font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                                    IPMA Clinical Observation Guidelines
+                                </h3>
+                                <p className="text-lg text-foreground/90 leading-relaxed">
+                                    Best-practice framework for clinical observation sessions in interventional pain settings.
+                                </p>
+                            </div>
+                            <div className="shrink-0 hidden md:flex items-center gap-2 text-primary font-semibold">
+                                <span>View PDF</span>
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </div>
+                        </button>
                     </div>
                 </div>
             </section>

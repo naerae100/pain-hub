@@ -10,7 +10,6 @@ import PageHero from "@/components/PageHero";
 
 // Images
 import heroImg from "@/assets/Orthobiologic Therapies_procedure (1).png";
-import prpAnalysisImg from "@/assets/PRP sample analysis.jpg";
 import prpProtocolsImg from "@/assets/PRP protocols.png";
 import marrowAspirationImg from "@/assets/Bone marrow aspiration procedure.png";
 
@@ -173,61 +172,57 @@ const OrthobiologicTherapiesDetail = () => {
             {/* IPMA Evaluation & Biologic Quality Assessment */}
             <section className="py-16 lg:py-20 bg-secondary/20">
                 <div className="section-container">
-                    <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
-                            IPMA Evaluation & Biologic Quality Assessment
-                        </h2>
-                        <p className="text-lg text-foreground/90 leading-relaxed mb-8">
-                            IPMA has undertaken internal evaluation of PRP preparation protocols across varying blood draw volumes, centrifugation strategies, leukocyte profiles, and final injection volumes.
-                        </p>
-
-                        <h3 className="text-2xl font-display font-bold text-foreground mb-4">
-                            Laboratory analysis has demonstrated significant variability between preparation methods in:
-                        </h3>
-                        <ul className="space-y-3 mb-10">
-                            {[
-                                "Platelet concentration",
-                                "Hematocrit contamination",
-                                "White cell distribution",
-                                "Final absolute platelet dose"
-                            ].map((item, i) => (
-                                <li key={i} className="flex items-start gap-3 text-lg text-foreground/90">
-                                    <ChevronRight className="w-5 h-5 text-primary shrink-0 mt-1" />{item}
-                                </li>
-                            ))}
-                        </ul>
-
-                        <div className="grid lg:grid-cols-2 gap-10 items-start mb-10">
+                    <div className="max-w-6xl mx-auto">
+                        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                            {/* Content — left */}
                             <div>
-                                <div className="content-img-wrap mb-3">
-                                    <img src={prpAnalysisImg} alt="PRP haematology report — sample analysis" className="content-img" />
-                                </div>
-                                <p className="text-sm text-center text-foreground/60">PRP haematology report — sample analysis</p>
+                                <h2 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">
+                                    IPMA Evaluation & Biologic Quality Assessment
+                                </h2>
+                                <p className="text-lg text-foreground/90 leading-relaxed mb-8">
+                                    IPMA has undertaken internal evaluation of PRP preparation protocols across varying blood draw volumes, centrifugation strategies, leukocyte profiles, and final injection volumes.
+                                </p>
+
+                                <p className="text-lg font-bold text-foreground mb-4">
+                                    Laboratory analysis has demonstrated significant variability between preparation methods in:
+                                </p>
+                                <ul className="space-y-3 mb-10">
+                                    {[
+                                        "Platelet concentration",
+                                        "Hematocrit contamination",
+                                        "White cell distribution",
+                                        "Final absolute platelet dose"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-lg text-foreground/90">
+                                            <ChevronRight className="w-5 h-5 text-primary shrink-0 mt-1" />{item}
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                <p className="text-lg font-bold text-foreground mb-4">These comparisons reinforce that:</p>
+                                <ul className="space-y-3 mb-8">
+                                    {[
+                                        "Visual appearance does not determine biologic quality",
+                                        "Hematocrit contamination must be controlled",
+                                        "Leukocyte inclusion should be intentional",
+                                        "Absolute platelet dose should be calculated"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-lg text-foreground/90">
+                                            <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />{item}
+                                        </li>
+                                    ))}
+                                </ul>
+                                <p className="text-lg text-foreground font-medium border-l-4 border-primary pl-6 py-2">
+                                    IPMA's educational framework emphasises biologic literacy in regenerative practice.
+                                </p>
                             </div>
-                            <div>
-                                <div className="content-img-wrap mb-3">
-                                    <img src={prpProtocolsImg} alt="Multiple PRP preparations generated under different protocols" className="content-img" />
-                                </div>
-                                <p className="text-sm text-center text-foreground/60">Multiple PRP preparations generated under different protocols</p>
+
+                            {/* Image — right */}
+                            <div className="rounded-2xl overflow-hidden">
+                                <img src={prpProtocolsImg} alt="Multiple PRP preparations generated under different protocols" className="w-full h-auto object-contain" />
+                                <p className="text-sm text-center text-foreground/60 mt-3">Multiple PRP preparations generated under different protocols</p>
                             </div>
                         </div>
-
-                        <h3 className="text-2xl font-display font-bold text-foreground mb-4">These comparisons reinforce that:</h3>
-                        <ul className="space-y-3 mb-8">
-                            {[
-                                "Visual appearance does not determine biologic quality",
-                                "Hematocrit contamination must be controlled",
-                                "Leukocyte inclusion should be intentional",
-                                "Absolute platelet dose should be calculated"
-                            ].map((item, i) => (
-                                <li key={i} className="flex items-start gap-3 text-lg text-foreground/90">
-                                    <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-1" />{item}
-                                </li>
-                            ))}
-                        </ul>
-                        <p className="text-lg text-foreground font-medium border-l-4 border-primary pl-6 py-2">
-                            IPMA's educational framework emphasises biologic literacy in regenerative practice.
-                        </p>
                     </div>
                 </div>
             </section>

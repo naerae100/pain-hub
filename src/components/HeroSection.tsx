@@ -13,8 +13,8 @@ const slides = [
     subtitle: "Structured procedural training across pain, spine, orthopaedics, vascular, and colorectal care.",
     cta: "Explore workshops",
     ctaSecondary: "View schedule",
-    href: "/clinical-education",
-    secondaryHref: "/clinical-education?filter=past",
+    href: "/clinical-education#workshops",
+    secondaryHref: "/clinical-education#workshops",
     image: workshopHero,
   },
   {
@@ -94,11 +94,11 @@ const HeroSection = () => {
             >
               <div className="flex flex-col h-full lg:grid lg:grid-cols-[1.1fr_1fr]">
                 {/* Image - Order 1 on Mobile */}
-                <div className="relative h-[40%] lg:h-full order-1 lg:order-2">
+                <div className="relative h-[40%] lg:h-full order-1 lg:order-2 overflow-hidden">
                   <img
                     src={slides[currentSlide].image}
                     alt={slides[currentSlide].title}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 lg:from-[hsl(222,32%,12%)/0.6] via-transparent to-transparent" />
                   <div className="hidden lg:block absolute bottom-6 left-6 glass-effect rounded-2xl px-4 py-3">

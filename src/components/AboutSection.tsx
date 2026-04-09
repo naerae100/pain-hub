@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import educationHero from "@/assets/Education of minimally invasive procedures for pain management.png";
-import sydneyWorkshop3 from "@/assets/Ultrasound-guided cryoanalgesia workshop Sydney_3.png.png";
+import workshopImg from "@/assets/Ultrasound-guided cryoanalgesia workshop Sydney_3.png.png";
 
 const focusPoints = [
   "Improve patient outcomes",
@@ -52,7 +51,7 @@ const AboutSection = () => {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link to="/clinical-education" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-primary to-blue-600 text-white font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300">
+            <Link to="/clinical-education#workshops" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-primary to-blue-600 text-white font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300">
               Explore workshops
             </Link>
             <Link to="/about" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white text-foreground font-semibold text-sm border border-slate-200 hover:border-primary/50 hover:text-primary transition-all duration-300">
@@ -83,27 +82,12 @@ const AboutSection = () => {
           viewport={{ once: true }}
           className="relative"
         >
-          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
+          <div className="rounded-2xl overflow-hidden">
             <img
-              src={educationHero}
+              src={workshopImg}
               alt="Interventional training session"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover"
             />
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
-          </div>
-          <div className="hidden md:block absolute -bottom-10 -left-12 bg-white/95 backdrop-blur-2xl rounded-[2rem] p-6 w-[360px] lg:w-[420px] border border-white/60 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] ring-1 ring-black/5 z-10">
-            <div className="aspect-[4/3] rounded-[1.25rem] overflow-hidden mb-5 shadow-inner">
-              <img
-                src={sydneyWorkshop3}
-                alt="Workshop in session"
-                className="w-full h-full object-contain hover:scale-105 transition-transform duration-700 hover:rotate-1"
-              />
-            </div>
-            <div className="px-2 pb-1">
-                <div className="text-xl font-display font-bold text-foreground mb-1">Live workshops</div>
-                <div className="text-base text-foreground/80 font-medium">Hands-on, ultrasound-guided practice.</div>
-            </div>
           </div>
         </motion.div>
       </div>

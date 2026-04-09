@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { BookOpen, FileText, Mail } from "lucide-react";
 import { treatments } from "@/data/treatments";
 import PageHero from "@/components/PageHero";
 import proceduresHero from "@/assets/Cryoanalgesia procedure in OR (1).png";
@@ -111,29 +112,33 @@ const Treatments = () => {
             </section>
 
             {/* Call to Action */}
-            <section className="py-16 lg:py-20 bg-secondary/30 border-t border-slate-100">
-                <div className="section-container">
-                    <div className="max-w-4xl mx-auto">
-                        <div className="relative bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-10 lg:p-16 text-white shadow-2xl overflow-hidden">
-                            <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 translate-x-1/4" />
-                            <div className="relative z-10 text-center">
-                                <h3 className="text-3xl lg:text-4xl font-display font-bold mb-6">Ready to Learn More?</h3>
-                                <p className="text-white/80 text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
-                                    Whether you are a clinician seeking training in minimally invasive procedures, or exploring treatment options, IPMA is here to support you.
-                                </p>
-                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                    <Link to="/clinical-education" className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full bg-white text-primary font-bold hover:bg-white/90 transition-colors">
-                                        Explore Clinical Education
-                                    </Link>
-                                    <Link to="/resources" className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition-colors">
-                                        Access Resources
-                                    </Link>
-                                    <Link to="/clinical-education/reference-centres" className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition-colors">
-                                        Enquire About Reference Centre Observation
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
+            <section className="py-20 lg:py-28 bg-gradient-to-br from-primary via-primary/95 to-blue-800 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.08)_0%,_transparent_60%)]" />
+                <div className="section-container relative z-10">
+                    <div className="max-w-3xl mx-auto text-center mb-14">
+                        <h3 className="text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+                            Ready to Learn More?
+                        </h3>
+                        <p className="text-white/85 text-xl leading-relaxed">
+                            Whether you are a clinician seeking training in minimally invasive procedures, or exploring treatment options, IPMA is here to support you.
+                        </p>
+                    </div>
+                    <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                        <Link to="/clinical-education#workshops" className="flex flex-col items-center gap-4 p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                            <BookOpen className="w-8 h-8 text-white/80 group-hover:text-white transition-colors" />
+                            <span className="text-lg font-bold text-white text-center">Explore Clinical Education</span>
+                            <span className="text-white/60 text-base text-center">Workshops, webinars, and structured training</span>
+                        </Link>
+                        <Link to="/resources" className="flex flex-col items-center gap-4 p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                            <FileText className="w-8 h-8 text-white/80 group-hover:text-white transition-colors" />
+                            <span className="text-lg font-bold text-white text-center">Access Resources</span>
+                            <span className="text-white/60 text-base text-center">Evidence libraries and clinical documentation</span>
+                        </Link>
+                        <Link to="/contact" className="flex flex-col items-center gap-4 p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                            <Mail className="w-8 h-8 text-white/80 group-hover:text-white transition-colors" />
+                            <span className="text-lg font-bold text-white text-center">Enquire About Reference Centres</span>
+                            <span className="text-white/60 text-base text-center">Observation opportunities and access</span>
+                        </Link>
                     </div>
                 </div>
             </section>

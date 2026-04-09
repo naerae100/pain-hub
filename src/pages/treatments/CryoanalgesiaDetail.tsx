@@ -1,12 +1,39 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
-    ChevronRight, Snowflake, Shield, Activity, Zap, BookOpen, Video,
-    FileText, ArrowRight, CheckCircle2, AlertTriangle, Users, Microscope,
-    Heart, Eye, Thermometer, Brain, Target, Syringe, Stethoscope, Clock,
-    CircleDot, Info, HelpCircle, ExternalLink, Layers
+    ChevronRight, Snowflake, Activity, Zap, BookOpen, Video,
+    FileText, CheckCircle2, AlertTriangle, Users,
+    Thermometer, Stethoscope,
+    X
 } from "lucide-react";
 import PageHero from "@/components/PageHero";
-import { researchData } from "@/data/research";
+
+const cryoPublications = [
+    {
+        title: "Ultrasound-guided Percutaneous Cryoneurolysis for the Treatment of Pain after Traumatic Rib Fracture: A Randomized, Active controlled, Participant and Observer-masked Study",
+        author: "John J. Finneran et al.",
+        journal: "Anesthesiology, 2025",
+        pdf: "/Sorted Pdfs/Thorax_chest wall_intercostal/Level II/US-guided Percutaneous Cryoneurolysis for the Treatment of Pain after Traumatic Rib Fracture A Randomized, Activecontrolled, Participantand Observer-masked Study_Finneran_2025.PDF",
+    },
+    {
+        title: "Bedside percutaneous cryoneurolysis technique for management of acute rib fracture pain in adult trauma patients",
+        author: "C. Villalta et al.",
+        journal: "Trauma Surgery & Acute Care Open, 2024",
+        pdf: "/Sorted Pdfs/Thorax_chest wall_intercostal/Level IV/Bedside percutaneous cryoneurolysis technique for management of acute rib fracture pain in adult trauma patients_Villalta_2024.pdf",
+    },
+    {
+        title: "Percutaneous Cryoneurolysis for Pain Control After Rib Fractures in Older Adults",
+        author: "S. Wang et al.",
+        journal: "JAMA Surgery, 2024",
+        pdf: "/Sorted Pdfs/Thorax_chest wall_intercostal/Level V/Percutaneous Cryoneurolysis for Pain Control_ Jamasurgery_Wang_2024.pdf",
+    },
+    {
+        title: "Rib fracture management: A review of surgical stabilization, regional analgesia, and intercostal nerve cryoablation",
+        author: "S. Stopenski et al.",
+        journal: "Surgery in Practice and Science, 2022",
+        pdf: "/Sorted Pdfs/Thorax_chest wall_intercostal/Level V/Rib fracture management A review of surgical stabilization, regional analgesia, and intercostal nerve cryoablation_Stopenski_2022.pdf",
+    },
+];
 
 // Images
 import heroImg from "@/assets/Cryoanalgesia of the genicular nerves using ultrasound guidance.png";
@@ -14,8 +41,36 @@ import nerveInjuryImg from "@/assets/Nerve injury grade mechanism.png";
 import kneeCryoImg from "@/assets/Knee cryoanalgesia under ultrasound guidance.png";
 
 const CryoanalgesiaDetail = () => {
+    const [activePdf, setActivePdf] = useState<{ url: string; title: string } | null>(null);
+
+    const openPdf = (pdf: string, title: string) => {
+        const safeUrl = pdf.replace(/ /g, "%20");
+        if (window.innerWidth <= 768) {
+            window.open(safeUrl, "_blank");
+        } else {
+            setActivePdf({ url: safeUrl, title });
+        }
+    };
+
     return (
         <div className="flex-1 flex flex-col bg-background">
+            {/* PDF Modal */}
+            {activePdf && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 !m-0">
+                    <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setActivePdf(null)} />
+                    <div className="relative w-full max-w-6xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[85vh] md:h-[90vh] animate-in fade-in zoom-in-95 duration-200">
+                        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-gray-50">
+                            <h3 className="text-lg font-bold text-foreground truncate pr-4">{activePdf.title}</h3>
+                            <button onClick={() => setActivePdf(null)} className="p-2 bg-gray-200 hover:bg-gray-300 rounded-full transition-colors shrink-0">
+                                <X className="w-5 h-5 text-foreground" />
+                            </button>
+                        </div>
+                        <div className="flex-1 w-full bg-gray-100 relative">
+                            <iframe src={activePdf.url} className="w-full h-full border-0 absolute inset-0" title={activePdf.title} />
+                        </div>
+                    </div>
+                </div>
+            )}
             {/* Hero */}
             <PageHero
                 image={heroImg}
@@ -104,37 +159,40 @@ const CryoanalgesiaDetail = () => {
                             ))}
                         </div>
 
-                        {/* Cryo vs RF vs PRF — written comparison */}
+                        {/* Cryo vs RF vs PRF — side by side */}
                         <h3 className="text-2xl font-display font-bold text-foreground mb-4">
                             Cryoneurolysis vs. Radiofrequency (RF) vs. PRF
                         </h3>
-                        <p className="text-lg text-foreground/90 leading-relaxed mb-8">
+                        <p className="text-lg text-foreground/90 leading-relaxed mb-10">
                             The clinical distinction between these modalities lies in the degree of tissue destruction:
                         </p>
 
-                        <div className="space-y-8">
-                            <div className="border-l-4 border-blue-400 pl-6">
-                                <h4 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
-                                    <Snowflake className="w-5 h-5 text-blue-500" /> Cryoneurolysis
-                                </h4>
-                                <p className="text-lg text-foreground/90 leading-relaxed">
-                                    Produces a reversible interruption of axonal continuity. Because it spares the connective tissue matrix, it is classified as a Grade II injury, which carries a 100% prognosis for functional recovery.
+                        <div className="grid md:grid-cols-3 gap-6">
+                            <div className="border-t-4 border-blue-400 pt-6">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <Snowflake className="w-5 h-5 text-blue-500" />
+                                    <h4 className="text-lg font-bold text-foreground">Cryoneurolysis</h4>
+                                </div>
+                                <p className="text-foreground/80 leading-relaxed">
+                                    Reversible axonal interruption. Spares connective tissue matrix — classified as a Grade II injury with 100% prognosis for functional recovery.
                                 </p>
                             </div>
-                            <div className="border-l-4 border-red-400 pl-6">
-                                <h4 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
-                                    <Thermometer className="w-5 h-5 text-red-500" /> Thermal Radiofrequency (Neurotomy)
-                                </h4>
-                                <p className="text-lg text-foreground/90 leading-relaxed">
-                                    Unlike cryo, traditional thermal RF uses high-frequency heat (60°C to 80°C) to create a Grade IV or V injury (Neurotmesis). This destroys the internal architecture of the nerve (including the endoneurium and perineurium).
+                            <div className="border-t-4 border-red-400 pt-6">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <Thermometer className="w-5 h-5 text-red-500" />
+                                    <h4 className="text-lg font-bold text-foreground">Thermal RF (Neurotomy)</h4>
+                                </div>
+                                <p className="text-foreground/80 leading-relaxed">
+                                    High-frequency heat (60–80°C) creates a Grade IV or V injury. Destroys internal nerve architecture including endoneurium and perineurium.
                                 </p>
                             </div>
-                            <div className="border-l-4 border-purple-400 pl-6">
-                                <h4 className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
-                                    <Activity className="w-5 h-5 text-purple-500" /> Pulsed Radiofrequency
-                                </h4>
-                                <p className="text-lg text-foreground/90 leading-relaxed">
-                                    Operates differently by using electromagnetic fields to alter nerve signaling via gene expression and cytokine modulation without causing structural disruption.
+                            <div className="border-t-4 border-purple-400 pt-6">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <Activity className="w-5 h-5 text-purple-500" />
+                                    <h4 className="text-lg font-bold text-foreground">Pulsed Radiofrequency</h4>
+                                </div>
+                                <p className="text-foreground/80 leading-relaxed">
+                                    Electromagnetic fields alter nerve signaling via gene expression and cytokine modulation — no structural disruption.
                                 </p>
                             </div>
                         </div>
@@ -243,38 +301,42 @@ const CryoanalgesiaDetail = () => {
                                 ))}
                             </div>
 
-                            <div className="space-y-10">
+                            <div>
                                 {/* Knee Cryo Image */}
-                                <div className="w-full rounded-2xl overflow-hidden">
+                                <div className="w-full rounded-2xl overflow-hidden sticky top-24">
                                     <img src={kneeCryoImg} alt="Knee cryoanalgesia under ultrasound guidance" className="w-full h-auto object-contain" />
-                                </div>
-
-                                {/* Spasticity — prominent featured block */}
-                                <div className="rounded-2xl overflow-hidden shadow-lg border border-primary/20" style={{ background: 'linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.82) 100%)' }}>
-                                    <div className="p-8">
-                                        <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-5">
-                                            <Microscope className="w-6 h-6 text-white" />
-                                        </div>
-                                        <h3 className="text-xl font-bold text-white mb-3">Spasticity-Associated Pain</h3>
-                                        <p className="text-white/85 leading-relaxed mb-3">
-                                            Cryoneurolysis is an effective emerging modality for upper and lower limb spasticity, targeting motor and mixed nerves to reduce muscle overactivity, improve function, and relieve associated pain without permanent neurodestruction.
-                                        </p>
-                                        <p className="text-white/70 text-sm leading-relaxed mb-6">
-                                            It offers a reversible, repeatable alternative to chemical neurolysis — particularly valuable where a prolonged or titratable effect is needed.
-                                        </p>
-                                        <a
-                                            href="https://ipmaustralia.com.au/cryoanalgesia/spasticity/"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-primary font-bold text-sm hover:bg-white/90 transition-colors"
-                                        >
-                                            <ExternalLink className="w-4 h-4" />
-                                            View Spasticity Programme &amp; Case Examples
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Spasticity-Associated Pain */}
+            <section className="py-16 lg:py-20 bg-primary text-white">
+                <div className="section-container">
+                    <div className="max-w-5xl mx-auto">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center">
+                                <Zap className="w-6 h-6 text-white" />
+                            </div>
+                            <p className="text-white/60 text-sm font-bold uppercase tracking-widest">Emerging Indication</p>
+                        </div>
+                        <h2 className="text-3xl lg:text-4xl font-display font-bold text-white mb-6">
+                            Spasticity-Associated Pain
+                        </h2>
+                        <p className="text-xl lg:text-2xl text-white/90 leading-relaxed mb-6 max-w-4xl">
+                            Cryoneurolysis is an effective emerging modality for upper and lower limb spasticity, targeting motor and mixed nerves to reduce muscle overactivity, improve function, and relieve associated pain without permanent neurodestruction.
+                        </p>
+                        <p className="text-lg text-white/70 leading-relaxed mb-10 max-w-3xl">
+                            It offers a reversible, repeatable alternative to chemical neurolysis — particularly valuable where a prolonged or titratable effect is needed.
+                        </p>
+                        <Link
+                            to="/procedures/cryoanalgesia/spasticity"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-primary font-bold text-sm hover:bg-white/90 transition-colors"
+                        >
+                            View Spasticity Programme & Case Examples
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -536,22 +598,20 @@ const CryoanalgesiaDetail = () => {
                     <div className="max-w-4xl mx-auto">
                         <h3 className="text-2xl font-display font-bold text-foreground mb-10">Selected Publications</h3>
                         <div className="space-y-6">
-                            {researchData.cryo.map((item) => (
-                                <a
-                                    key={item.id}
-                                    href={item.link || `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(item.title)}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block py-5 border-b border-border hover:border-primary/30 transition-all duration-200 group"
+                            {cryoPublications.map((item, idx) => (
+                                <button
+                                    key={idx}
+                                    onClick={() => openPdf(item.pdf, item.title)}
+                                    className="block w-full text-left py-5 border-b border-border hover:border-primary/30 transition-all duration-200 group"
                                 >
                                     <h4 className="text-lg font-bold text-primary group-hover:underline mb-2 leading-snug">{item.title}</h4>
                                     <div className="text-lg text-foreground/70 flex items-center gap-2">
                                         <span className="font-semibold text-foreground">{item.author}</span>
                                         <span className="text-foreground/30">·</span>
                                         <span>{item.journal}</span>
-                                        <ExternalLink className="w-4 h-4 ml-auto text-primary/40 group-hover:text-primary transition-colors shrink-0" />
+                                        <FileText className="w-4 h-4 ml-auto text-primary/40 group-hover:text-primary transition-colors shrink-0" />
                                     </div>
-                                </a>
+                                </button>
                             ))}
                         </div>
                     </div>

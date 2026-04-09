@@ -48,22 +48,12 @@ const About = () => {
                             Through structured education programs, reference centre observation, and clinical resources, IPMA promotes safe and effective integration of procedures that target the underlying causes of pain while minimising tissue disruption.
                         </p>
                     </div>
-                    <div className="relative">
-                        <div className="relative rounded-2xl overflow-hidden z-10 bg-slate-50 h-[400px]">
-                            <img
-                                src={educationHero}
-                                alt="Clinician Training"
-                                className="w-full h-full object-contain"
-                            />
-                        </div>
-                        {/* Secondary Overlapping Image */}
-                        <div className="absolute -bottom-8 -right-8 w-2/3 aspect-[4/3] rounded-2xl overflow-hidden z-20 hidden md:block group bg-slate-50">
-                            <img
-                                src={sydneyWorkshop3}
-                                alt="Sydney Workshop Session"
-                                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
-                            />
-                        </div>
+                    <div className="rounded-2xl overflow-hidden">
+                        <img
+                            src={sydneyWorkshop3}
+                            alt="Sydney Workshop Session"
+                            className="w-full h-auto object-cover"
+                        />
                     </div>
                 </div>
             </section>
@@ -144,7 +134,7 @@ const About = () => {
                         </Link>
                     ))}
                 </div>
-                <p className="text-center text-muted-foreground mt-12">
+                <p className="text-center text-xl lg:text-2xl font-bold text-foreground mt-12 max-w-3xl mx-auto leading-snug">
                     Each modality is presented within a structured clinical framework emphasising indications, mechanisms, safety, and outcomes.
                 </p>
             </section>
