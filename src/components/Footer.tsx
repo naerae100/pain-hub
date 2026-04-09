@@ -133,12 +133,12 @@ const Footer = () => {
               <li>
                 <a
                   href="mailto:contact@ipmaaustralia.com.au"
-                  className="flex items-center gap-4 text-blue-300 hover:text-white transition-colors duration-200 group break-all"
+                  className="flex items-center gap-4 text-blue-300 hover:text-white transition-colors duration-200 group"
                 >
                   <div className="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center shrink-0 border border-blue-800 group-hover:border-primary transition-colors">
                     <Mail className="w-4 h-4 text-primary" />
                   </div>
-                  <span className="text-lg font-medium">contact@ipmaaustralia.com.au</span>
+                  <span className="text-sm sm:text-base font-medium whitespace-nowrap">contact@ipmaaustralia.com.au</span>
                 </a>
               </li>
               <li className="flex items-center gap-4 text-blue-300">
