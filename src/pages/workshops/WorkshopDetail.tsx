@@ -77,8 +77,8 @@ const WorkshopDetail = () => {
                     </div>
 
                     <div className="order-1 lg:order-2">
-                        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                            <img src={workshop.image} alt={workshop.title} className="w-full h-full object-contain" />
+                        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 shadow-md">
+                            <img src={workshop.image} alt={workshop.title} className="w-full h-full object-cover rounded-2xl" />
                         </div>
                     </div>
                 </div>

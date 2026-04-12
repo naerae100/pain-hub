@@ -406,19 +406,19 @@ const Resources = () => {
                             A curated selection of key peer-reviewed studies and trials supporting our interventional techniques.
                         </p>
                         
-                        <div className="space-y-12">
+                        <div className="space-y-14">
                             {Object.entries(researchData).map(([category, items]) => (
                                 <div key={category}>
-                                    <h4 className="text-sm font-extrabold text-primary uppercase tracking-widest mb-6">
+                                    <h4 className="text-lg lg:text-xl font-extrabold text-primary uppercase tracking-widest mb-8">
                                         {category === "cryo" ? "Cryoanalgesia" :
                                          category === "thoracic" ? "Thoracic" :
                                          category === "spasticity" ? "Spasticity" :
                                          "Additional Anatomical Regions"}
                                     </h4>
-                                    <div className="space-y-6">
+                                    <div className="space-y-8">
                                         {items.map((item) => (
-                                            <div key={item.id} className="group">
-                                                <p className="text-base text-foreground/90 leading-relaxed">
+                                            <div key={item.id}>
+                                                <p className="text-lg lg:text-xl text-foreground/90 leading-relaxed">
                                                     <span className="font-semibold text-foreground">{item.author}</span>
                                                     {" "}
                                                     {item.pdf ? (
