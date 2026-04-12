@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { 
-    BookOpenCheck, Building2, Library, Network, 
-    Snowflake, Minimize2, Zap, Dna, 
-    Target, Eye, 
+import { FEATURES } from "@/config/featureFlags";
+import {
+    BookOpenCheck, Building2, Library, Network,
+    Snowflake, Minimize2, Zap, Dna,
+    Target, Eye,
     Microscope, Users, FileText,
     PhoneCall, Mail, MapPin, Search
 } from "lucide-react";
@@ -14,6 +15,33 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import PageHero from "@/components/PageHero";
+
+const clinicalDomains = [
+    {
+        title: "Cryoanalgesia",
+        desc: "Image-guided cryoneurolysis for peripheral neuralgia, postoperative pain, and selected spasticity applications.",
+        icon: Snowflake,
+        href: "/procedures/cryoanalgesia"
+    },
+    {
+        title: "Epidural Balloon Decompression",
+        desc: "Mechanical epidural expansion and adhesiolysis for lumbar spinal stenosis and neurogenic claudication.",
+        icon: Minimize2,
+        href: "/procedures/epidural-balloon-decompression"
+    },
+    ...(FEATURES.LASER_SYSTEMS ? [{
+        title: "Percutaneous Laser Disc Decompression (PLDD)",
+        desc: "Minimally invasive intradiscal decompression for contained disc herniation and radicular pain.",
+        icon: Zap,
+        href: "/procedures/pldd"
+    }] : []),
+    {
+        title: "Orthobiologic Therapies",
+        desc: "Autologous biologic approaches supporting tissue repair and regenerative pathways within interventional care.",
+        icon: Dna,
+        href: "/procedures/orthobiologic-therapies"
+    }
+];
 
 const About = () => {
     // Find the next OPEN workshop, or default to the first one
@@ -90,36 +118,11 @@ const About = () => {
             <section className="section-container py-24">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="text-3xl lg:text-5xl font-display font-bold text-foreground mb-6">Areas of Clinical Focus</h2>
-                    <p className="text-muted-foreground text-lg">IPMA educational programs currently focus on four core procedural domains:</p>
+                    <p className="text-muted-foreground text-lg">IPMA educational programs currently focus on core procedural domains:</p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {[
-                        {
-                            title: "Cryoanalgesia",
-                            desc: "Image-guided cryoneurolysis for peripheral neuralgia, postoperative pain, and selected spasticity applications.",
-                            icon: Snowflake,
-                            href: "/procedures/cryoanalgesia"
-                        },
-                        {
-                            title: "Epidural Balloon Decompression",
-                            desc: "Mechanical epidural expansion and adhesiolysis for lumbar spinal stenosis and neurogenic claudication.",
-                            icon: Minimize2,
-                            href: "/procedures/epidural-balloon-decompression"
-                        },
-                        {
-                            title: "Percutaneous Laser Disc Decompression (PLDD)",
-                            desc: "Minimally invasive intradiscal decompression for contained disc herniation and radicular pain.",
-                            icon: Zap,
-                            href: "/procedures/pldd"
-                        },
-                        {
-                            title: "Orthobiologic Therapies",
-                            desc: "Autologous biologic approaches supporting tissue repair and regenerative pathways within interventional care.",
-                            icon: Dna,
-                            href: "/procedures/orthobiologic-therapies"
-                        }
-                    ].map((domain, idx) => (
+                <div className={`grid md:grid-cols-2 ${clinicalDomains.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'} gap-8`}>
+                    {clinicalDomains.map((domain, idx) => (
                         <Link key={idx} to={domain.href} className="bg-white border border-slate-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow group block">
                             <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-300">
                                 <domain.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />

@@ -410,7 +410,7 @@
 
   /* Full image shown, no crop */
   .content-img {
-    @apply w-full h-auto block;
+    @apply w-full h-auto block rounded-2xl;
     object-fit: contain;
   }
 

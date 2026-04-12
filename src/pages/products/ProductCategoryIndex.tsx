@@ -4,6 +4,7 @@ import { categories, products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Snowflake, Circle, Zap, Droplets } from "lucide-react";
+import { FEATURES } from "@/config/featureFlags";
 import PageHero from "@/components/PageHero";
 import technologiesHero from "@/assets/Technologies.png";
 
@@ -29,13 +30,13 @@ const proceduralPlatforms = [
         icon: Droplets,
         color: "bg-rose-100 text-rose-600",
     },
-    {
+    ...(FEATURES.LASER_SYSTEMS ? [{
         title: "Laser Systems",
         description: "Image-guided laser technologies used in pain and spine-related procedures (e.g. PLDD).",
         href: "/technologies/laser-systems",
         icon: Zap,
         color: "bg-green-100 text-green-600",
-    },
+    }] : []),
 ];
 
 const ProductCategoryIndex = () => {
@@ -71,7 +72,7 @@ const ProductCategoryIndex = () => {
                         Please note that the order of these are the same as in Procedures.
                     </p>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className={`grid md:grid-cols-2 ${proceduralPlatforms.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'} gap-6`}>
                     {proceduralPlatforms.map((platform) => (
                         <Link
                             key={platform.title}

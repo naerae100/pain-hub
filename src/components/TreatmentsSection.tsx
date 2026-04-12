@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Snowflake, Minimize2, Zap, Dna } from "lucide-react";
+import { FEATURES } from "@/config/featureFlags";
 import cryoProcedure from "@/assets/Cryoanalgesia of the genicular nerves using ultrasound guidance.png";
 import balloonProcedure from "@/assets/Epidural Balloon Decompression Procedure.png";
 import laserProcedure from "@/assets/Percutaneous Laser Disc Decompression_technology2 (2).png";
 import orthobiologicProcedure from "@/assets/Orthobiologic Therapies_procedure (1).png";
 
-const treatments = [
+const allTreatments = [
   {
     category: "Procedure",
     title: "Cryoanalgesia",
@@ -49,6 +50,10 @@ const treatments = [
   },
 ];
 
+const treatments = FEATURES.LASER_SYSTEMS
+  ? allTreatments
+  : allTreatments.filter(t => t.href !== "/procedures/pldd");
+
 const TreatmentsSection = () => {
   const MotionLink = motion(Link);
   return (
@@ -78,7 +83,7 @@ const TreatmentsSection = () => {
         </motion.div>
 
         {/* Treatment Cards Grid */}
-        <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+        <div className={`grid md:grid-cols-2 ${treatments.length === 3 ? 'lg:grid-cols-3' : ''} gap-5 md:gap-6`}>
           {treatments.map((treatment, index) => (
             <MotionLink
               key={treatment.title}

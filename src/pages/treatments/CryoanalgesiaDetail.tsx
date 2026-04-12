@@ -208,7 +208,7 @@ const CryoanalgesiaDetail = () => {
                             The Seddon–Sunderland classification provides the anatomical framework for understanding why cryoneurolysis targets Grade II injury specifically — ensuring Wallerian degeneration proceeds with a 100% prognosis for recovery, unlike higher-grade injuries common with thermal techniques.
                         </p>
                         <div className="w-full overflow-hidden rounded-2xl shadow-md mb-4">
-                            <img src={nerveInjuryImg} alt="Nerve injury grade mechanism — Cryoneurolysis Grade II vs Radiofrequency Grade IV" className="w-full h-auto object-contain" />
+                            <img src={nerveInjuryImg} alt="Nerve injury grade mechanism — Cryoneurolysis Grade II vs Radiofrequency Grade IV" className="w-full h-auto object-contain rounded-2xl" />
                         </div>
                         <p className="text-lg text-foreground/90 border-l-4 border-primary pl-4">
                             <strong>Clinical Note:</strong> While RF aims to "destroy" the nerve's signaling ability through thermal coagulation of the entire nerve bundle, cryoneurolysis selectively disrupts the axon while leaving the "blueprint" of the nerve intact.
@@ -304,7 +304,7 @@ const CryoanalgesiaDetail = () => {
                             <div>
                                 {/* Knee Cryo Image */}
                                 <div className="w-full rounded-2xl overflow-hidden sticky top-24">
-                                    <img src={kneeCryoImg} alt="Knee cryoanalgesia under ultrasound guidance" className="w-full h-auto object-contain" />
+                                    <img src={kneeCryoImg} alt="Knee cryoanalgesia under ultrasound guidance" className="w-full h-auto object-contain rounded-2xl" />
                                 </div>
                             </div>
                         </div>
@@ -599,19 +599,20 @@ const CryoanalgesiaDetail = () => {
                         <h3 className="text-2xl font-display font-bold text-foreground mb-10">Selected Publications</h3>
                         <div className="space-y-6">
                             {cryoPublications.map((item, idx) => (
-                                <button
-                                    key={idx}
-                                    onClick={() => openPdf(item.pdf, item.title)}
-                                    className="block w-full text-left py-5 border-b border-border hover:border-primary/30 transition-all duration-200 group"
-                                >
-                                    <h4 className="text-lg font-bold text-primary group-hover:underline mb-2 leading-snug">{item.title}</h4>
-                                    <div className="text-lg text-foreground/70 flex items-center gap-2">
+                                <div key={idx}>
+                                    <p className="text-base text-foreground/90 leading-relaxed">
                                         <span className="font-semibold text-foreground">{item.author}</span>
-                                        <span className="text-foreground/30">·</span>
-                                        <span>{item.journal}</span>
-                                        <FileText className="w-4 h-4 ml-auto text-primary/40 group-hover:text-primary transition-colors shrink-0" />
-                                    </div>
-                                </button>
+                                        {" "}
+                                        <button
+                                            onClick={() => openPdf(item.pdf, item.title)}
+                                            className="text-primary font-bold underline underline-offset-2 hover:text-primary/80 transition-colors text-left"
+                                        >
+                                            {item.title}.
+                                        </button>
+                                        {" "}
+                                        <span className="italic text-foreground/70">{item.journal}.</span>
+                                    </p>
+                                </div>
                             ))}
                         </div>
                     </div>

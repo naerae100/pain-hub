@@ -1,13 +1,38 @@
-import {
-    Snowflake, Shield, Users, DollarSign, Syringe
-} from "lucide-react";
+import { useState } from "react";
+import { X } from "lucide-react";
 import PageHero from "@/components/PageHero";
+import { researchData } from "@/data/research";
 
 import heroImg from "@/assets/cryotherapy-hero.png";
 
 const SpasticityPage = () => {
+    const [activePdf, setActivePdf] = useState<{ url: string; title: string } | null>(null);
+
+    const openPdf = (path: string, title: string) => {
+        const safeUrl = path.split('/').map(s => s.replace(/ /g, '%20')).join('/');
+        setActivePdf({ url: safeUrl, title });
+    };
+
     return (
         <div className="flex-1 flex flex-col bg-background">
+            {/* PDF Modal */}
+            {activePdf && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+                    <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={() => setActivePdf(null)} />
+                    <div className="relative w-full max-w-6xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[85vh] md:h-[90vh]">
+                        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-gray-50">
+                            <h3 className="text-lg font-bold text-foreground truncate pr-4">{activePdf.title}</h3>
+                            <button onClick={() => setActivePdf(null)} className="p-2 bg-gray-200 hover:bg-gray-300 rounded-full transition-colors shrink-0">
+                                <X className="w-5 h-5 text-foreground" />
+                            </button>
+                        </div>
+                        <div className="flex-1 w-full bg-gray-100 relative">
+                            <iframe src={activePdf.url} className="w-full h-full border-0 absolute inset-0" title={activePdf.title} />
+                        </div>
+                    </div>
+                </div>
+            )}
+
             {/* Hero */}
             <PageHero
                 image={heroImg}
@@ -169,42 +194,32 @@ const SpasticityPage = () => {
                             Cryoneurolysis offers several distinct advantages over traditional spasticity treatments:
                         </p>
 
-                        <div className="space-y-8">
+                        <div className="space-y-10">
                             {[
                                 {
-                                    icon: Syringe,
                                     title: "No Maximal Dose Limit",
                                     desc: "Unlike some injectables, cryoneurolysis has no maximal dose restriction, allowing for a greater number of muscles to be treated, including all muscles from a single nerve trunk."
                                 },
                                 {
-                                    icon: Shield,
                                     title: "Tissue Sparing",
-                                    desc: "At specified temperatures (\u221288\u00B0C in spasticity applications), cryoneurolysis selectively destroys the neuron while sparing surrounding tissues. The 'heat sink' effect of adjacent blood vessels protects their integrity, allowing for safe application even near vascular structures. This contrasts with chemical neurolysis, which can lead to tissue destruction and vessel thrombosis."
+                                    desc: "At specified temperatures (\u221288\u00B0C in spasticity applications), cryoneurolysis selectively destroys the neuron while sparing surrounding tissues. The \u2018heat sink\u2019 effect of adjacent blood vessels protects their integrity, allowing for safe application even near vascular structures. This contrasts with chemical neurolysis, which can lead to tissue destruction and vessel thrombosis."
                                 },
                                 {
-                                    icon: Snowflake,
                                     title: "Addressing Concurrent Pain",
                                     desc: "Spasticity often presents with pain at rest or with movement. Cryoneurolysis is a well-established pain management technique; targeting sensory and mixed sensorimotor nerves (e.g., suprascapular, superficial fibular, genicular nerves) can provide dual therapeutic benefits of tone reduction and pain relief. This extends to challenging conditions like spastic claw hand contractures via ulnar and median nerve trunks."
                                 },
                                 {
-                                    icon: Users,
                                     title: "Broad Patient Applicability",
                                     desc: "The technique has been safely and effectively performed across a wide age range, from children as young as 3 years to nonagenarians."
                                 },
                                 {
-                                    icon: DollarSign,
                                     title: "Potential Cost-Effectiveness",
                                     desc: "Initial financial analyses suggest significant cost savings compared to current dominant techniques, which could enhance global accessibility. Current equipment costs are approximately $500\u2013$700 for a single treatment, with most patients averaging less than one treatment per year."
                                 },
                             ].map((item, i) => (
-                                <div key={i} className="flex gap-5 items-start">
-                                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                                        <item.icon className="w-6 h-6 text-primary" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-display font-bold text-foreground mb-2">{item.title}</h3>
-                                        <p className="text-lg text-foreground/90 leading-relaxed">{item.desc}</p>
-                                    </div>
+                                <div key={i} className="border-l-4 border-primary pl-6">
+                                    <h3 className="text-xl font-display font-bold text-foreground mb-2">{item.title}</h3>
+                                    <p className="text-lg text-foreground/90 leading-relaxed">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -273,42 +288,26 @@ const SpasticityPage = () => {
                             References
                         </h2>
 
-                        <div className="space-y-0 divide-y divide-border">
-                            {[
-                                {
-                                    authors: "Guynn, C. C.",
-                                    year: "2025",
-                                    title: "Percutaneous Cryoneurolysis as a Dynamic Treatment for Spasticity: A Case Series.",
-                                    journal: "Archives of Rehabilitation Research and Clinical Translation, 7, 100426.",
-                                    doi: "https://doi.org/10.1016/j.arrct.2025.100426",
-                                },
-                                {
-                                    authors: "Winston, P., Mills, P. B., Reebye, R., & Vincent, D.",
-                                    year: "2019",
-                                    title: "Cryoneurotomy as a Percutaneous Mini-invasive Therapy for the Treatment of the Spastic Limb: Case Presentation, Review of the Literature, and Proposed Approach for Use.",
-                                    journal: "Archives of Rehabilitation Research and Clinical Translation, 1, 100030.",
-                                    doi: "https://doi.org/10.1016/j.arrct.2019.100030",
-                                },
-                                {
-                                    authors: "Winston, P. W., & Vincent, D.",
-                                    year: "2024",
-                                    title: "Cryoneurolysis as a Novel Treatment for Spasticity, Associated Pain and Presumed Contracture.",
-                                    journal: "Advances in Rehabilitation Science and Practice.",
-                                    doi: "https://doi.org/10.1177/27536351241285198",
-                                },
-                            ].map((ref, i) => (
-                                <a
-                                    key={i}
-                                    href={ref.doi}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block py-5 group hover:bg-white/50 -mx-4 px-4 transition-colors"
-                                >
-                                    <p className="text-lg text-foreground/90 leading-relaxed">
-                                        <span className="font-semibold text-foreground">{ref.authors}</span> ({ref.year}). <span className="font-bold text-primary group-hover:underline">{ref.title}</span> <em>{ref.journal}</em>
+                        <div className="space-y-6">
+                            {researchData.spasticity.map((item) => (
+                                <div key={item.id}>
+                                    <p className="text-base text-foreground/90 leading-relaxed">
+                                        <span className="font-semibold text-foreground">{item.author}</span>
+                                        {" "}
+                                        {item.pdf ? (
+                                            <button
+                                                onClick={() => openPdf(item.pdf!, item.title)}
+                                                className="text-primary font-bold underline underline-offset-2 hover:text-primary/80 transition-colors text-left"
+                                            >
+                                                {item.title}.
+                                            </button>
+                                        ) : (
+                                            <span className="font-bold text-foreground">{item.title}.</span>
+                                        )}
+                                        {" "}
+                                        <span className="italic text-foreground/70">{item.journal}.</span>
                                     </p>
-                                    <p className="text-sm text-primary/70 mt-1">{ref.doi}</p>
-                                </a>
+                                </div>
                             ))}
                         </div>
                     </div>

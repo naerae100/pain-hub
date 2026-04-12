@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import ipmaLogo from "@/assets/ipma-logo.webp";
 import { Button } from "@/components/ui/button";
+import { FEATURES } from "@/config/featureFlags";
 
 const topNavLinks = [
   { label: "My IPMA", href: "/auth", icon: UserCircle2 },
@@ -28,7 +29,7 @@ const mainNavLinks = [
       { label: "Cryoanalgesia", href: "/procedures/cryoanalgesia" },
       { label: "Epidural Balloon Decompression", href: "/procedures/epidural-balloon-decompression" },
       { label: "Orthobiologic Therapies", href: "/procedures/orthobiologic-therapies" },
-      { label: "PLDD", href: "/procedures/pldd" },
+      ...(FEATURES.LASER_SYSTEMS ? [{ label: "PLDD", href: "/procedures/pldd" }] : []),
     ],
   },
   {
@@ -37,7 +38,7 @@ const mainNavLinks = [
     children: [
       { label: "Cryotherapy", href: "/technologies/cryotherapy" },
       { label: "Balloon Technology", href: "/technologies/balloon-technology" },
-      { label: "Laser Systems", href: "/technologies/laser-systems" },
+      ...(FEATURES.LASER_SYSTEMS ? [{ label: "Laser Systems", href: "/technologies/laser-systems" }] : []),
       { label: "Orthobiologics", href: "/technologies/orthobiologics" },
     ],
   },

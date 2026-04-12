@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FEATURES } from "@/config/featureFlags";
 import cryoTech from "@/assets/Cryotherapy_technology.png";
 import laserTech from "@/assets/Percutaneous Laser Disc Decompression_technology2.png";
 import balloonTech from "@/assets/Balloon decompression_technology.png";
 import orthobiologicsTech from "@/assets/Orthobiologics_technology.png";
 
-const products = [
+const allProducts = [
   {
     title: "Cryotherapy",
     description: "Precision cryoanalgesia systems",
@@ -31,6 +32,10 @@ const products = [
     href: "/technologies/orthobiologics",
   },
 ];
+
+const products = FEATURES.LASER_SYSTEMS
+  ? allProducts
+  : allProducts.filter(p => p.href !== "/technologies/laser-systems");
 
 const containerVariants = {
   hidden: {},
@@ -85,7 +90,7 @@ const ProductsSection = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
-        className="relative grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+        className={`relative grid grid-cols-2 ${products.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'} gap-4 md:gap-6`}
       >
         {products.map((product) => (
           <MotionLink

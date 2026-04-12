@@ -37,6 +37,7 @@ import SpasticityPage from "./pages/treatments/SpasticityPage";
 
 import Resources from "./pages/Resources";
 import FAQ from "./pages/FAQ";
+import { FEATURES } from "./config/featureFlags";
 
 
 const queryClient = new QueryClient();
@@ -62,7 +63,7 @@ const App = () => (
                   <Route path="/technologies" element={<ProductCategoryIndex />} />
                   <Route path="/technologies/cryotherapy" element={<Cryotherapy />} />
                   <Route path="/technologies/balloon-technology" element={<BalloonTechnology />} />
-                  <Route path="/technologies/laser-systems" element={<LaserSystems />} />
+                  {FEATURES.LASER_SYSTEMS && <Route path="/technologies/laser-systems" element={<LaserSystems />} />}
                   <Route path="/technologies/orthobiologics" element={<Orthobiologics />} />
                   <Route path="/technologies/:categorySlug" element={<ProductList />} />
                   <Route path="/technologies/:categorySlug/:productSlug" element={<ProductDetail />} />
@@ -73,7 +74,7 @@ const App = () => (
                   <Route path="/procedures/cryoanalgesia/spasticity" element={<SpasticityPage />} />
                   <Route path="/procedures/epidural-balloon-decompression" element={<EpiduralBalloonDetail />} />
                   <Route path="/procedures/orthobiologic-therapies" element={<OrthobiologicTherapiesDetail />} />
-                  <Route path="/procedures/pldd" element={<PLDDDetail />} />
+                  {FEATURES.LASER_SYSTEMS && <Route path="/procedures/pldd" element={<PLDDDetail />} />}
                   <Route path="/procedures/:slug" element={<TreatmentDetail />} />
 
                   {/* Clinical Education (formerly Workshops) Routes */}

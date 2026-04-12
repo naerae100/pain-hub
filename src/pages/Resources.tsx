@@ -11,6 +11,7 @@ import {
     cryoAnatomicalAreas, cryoLevelsOfEvidence, balloonCategoryNames,
 } from "@/data/evidence";
 import { researchData } from "@/data/research";
+import { FEATURES } from "@/config/featureFlags";
 
 /* ───────── helpers ───────── */
 const ytId = (url: string) => {
@@ -193,12 +194,15 @@ const VideoSection = ({
 /*                   PAGE                     */
 /* ═══════════════════════════════════════════ */
 
-const videoTabs = [
+const allVideoTabs = [
     { key: "cryo", label: "Cryoanalgesia", icon: Snowflake },
     { key: "balloon", label: "Balloon Decompression", icon: Minimize2 },
     { key: "ortho", label: "Orthobiologics", icon: Dna },
     { key: "laser", label: "Laser (PLDD)", icon: Zap },
 ];
+const videoTabs = FEATURES.LASER_SYSTEMS
+    ? allVideoTabs
+    : allVideoTabs.filter(t => t.key !== "laser");
 
 const Resources = () => {
     // Media Viewer State
@@ -220,8 +224,8 @@ const Resources = () => {
     const [webTab, setWebTab] = useState("cryo");
 
     const openPdf = (pdf: { title: string; relativePath: string }) => {
-        // Enforce URL encoding for paths with spaces and special characters
-        const safeUrl = "/" + pdf.relativePath.split('/').map(segment => encodeURIComponent(segment)).join('/');
+        // Only encode spaces — Vite fails to resolve files when commas are encoded as %2C
+        const safeUrl = "/" + pdf.relativePath.split('/').map(segment => segment.replace(/ /g, '%20')).join('/');
         
         // Mobile browsers struggle with iframe PDFs. Fallback to native tab opening.
         if (window.innerWidth <= 768) {
@@ -377,6 +381,7 @@ const Resources = () => {
                     </div>
 
                     {/* ── PLDD ── */}
+                    {FEATURES.LASER_SYSTEMS && (
                     <div id="pldd" className="mb-8 scroll-mt-28">
                         <h3 className="text-xl font-bold text-foreground mb-3 block border-l-4 border-primary pl-4">
                             Percutaneous Laser Disc Decompression (PLDD)
@@ -390,6 +395,7 @@ const Resources = () => {
                             {plddPdfs.map((p, i) => <PdfCard key={i} title={p.title} onClick={() => openPdf(p)} />)}
                         </PdfLibrary>
                     </div>
+                    )}
 
                     {/* ── CLINICAL LITERATURE (from Research data) ── */}
                     <div className="mb-8 mt-20">
@@ -400,36 +406,41 @@ const Resources = () => {
                             A curated selection of key peer-reviewed studies and trials supporting our interventional techniques.
                         </p>
                         
-                        <div className="space-y-0 divide-y divide-gray-200">
+                        <div className="space-y-12">
                             {Object.entries(researchData).map(([category, items]) => (
-                                <React.Fragment key={category}>
-                                    <div className="pt-8 pb-2 first:pt-0">
-                                        <h4 className="text-sm font-extrabold text-primary uppercase tracking-widest">
-                                            {category === "cryo" ? "Cryoanalgesia" :
-                                             category === "thoracic" ? "Thoracic" :
-                                             category === "spasticity" ? "Spasticity" :
-                                             "Additional Anatomical Regions"}
-                                        </h4>
+                                <div key={category}>
+                                    <h4 className="text-sm font-extrabold text-primary uppercase tracking-widest mb-6">
+                                        {category === "cryo" ? "Cryoanalgesia" :
+                                         category === "thoracic" ? "Thoracic" :
+                                         category === "spasticity" ? "Spasticity" :
+                                         "Additional Anatomical Regions"}
+                                    </h4>
+                                    <div className="space-y-6">
+                                        {items.map((item) => (
+                                            <div key={item.id} className="group">
+                                                <p className="text-base text-foreground/90 leading-relaxed">
+                                                    <span className="font-semibold text-foreground">{item.author}</span>
+                                                    {" "}
+                                                    {item.pdf ? (
+                                                        <button
+                                                            onClick={() => {
+                                                                const safeUrl = item.pdf!.split('/').map(s => s.replace(/ /g, '%20')).join('/');
+                                                                setActiveMedia({ url: safeUrl, title: item.title, type: 'pdf' });
+                                                            }}
+                                                            className="text-primary font-bold underline underline-offset-2 hover:text-primary/80 transition-colors text-left"
+                                                        >
+                                                            {item.title}.
+                                                        </button>
+                                                    ) : (
+                                                        <span className="font-bold text-foreground">{item.title}.</span>
+                                                    )}
+                                                    {" "}
+                                                    <span className="italic text-foreground/70">{item.journal}.</span>
+                                                </p>
+                                            </div>
+                                        ))}
                                     </div>
-                                    {items.map((item) => (
-                                        <a
-                                            key={item.id}
-                                            href={item.link || `https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(item.title)}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-4 group hover:bg-gray-50 -mx-4 px-4 transition-colors"
-                                        >
-                                            <p className="text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors flex-1">
-                                                {item.title}
-                                            </p>
-                                            <p className="text-sm text-foreground/70 shrink-0 whitespace-nowrap">
-                                                <span className="font-semibold text-foreground/80">{item.author}</span>
-                                                <span className="mx-1.5 text-foreground/30">·</span>
-                                                <span>{item.journal}</span>
-                                            </p>
-                                        </a>
-                                    ))}
-                                </React.Fragment>
+                                </div>
                             ))}
                         </div>
                     </div>

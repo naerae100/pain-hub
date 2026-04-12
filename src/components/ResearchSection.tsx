@@ -2,12 +2,13 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { FEATURES } from "@/config/featureFlags";
 import cryoImg from "@/assets/Cryoanalgesia procedure in OR (1).png";
 import balloonImg from "@/assets/Epidural Balloon Decompression Procedure.png";
 import prpImg from "@/assets/Bone marrow aspiration procedure.png";
 import plddImg from "@/assets/Percutaneous Laser Disc Decompression_technology2 (2).png";
 
-const articles = [
+const allArticles = [
   {
     category: "Research",
     title: "Cryoanalgesia & Cryoneurolysis",
@@ -37,6 +38,10 @@ const articles = [
     href: "/resources#pldd",
   },
 ];
+
+const articles = FEATURES.LASER_SYSTEMS
+  ? allArticles
+  : allArticles.filter(a => !a.href.includes("pldd"));
 
 const ResearchSection = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
