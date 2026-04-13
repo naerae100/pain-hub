@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ChevronRight, ArrowRight, Circle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageHero from "@/components/PageHero";
+import { FEATURES } from "@/config/featureFlags";
 import balloonHero from "@/assets/Balloon-catheter_Technology.jpg";
 import platformCatheter from "@/assets/Balloon Decompression_Catheter_2.jpg";
 import inflatedBalloon from "@/assets/Inflated balloon with 0_1cc contrast dye.jpg";
@@ -14,7 +15,7 @@ const structuralVsNeural = [
     { tech: "Balloon", target: "Epidural space", mechanism: "Mechanical expansion" },
     { tech: "Cryotherapy", target: "Peripheral nerve", mechanism: "Reversible axonal interruption" },
     { tech: "Orthobiologics", target: "Tissue microenvironment", mechanism: "Biologic modulation" },
-    { tech: "PLDD", target: "Disc nucleus", mechanism: "Intradiscal pressure reduction" },
+    ...(FEATURES.LASER_SYSTEMS ? [{ tech: "PLDD", target: "Disc nucleus", mechanism: "Intradiscal pressure reduction" }] : []),
 ];
 
 const BalloonTechnology = () => {
@@ -144,7 +145,7 @@ const BalloonTechnology = () => {
                                 <li className="flex items-center gap-2"><ChevronRight className="w-4 h-4 text-primary" /> Fluoroscopic-guided interventional workflows</li>
                             </ul>
                         </div>
-                        <div className="content-img-wrap">
+                        <div className="content-img-wrap max-w-xs mx-auto lg:w-1/2">
                             <img src={ecoSeriesImg} alt="ECO Series Catheter" className="content-img" />
                         </div>
                     </div>
@@ -231,68 +232,76 @@ const BalloonTechnology = () => {
                     </div>
 
                     {/* Tip Comparison */}
-                    <div className="grid lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto mb-20">
-                        <div className="order-2 lg:order-1 relative">
-                            <div className="content-img-wrap content-img-wrap--auto bg-white">
-                                <img src={tipsComparison} alt="Differences between the ZiNeu01 and ZiNeuS" className="w-full h-full object-contain p-2" />
-                            </div>
-                        </div>
-                        <div className="order-1 lg:order-2 space-y-6">
-                            <h3 className="text-2xl font-bold text-foreground">Tip Bending Dynamics</h3>
+                    <div className="max-w-6xl mx-auto mb-20">
+                        <h3 className="text-3xl lg:text-4xl font-display font-bold text-foreground mb-4">Tip Bending Dynamics</h3>
+                        <p className="text-lg text-foreground/90 leading-relaxed mb-10 max-w-3xl">
+                            Understanding how each catheter tip responds to forward force during foraminal access.
+                        </p>
 
-                            <div className="space-y-2">
-                                <h4 className="font-bold text-primary">ZiNeu01 (Non-Articulated Tip)</h4>
-                                <p className="text-lg text-foreground/90 bg-secondary/30 p-4 rounded-xl">
-                                    The tip bends as a single, fixed structure. When inserted in a bent state, forward force naturally directs the catheter toward the intervertebral foramen. This directional bias supports more reliable entry into the foramen.
+                        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+                            <div className="space-y-10">
+                                <div className="border-l-4 border-primary pl-6">
+                                    <h4 className="text-xl font-display font-bold text-foreground mb-3">ZiNeu01 — Non-Articulated Tip</h4>
+                                    <p className="text-lg text-foreground/90 leading-relaxed">
+                                        The tip bends as a single, fixed structure. When inserted in a bent state, forward force naturally directs the catheter toward the intervertebral foramen. This directional bias supports more reliable entry into the foramen.
+                                    </p>
+                                </div>
+
+                                <div className="border-l-4 border-primary pl-6">
+                                    <h4 className="text-xl font-display font-bold text-foreground mb-3">ZiNeu01S — Articulated Tip</h4>
+                                    <p className="text-lg text-foreground/90 leading-relaxed">
+                                        The tip includes an articulation joint, allowing easier and more flexible bending. However, when inserted while bent, forward force tends to direct the catheter upward (cephalad) rather than toward the intervertebral foramen. This may reduce effective entry force and make foraminal access more technically challenging.
+                                    </p>
+                                </div>
+
+                                <p className="text-lg font-bold text-foreground pt-2">
+                                    ZiNeu01 provides stronger directional support toward the foramen; ZiNeu01S offers greater flexibility but requires more precise handling to achieve optimal foraminal access.
                                 </p>
                             </div>
 
-                            <div className="space-y-2">
-                                <h4 className="font-bold text-primary">ZiNeu01S (Articulated Tip)</h4>
-                                <p className="text-lg text-foreground/90 bg-secondary/30 p-4 rounded-xl">
-                                    The tip includes an articulation joint, allowing easier and more flexible bending. However, when inserted while bent, forward force tends to direct the catheter upward (cephalad) rather than toward the intervertebral foramen. This may reduce effective entry force and make foraminal access more technically challenging.
-                                </p>
-                            </div>
-
-                            <div className="bg-blue-50 border border-blue-200 text-blue-800 p-4 rounded-xl text-lg font-medium">
-                                Summary: ZiNeu01 provides stronger directional support toward the foramen, while ZiNeu01S offers greater flexibility but may require more precise handling to achieve optimal foraminal access.
+                            <div className="flex items-center justify-center">
+                                <img src={tipsComparison} alt="Differences between the ZiNeu01 and ZiNeuS" className="max-w-full h-auto rounded-2xl" />
                             </div>
                         </div>
                     </div>
 
                     {/* ECO2 */}
-                    <div className=" mt-16">
-                        <h3 className="text-3xl font-display font-bold text-foreground mb-6">ECO2</h3>
-                        <div className="space-y-8 mb-8">
-                            <div>
-                                <h4 className="font-bold text-foreground mb-3 text-base uppercase tracking-wider border-b border-border pb-2">Technical Profile</h4>
-                                <ul className="space-y-2 text-lg text-foreground/90">
-                                    <li className="flex justify-between"><span>Outer:</span> <span className="font-medium">1.55 mm</span></li>
-                                    <li className="flex justify-between"><span>Inner:</span> <span className="font-medium">0.5 mm</span></li>
-                                    <li className="flex justify-between"><span>Length:</span> <span className="font-medium">300 mm</span></li>
-                                    <li className="flex justify-between"><span>Needle:</span> <span className="font-medium">13G</span></li>
-                                </ul>
+                    <div className="mt-16">
+                        <h3 className="text-3xl font-display font-bold text-foreground mb-8">ECO2</h3>
+                        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                            <div className="space-y-8">
+                                <div>
+                                    <h4 className="font-bold text-foreground mb-3 text-base uppercase tracking-wider border-b border-border pb-2">Technical Profile</h4>
+                                    <ul className="space-y-2 text-lg text-foreground/90">
+                                        <li className="flex justify-between"><span>Outer:</span> <span className="font-medium">1.55 mm</span></li>
+                                        <li className="flex justify-between"><span>Inner:</span> <span className="font-medium">0.5 mm</span></li>
+                                        <li className="flex justify-between"><span>Length:</span> <span className="font-medium">300 mm</span></li>
+                                        <li className="flex justify-between"><span>Needle:</span> <span className="font-medium">13G</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-foreground mb-3 text-base uppercase tracking-wider border-b border-border pb-2">Design</h4>
+                                    <ul className="space-y-2 text-lg text-foreground/90">
+                                        <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></div> Reduced outer diameter</li>
+                                        <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></div> Minimised tissue disruption</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-foreground mb-3 text-base uppercase tracking-wider border-b border-border pb-2">Consider in:</h4>
+                                    <ul className="space-y-2 text-lg text-foreground/90">
+                                        <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></div> Localised pathology</li>
+                                        <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></div> Heightened sensitivity</li>
+                                        <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></div> Minimally traumatic access</li>
+                                    </ul>
+                                </div>
                             </div>
                             <div>
-                                <h4 className="font-bold text-foreground mb-3 text-base uppercase tracking-wider border-b border-border pb-2">Design</h4>
-                                <ul className="space-y-2 text-lg text-foreground/90">
-                                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></div> Reduced outer diameter</li>
-                                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></div> Minimised tissue disruption</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-foreground mb-3 text-base uppercase tracking-wider border-b border-border pb-2">Consider in:</h4>
-                                <ul className="space-y-2 text-lg text-foreground/90">
-                                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></div> Localised pathology</li>
-                                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></div> Heightened sensitivity</li>
-                                    <li className="flex items-start gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></div> Minimally traumatic access</li>
-                                </ul>
+                                <h4 className="font-display font-bold text-foreground mb-6 text-2xl lg:text-3xl">Platform Role</h4>
+                                <p className="text-xl lg:text-2xl font-display text-foreground/90 leading-relaxed">
+                                    The ECO2 catheter is designed as a smaller-calibre option to reduce insertion-related discomfort and enhance procedural safety in selected patients. Its reduced diameter supports lower insertion resistance, potentially decreased patient discomfort, and improved safety in narrow anatomical corridors.
+                                </p>
                             </div>
                         </div>
-                        <p className="text-foreground/90 leading-relaxed max-w-2xl">
-                            <span className="font-bold text-foreground block mb-2">Platform Role:</span>
-                            The ECO2 catheter is designed as a smaller-calibre option to reduce insertion-related discomfort and enhance procedural safety in selected patients. Its reduced diameter supports lower insertion resistance, potentially decreased patient discomfort, and improved safety in narrow anatomical corridors.
-                        </p>
                     </div>
                 </div>
             </section>
@@ -307,10 +316,10 @@ const BalloonTechnology = () => {
                             <div>
                                 <h2 className="text-3xl font-display font-bold text-foreground mb-6">Access Pathways</h2>
                                 <p className="text-lg text-foreground/90 mb-6">Balloon catheter systems support multiple anatomical approaches:</p>
-                                <div className="flex gap-4 mb-6">
-                                    <span className="px-4 py-2 bg-background border border-border rounded-full text-base font-medium">Caudal</span>
-                                    <span className="px-4 py-2 bg-background border border-border rounded-full text-base font-medium">Transforaminal</span>
-                                    <span className="px-4 py-2 bg-background border border-border rounded-full text-base font-medium">Interlaminar</span>
+                                <div className="flex flex-wrap gap-x-8 gap-y-2 mb-6">
+                                    <span className="text-lg font-semibold text-foreground flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary"></div> Caudal</span>
+                                    <span className="text-lg font-semibold text-foreground flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary"></div> Transforaminal</span>
+                                    <span className="text-lg font-semibold text-foreground flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary"></div> Interlaminar</span>
                                 </div>
                                 <div className="mt-4">
                                     <p className="font-bold text-base uppercase text-foreground mb-3">Approach selection depends on:</p>

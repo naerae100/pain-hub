@@ -138,9 +138,26 @@ const EpiduralBalloonDetail = () => {
                                 <div className="rounded-2xl overflow-hidden">
                                     <img src={adhesiolysisImg} alt="Percutaneous epidural adhesiolysis combined with balloon decompression case study" className="w-full h-auto object-contain" />
                                 </div>
-                                <p className="text-base text-foreground/70 mt-3 leading-relaxed">
-                                    <strong className="not-italic text-foreground/80">Figure:</strong> Percutaneous epidural adhesiolysis combined with balloon decompression in a patient with lumbar post-laminectomy syndrome. A 61-year-old male with a history of L4-5 partial laminectomy and flavectomy 1 year prior underwent combined epidural adhesiolysis and balloon decompression. (A) Adhesive cauda equina in cross-sectional MRI at L4-5. (B) Sagittal MRI showing well-decompressed state. (C) AP fluoroscopic view showing contrast filling defect. (D) Lateral fluoroscopic image showing filling defect. (E) Inflatable balloon catheter placed with contrast medium. (F) Contrast flow detected after balloon procedure.
-                                </p>
+                                <div className="mt-6">
+                                    <p className="text-base lg:text-lg text-foreground/90 leading-relaxed mb-5">
+                                        <strong className="text-foreground">Case study:</strong> A 61-year-old male with lumbar post-laminectomy syndrome underwent combined epidural adhesiolysis and balloon decompression. He had a history of L4–5 partial laminectomy and flavectomy one year prior to the procedure.
+                                    </p>
+                                    <dl className="space-y-3 text-base lg:text-lg">
+                                        {[
+                                            ["A", "Adhesive cauda equina in cross-sectional MRI at L4–5."],
+                                            ["B", "Sagittal MRI showing well-decompressed state."],
+                                            ["C", "AP fluoroscopic view showing contrast filling defect."],
+                                            ["D", "Lateral fluoroscopic image showing filling defect."],
+                                            ["E", "Inflatable balloon catheter placed with contrast medium."],
+                                            ["F", "Contrast flow detected after balloon procedure."],
+                                        ].map(([label, desc]) => (
+                                            <div key={label} className="flex gap-4">
+                                                <dt className="font-bold text-primary shrink-0 w-6">{label}</dt>
+                                                <dd className="text-foreground/90 leading-relaxed">{desc}</dd>
+                                            </div>
+                                        ))}
+                                    </dl>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -433,24 +450,21 @@ const EpiduralBalloonDetail = () => {
                         </ul>
 
                         {/* CTA */}
-                        <div className="relative bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-10 lg:p-16 text-white overflow-hidden">
-                            <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 translate-x-1/4" />
-                            <div className="relative z-10 text-center">
-                                <h3 className="text-2xl lg:text-3xl font-display font-bold mb-8">Get Started</h3>
-                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                    <Link to="/clinical-education" className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full bg-white text-primary font-bold hover:bg-white/90 transition-colors">
-                                        <BookOpen className="w-5 h-5" />
-                                        View Clinical Education
-                                    </Link>
-                                    <Link to="/resources" className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition-colors">
-                                        <FileText className="w-5 h-5" />
-                                        Access Resources & Evidence
-                                    </Link>
-                                    <Link to="/contact" className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition-colors">
-                                        <MapPin className="w-5 h-5" />
-                                        Enquire About Training
-                                    </Link>
-                                </div>
+                        <div className="pt-8 border-t border-border">
+                            <h3 className="text-2xl lg:text-3xl font-display font-bold text-foreground mb-8">Get Started</h3>
+                            <div className="flex flex-wrap gap-4">
+                                <Link to="/clinical-education" className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full bg-primary text-white font-bold hover:bg-primary/90 transition-colors">
+                                    <BookOpen className="w-5 h-5" />
+                                    View Clinical Education
+                                </Link>
+                                <Link to="/resources" className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full border-2 border-primary text-primary font-bold hover:bg-primary/5 transition-colors">
+                                    <FileText className="w-5 h-5" />
+                                    Access Resources & Evidence
+                                </Link>
+                                <Link to="/contact" className="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-full border-2 border-primary text-primary font-bold hover:bg-primary/5 transition-colors">
+                                    <MapPin className="w-5 h-5" />
+                                    Enquire About Training
+                                </Link>
                             </div>
                         </div>
                     </div>

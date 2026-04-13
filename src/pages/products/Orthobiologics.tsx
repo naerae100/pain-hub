@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import PageHero from "@/components/PageHero";
 import orthobiologicsHero from "@/assets/prp-sample-min.jpg";
 import marrowAspirationLiquid from "@/assets/Marrow Aspiration Liquid Autograft.jpg";
-import marrowAspirationLiquidTip from "@/assets/Marrow Aspiration Liquid Autograft_tip.jpg";
 import marrowCancellousAllThree from "@/assets/Marrow-Aspiration-&-Cancellous-Bone-Graft_all-three.jpg";
 import marrowCancellousTip from "@/assets/Marrow Aspiration & Cancellous Bone Graft_tip.jpg";
 import cervosTripleKeyPrp from "@/assets/Cervos Triple KeyPRP.png";
@@ -31,28 +30,25 @@ const Orthobiologics = () => {
                         </p>
                         <p className="text-lg text-foreground/90 leading-relaxed mb-4">These platforms are designed to optimise:</p>
                         <ul className="space-y-3 mt-4 mb-8">
-                            <li className="flex items-center gap-3 text-lg text-foreground/90">
-                                <TestTube className="w-5 h-5 text-primary shrink-0" /> Cellular yield
+                            <li className="flex items-start gap-3 text-lg text-foreground/90">
+                                <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></div> Cellular yield
                             </li>
-                            <li className="flex items-center gap-3 text-lg text-foreground/90">
-                                <Dna className="w-5 h-5 text-primary shrink-0" /> Biologic composition
+                            <li className="flex items-start gap-3 text-lg text-foreground/90">
+                                <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></div> Biologic composition
                             </li>
-                            <li className="flex items-center gap-3 text-lg text-foreground/90">
-                                <Droplet className="w-5 h-5 text-primary shrink-0" /> Platelet concentration & absolute dose
+                            <li className="flex items-start gap-3 text-lg text-foreground/90">
+                                <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></div> Platelet concentration & absolute dose
                             </li>
-                            <li className="flex items-center gap-3 text-lg text-foreground/90">
-                                <Shield className="w-5 h-5 text-primary shrink-0" /> Procedural sterility & workflow efficiency
+                            <li className="flex items-start gap-3 text-lg text-foreground/90">
+                                <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></div> Procedural sterility & workflow efficiency
                             </li>
-                            <li className="flex items-center gap-3 text-lg text-foreground/90">
-                                <Settings className="w-5 h-5 text-primary shrink-0" /> Reproducibility across clinical settings
+                            <li className="flex items-start gap-3 text-lg text-foreground/90">
+                                <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 shrink-0"></div> Reproducibility across clinical settings
                             </li>
                         </ul>
-                        <div className="bg-primary/5 rounded-2xl p-6 text-primary flex gap-4 items-start border border-primary/20">
-                            <Workflow className="w-6 h-6 mt-1 flex-shrink-0" />
-                            <p className="font-medium leading-relaxed">
-                                Unlike ablative or decompressive technologies, orthobiologic systems focus on biologic optimisation — preparing patient-derived cellular materials for targeted regenerative application.
-                            </p>
-                        </div>
+                        <p className="text-2xl lg:text-3xl font-display font-bold text-foreground leading-snug pt-4">
+                            Unlike ablative or decompressive technologies, orthobiologic systems focus on biologic optimisation — preparing patient-derived cellular materials for targeted regenerative application.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -74,14 +70,8 @@ const Orthobiologics = () => {
 
                     <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
                         <div className="lg:col-span-6 order-2 lg:order-1 relative">
-                            <div className="content-img-wrap mb-6 relative z-10">
+                            <div className="content-img-wrap">
                                 <img src={marrowAspirationLiquid} alt="Marrow Aspiration Liquid Autograft" className="content-img" />
-                            </div>
-                            <div className="content-img-wrap w-2/3 ml-auto relative -mt-16 z-20">
-                                <img src={marrowAspirationLiquidTip} alt="Marrow Aspiration Tip Detail" className="content-img" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-3">
-                                    <span className="text-white text-base font-medium">Trochar Tip Detail</span>
-                                </div>
                             </div>
                         </div>
 
@@ -170,7 +160,8 @@ const Orthobiologics = () => {
             {/* Marrow Aspiration & Cancellous Bone Graft Technologies */}
             <section className="py-20 lg:py-24">
                 <div className="section-container">
-                    <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+                    {/* Intro + Main Image */}
+                    <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
 
                         <div className="lg:col-span-7 space-y-10">
                             <div>
@@ -196,68 +187,62 @@ const Orthobiologics = () => {
                                         <span className="font-bold text-foreground">Structural cancellous bone core graft</span>
                                     </li>
                                 </ul>
-                                <p className="text-lg text-foreground/90 font-medium">...from a minimally invasive access pathway.</p>
-                            </div>
-
-                            <div className="space-y-6">
-                                <h3 className="text-2xl font-bold text-foreground">Biological Rationale</h3>
-                                <p className="text-lg text-foreground/90 leading-relaxed">
-                                    Harvesting intact cancellous bone cores without disrupting highly vascularised and organised trabecular architecture preserves:
-                                </p>
-                                <ul className="space-y-2 mb-6">
-                                    <li className="flex items-center gap-3 text-lg text-foreground/90">
-                                        <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div> Native microvascular networks
-                                    </li>
-                                    <li className="flex items-center gap-3 text-lg text-foreground/90">
-                                        <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div> Osteogenic cellular niches
-                                    </li>
-                                    <li className="flex items-center gap-3 text-lg text-foreground/90">
-                                        <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div> Structural integrity of the graft
-                                    </li>
-                                </ul>
-                                <p className="text-lg text-foreground/90 leading-relaxed mb-6">
-                                    Compared with morselised bone fragments, intact cancellous cores support more physiologic incorporation and remodeling. When combined with highly cellular marrow aspirate, this approach delivers autologous graft material with:
-                                </p>
-                                <ul className="space-y-3">
-                                    <li className="flex items-start gap-3">
-                                        <ChevronRight className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                                        <div>
-                                            <span className="font-bold text-foreground block">Osteoconductive properties</span>
-                                            <span className="text-lg text-foreground/90">Scaffold support</span>
-                                        </div>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <ChevronRight className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                                        <div>
-                                            <span className="font-bold text-foreground block">Osteoinductive potential</span>
-                                            <span className="text-lg text-foreground/90">Biologic signalling</span>
-                                        </div>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <ChevronRight className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                                        <div>
-                                            <span className="font-bold text-foreground block">Osteogenic capacity</span>
-                                            <span className="text-lg text-foreground/90">Cellular contribution</span>
-                                        </div>
-                                    </li>
-                                </ul>
+                                <p className="text-lg text-foreground/90 font-medium">from a minimally invasive access pathway.</p>
                             </div>
                         </div>
 
-                        <div className="lg:col-span-5 space-y-10">
-                            {/* Images Grid */}
-                            <div className="space-y-4">
-                                <div className="content-img-wrap">
-                                    <img src={marrowCancellousAllThree} alt="Marrow Aspiration & Cancellous Bone Graft Setup" className="content-img" />
-                                </div>
-                                <div className="content-img-wrap relative">
-                                    <img src={marrowCancellousTip} alt="Trephine Needle Tip" className="content-img" />
-                                    <p className="absolute bottom-0 left-0 right-0 bg-background/80 backdrop-blur-sm text-base text-left text-muted-foreground py-2 px-3 font-medium tracking-wide uppercase">8G Trephine Core Extraction</p>
-                                </div>
+                        <div className="lg:col-span-5">
+                            <div className="content-img-wrap lg:-mt-8">
+                                <img src={marrowCancellousAllThree} alt="Marrow Aspiration & Cancellous Bone Graft Setup" className="content-img" />
                             </div>
+                        </div>
 
-                            {/* Technical Specs */}
-                            <div>
+                    </div>
+
+                    {/* Biological Rationale — image left, content right */}
+                    <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center mt-24">
+                        <div className="lg:col-span-5">
+                            <div className="content-img-wrap relative">
+                                <img src={marrowCancellousTip} alt="Trephine Needle Tip" className="content-img" />
+                                <p className="absolute bottom-0 left-0 right-0 bg-background/80 backdrop-blur-sm text-base text-left text-muted-foreground py-2 px-3 font-medium tracking-wide uppercase"></p>
+                            </div>
+                        </div>
+
+                        <div className="lg:col-span-7 space-y-6">
+                            <h3 className="text-3xl lg:text-4xl font-display font-bold text-foreground">Biological Rationale</h3>
+                            <p className="text-lg text-foreground/90 leading-relaxed">
+                                Harvesting intact cancellous bone cores without disrupting highly vascularised and organised trabecular architecture preserves:
+                            </p>
+                            <ul className="space-y-2 mb-6">
+                                <li className="flex items-center gap-3 text-lg text-foreground/90">
+                                    <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div> Native microvascular networks
+                                </li>
+                                <li className="flex items-center gap-3 text-lg text-foreground/90">
+                                    <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div> Osteogenic cellular niches
+                                </li>
+                                <li className="flex items-center gap-3 text-lg text-foreground/90">
+                                    <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div> Structural integrity of the graft
+                                </li>
+                            </ul>
+                            <p className="text-lg text-foreground/90 leading-relaxed mb-6">
+                                Compared with morselised bone fragments, intact cancellous cores support more physiologic incorporation and remodeling. When combined with highly cellular marrow aspirate, this approach delivers autologous graft material with:
+                            </p>
+                            <ul className="space-y-4">
+                                <li className="flex items-center gap-3 text-lg">
+                                    <ChevronRight className="w-5 h-5 text-primary shrink-0" />
+                                    <span><span className="font-bold text-foreground">Osteoconductive properties</span> <span className="text-foreground/90">(scaffold support)</span></span>
+                                </li>
+                                <li className="flex items-center gap-3 text-lg">
+                                    <ChevronRight className="w-5 h-5 text-primary shrink-0" />
+                                    <span><span className="font-bold text-foreground">Osteoinductive potential</span> <span className="text-foreground/90">(biologic signalling)</span></span>
+                                </li>
+                                <li className="flex items-center gap-3 text-lg">
+                                    <ChevronRight className="w-5 h-5 text-primary shrink-0" />
+                                    <span><span className="font-bold text-foreground">Osteogenic capacity</span> <span className="text-foreground/90">(cellular contribution)</span></span>
+                                </li>
+                            </ul>
+
+                            <div className="pt-6 mt-4 border-t border-border">
                                 <h4 className="font-bold text-lg text-foreground mb-4">Technical Characteristics</h4>
                                 <ul className="space-y-3 text-lg text-foreground/90 mb-6">
                                     <li className="flex items-center gap-3"><Circle className="w-2 h-2 text-primary" /> Bone marrow aspiration components</li>
@@ -270,7 +255,6 @@ const Orthobiologics = () => {
                                 </p>
                             </div>
                         </div>
-
                     </div>
 
                     {/* Graft Integration & Advantages */}
@@ -349,65 +333,68 @@ const Orthobiologics = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="grid grid-cols-2 gap-6 relative">
-                            <div className="col-span-2 content-img-wrap flex items-center justify-center">
-                                <img src={cervosTripleKeyPrp} alt="Cervos Triple KeyPRP" className="content-img" />
+                        <div className="content-img-wrap flex items-center justify-center">
+                            <img src={cervosTripleKeyPrp} alt="Cervos Triple KeyPRP" className="content-img" />
+                        </div>
+                    </div>
+
+                    {/* Customisable Biologic Profiles — standalone sub-section */}
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start max-w-6xl mx-auto mb-20">
+                        <div className="content-img-wrap max-w-sm mx-auto lg:mx-0">
+                            <img src={cervosKeyPrp} alt="CERVOS-KEYPRP Technology" className="content-img" />
+                        </div>
+                        <div className="space-y-8">
+                            <h3 className="text-3xl lg:text-4xl font-display font-bold text-foreground">Customisable Biologic Profiles</h3>
+
+                            <div>
+                                <p className="text-lg text-foreground/90 leading-relaxed mb-4">Technical capabilities include:</p>
+                                <ul className="space-y-2 text-lg text-foreground/90 pl-2">
+                                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary shrink-0"></div> Leukocyte-rich PRP</li>
+                                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary shrink-0"></div> Leukocyte-reduced PRP</li>
+                                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary shrink-0"></div> Conditioned plasma</li>
+                                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary shrink-0"></div> Monocyte-optimised preparations</li>
+                                </ul>
                             </div>
-                            <div className="col-span-2 flex flex-col md:flex-row gap-8 items-center">
-                                <div className="w-1/3 min-w-[120px]">
-                                    <div className="content-img-wrap content-img-wrap--square">
-                                        <img src={cervosKeyPrp} alt="CERVOS-KEYPRP Technology" className="content-img" />
-                                    </div>
-                                </div>
-                                <div className="w-2/3">
-                                    <h5 className="font-bold text-lg text-foreground mb-3">Customisable Biologic Profiles</h5>
-                                    <p className="text-lg text-foreground/90 leading-relaxed">
-                                        Advanced platforms support tailored preparations ranging from leukocyte-rich to leukocyte-reduced PRP, Conditioned plasma, and Monocyte-optimised outputs.
-                                    </p>
-                                </div>
+
+                            <div>
+                                <p className="text-lg text-foreground/90 leading-relaxed mb-4">Density-based centrifugation allows separation of:</p>
+                                <ul className="space-y-2 text-lg text-foreground/90 pl-2">
+                                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary shrink-0"></div> Platelets</li>
+                                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary shrink-0"></div> Agranulocytes (monocytes & lymphocytes)</li>
+                                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary shrink-0"></div> Granulocytes (neutrophils)</li>
+                                    <li className="flex items-center gap-3"><div className="w-2 h-2 rounded-full bg-primary shrink-0"></div> Erythrocytes</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
 
-                    <div className=" grid lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h3 className="text-2xl font-bold text-foreground mb-4">Density-Based Separation</h3>
-                            <p className="text-lg text-foreground/90 leading-relaxed mb-6">
-                                Density-based centrifugation allows precise separation and customisation of the cellular composition:
+                    {/* Anticoagulation */}
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto">
+                        <div className="space-y-6">
+                            <h3 className="text-3xl lg:text-4xl font-display font-bold text-foreground">Anticoagulation</h3>
+                            <p className="text-xl text-foreground font-semibold leading-relaxed">
+                                Controlled biologic processing requires appropriate anticoagulation.
                             </p>
-                            <ul className="space-y-3">
-                                <li className="flex items-center justify-between">
-                                    <span className="font-bold text-foreground text-base">Platelets</span>
-                                    <div className="w-4 h-4 rounded-full bg-yellow-400 opacity-80" />
-                                </li>
-                                <li className="flex items-center justify-between">
-                                    <span className="font-bold text-foreground text-base">Agranulocytes <span className="font-normal text-muted-foreground text-base ml-2">(monocytes & lymphocytes)</span></span>
-                                    <div className="w-4 h-4 rounded-full bg-gray-200" />
-                                </li>
-                                <li className="flex items-center justify-between">
-                                    <span className="font-bold text-foreground text-base">Granulocytes <span className="font-normal text-muted-foreground text-base ml-2">(neutrophils)</span></span>
-                                    <div className="w-4 h-4 rounded-full bg-gray-400" />
-                                </li>
-                                <li className="flex items-center justify-between">
-                                    <span className="font-bold text-foreground text-base">Erythrocytes</span>
-                                    <div className="w-4 h-4 rounded-full bg-red-600 opacity-80" />
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="flex flex-col justify-center">
-                            <h3 className="text-xl font-bold text-foreground mb-4">Anticoagulation</h3>
-                            <p className="text-lg text-foreground/90 leading-relaxed mb-6">
-                                Controlled biologic processing requires appropriate anticoagulation. The <span className="font-bold text-foreground">PPS Sodium Citrate 3.13%</span> solution (10ml ampoules) is used to:
-                            </p>
-                            <ul className="space-y-3 text-lg text-foreground/90 mb-6">
-                                <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" /> Prevent premature coagulation during blood collection</li>
-                                <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" /> Preserve platelet integrity prior to centrifugation</li>
-                                <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" /> Support consistent PRP processing protocols</li>
-                            </ul>
-                            <div className="content-img-wrap w-2/3">
-                                <img src={ppsSodiumCitrate} alt="PPS Sodium Citrate" className="content-img" />
+                            <div>
+                                <h4 className="font-bold text-foreground text-lg mb-3">PPS Sodium Citrate 3.13%</h4>
+                                <p className="text-lg text-foreground/90 leading-relaxed mb-4">
+                                    The PPS Sodium Citrate 3.13% solution (10ml ampoules) is used to:
+                                </p>
+                                <ul className="space-y-3 text-lg text-foreground/90 mb-6">
+                                    <li className="flex items-start gap-3"><div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0"></div> Prevent premature coagulation during blood collection</li>
+                                    <li className="flex items-start gap-3"><div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0"></div> Preserve platelet integrity prior to centrifugation</li>
+                                    <li className="flex items-start gap-3"><div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0"></div> Support consistent PRP processing protocols</li>
+                                </ul>
                             </div>
+                            <div>
+                                <p className="text-lg text-foreground/90 leading-relaxed mb-3">Available configurations include:</p>
+                                <ul className="space-y-3 text-lg text-foreground/90">
+                                    <li className="flex items-start gap-3"><div className="w-2 h-2 rounded-full bg-primary mt-2.5 shrink-0"></div> 10 ml ampoules</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="content-img-wrap">
+                            <img src={ppsSodiumCitrate} alt="PPS Sodium Citrate 3.13% solution (10ml ampoules)" className="content-img" />
                         </div>
                     </div>
                 </div>
